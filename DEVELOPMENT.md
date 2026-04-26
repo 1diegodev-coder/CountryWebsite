@@ -26,7 +26,7 @@ Root-level files (`CountryDNA.html`, `index.html`), legacy scripts (`js/*.js`), 
 - `fixtures/` — Test profiles and expected results for engine validation.
 
 ## Development Workflow
-- **Install:** `npm install` (or `pnpm install`)
+- **Install:** `npm install`
 - **Dev:** `npm run dev` (starts on port 3000)
 - **Test:** `npm run test` (Vitest for engine and logic)
 - **Lint:** `npm run lint` (Next.js linting)
