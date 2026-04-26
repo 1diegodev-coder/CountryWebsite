@@ -75,6 +75,9 @@ export type RawIndicators = z.infer<typeof RawIndicatorsSchema>;
 
 import { VisaSchema } from './visa';
 
+export const DataConfidenceSchema = z.enum(['high', 'medium', 'low']);
+export type DataConfidence = z.infer<typeof DataConfidenceSchema>;
+
 export const CountrySchema = z.object({
   name: z.string().min(1),
   iso2: z.string().length(2),
@@ -91,7 +94,7 @@ export const CountrySchema = z.object({
   visaPathways: z.array(VisaSchema).optional(),
   cities: z.array(z.string()).default([]),
   rawIndicators: RawIndicatorsSchema,
-  dataConfidence: z.enum(['high', 'medium', 'low']),
+  dataConfidence: DataConfidenceSchema,
   lastUpdated: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
 });
 

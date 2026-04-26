@@ -6,7 +6,6 @@ import { RefreshCcw, Share2, MapPin, Check, AlertTriangle, TrendingUp, Globe, In
 import GlobeViewer from "./GlobeViewer";
 import { MatchPayload, EliminatedCountry } from "../lib/schema/match";
 import { UserProfile } from "../lib/schema/profile";
-import { COUNTRIES } from "../lib/data/countries";
 
 interface ResultsViewProps {
   result: MatchPayload;
@@ -164,9 +163,6 @@ export default function ResultsView({
         <div className="match-cards-panel">
           <div className="match-cards-grid">
             {result.matches.map((match, i) => {
-              const country = COUNTRIES.find(c => c.iso2 === match.countryCode);
-              if (!country) return null;
-
               return (
                 <motion.div
                   key={match.countryCode}
@@ -179,22 +175,22 @@ export default function ResultsView({
                     <div>
                       <div className="flex items-center gap-2 mb-1">
                         <span className="text-2xl">🌍</span>
-                        <h3 className="text-lg font-bold">{country.name}</h3>
+                        <h3 className="text-lg font-bold">{match.countryName}</h3>
                         <span className="text-[10px] font-mono text-text-muted bg-bg-elevated px-1.5 py-0.5 rounded uppercase">
-                          {country.iso2}
+                          {match.countryCode}
                         </span>
-                        {country.dataConfidence !== "high" && (
+                        {match.dataConfidence !== "high" && (
                           <span
                             className="inline-flex items-center gap-1 text-[10px] font-mono text-accent-warning bg-accent-warning/10 border border-accent-warning/20 px-1.5 py-0.5 rounded uppercase"
                             title="This country uses lower-confidence source data and should be reviewed before making decisions."
                           >
                             <Info size={10} />
-                            {country.dataConfidence} confidence
+                            {match.dataConfidence} confidence
                           </span>
                         )}
                       </div>
                       <p className="text-xs text-text-secondary leading-relaxed max-w-md">
-                        {country.descriptor}
+                        {match.countryDescriptor}
                       </p>
                     </div>
                     <div className="text-right">
@@ -387,7 +383,6 @@ export default function ResultsView({
                       {reason} ({items.length})
                     </div>
                     {items.map((elim, idx) => {
-                      const country = COUNTRIES.find(c => c.iso2 === elim.countryCode);
                       const isOverridden = ((profile as any).overrides || []).includes(elim.countryCode);
                       
                       return (
@@ -396,7 +391,7 @@ export default function ResultsView({
                             <div className="flex items-start gap-3">
                               <span className="text-lg opacity-50">🌍</span>
                               <div>
-                                <div className="text-[13px] font-semibold text-text-secondary">{country?.name || elim.countryCode}</div>
+                                <div className="text-[13px] font-semibold text-text-secondary">{elim.countryName}</div>
                                 <div className="text-[11px] text-text-muted leading-relaxed">{elim.detail}</div>
                               </div>
                             </div>
@@ -462,14 +457,14 @@ export default function ResultsView({
                     <span className="text-2xl">🌍</span>
                     <div>
                       <div className="text-[10px] font-mono text-accent-green uppercase tracking-widest">Your Top Match</div>
-                      <div className="text-lg font-bold">{COUNTRIES.find(c => c.iso2 === result.matches[0].countryCode)?.name}</div>
+                      <div className="text-lg font-bold">{result.matches[0].countryName}</div>
                     </div>
                   </div>
                   
                   <div className="space-y-2">
                     {result.matches.slice(0, 3).map((m, i) => (
                       <div key={m.countryCode} className="flex justify-between items-center text-xs">
-                        <span className="text-text-secondary">{i + 1}. {COUNTRIES.find(c => c.iso2 === m.countryCode)?.name}</span>
+                        <span className="text-text-secondary">{i + 1}. {m.countryName}</span>
                         <span className="font-mono text-accent-green">{m.score}%</span>
                       </div>
                     ))}

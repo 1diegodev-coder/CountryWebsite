@@ -1,3 +1,5 @@
+import "server-only";
+
 import { Country, DimensionKey } from '../schema/country';
 
 export const LIFE_STAGE_WEIGHTS: Record<string, Record<DimensionKey, number>> = {

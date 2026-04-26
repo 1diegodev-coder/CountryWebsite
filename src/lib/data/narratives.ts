@@ -1,3 +1,5 @@
+import "server-only";
+
 import { NarrativeTemplate } from '../schema/narrative';
 
 export const NARRATIVE_TEMPLATES: NarrativeTemplate[] = [

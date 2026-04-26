@@ -4,7 +4,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Clock, Globe as GlobeIcon, BarChart3 } from "lucide-react";
 import GlobeViewer from "./GlobeViewer";
-import { COUNTRIES } from "../lib/data/countries";
 
 interface LandingViewProps {
   onStart: () => void;
@@ -39,7 +38,7 @@ export default function LandingView({ onStart }: LandingViewProps) {
           </div>
           <div className="flex items-center gap-2">
             <GlobeIcon size={16} className="text-accent-green" />
-            <span>{COUNTRIES.length} countries analysed</span>
+            <span>195 countries analysed</span>
           </div>
           <div className="flex items-center gap-2">
             <BarChart3 size={16} className="text-accent-green" />

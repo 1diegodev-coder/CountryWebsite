@@ -1,3 +1,5 @@
+import "server-only";
+
 import { Redis } from '@upstash/redis';
 
 export const REDIS_TTL = 60 * 60 * 24 * 90; // 90 days
