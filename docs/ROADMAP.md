@@ -5,7 +5,7 @@
 | 0 | Split WIP into clean commits | claude | you | #1 | [x] |
 | 1 | Tooling fixes (lint/vitest/redis) | gemini | claude | #2 | [x] |
 | 2 | Server-only data boundary | gemini | codex | #4 | [x] |
-| 3 | SSR /r/[token] + OG tags | gemini | claude | — | [ ] |
+| 3 | SSR /r/[token] + OG tags | gemini | claude | #6 | [x] |
 | 4 | Deploy + Sentry + ratelimit | gemini | claude | — | [ ] |
 | 5 | Observability + data parity | gemini | claude | — | [ ] |
 
@@ -24,9 +24,9 @@ Spec: `docs/phase2-boundary.md`.
 Merged in PR #4. Verified: 21/21 spec table rows, `npm test` (33/33), `npm run build` (clean), `npm run lint` (exit 0), server-only client import grep (zero output).
 **Must land before Phase 4** — deploying on a leaky client boundary is a bug, not a feature.
 
-### Phase 3 — parallel with Phase 1
+### Phase 3 — complete
 Branch: `phase/3-ssr` off `main`.
-Gemini converts `/r/[token]` to a server component. Claude reviews for hydration correctness and OG tag placement.
+Merged in PR #6. Verified: `npm test` (33/33), `npm run build` (`/r/[token]` dynamic), `npm run lint` (exit 0).
 
 ### Phase 4 — after Phase 2
 Branch: `phase/4-deploy` off `main`.
