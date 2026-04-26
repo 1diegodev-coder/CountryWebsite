@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-import { DimensionKeySchema, DimensionsSchema } from './country';
+import { DimensionKeySchema, DimensionsSchema, DataConfidenceSchema } from './country';
 
 export const EliminationReasonSchema = z.enum([
   'budget',
@@ -16,6 +16,9 @@ export type EliminationReason = z.infer<typeof EliminationReasonSchema>;
 export const MatchResultSchema = z.object({
   /** ISO2 country code. */
   countryCode: z.string().length(2),
+  countryName: z.string().min(1),
+  countryDescriptor: z.string().min(1),
+  dataConfidence: DataConfidenceSchema,
   /** Normalised match score 0–100. */
   score: z.number().min(0).max(100),
   /** 1-indexed rank among all non-eliminated countries. */
@@ -34,6 +37,7 @@ export type MatchResult = z.infer<typeof MatchResultSchema>;
 
 export const EliminatedCountrySchema = z.object({
   countryCode: z.string().length(2),
+  countryName: z.string().min(1),
   reason: EliminationReasonSchema,
   detail: z.string().min(1),
 });

@@ -13,7 +13,10 @@ export default defineConfig({
           globals: true,
         },
         resolve: {
-          alias: { '@': path.resolve(__dirname, './src') },
+          alias: {
+            '@': path.resolve(__dirname, './src'),
+            'server-only': path.resolve(__dirname, 'src/__mocks__/server-only.ts'),
+          },
         },
       },
       {
@@ -24,7 +27,10 @@ export default defineConfig({
           globals: true,
         },
         resolve: {
-          alias: { '@': path.resolve(__dirname, './src') },
+          alias: {
+            '@': path.resolve(__dirname, './src'),
+            'server-only': path.resolve(__dirname, 'src/__mocks__/server-only.ts'),
+          },
         },
       },
     ],

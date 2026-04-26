@@ -1,3 +1,5 @@
+import "server-only";
+
 import { DimensionKey, Country, Dimensions, LifeStage } from '@/lib/schema/country';
 import { UserProfile } from '@/lib/schema/profile';
 import { MatchResult, EliminatedCountry, MatchPayload, EliminationReason } from '@/lib/schema/match';
@@ -36,6 +38,9 @@ export function runMatchingEngine(profile: UserProfile, overrides: string[] = []
   // Phase 3: Narratives & Formatting
   const matches: MatchResult[] = scored.map((c, index) => ({
     countryCode: c.iso2,
+    countryName: c.name,
+    countryDescriptor: c.descriptor,
+    dataConfidence: c.dataConfidence,
     score: c.matchPct,
     rank: index + 1,
     whyFit: generateWhyFit(c, profile),
@@ -65,6 +70,7 @@ function applyHardFilters(countries: Country[], profile: UserProfile): { candida
     if (reasons.length > 0) {
       eliminated.push({
         countryCode: country.iso2,
+        countryName: country.name,
         reason: reasons[0].code,
         detail: reasons[0].detail
       });

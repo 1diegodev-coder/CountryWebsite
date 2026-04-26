@@ -90,6 +90,9 @@ describe('ResultsView', () => {
           eliminatedCount: 0,
           matches: [{
             countryCode: 'AF',
+            countryName: 'Afghanistan',
+            countryDescriptor: 'A landlocked country in Central Asia.',
+            dataConfidence: 'low',
             score: 72,
             rank: 1,
             whyFit: ['Low nominal cost.'],

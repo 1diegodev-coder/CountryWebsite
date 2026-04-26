@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, ArrowRight, Check, Globe } from "lucide-react";
 import GlobeViewer from "./GlobeViewer";
 import { QUESTIONS, Question } from "../lib/data/questions";
-import { COUNTRIES } from "../lib/data/countries";
 
 interface QuizViewProps {
   answers: any;
@@ -252,7 +251,7 @@ export default function QuizView({ answers, onAnswer, onComplete, initialStep }:
         <div className="live-counter">
           <Globe size={24} className="text-accent-green" />
           <div>
-            <div className="counter-number">{COUNTRIES.length}</div>
+            <div className="counter-number">195</div>
             <div className="text-[11px] text-text-secondary uppercase tracking-wider">countries match</div>
           </div>
         </div>
