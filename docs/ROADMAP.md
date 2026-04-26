@@ -3,7 +3,7 @@
 | Phase | Goal | Drafted | Reviewed | PR | Status |
 |-------|------|---------|----------|----|-------:|
 | 0 | Split WIP into clean commits | claude | you | #1 | [x] |
-| 1 | Tooling fixes (lint/vitest/redis) | gemini | claude | — | [ ] |
+| 1 | Tooling fixes (lint/vitest/redis) | gemini | claude | #2 | [x] |
 | 2 | Server-only data boundary | gemini | codex | — | [ ] |
 | 3 | SSR /r/[token] + OG tags | gemini | claude | — | [ ] |
 | 4 | Deploy + Sentry + ratelimit | gemini | claude | — | [ ] |
@@ -14,10 +14,9 @@
 ### Phase 0 — complete
 Three atomic commits on PR #1. Verified: `npm test` (31/31), `npm run build` (clean). Merged to `main`.
 
-### Phase 1 — next
+### Phase 1 — complete
 Branch: `phase/1-tooling` off `main`.
-Gemini drafts, Claude reviews. Phases 1 and 3 can run in parallel.
-Acceptance gate: `npm install && npm test && npm run build && npm run lint` with zero warnings.
+Merged in PR #2. Verified: `npm install`, `npm test` (33/33), `npm run build` (clean), `npm run lint` (exit 0, zero warnings).
 
 ### Phase 2 — after Phase 1
 Branch: `phase/2-boundary` off `main`.
