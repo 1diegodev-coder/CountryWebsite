@@ -4,7 +4,7 @@
 |-------|------|---------|----------|----|-------:|
 | 0 | Split WIP into clean commits | claude | you | #1 | [x] |
 | 1 | Tooling fixes (lint/vitest/redis) | gemini | claude | #2 | [x] |
-| 2 | Server-only data boundary | gemini | codex | — | [ ] |
+| 2 | Server-only data boundary | gemini | codex | #4 | [x] |
 | 3 | SSR /r/[token] + OG tags | gemini | claude | — | [ ] |
 | 4 | Deploy + Sentry + ratelimit | gemini | claude | — | [ ] |
 | 5 | Observability + data parity | gemini | claude | — | [ ] |
@@ -18,10 +18,10 @@ Three atomic commits on PR #1. Verified: `npm test` (31/31), `npm run build` (cl
 Branch: `phase/1-tooling` off `main`.
 Merged in PR #2. Verified: `npm install`, `npm test` (33/33), `npm run build` (clean), `npm run lint` (exit 0, zero warnings).
 
-### Phase 2 — after Phase 1
+### Phase 2 — complete
 Branch: `phase/2-boundary` off `main`.
-Claude writes spec (`docs/phase2-boundary.md`) first. No code until spec is approved.
-Codex reviews the implementation PR against the spec table.
+Spec: `docs/phase2-boundary.md`.
+Merged in PR #4. Verified: 21/21 spec table rows, `npm test` (33/33), `npm run build` (clean), `npm run lint` (exit 0), server-only client import grep (zero output).
 **Must land before Phase 4** — deploying on a leaky client boundary is a bug, not a feature.
 
 ### Phase 3 — parallel with Phase 1
