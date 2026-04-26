@@ -27,7 +27,7 @@ export async function POST(request: NextRequest) {
     
     // Persist to Redis if available
     let shareReady = false;
-    if (process.env.UPSTASH_REDIS_REST_URL) {
+    if (redis) {
       try {
         await redis.set(`result:${sessionToken}`, JSON.stringify({ ...result, sessionToken, shareReady: true }), { ex: REDIS_TTL });
         shareReady = true;

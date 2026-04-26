@@ -12,6 +12,9 @@ export async function GET(
       return NextResponse.json({ error: 'Invalid token format' }, { status: 400 });
     }
 
+    if (!redis) {
+      return NextResponse.json({ error: 'service_unavailable' }, { status: 503 });
+    }
     const data = await redis.get(`result:${token}`);
     
     if (!data) {
