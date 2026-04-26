@@ -3,8 +3,18 @@ import { UserProfileSchema } from '@/lib/schema/profile';
 import { runMatchingEngine } from '@/lib/engine';
 import { redis, REDIS_TTL } from '@/lib/redis';
 import { nanoid } from 'nanoid';
+import * as Sentry from "@sentry/nextjs";
+import { matchRatelimit } from '@/lib/ratelimit';
 
 export async function POST(request: NextRequest) {
+  if (matchRatelimit) {
+    const ip = request.headers.get('x-forwarded-for') ?? '127.0.0.1';
+    const { success } = await matchRatelimit.limit(ip);
+    if (!success) {
+      return NextResponse.json({ error: 'Too many requests' }, { status: 429 });
+    }
+  }
+
   try {
     const body = await request.json();
     
@@ -45,6 +55,7 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json(matchPayload);
   } catch (error) {
+    Sentry.captureException(error);
     console.error('Match error:', error);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
