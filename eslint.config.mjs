@@ -14,10 +14,9 @@ const eslintConfig = [
       "@typescript-eslint/no-explicit-any": "off",
       "@typescript-eslint/no-unused-vars": "off",
       "react/no-unescaped-entities": "off",
-      "@typescript-eslint/triple-slash-reference": "off",
     }
   },
-  { ignores: ["node_modules/", ".next/", "archive/", "**/*.js", ".claude/"] },
+  { ignores: ["node_modules/", ".next/", "archive/", "**/*.js", ".claude/", "next-env.d.ts"] },
 ];
 
 export default eslintConfig;
