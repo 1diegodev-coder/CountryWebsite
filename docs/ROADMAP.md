@@ -6,7 +6,7 @@
 | 1 | Tooling fixes (lint/vitest/redis) | gemini | claude | #2 | [x] |
 | 2 | Server-only data boundary | gemini | codex | #4 | [x] |
 | 3 | SSR /r/[token] + OG tags | gemini | claude | #6 | [x] |
-| 4 | Deploy + Sentry + ratelimit | gemini | claude | — | [ ] |
+| 4 | Deploy + Sentry + ratelimit | gemini | claude | #8 | [x] |
 | 5 | Observability + data parity | gemini | claude | — | [ ] |
 
 ## Phase notes
@@ -28,10 +28,9 @@ Merged in PR #4. Verified: 21/21 spec table rows, `npm test` (33/33), `npm run b
 Branch: `phase/3-ssr` off `main`.
 Merged in PR #6. Verified: `npm test` (33/33), `npm run build` (`/r/[token]` dynamic), `npm run lint` (exit 0).
 
-### Phase 4 — after Phase 2
+### Phase 4 — complete
 Branch: `phase/4-deploy` off `main`.
-Three commits: Sentry wiring, `/api/healthz`, Upstash ratelimit on `/api/match` and `/api/whatif`.
-Claude review focuses on PII handling and ratelimit bypass paths.
+Merged in PR #8. Verified: `npm test` (33/33), `npm run build` (clean, `/api/healthz` edge), `npm run lint` (exit 0).
 
 ### Phase 5 — independent, trailing
 New worktree off `main` at any point after Phase 0.
