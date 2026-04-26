@@ -31,6 +31,13 @@ Root-level files (`CountryDNA.html`, `index.html`), legacy scripts (`js/*.js`), 
 - **Test:** `npm run test` (Vitest for engine and logic)
 - **Lint:** `npm run lint` (Next.js linting)
 
+## Git Workflow Hygiene
+- Use the root repository checkout as the canonical local `main`.
+- Do implementation work on a feature branch/worktree, not on root `main`.
+- Before starting work from `main`, verify it is synced with `origin/main`. Preferred command: `git pull --ff-only`.
+- After a feature branch is merged, immediately sync root `main`, then remove merged local worktrees and local branch refs.
+- If root `main` appears dirty after a merge, assume it may be a stale checkout before assuming files are intentionally modified.
+
 ## Environment Requirements
 Phase 2 features (sharing and results persistence) require:
 - `UPSTASH_REDIS_REST_URL`
