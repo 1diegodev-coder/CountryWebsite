@@ -1,0 +1,25 @@
+{
+  "top5": [
+    {
+      "countryCode": "VN",
+      "reason": "Vietnam remains the strongest match at $1,501; the extra $2 provides a negligible but real buffer over the tightest Hanoi estimates (~$1,350–1,490/month); US passport e-visa; warm climate; reliable fibre internet."
+    },
+    {
+      "countryCode": "GE",
+      "reason": "Tbilisi costs of $1,100–1,450/month now sit comfortably under the $1,501 budget, removing the tension at the $1,499 edge; US passport visa-free 365 days; reliable internet; 1% flat entrepreneur tax."
+    },
+    {
+      "countryCode": "TH",
+      "reason": "Chiang Mai at $1,400–1,480/month now has ~$20 headroom at $1,501; US passport 30-day VOA; warm climate; reliable co-working internet infrastructure."
+    },
+    {
+      "countryCode": "MX",
+      "reason": "At $1,501 Mexico City's outer neighbourhoods (Iztapalapa, Azcapotzalco) become marginally viable (~$1,460–1,500/month), unlocking this option that was infeasible at $1,499; US passport visa-free 180 days; warm highland climate."
+    },
+    {
+      "countryCode": "CO",
+      "reason": "Medellín at $1,200–1,450/month sits comfortably under $1,501; US passport 90-day visa-free entry; reliable fibre internet; spring-like climate in El Poblado satisfies the climate priority."
+    }
+  ],
+  "zero_results": false
+}

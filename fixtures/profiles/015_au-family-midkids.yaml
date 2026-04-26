@@ -1,0 +1,27 @@
+lifeStage: remoteEmployee
+household: coupleWithKids
+childrenAges:
+  - 5to11
+pushFactors:
+  - lifestyle
+  - exploring
+  - costTooHigh
+passports:
+  - AU
+budgetUsdMonthly: 5500
+languages:
+  - en
+languageFlexibility: openToLearning
+healthcareNeed: general
+nonNegotiables: []
+socialMode: mixed
+environmentPreference: midCity
+culturalAppetite: upgradeButFamiliar
+topPriorities:
+  - safety
+  - healthcare
+  - nature
+dealbreakers:
+  - extremeHeat
+  - airPollution
+locale: en-AU

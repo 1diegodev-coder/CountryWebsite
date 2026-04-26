@@ -1,0 +1,26 @@
+lifeStage: semiRetired
+household: coupleNoKids
+pushFactors:
+  - climate
+  - lifestyle
+  - costTooHigh
+passports:
+  - DE
+budgetUsdMonthly: 3500
+languages:
+  - de
+  - en
+languageFlexibility: openToLearning
+healthcareNeed: general
+nonNegotiables: []
+socialMode: mixed
+environmentPreference: smallTown
+culturalAppetite: upgradeButFamiliar
+topPriorities:
+  - climate
+  - cost
+  - healthcare
+dealbreakers:
+  - extremeCold
+  - highCost
+locale: de-DE

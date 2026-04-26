@@ -1,0 +1,25 @@
+{
+  "top5": [
+    {
+      "countryCode": "ES",
+      "reason": "Spain's Costa del Sol averages 300 sunny days/year, directly addressing the climate top priority for a German couple fleeing extremeCold; large German expatriate communities in Málaga and Torrevieja ease the social transition; $3,500 is very comfortable outside Madrid."
+    },
+    {
+      "countryCode": "PT",
+      "reason": "Portugal's Algarve is Europe's sunniest region (3,300 hours/year); NHR regime offers 10-year tax benefits on foreign pension income; Portuguese is structurally learnable for German-English bilingual speakers; $3,500 covers a comfortable two-bedroom in Tavira or Lagos."
+    },
+    {
+      "countryCode": "MX",
+      "reason": "Lake Chapala's year-round spring climate at 1,500 m eliminates both extremeHeat and extremeCold; large English-speaking international community aids the semi-retired mixed socialMode; private healthcare is excellent and affordable; $3,500 is very generous for a couple."
+    },
+    {
+      "countryCode": "TH",
+      "reason": "Thailand's LTR Retirement Visa is accessible at 50+ years; Chiang Mai's climate is milder than Bangkok's; German retiree communities are established; $3,500 provides a premium lifestyle; healthcare priority is well-served by modern Thai private hospitals."
+    },
+    {
+      "countryCode": "IT",
+      "reason": "Southern Italy (Puglia, Sicily, Calabria) offers warm Mediterranean climate and Italian culture that appeals strongly to German retirees; Italian is fast-learning for German+English bilingual speakers; smallTown preference fits Puglia's masserie beautifully at $3,500."
+    }
+  ],
+  "zero_results": false
+}

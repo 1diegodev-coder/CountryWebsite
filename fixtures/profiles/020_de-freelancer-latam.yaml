@@ -1,0 +1,26 @@
+lifeStage: freelancer
+household: solo
+pushFactors:
+  - career
+  - lifestyle
+  - exploring
+passports:
+  - DE
+budgetUsdMonthly: 3000
+languages:
+  - de
+  - en
+languageFlexibility: openToLearning
+healthcareNeed: general
+nonNegotiables: []
+socialMode: deepIntegration
+environmentPreference: bigCity
+culturalAppetite: radicallyDifferent
+topPriorities:
+  - cost
+  - internet
+  - culture
+dealbreakers:
+  - authoritarian
+  - noInternet
+locale: de-DE

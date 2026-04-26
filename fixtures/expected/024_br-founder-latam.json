@@ -1,0 +1,25 @@
+{
+  "top5": [
+    {
+      "countryCode": "CO",
+      "reason": "Colombia is the strongest LATAM founder match: Medellín and Bogotá have Latin America's fastest-growing startup ecosystems; BR passport is visa-free for 90 days; Spanish is easily acquired by Portuguese speakers (openToLearning confirmed); $3,500 is very generous; Ruta N tech district in Medellín directly serves techEco."
+    },
+    {
+      "countryCode": "MX",
+      "reason": "Mexico City is LATAM's largest startup hub (Kavak, Clip, Bitso born here); BR passport visa-free for 180 days; Spanish from Portuguese in weeks; $3,500 is comfortable in Roma or Condesa; lowTax via Mexico's 30% top rate is less optimal but CDMX's ecosystem is unmatched in LATAM."
+    },
+    {
+      "countryCode": "CL",
+      "reason": "Chile's Start-Up Chile programme has funded 2,500+ startups and provides seed funding plus legal residency; BR passport is visa-free; Spanish acquisition easy; $3,500 is feasible in Santiago's Providencia district; stable political environment avoids the unstable dealbreaker."
+    },
+    {
+      "countryCode": "PA",
+      "reason": "Panama's territorial tax system means foreign-sourced income is tax-exempt — the strongest lowTax option in LATAM; BR passport visa-free; dollar economy eliminates currency risk; $3,500 is comfortable in Panama City's tech corridor; growing fintech and logistics startup scene."
+    },
+    {
+      "countryCode": "AR",
+      "reason": "Argentina's large and sophisticated tech community (Mercado Libre, Auth0 origins) and MERCOSUR free movement for BR passport holders are compelling; $3,500 goes very far in Buenos Aires; the unstable dealbreaker is a real risk given persistent macroeconomic volatility — rank #5 accordingly."
+    }
+  ],
+  "zero_results": false
+}

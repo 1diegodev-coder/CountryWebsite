@@ -1,0 +1,27 @@
+lifeStage: remoteEmployee
+household: coupleWithKids
+childrenAges:
+  - 12to18
+pushFactors:
+  - costTooHigh
+  - lifestyle
+  - politicalSocial
+passports:
+  - GB
+budgetUsdMonthly: 6000
+languages:
+  - en
+languageFlexibility: openToLearning
+healthcareNeed: general
+nonNegotiables: []
+socialMode: mixed
+environmentPreference: midCity
+culturalAppetite: upgradeButFamiliar
+topPriorities:
+  - safety
+  - healthcare
+  - internet
+dealbreakers:
+  - airPollution
+  - authoritarian
+locale: en-GB

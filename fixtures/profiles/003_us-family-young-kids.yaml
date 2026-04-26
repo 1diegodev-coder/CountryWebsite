@@ -1,0 +1,27 @@
+lifeStage: remoteEmployee
+household: coupleWithKids
+childrenAges:
+  - under5
+pushFactors:
+  - costTooHigh
+  - lifestyle
+  - exploring
+passports:
+  - US
+budgetUsdMonthly: 5500
+languages:
+  - en
+languageFlexibility: openToLearning
+healthcareNeed: general
+nonNegotiables: []
+socialMode: mixed
+environmentPreference: midCity
+culturalAppetite: upgradeButFamiliar
+topPriorities:
+  - safety
+  - healthcare
+  - cost
+dealbreakers:
+  - extremeHeat
+  - airPollution
+locale: en-US

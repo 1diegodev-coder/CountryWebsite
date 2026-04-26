@@ -1,0 +1,25 @@
+{
+  "top5": [
+    {
+      "countryCode": "JP",
+      "reason": "Japan delivers radicallyDifferent cultural immersion, world-leading safety (Global Peace Index top-10), and spectacular natural environments from Hokkaido mountains to Okinawa reefs; low urban air pollution satisfies the dealbreaker; $8,500 covers a comfortable Tokyo two-bedroom plus travel; US passport 90-day visa-free."
+    },
+    {
+      "countryCode": "ES",
+      "reason": "Spain's rich culture (Gaudí, Flamenco, Semana Santa), safety, and diverse nature (Pyrenees, Mediterranean coast, Canary Islands) satisfy all three top priorities; $8,500 is very comfortable in Barcelona or Madrid; US passport enters Schengen visa-free; low airPollution in coastal cities."
+    },
+    {
+      "countryCode": "PT",
+      "reason": "Portugal's Atlantic culture, Fado music scene, and wild coast satisfy culture and nature priorities; safety is excellent; $8,500 is generous — a premium two-bedroom in Príncipe Real runs ~$2,200/month; D8 Visa provides legal long-stay path; airPollution is very low."
+    },
+    {
+      "countryCode": "SG",
+      "reason": "Singapore's multicultural food and arts scene, world-class internet infrastructure, and exceptional safety scores align with culture, internet, and safety priorities; $8,500 covers a one-bedroom in a mid-tier district; note: nature priority is less well served than other options."
+    },
+    {
+      "countryCode": "NL",
+      "reason": "Amsterdam's world-class museums, cycling culture, and cosmopolitan social scene satisfy culture and internet priorities; Dutch cities consistently rank top-10 for safety; $8,500 covers a comfortable canal-area apartment; US passport enters Schengen visa-free; low airPollution."
+    }
+  ],
+  "zero_results": false
+}

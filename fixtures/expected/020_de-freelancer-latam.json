@@ -1,0 +1,25 @@
+{
+  "top5": [
+    {
+      "countryCode": "ES",
+      "reason": "Spain is the highest-overlap match for a German freelancer with openToLearning: Spanish is structurally learnable in 3–4 months for German+English bilinguals; Spain's Digital Nomad Visa is available to DE passport holders; Canary Islands offer freelancer tax incentives; $3,000 is comfortable in Valencia or Seville."
+    },
+    {
+      "countryCode": "PT",
+      "reason": "Portugal's NHR 2.0 flat rate directly serves the cost top priority; D8 Visa is accessible for DE (Schengen) passport holders with minimal paperwork; Lisbon's radicallyDifferent street culture relative to Germany satisfies culturalAppetite; $3,000 is comfortable."
+    },
+    {
+      "countryCode": "CO",
+      "reason": "Colombia's Nómada Digital visa provides a legal freelance path for DE nationals; Spanish-language deepIntegration is achievable within months for a German with Latin curiosity; Medellín's co-working scene is world-class; $3,000 is very generous in El Poblado."
+    },
+    {
+      "countryCode": "MX",
+      "reason": "Mexico City's massive tech and creative freelancer community satisfies internet and culture priorities; DE passport enters Mexico visa-free; Spanish acquisition is rapid; $3,000 is comfortable in Roma Norte; radicallyDifferent culture from Germany provides the intended contrast."
+    },
+    {
+      "countryCode": "GE",
+      "reason": "Georgia's 1% flat tax for sole traders is Europe's most freelancer-friendly; DE passport enters visa-free for 365 days (no-hassle visaEase); Tbilisi costs ~$1,500/month leaving $1,500 surplus from the $3,000 budget; reliable fibre internet for remote client work."
+    }
+  ],
+  "zero_results": false
+}

@@ -1,0 +1,26 @@
+lifeStage: founder
+household: solo
+pushFactors:
+  - tax
+  - career
+  - costTooHigh
+passports:
+  - IN
+budgetUsdMonthly: 5000
+languages:
+  - en
+  - hi
+languageFlexibility: openToLearning
+healthcareNeed: none
+nonNegotiables: []
+socialMode: independent
+environmentPreference: bigCity
+culturalAppetite: upgradeButFamiliar
+topPriorities:
+  - lowTax
+  - visaEase
+  - techEco
+dealbreakers:
+  - authoritarian
+  - noInternet
+locale: en-IN

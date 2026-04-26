@@ -1,0 +1,25 @@
+{
+  "top5": [
+    {
+      "countryCode": "VN",
+      "reason": "Vietnam is the strongest match just below the $1,500 threshold: Hanoi averages $1,100–1,350/month all-in for a solo remote worker; US passport gets a 90-day e-visa; fibre internet is widely available; warm climate satisfies the climate priority."
+    },
+    {
+      "countryCode": "GE",
+      "reason": "Tbilisi's all-in solo cost runs $1,100–1,450/month — inside the $1,499 budget with modest headroom; US passport receives visa-free entry for 365 days (no visa cost); reliable fibre internet; the 1% entrepreneur tax suits the cost priority."
+    },
+    {
+      "countryCode": "TH",
+      "reason": "Chiang Mai is the established $1,400–1,499/month remote-work destination; US passport receives 30-day visa-on-arrival (extendable); reliable internet infrastructure; warm climate aligns with the climate priority; just within budget at this edge."
+    },
+    {
+      "countryCode": "CO",
+      "reason": "Medellín's El Centro or Laureles neighbourhoods run $1,200–1,450/month; US passport enters Colombia visa-free for 90 days (extendable to 180); reliable fibre internet in Poblado and Laureles; spring-like climate at altitude satisfies climate priority."
+    },
+    {
+      "countryCode": "ID",
+      "reason": "Yogyakarta or Canggu (off-peak) costs run $1,100–1,499/month; US passport receives 30-day visa-on-arrival; internet infrastructure is reliable in co-working hubs; warm tropical climate aligns with the climate priority; just within budget at this $1,499 edge."
+    }
+  ],
+  "zero_results": false
+}

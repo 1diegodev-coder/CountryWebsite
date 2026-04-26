@@ -1,0 +1,25 @@
+{
+  "top5": [
+    {
+      "countryCode": "VN",
+      "reason": "Vietnam is the strongest cost match at $800–1,100/month in Hanoi or Hội An; Filipino passport receives 30-day visa-on-arrival; fast fibre internet is widely available; the upgradeButFamiliar cultural environment is accessible given shared Southeast Asian context."
+    },
+    {
+      "countryCode": "ID",
+      "reason": "Indonesia's B211A social-budgetary visa is obtainable for Filipino passport holders; Yogyakarta or Solo costs run $600–900/month — the budget's lowest viable floor; reliable internet in Java's university cities supports remote employment fully."
+    },
+    {
+      "countryCode": "TH",
+      "reason": "Thailand offers a 30-day visa-on-arrival for Filipino passport holders; Chiang Mai's well-established remote-worker infrastructure — co-working, fibre, digital-nomad community — delivers reliable internet at $1,000–1,200/month, right at the budget ceiling."
+    },
+    {
+      "countryCode": "GE",
+      "reason": "Georgia's e-visa is obtainable for Filipino nationals; Tbilisi costs $900–1,200/month; the 1% individual entrepreneur tax benefits freelancers; English is widely spoken in co-working spaces; the upgradeButFamiliar cultural appetite is satisfied by a familiar international expat mix."
+    },
+    {
+      "countryCode": "CO",
+      "reason": "Colombia's Bogotá or Cali districts are reachable at $1,000–1,200/month; tourist visa extensions cover initial stays; remote-worker infrastructure in Medellín's Laureles neighbourhood is strong; internet speeds are among South America's best."
+    }
+  ],
+  "zero_results": false
+}

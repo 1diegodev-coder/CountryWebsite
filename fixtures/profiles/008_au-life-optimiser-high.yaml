@@ -1,0 +1,25 @@
+lifeStage: freelancer
+household: solo
+pushFactors:
+  - lifestyle
+  - exploring
+  - career
+passports:
+  - AU
+budgetUsdMonthly: 8500
+languages:
+  - en
+languageFlexibility: openToLearning
+healthcareNeed: general
+nonNegotiables: []
+socialMode: mixed
+environmentPreference: bigCity
+culturalAppetite: radicallyDifferent
+topPriorities:
+  - culture
+  - safety
+  - nature
+dealbreakers:
+  - airPollution
+  - authoritarian
+locale: en-AU

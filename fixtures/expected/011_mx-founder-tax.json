@@ -1,0 +1,25 @@
+{
+  "top5": [
+    {
+      "countryCode": "AE",
+      "reason": "UAE levies 0% personal income tax and 9% corporate tax (below $100k threshold is 0%), directly serving the lowTax top priority; Mexican passport receives visa-on-arrival; Dubai's founder ecosystem is world-class for the internet and techEco priorities; $4,000 covers a share flat in Dubai Marina."
+    },
+    {
+      "countryCode": "PA",
+      "reason": "Panama's territorial tax system means foreign-sourced income is fully exempt; the Friendly Nations Visa is straightforward for Mexican passport holders; dollarised economy eliminates currency risk; $4,000 is comfortable in Panama City's tech corridor."
+    },
+    {
+      "countryCode": "GE",
+      "reason": "Georgia's Virtual Zone status grants 0% corporate tax on foreign IT revenue; Mexican passport enters visa-free for 365 days (best visaEase score); flat 1% personal entrepreneur tax; Tbilisi costs ~$1,500/month, leaving $2,500 buffer from the $4,000 budget."
+    },
+    {
+      "countryCode": "PY",
+      "reason": "Paraguay's flat 10% income tax is among Latin America's lowest; Mexican passport is visa-free; MADES residency is obtainable with minimal income requirements; Asunción costs ~$1,500/month; full territoriality means offshore revenue is untaxed."
+    },
+    {
+      "countryCode": "EE",
+      "reason": "Estonia's 0% corporate tax on retained profits via e-Residency enables EU entity formation without physical relocation; Mexican passport enters Schengen visa-free; digital infrastructure is Europe's best, satisfying the internet priority; Tallinn costs ~$2,500/month within budget."
+    }
+  ],
+  "zero_results": false
+}

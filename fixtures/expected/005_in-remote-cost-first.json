@@ -1,0 +1,25 @@
+{
+  "top5": [
+    {
+      "countryCode": "GE",
+      "reason": "Georgia offers the highest cost-to-quality ratio at ~$1,200/month for a comfortable Tbilisi lifestyle; Indian citizens can obtain an e-visa; the 1% individual entrepreneur flat tax satisfies the tax push factor; strong English in co-working spaces supports remote work."
+    },
+    {
+      "countryCode": "VN",
+      "reason": "Vietnam's e-visa is available for Indian passport holders; Hanoi or Da Nang living costs run $800–$1,200/month, well within the $2,000 budget; fibre internet in major cities supports remote employment; radicallyDifferent cultural environment aligns with culturalAppetite."
+    },
+    {
+      "countryCode": "TH",
+      "reason": "Thailand's SMART Visa and LTR Visa for remote workers provide longer legal stays; Chiang Mai's cost of ~$1,200/month and Koh Lanta's digital nomad scene serve the cost priority; Indian passport receives 30-day visa-on-arrival since 2024."
+    },
+    {
+      "countryCode": "CO",
+      "reason": "Colombia's digital nomad visa (Nómada Digital) is accessible to Indian nationals; Medellín costs ~$1,400–1,800/month; growing tech infrastructure in Medellín and Bogotá supports remote employment within the $2,000 budget."
+    },
+    {
+      "countryCode": "ID",
+      "reason": "Indonesia's B211A visa is obtainable for Indian nationals; Yogyakarta or Canggu living costs run $900–1,400/month; the radicallyDifferent cultural appetite is fully satisfied; internet infrastructure in Java's major cities is solid for remote work."
+    }
+  ],
+  "zero_results": false
+}

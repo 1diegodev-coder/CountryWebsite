@@ -1,0 +1,200 @@
+    name: "Solomon Islands", iso2: "SB", iso3: "SLB", region: "Oceania", subregion: "Melanesia",
+    languages: ["English"], euMember: false, schengen: false, commonwealth: true,
+    descriptor: "A vast Pacific archipelago of hundreds of islands, known for its deep history and natural diversity.",
+    dimensions: { cost: 7.6, safety: 7.1, healthcare: 3.2, visaEase: 7.8, digitalInfra: 4.1, climate: 8.1, english: 10.0, lgbtqSafety: 4.8, techEcosystem: 1.8, naturalEnvironment: 9.8 },
+    costBreakdown: { rentUsd: 800, groceriesUsd: 350, transportUsd: 40, utilitiesUsd: 150, diningOutUsd: 180, healthInsuranceUsd: 60, totalEstimateUsd: 1580 },
+    cities: ["Honiara", "Gizo"],
+    rawIndicators: { summerHighC: 31, winterLowC: 23, humidityAvg: 80, airQualityIndex: 15, seismicZone: 5, internetReliability: 4.5, englishDailyLife: 9.8, stability: 7.4, authoritarianRisk: 1.5, corruptionRisk: 5.2 },
+    dataConfidence: "low", lastUpdated: "2026-04-24"
+  },
+  {
+    name: "Somalia", iso2: "SO", iso3: "SOM", region: "Africa", subregion: "Eastern Africa",
+    languages: ["Somali", "Arabic"], euMember: false, schengen: false, commonwealth: false,
+    descriptor: "A strategic Horn of Africa nation with the continent's longest coastline, still navigating post-conflict recovery.",
+    dimensions: { cost: 9.6, safety: 1.1, healthcare: 2.1, visaEase: 1.5, digitalInfra: 4.2, climate: 6.8, english: 3.2, lgbtqSafety: 0.1, techEcosystem: 2.8, naturalEnvironment: 7.4 },
+    costBreakdown: { rentUsd: 300, groceriesUsd: 150, transportUsd: 15, utilitiesUsd: 40, diningOutUsd: 80, healthInsuranceUsd: 30, totalEstimateUsd: 615 },
+    cities: ["Mogadishu", "Hargeisa", "Garowe"],
+    rawIndicators: { summerHighC: 32, winterLowC: 23, humidityAvg: 75, airQualityIndex: 45, seismicZone: 1, internetReliability: 5.8, englishDailyLife: 2.4, stability: 1.1, authoritarianRisk: 9.8, corruptionRisk: 9.5 },
+    dataConfidence: "low", lastUpdated: "2026-04-24"
+  },
+  {
+    name: "South Sudan", iso2: "SS", iso3: "SSD", region: "Africa", subregion: "Eastern Africa",
+    languages: ["English"], euMember: false, schengen: false, commonwealth: false,
+    descriptor: "The world's youngest nation, rich in Nile history but facing severe structural and security challenges.",
+    dimensions: { cost: 8.8, safety: 1.0, healthcare: 1.8, visaEase: 1.1, digitalInfra: 2.1, climate: 6.2, english: 10.0, lgbtqSafety: 0.1, techEcosystem: 1.5, naturalEnvironment: 8.2 },
+    costBreakdown: { rentUsd: 800, groceriesUsd: 250, transportUsd: 30, utilitiesUsd: 80, diningOutUsd: 120, healthInsuranceUsd: 60, totalEstimateUsd: 1340 },
+    cities: ["Juba", "Wau"],
+    rawIndicators: { summerHighC: 37, winterLowC: 20, humidityAvg: 55, airQualityIndex: 85, seismicZone: 2, internetReliability: 2.5, englishDailyLife: 9.5, stability: 0.8, authoritarianRisk: 9.9, corruptionRisk: 9.8 },
+    dataConfidence: "low", lastUpdated: "2026-04-24"
+  },
+  {
+    name: "Sri Lanka", iso2: "LK", iso3: "LKA", region: "Asia", subregion: "Southern Asia",
+    languages: ["Sinhala", "Tamil", "English"], euMember: false, schengen: false, commonwealth: true,
+    descriptor: "The 'Resplendent Isle', offering incredible biodiversity, ancient culture, and exceptional value.",
+    dimensions: { cost: 9.4, safety: 7.8, healthcare: 6.1, visaEase: 9.1, digitalInfra: 6.8, climate: 7.4, english: 8.4, lgbtqSafety: 3.1, techEcosystem: 6.4, naturalEnvironment: 9.8 },
+    costBreakdown: { rentUsd: 450, groceriesUsd: 200, transportUsd: 20, utilitiesUsd: 70, diningOutUsd: 120, healthInsuranceUsd: 50, totalEstimateUsd: 910 },
+    cities: ["Colombo", "Kandy", "Galle"],
+    rawIndicators: { summerHighC: 31, winterLowC: 23, humidityAvg: 80, airQualityIndex: 55, seismicZone: 1, internetReliability: 7.8, englishDailyLife: 8.1, stability: 5.2, authoritarianRisk: 4.8, corruptionRisk: 6.8 },
+    dataConfidence: "medium", lastUpdated: "2026-04-24"
+  },
+  {
+    name: "Sudan", iso2: "SD", iso3: "SDN", region: "Africa", subregion: "Northern Africa",
+    languages: ["Arabic", "English"], euMember: false, schengen: false, commonwealth: false,
+    descriptor: "A vast African nation of deep history and Nile influence, currently in deep domestic crisis.",
+    dimensions: { cost: 9.4, safety: 1.5, healthcare: 2.4, visaEase: 1.2, digitalInfra: 3.1, climate: 4.8, english: 5.2, lgbtqSafety: 0.1, techEcosystem: 3.1, naturalEnvironment: 7.1 },
+    costBreakdown: { rentUsd: 350, groceriesUsd: 180, transportUsd: 20, utilitiesUsd: 50, diningOutUsd: 100, healthInsuranceUsd: 40, totalEstimateUsd: 740 },
+    cities: ["Khartoum", "Port Sudan"],
+    rawIndicators: { summerHighC: 41, winterLowC: 15, humidityAvg: 30, airQualityIndex: 110, seismicZone: 1, internetReliability: 4.2, englishDailyLife: 3.8, stability: 0.8, authoritarianRisk: 9.9, corruptionRisk: 9.4 },
+    dataConfidence: "low", lastUpdated: "2026-04-24"
+  },
+  {
+    name: "Suriname", iso2: "SR", iso3: "SUR", region: "Americas", subregion: "South America",
+    languages: ["Dutch", "English", "Sranan Tongo"], euMember: false, schengen: false, commonwealth: false,
+    descriptor: "A Caribbean-influenced South American nation known for its multicultural heritage and vast rainforests.",
+    dimensions: { cost: 8.4, safety: 6.8, healthcare: 4.2, visaEase: 8.1, digitalInfra: 5.8, climate: 7.8, english: 7.8, lgbtqSafety: 5.8, techEcosystem: 3.5, naturalEnvironment: 9.8 },
+    costBreakdown: { rentUsd: 700, groceriesUsd: 250, transportUsd: 30, utilitiesUsd: 100, diningOutUsd: 150, healthInsuranceUsd: 60, totalEstimateUsd: 1290 },
+    cities: ["Paramaribo", "Nieuw Nickerie"],
+    rawIndicators: { summerHighC: 31, winterLowC: 23, humidityAvg: 80, airQualityIndex: 25, seismicZone: 1, internetReliability: 6.8, englishDailyLife: 7.4, stability: 7.8, authoritarianRisk: 2.5, corruptionRisk: 5.8 },
+    dataConfidence: "medium", lastUpdated: "2026-04-24"
+  },
+  {
+    name: "Sweden", iso2: "SE", iso3: "SWE", region: "Europe", subregion: "Northern Europe",
+    languages: ["Swedish", "English"], euMember: true, schengen: true, commonwealth: false,
+    descriptor: "A Nordic innovation leader offering high-tech urban living, social stability, and vast wilderness.",
+    dimensions: { cost: 4.8, safety: 8.6, healthcare: 9.1, visaEase: 6.8, digitalInfra: 9.6, climate: 4.2, english: 9.4, lgbtqSafety: 9.8, techEcosystem: 9.2, naturalEnvironment: 9.4 },
+    costBreakdown: { rentUsd: 1600, groceriesUsd: 450, transportUsd: 80, utilitiesUsd: 150, diningOutUsd: 450, healthInsuranceUsd: 100, totalEstimateUsd: 2830 },
+    cities: ["Stockholm", "Gothenburg", "Malmö"],
+    rawIndicators: { summerHighC: 22, winterLowC: -5, humidityAvg: 75, airQualityIndex: 20, seismicZone: 0, internetReliability: 9.9, englishDailyLife: 9.5, stability: 9.4, authoritarianRisk: 0.5, corruptionRisk: 0.8 },
+    dataConfidence: "high", lastUpdated: "2026-04-24"
+  },
+  {
+    name: "Syria", iso2: "SY", iso3: "SYR", region: "Asia", subregion: "Western Asia",
+    languages: ["Arabic"], euMember: false, schengen: false, commonwealth: false,
+    descriptor: "A land of immense antiquity and cultural depth, currently enduring a long-term humanitarian crisis.",
+    dimensions: { cost: 9.6, safety: 1.2, healthcare: 2.1, visaEase: 1.2, digitalInfra: 3.5, climate: 7.2, english: 2.8, lgbtqSafety: 0.5, techEcosystem: 2.5, naturalEnvironment: 7.8 },
+    costBreakdown: { rentUsd: 300, groceriesUsd: 150, transportUsd: 10, utilitiesUsd: 40, diningOutUsd: 80, healthInsuranceUsd: 40, totalEstimateUsd: 620 },
+    cities: ["Damascus", "Aleppo", "Latakia"],
+    rawIndicators: { summerHighC: 36, winterLowC: 2, humidityAvg: 50, airQualityIndex: 110, seismicZone: 4, internetReliability: 4.1, englishDailyLife: 1.5, stability: 0.8, authoritarianRisk: 10.0, corruptionRisk: 9.5 },
+    dataConfidence: "low", lastUpdated: "2026-04-24"
+  },
+  {
+    name: "Tajikistan", iso2: "TJ", iso3: "TJK", region: "Asia", subregion: "Central Asia",
+    languages: ["Tajik", "Russian"], euMember: false, schengen: false, commonwealth: false,
+    descriptor: "A mountainous Central Asian nation dominated by the Pamir range and ancient Silk Road history.",
+    dimensions: { cost: 9.4, safety: 7.4, healthcare: 3.5, visaEase: 7.8, digitalInfra: 4.8, climate: 5.8, english: 2.1, lgbtqSafety: 3.1, techEcosystem: 2.8, naturalEnvironment: 9.6 },
+    costBreakdown: { rentUsd: 400, groceriesUsd: 180, transportUsd: 20, utilitiesUsd: 60, diningOutUsd: 100, healthInsuranceUsd: 40, totalEstimateUsd: 800 },
+    cities: ["Dushanbe", "Khujand"],
+    rawIndicators: { summerHighC: 34, winterLowC: -2, humidityAvg: 45, airQualityIndex: 85, seismicZone: 5, internetReliability: 6.2, englishDailyLife: 1.2, stability: 6.8, authoritarianRisk: 8.8, corruptionRisk: 8.2 },
+    dataConfidence: "medium", lastUpdated: "2026-04-24"
+  },
+  {
+    name: "Tanzania", iso2: "TZ", iso3: "TZA", region: "Africa", subregion: "Eastern Africa",
+    languages: ["Swahili", "English"], euMember: false, schengen: false, commonwealth: true,
+    descriptor: "An East African giant of incredible wildlife, tropical islands, and the majestic Mount Kilimanjaro.",
+    dimensions: { cost: 8.8, safety: 7.2, healthcare: 4.8, visaEase: 8.4, digitalInfra: 6.4, climate: 7.8, english: 9.1, lgbtqSafety: 0.8, techEcosystem: 5.8, naturalEnvironment: 9.8 },
+    costBreakdown: { rentUsd: 600, groceriesUsd: 220, transportUsd: 30, utilitiesUsd: 80, diningOutUsd: 150, healthInsuranceUsd: 60, totalEstimateUsd: 1140 },
+    cities: ["Dar es Salaam", "Zanzibar City", "Arusha"],
+    rawIndicators: { summerHighC: 31, winterLowC: 18, humidityAvg: 75, airQualityIndex: 65, seismicZone: 3, internetReliability: 7.4, englishDailyLife: 8.8, stability: 7.8, authoritarianRisk: 5.8, corruptionRisk: 6.8 },
+    dataConfidence: "medium", lastUpdated: "2026-04-24"
+  },
+  {
+    name: "Timor-Leste", iso2: "TL", iso3: "TLS", region: "Asia", subregion: "Southeast Asia",
+    languages: ["Tetum", "Portuguese"], euMember: false, schengen: false, commonwealth: false,
+    descriptor: "A young island nation of dramatic coral reefs and rugged mountains, with a resilient cultural soul.",
+    dimensions: { cost: 8.1, safety: 7.4, healthcare: 3.1, visaEase: 7.2, digitalInfra: 4.2, climate: 7.8, english: 3.1, lgbtqSafety: 5.8, techEcosystem: 2.1, naturalEnvironment: 9.4 },
+    costBreakdown: { rentUsd: 600, groceriesUsd: 250, transportUsd: 30, utilitiesUsd: 120, diningOutUsd: 180, healthInsuranceUsd: 60, totalEstimateUsd: 1240 },
+    cities: ["Dili", "Baucau"],
+    rawIndicators: { summerHighC: 31, winterLowC: 21, humidityAvg: 80, airQualityIndex: 30, seismicZone: 5, internetReliability: 5.1, englishDailyLife: 2.5, stability: 7.1, authoritarianRisk: 3.8, corruptionRisk: 6.2 },
+    dataConfidence: "low", lastUpdated: "2026-04-24"
+  },
+  {
+    name: "Togo", iso2: "TG", iso3: "TGO", region: "Africa", subregion: "Western Africa",
+    languages: ["French"], euMember: false, schengen: false, commonwealth: true,
+    descriptor: "A slender West African nation of vibrant markets and varied landscapes from coast to savannah.",
+    dimensions: { cost: 9.1, safety: 6.8, healthcare: 3.5, visaEase: 7.8, digitalInfra: 5.2, climate: 7.8, english: 2.1, lgbtqSafety: 2.1, techEcosystem: 4.2, naturalEnvironment: 8.4 },
+    costBreakdown: { rentUsd: 450, groceriesUsd: 180, transportUsd: 20, utilitiesUsd: 60, diningOutUsd: 120, healthInsuranceUsd: 50, totalEstimateUsd: 880 },
+    cities: ["Lomé", "Kara"],
+    rawIndicators: { summerHighC: 31, winterLowC: 23, humidityAvg: 80, airQualityIndex: 75, seismicZone: 1, internetReliability: 6.2, englishDailyLife: 1.5, stability: 7.1, authoritarianRisk: 5.8, corruptionRisk: 6.5 },
+    dataConfidence: "medium", lastUpdated: "2026-04-24"
+  },
+  {
+    name: "Tonga", iso2: "TO", iso3: "TON", region: "Oceania", subregion: "Polynesia",
+    languages: ["Tongan", "English"], euMember: false, schengen: false, commonwealth: true,
+    descriptor: "The 'Friendly Islands', a Polynesian kingdom of ancient traditions and turquoise lagoons.",
+    dimensions: { cost: 7.4, safety: 8.4, healthcare: 4.1, visaEase: 7.8, digitalInfra: 4.8, climate: 8.1, english: 9.8, lgbtqSafety: 5.1, techEcosystem: 1.8, naturalEnvironment: 9.8 },
+    costBreakdown: { rentUsd: 800, groceriesUsd: 400, transportUsd: 40, utilitiesUsd: 180, diningOutUsd: 180, healthInsuranceUsd: 80, totalEstimateUsd: 1680 },
+    cities: ["Nuku'alofa", "Neiafu"],
+    rawIndicators: { summerHighC: 29, winterLowC: 19, humidityAvg: 80, airQualityIndex: 15, seismicZone: 5, internetReliability: 5.4, englishDailyLife: 9.5, stability: 8.8, authoritarianRisk: 1.1, corruptionRisk: 3.8 },
+    dataConfidence: "low", lastUpdated: "2026-04-24"
+  },
+  {
+    name: "Trinidad and Tobago", iso2: "TT", iso3: "TTO", region: "Americas", subregion: "Caribbean",
+    languages: ["English"], euMember: false, schengen: false, commonwealth: true,
+    descriptor: "A dynamic twin-island nation of industrial energy and the world-famous Carnival spirit.",
+    dimensions: { cost: 7.1, safety: 5.4, healthcare: 6.2, visaEase: 7.8, digitalInfra: 7.8, climate: 8.2, english: 10.0, lgbtqSafety: 5.1, techEcosystem: 5.8, naturalEnvironment: 9.4 },
+    costBreakdown: { rentUsd: 1000, groceriesUsd: 400, transportUsd: 60, utilitiesUsd: 180, diningOutUsd: 300, healthInsuranceUsd: 100, totalEstimateUsd: 2040 },
+    cities: ["Port of Spain", "San Fernando", "Scarborough"],
+    rawIndicators: { summerHighC: 32, winterLowC: 22, humidityAvg: 75, airQualityIndex: 45, seismicZone: 4, internetReliability: 8.5, englishDailyLife: 10.0, stability: 7.2, authoritarianRisk: 1.8, corruptionRisk: 5.2 },
+    dataConfidence: "medium", lastUpdated: "2026-04-24"
+  },
+  {
+    name: "Tunisia", iso2: "TN", iso3: "TUN", region: "Africa", subregion: "Northern Africa",
+    languages: ["Arabic", "French"], euMember: false, schengen: false, commonwealth: false,
+    descriptor: "A North African crossroads of Mediterranean beaches, Roman ruins, and a burgeoning democratic history.",
+    dimensions: { cost: 9.2, safety: 7.4, healthcare: 5.8, visaEase: 7.8, digitalInfra: 7.1, climate: 8.2, english: 3.5, lgbtqSafety: 2.1, techEcosystem: 6.4, naturalEnvironment: 8.6 },
+    costBreakdown: { rentUsd: 400, groceriesUsd: 180, transportUsd: 20, utilitiesUsd: 60, diningOutUsd: 120, healthInsuranceUsd: 50, totalEstimateUsd: 830 },
+    cities: ["Tunis", "Sousse", "Sfax"],
+    rawIndicators: { summerHighC: 33, winterLowC: 7, humidityAvg: 60, airQualityIndex: 55, seismicZone: 2, internetReliability: 7.8, englishDailyLife: 2.4, stability: 6.5, authoritarianRisk: 6.2, corruptionRisk: 5.8 },
+    dataConfidence: "medium", lastUpdated: "2026-04-24"
+  },
+  {
+    name: "Turkmenistan", iso2: "TM", iso3: "TKM", region: "Asia", subregion: "Central Asia",
+    languages: ["Turkmen", "Russian"], euMember: false, schengen: false, commonwealth: false,
+    descriptor: "A uniquely isolated and highly controlled desert nation of marble cities and ancient Silk Road sites.",
+    dimensions: { cost: 7.8, safety: 9.1, healthcare: 3.8, visaEase: 0.2, digitalInfra: 3.5, climate: 5.1, english: 2.1, lgbtqSafety: 0.1, techEcosystem: 2.1, naturalEnvironment: 7.1 },
+    costBreakdown: { rentUsd: 1000, groceriesUsd: 300, transportUsd: 20, utilitiesUsd: 40, diningOutUsd: 150, healthInsuranceUsd: 50, totalEstimateUsd: 1560 },
+    cities: ["Ashgabat", "Turkmenbashy"],
+    rawIndicators: { summerHighC: 40, winterLowC: -2, humidityAvg: 40, airQualityIndex: 85, seismicZone: 5, internetReliability: 4.1, englishDailyLife: 1.1, stability: 9.4, authoritarianRisk: 10.0, corruptionRisk: 8.8 },
+    dataConfidence: "low", lastUpdated: "2026-04-24"
+  },
+  {
+    name: "Tuvalu", iso2: "TV", iso3: "TUV", region: "Oceania", subregion: "Polynesia",
+    languages: ["Tuvaluan", "English"], euMember: false, schengen: false, commonwealth: true,
+    descriptor: "One of the world's smallest and most remote nations, a tiny island chain in the vast Pacific.",
+    dimensions: { cost: 7.2, safety: 8.8, healthcare: 2.8, visaEase: 7.4, digitalInfra: 3.1, climate: 8.1, english: 9.2, lgbtqSafety: 5.1, techEcosystem: 1.1, naturalEnvironment: 9.1 },
+    costBreakdown: { rentUsd: 800, groceriesUsd: 450, transportUsd: 50, utilitiesUsd: 200, diningOutUsd: 150, healthInsuranceUsd: 100, totalEstimateUsd: 1750 },
+    cities: ["Funafuti", "Vaitupu"],
+    rawIndicators: { summerHighC: 31, winterLowC: 25, humidityAvg: 80, airQualityIndex: 15, seismicZone: 1, internetReliability: 3.2, englishDailyLife: 8.5, stability: 8.8, authoritarianRisk: 0.5, corruptionRisk: 3.2 },
+    dataConfidence: "low", lastUpdated: "2026-04-24"
+  },
+  {
+    name: "Uganda", iso2: "UG", iso3: "UGA", region: "Africa", subregion: "Eastern Africa",
+    languages: ["English", "Swahili"], euMember: false, schengen: false, commonwealth: true,
+    descriptor: "The 'Pearl of Africa', known for its diverse landscapes, source of the Nile, and friendly people.",
+    dimensions: { cost: 9.1, safety: 7.1, healthcare: 4.5, visaEase: 7.8, digitalInfra: 6.2, climate: 8.4, english: 10.0, lgbtqSafety: 0.1, techEcosystem: 6.1, naturalEnvironment: 9.8 },
+    costBreakdown: { rentUsd: 500, groceriesUsd: 200, transportUsd: 30, utilitiesUsd: 80, diningOutUsd: 120, healthInsuranceUsd: 50, totalEstimateUsd: 980 },
+    cities: ["Kampala", "Entebbe", "Jinja"],
+    rawIndicators: { summerHighC: 28, winterLowC: 17, humidityAvg: 70, airQualityIndex: 110, seismicZone: 3, internetReliability: 6.8, englishDailyLife: 9.8, stability: 7.1, authoritarianRisk: 7.8, corruptionRisk: 7.5 },
+    dataConfidence: "medium", lastUpdated: "2026-04-24"
+  },
+  {
+    name: "Ukraine", iso2: "UA", iso3: "UKR", region: "Europe", subregion: "Eastern Europe",
+    languages: ["Ukrainian"], euMember: false, schengen: false, commonwealth: false,
+    descriptor: "A resilient Eastern European giant with a world-class tech sector, currently defending its sovereignty.",
+    dimensions: { cost: 9.4, safety: 1.8, healthcare: 5.6, visaEase: 8.5, digitalInfra: 9.1, climate: 6.1, english: 4.8, lgbtqSafety: 4.1, techEcosystem: 8.8, naturalEnvironment: 9.1 },
+    costBreakdown: { rentUsd: 400, groceriesUsd: 200, transportUsd: 20, utilitiesUsd: 80, diningOutUsd: 120, healthInsuranceUsd: 40, totalEstimateUsd: 860 },
+    cities: ["Kyiv", "Lviv", "Odessa"],
+    rawIndicators: { summerHighC: 26, winterLowC: -5, humidityAvg: 65, airQualityIndex: 55, seismicZone: 2, internetReliability: 9.6, englishDailyLife: 4.5, stability: 1.2, authoritarianRisk: 3.5, corruptionRisk: 6.8 },
+    dataConfidence: "high", lastUpdated: "2026-04-24"
+  },
+  {
+    name: "Dominican Republic", iso2: "DO", iso3: "DOM", region: "Americas", subregion: "Caribbean",
+    languages: ["Spanish"], euMember: false, schengen: false, commonwealth: false,
+    descriptor: "A diverse Caribbean nation offering high-end resorts and a growing tech sector in Santo Domingo.",
+    dimensions: { cost: 8.4, safety: 6.1, healthcare: 6.2, visaEase: 7.8, digitalInfra: 7.1, climate: 8.2, english: 5.2, lgbtqSafety: 5.8, techEcosystem: 6.1, naturalEnvironment: 8.8 },
+    costBreakdown: { rentUsd: 800, groceriesUsd: 300, transportUsd: 40, utilitiesUsd: 120, diningOutUsd: 200, healthInsuranceUsd: 70, totalEstimateUsd: 1530 },
+    cities: ["Santo Domingo", "Punta Cana", "Santiago"],
+    rawIndicators: { summerHighC: 32, winterLowC: 19, humidityAvg: 75, airQualityIndex: 45, seismicZone: 4, internetReliability: 7.8, englishDailyLife: 5.1, stability: 7.5, authoritarianRisk: 3.2, corruptionRisk: 5.8 },
+    dataConfidence: "medium", lastUpdated: "2026-04-24"
+  }
+];

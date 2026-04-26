@@ -1,0 +1,26 @@
+lifeStage: freelancer
+household: solo
+pushFactors:
+  - career
+  - lifestyle
+  - exploring
+passports:
+  - BR
+budgetUsdMonthly: 2800
+languages:
+  - pt
+  - en
+languageFlexibility: openToLearning
+healthcareNeed: general
+nonNegotiables: []
+socialMode: deepIntegration
+environmentPreference: bigCity
+culturalAppetite: upgradeButFamiliar
+topPriorities:
+  - visaEase
+  - internet
+  - cost
+dealbreakers:
+  - authoritarian
+  - noInternet
+locale: pt-BR

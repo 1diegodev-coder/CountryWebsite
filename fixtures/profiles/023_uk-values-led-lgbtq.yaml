@@ -1,0 +1,28 @@
+lifeStage: remoteEmployee
+household: solo
+pushFactors:
+  - politicalSocial
+  - lifestyle
+  - exploring
+passports:
+  - GB
+budgetUsdMonthly: 4000
+languages:
+  - en
+languageFlexibility: openToLearning
+healthcareNeed: general
+nonNegotiables:
+  - lgbtq
+  - pressFreedom
+  - genderEquality
+socialMode: deepIntegration
+environmentPreference: bigCity
+culturalAppetite: upgradeButFamiliar
+topPriorities:
+  - safety
+  - culture
+  - internet
+dealbreakers:
+  - authoritarian
+  - corruption
+locale: en-GB

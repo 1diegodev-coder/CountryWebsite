@@ -1,0 +1,25 @@
+{
+  "top5": [
+    {
+      "countryCode": "JP",
+      "reason": "Japan delivers unmatched cultural depth (radicallyDifferent appetite satisfied), world-class safety scores, and pristine natural environments from Hokkaido to Okinawa; $8,500 covers a comfortable Tokyo lifestyle; AU passport receives 90-day visa-free entry and working-holiday options under 31."
+    },
+    {
+      "countryCode": "ES",
+      "reason": "Spain's Mediterranean lifestyle, world-ranked food culture, and diverse landscapes from Pyrenees to Canary Islands satisfy all three top priorities (culture, safety, nature); $8,500 is very comfortable in Barcelona or Madrid; AU passport enters Schengen visa-free."
+    },
+    {
+      "countryCode": "PT",
+      "reason": "Portugal offers Atlantic beaches, Douro wine country, and Lisbon's café culture; low air pollution satisfies the dealbreaker; D8 visa provides a legal pathway beyond 90 days for AU passport; $8,500 is generous — a two-bedroom in Bairro Alto costs ~$1,800/month."
+    },
+    {
+      "countryCode": "NZ",
+      "reason": "New Zealand's landscapes are world-renowned (Fiordland, Coromandel, Marlborough Sounds), safety is exceptional, and the AU-NZ special relationship means AU citizens can live and work in NZ without a visa — the most frictionless option in the list."
+    },
+    {
+      "countryCode": "IT",
+      "reason": "Italy's unparalleled cultural heritage, food, and nature (Dolomites, Amalfi, Sicily) satisfy the culture and nature priorities; air quality in Tuscany and Puglia avoids the airPollution dealbreaker; $8,500 supports a generous lifestyle; AU passport enters Schengen visa-free."
+    }
+  ],
+  "zero_results": false
+}

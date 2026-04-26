@@ -1,0 +1,25 @@
+{
+  "top5": [
+    {
+      "countryCode": "PT",
+      "reason": "Portugal's D8 visa fits AU remote-working parents; English-medium international primary schools in Cascais and Lisbon are affordable at under $1,000/month per child; Atlantic beaches satisfy the nature priority; $5,500 covers a three-bedroom family apartment comfortably."
+    },
+    {
+      "countryCode": "ES",
+      "reason": "Spain's bilingual immersion schools make 5–11 year olds the ideal age to learn Spanish naturally; Mediterranean outdoor lifestyle satisfies safety and nature priorities; $5,500 is comfortable in Málaga, Valencia, or Barcelona suburbs; low extremeHeat risk in northern regions."
+    },
+    {
+      "countryCode": "NZ",
+      "reason": "New Zealand's world-ranked primary education, exceptional safety, and unmatched natural environment (beaches, forests, mountains) align perfectly with all three top priorities (safety, healthcare, nature); AU passport grants AU citizens visa-free work and residence rights."
+    },
+    {
+      "countryCode": "MX",
+      "reason": "Mexico City's Las Águilas and Santa Fe districts have US-accredited bilingual primary schools; AU passport enters Mexico visa-free; $5,500 for a family in Condesa is extremely comfortable; cooler highland climate in CDMX avoids the extremeHeat dealbreaker."
+    },
+    {
+      "countryCode": "CR",
+      "reason": "Costa Rica's cloud-forest and coastal nature is transformative for 5–11 year olds; private bilingual primary schools in Escazú are accredited and under $700/month; crime rates in expat zones are low; $5,500 is generous; mild highland climate avoids the extremeHeat dealbreaker."
+    }
+  ],
+  "zero_results": false
+}

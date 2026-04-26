@@ -1,0 +1,25 @@
+lifeStage: freelancer
+household: solo
+pushFactors:
+  - costTooHigh
+  - lifestyle
+  - exploring
+passports:
+  - ZA
+budgetUsdMonthly: 3000
+languages:
+  - en
+languageFlexibility: openToLearning
+healthcareNeed: general
+nonNegotiables: []
+socialMode: mixed
+environmentPreference: midCity
+culturalAppetite: radicallyDifferent
+topPriorities:
+  - cost
+  - climate
+  - culture
+dealbreakers:
+  - extremeCold
+  - noInternet
+locale: en-ZA

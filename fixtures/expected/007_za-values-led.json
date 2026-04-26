@@ -1,0 +1,25 @@
+{
+  "top5": [
+    {
+      "countryCode": "PT",
+      "reason": "Portugal scores near-maximum on all three non-negotiables: same-sex marriage since 2010 (LGBTQ), RSF press freedom rank top-25 globally (pressFreedom), and WEF gender gap index top-30 (genderEquality); $3,500 is comfortable in Lisbon; ZA passport gets 90-day Schengen access."
+    },
+    {
+      "countryCode": "ES",
+      "reason": "Spain was the third country in the world to legalise same-sex marriage (2005); press freedom is rated free; $3,500 is comfortable in Valencia or Seville; ZA passport enters Schengen visa-free, and Spain's Digital Nomad Visa enables long-term remote work."
+    },
+    {
+      "countryCode": "DE",
+      "reason": "Germany legalised same-sex marriage in 2017 and has strong constitutional press and gender equality protections; Berlin's living costs at ~$2,500/month leave budget headroom; deepIntegration is achievable in Berlin's internationally minded neighbourhoods."
+    },
+    {
+      "countryCode": "NL",
+      "reason": "The Netherlands was the first country globally to legalise same-sex marriage (2001) and consistently ranks in the top 10 for press freedom and gender equality; Rotterdam or The Hague costs are manageable at $3,500; ZA passport enters Schengen visa-free."
+    },
+    {
+      "countryCode": "SE",
+      "reason": "Sweden ranks #1 globally for gender equality (WEF 2024), top-5 for press freedom, and has comprehensive LGBTQ protections; Stockholm is expensive but $3,500 is sufficient for a solo person in a smaller Swedish city; ZA passport enters Schengen visa-free."
+    }
+  ],
+  "zero_results": false
+}
