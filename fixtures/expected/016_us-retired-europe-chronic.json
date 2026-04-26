@@ -1,0 +1,25 @@
+{
+  "top5": [
+    {
+      "countryCode": "PT",
+      "reason": "Portugal ranks among Europe's best value for chronic healthcare: specialist care in Lisbon is ~40% of US out-of-pocket costs; NHR retirement exemption reduces tax on US pension income; the Algarve's warm climate eliminates the extremeCold dealbreaker; $3,000 for a couple is achievable in the interior Alentejo or Algarve towns."
+    },
+    {
+      "countryCode": "ES",
+      "reason": "Spain's national healthcare is rated top-5 globally; the Mediterranean coast (Costa Blanca, Costa del Sol) satisfies the warm-climate priority; US retiree communities in Marbella and Torrevieja have English-speaking GPs; $3,000 for a couple is feasible outside major cities."
+    },
+    {
+      "countryCode": "MX",
+      "reason": "Mexico City and Lake Chapala offer English-speaking cardiologists and chronic-disease management at 15–20% of US costs; the large US retiree expatBubble in Chapala provides immediate community; mild highland climate suits the small-town environment preference; $3,000 is generous for two."
+    },
+    {
+      "countryCode": "CO",
+      "reason": "Medellín's internationally accredited Clínica del Country and Clínica Medellín deliver chronic-condition management with English-speaking staff; pensionado visa requires only $800/month income; spring-like altitude climate satisfies the extremeCold dealbreaker; $3,000 is very comfortable for two."
+    },
+    {
+      "countryCode": "TH",
+      "reason": "Thailand's Bumrungrad Hospital in Bangkok is JCI-accredited with English-speaking specialists; the LTR Retirement Visa is renewable; warm climate directly addresses the extremeCold dealbreaker; $3,000 for a couple covers premium health insurance plus comfortable living in Chiang Mai."
+    }
+  ],
+  "zero_results": false
+}

@@ -1,0 +1,25 @@
+{
+  "top5": [
+    {
+      "countryCode": "GE",
+      "reason": "Georgia is the cheapest viable student destination: Tbilisi student housing runs $250–350/month, food $200/month, totalling ~$700–800 all-in; Nigerian passport obtains an e-visa; English is widely spoken in tech and academic circles; the internet infrastructure is reliable."
+    },
+    {
+      "countryCode": "VN",
+      "reason": "Vietnam's e-visa is available to Nigerian passport holders; Hanoi student life costs $600–900/month; university student visas are obtainable; internet infrastructure is strong; the upgradeButFamiliar cultural appetite is well-served by Vietnam's accessible expat community."
+    },
+    {
+      "countryCode": "GH",
+      "reason": "Ghana is the lowest-friction option for a Nigerian student: ECOWAS free movement means zero visa hurdles; English is the official language; Accra university costs run $500–800/month; cultural upgradeButFamiliar appetite is satisfied by a familiar West African context."
+    },
+    {
+      "countryCode": "EG",
+      "reason": "Egypt grants visa-on-arrival to Nigerian passport holders at Cairo International Airport; Cairo student living costs are among Africa's lowest at $400–700/month; internet infrastructure is adequate; several strong English-medium universities operate in Cairo."
+    },
+    {
+      "countryCode": "PH",
+      "reason": "The Philippines grants Nigerian passport holders a 30-day visa-on-arrival with student-visa extensions available; Metro Manila student costs run $700–1,000/month; English is an official language of instruction, fully satisfying the openToLearning and internet priorities."
+    }
+  ],
+  "zero_results": false
+}

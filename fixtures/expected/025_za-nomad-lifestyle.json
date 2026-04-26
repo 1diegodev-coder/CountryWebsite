@@ -1,0 +1,25 @@
+{
+  "top5": [
+    {
+      "countryCode": "PT",
+      "reason": "Portugal offers the best value lifestyle for a ZA freelancer at $3,000: D8 Visa provides legal long-stay status beyond the 90-day Schengen window; warm Atlantic climate satisfies cost and climate priorities; Lisbon's cultural depth is high; ZA passport enters Schengen visa-free for 90 days."
+    },
+    {
+      "countryCode": "TH",
+      "reason": "Thailand's warm climate is the top climate match; Chiang Mai's digital-nomad infrastructure (fast fibre, co-working, freelancer community) directly serves the cost and internet priorities; $3,000 is generous for a solo person; ZA passport receives 30-day visa-on-arrival with Thailand Elite option for longer stays."
+    },
+    {
+      "countryCode": "GE",
+      "reason": "Georgia delivers the highest cost surplus at $3,000: Tbilisi all-in runs ~$1,300/month, leaving $1,700 buffer; ZA passport enters Georgia visa-free for 365 days — the most frictionless visaEase option; 1% entrepreneur flat tax; diverse Caucasian culture satisfies radicallyDifferent appetite."
+    },
+    {
+      "countryCode": "MX",
+      "reason": "Mexico's culture, food, and warm climate in CDMX's highlands satisfy climate and culture priorities; ZA passport is visa-free for Mexico for 180 days; $3,000 is comfortable in Roma Norte; a freelancer can invoice internationally while enjoying a cosmopolitan lifestyle."
+    },
+    {
+      "countryCode": "CO",
+      "reason": "Medellín's spring-like climate at 1,500 m directly satisfies the extremeCold dealbreaker; ZA passport enters Colombia visa-free for 90 days; $3,000 is generous; the city's radicallyDifferent culture and arts scene (Botero, Feria de las Flores) satisfies culturalAppetite."
+    }
+  ],
+  "zero_results": false
+}

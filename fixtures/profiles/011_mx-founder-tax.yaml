@@ -1,0 +1,26 @@
+lifeStage: founder
+household: solo
+pushFactors:
+  - tax
+  - career
+  - costTooHigh
+passports:
+  - MX
+budgetUsdMonthly: 4000
+languages:
+  - es
+  - en
+languageFlexibility: openToLearning
+healthcareNeed: none
+nonNegotiables: []
+socialMode: independent
+environmentPreference: bigCity
+culturalAppetite: radicallyDifferent
+topPriorities:
+  - lowTax
+  - visaEase
+  - internet
+dealbreakers:
+  - authoritarian
+  - unstable
+locale: es-MX

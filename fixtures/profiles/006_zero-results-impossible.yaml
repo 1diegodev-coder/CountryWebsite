@@ -1,0 +1,25 @@
+lifeStage: remoteEmployee
+household: solo
+pushFactors:
+  - costTooHigh
+  - lifestyle
+passports:
+  - US
+budgetUsdMonthly: 1500
+languages:
+  - en
+languageFlexibility: englishOnly
+healthcareNeed: none
+nonNegotiables:
+  - lgbtq
+socialMode: expatBubble
+environmentPreference: midCity
+culturalAppetite: similarToHome
+topPriorities:
+  - cost
+  - english
+  - safety
+dealbreakers:
+  - noEnglish
+  - authoritarian
+locale: en-US

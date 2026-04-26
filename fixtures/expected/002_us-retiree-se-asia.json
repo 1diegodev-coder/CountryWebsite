@@ -1,0 +1,25 @@
+{
+  "top5": [
+    {
+      "countryCode": "TH",
+      "reason": "Thailand's LTR Retirement Visa provides a 10-year renewable stay; Bumrungrad and Samitivej hospitals handle complex chronic conditions at ~30% of US costs, and the $3,000 couple budget covers premium health insurance plus a comfortable lifestyle."
+    },
+    {
+      "countryCode": "MY",
+      "reason": "Malaysia's MM2H programme offers a renewable long-stay visa; Gleneagles and Pantai hospitals deliver bilingual English-Malay specialist care; $3,000/month is generous for a couple in Penang or Kuala Lumpur."
+    },
+    {
+      "countryCode": "MX",
+      "reason": "Lake Chapala and Ajijic host 15,000+ US retirees with English-speaking cardiologists and $150/month chronic-disease clinics; warm climate satisfies the climate dealbreaker and $3,000 is very comfortable for two."
+    },
+    {
+      "countryCode": "CO",
+      "reason": "Medellín's spring-like climate at 1,500 m eliminates extreme-heat concerns; English-speaking specialists and cardiac care cost ~20% of US prices, and a retired couple lives comfortably on $3,000 in El Poblado."
+    },
+    {
+      "countryCode": "VN",
+      "reason": "Da Nang and Hội An have established US-expat communities and improving private-hospital infrastructure; $3,000 provides a generous coastal lifestyle, though specialist care is shallower than Thailand."
+    }
+  ],
+  "zero_results": false
+}

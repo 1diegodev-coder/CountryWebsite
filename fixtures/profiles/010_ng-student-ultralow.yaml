@@ -1,0 +1,25 @@
+lifeStage: student
+household: solo
+pushFactors:
+  - career
+  - exploring
+  - costTooHigh
+passports:
+  - NG
+budgetUsdMonthly: 1000
+languages:
+  - en
+languageFlexibility: openToLearning
+healthcareNeed: none
+nonNegotiables: []
+socialMode: mixed
+environmentPreference: midCity
+culturalAppetite: upgradeButFamiliar
+topPriorities:
+  - cost
+  - internet
+  - visaEase
+dealbreakers:
+  - noInternet
+  - authoritarian
+locale: en-NG

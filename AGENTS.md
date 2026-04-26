@@ -1,14 +1,14 @@
-# CLAUDE.md
+# AGENTS.md
 
-This file provides behavioral guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides behavioral guidance to Codex and other agents working in this repository.
 
 ## Operational Mandates
 1. **Single Source of Truth:** You MUST adhere to the architecture, standards, and workflow defined in **DEVELOPMENT.md**.
 2. **Verify Toolchain:** Always check `package.json` before assuming the toolchain or build system. The project has migrated from a CDN-based static site to Next.js 15.
 3. **Code Trumps Docs:** If any documentation (including this file or DEVELOPMENT.md) conflicts with the actual code or configuration files, the **code/config wins**.
-4. **Next.js 15 Patterns:** Use App Router conventions, React Server Components where appropriate, and Lucide icons.
+4. **Preserve Persistence:** Do not break the `localStorage` hydration/persistence logic in `App.tsx`.
 
 ## Behavioral Instructions
-- Follow the multi-phase matching logic in `src/lib/engine.ts`.
-- Ensure Framer Motion animations respect `prefers-reduced-motion`.
-- When adding features, update corresponding Zod schemas in `src/lib/schema/`.
+- Prioritize surgical edits over large refactors.
+- Maintain the "Editorial + Data" aesthetic described in the PRD.
+- Ensure all matching engine changes are verified against fixtures in `fixtures/`.

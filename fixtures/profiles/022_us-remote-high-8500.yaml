@@ -1,0 +1,24 @@
+lifeStage: remoteEmployee
+household: solo
+pushFactors:
+  - lifestyle
+  - exploring
+passports:
+  - US
+budgetUsdMonthly: 8500
+languages:
+  - en
+languageFlexibility: openToLearning
+healthcareNeed: none
+nonNegotiables: []
+socialMode: mixed
+environmentPreference: bigCity
+culturalAppetite: radicallyDifferent
+topPriorities:
+  - culture
+  - safety
+  - internet
+dealbreakers:
+  - airPollution
+  - authoritarian
+locale: en-US

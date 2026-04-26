@@ -1,0 +1,25 @@
+{
+  "top5": [
+    {
+      "countryCode": "PT",
+      "reason": "Portugal's D8 visa suits a remote-working US parent; EU-standard paediatric care in Cascais/Lisbon is English-speaking, and $5,500 covers a three-bedroom family apartment plus an international Montessori nursery."
+    },
+    {
+      "countryCode": "MX",
+      "reason": "Mexico City's Polanco and Condesa neighbourhoods host a dense US-expat playdate network and bilingual Montessori preschools; low air-pollution in Coyoacán and Santa Fe wards satisfies the airPollution dealbreaker; $5,500 is extremely comfortable."
+    },
+    {
+      "countryCode": "CR",
+      "reason": "Costa Rica's pura vida culture prioritises outdoor childhood development; private bilingual preschools in Escazú are US-accredited and under $800/month; $5,500 for a family of three is generous, and safety scores are among Latin America's highest."
+    },
+    {
+      "countryCode": "ES",
+      "reason": "Spain's Mediterranean family culture, EU-standard paediatric public and private healthcare, and temperate climate address the safety and healthcare top priorities; $5,500 covers a family apartment comfortably outside central Barcelona."
+    },
+    {
+      "countryCode": "CO",
+      "reason": "Medellín's Envigado neighbourhood has low crime, English-speaking paediatricians, and bilingual nurseries charging under $500/month; altitude keeps temperatures mild, avoiding the extremeHeat dealbreaker; $5,500 is exceptionally generous."
+    }
+  ],
+  "zero_results": false
+}

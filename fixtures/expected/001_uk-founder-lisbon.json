@@ -1,0 +1,25 @@
+{
+  "top5": [
+    {
+      "countryCode": "PT",
+      "reason": "Portugal's NHR 2.0 flat 20% tax and D8 digital nomad visa are purpose-built for UK founders post-Brexit; Lisbon's growing tech scene and €3,000/month average cost sit comfortably within the £3,500 equivalent budget."
+    },
+    {
+      "countryCode": "EE",
+      "reason": "Estonia's e-Residency enables EU company formation with 0% corporate tax on retained earnings; digital-first infrastructure and flat 20% income tax directly serve the lowTax and techEco top priorities."
+    },
+    {
+      "countryCode": "GE",
+      "reason": "Georgia's Virtual Zone status grants 0% corporate tax on foreign-sourced IT revenue; UK passport enters visa-free for up to 365 days, the most generous no-cost window of any option, and Tbilisi costs ~$1,500/month."
+    },
+    {
+      "countryCode": "MT",
+      "reason": "Malta's ~5% effective corporate tax via the shareholder refund system and EU jurisdiction give a post-Brexit UK founder a compliant low-tax EU base; English is an official language eliminating the language barrier."
+    },
+    {
+      "countryCode": "CY",
+      "reason": "Cyprus offers 12.5% corporate tax, EU membership, and an English-speaking environment; warm Mediterranean climate and a straightforward non-dom regime round out the lowTax and visaEase priorities."
+    }
+  ],
+  "zero_results": false
+}

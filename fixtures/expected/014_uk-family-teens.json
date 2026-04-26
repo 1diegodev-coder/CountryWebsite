@@ -1,0 +1,25 @@
+{
+  "top5": [
+    {
+      "countryCode": "PT",
+      "reason": "Portugal has over 30 accredited English-medium international schools; D8 and NHR visas accommodate remote-working UK parents post-Brexit; Lisbon's teens-friendly café and surf culture scores well for 12–18 age group; $6,000 comfortably covers school fees plus a four-bedroom apartment."
+    },
+    {
+      "countryCode": "ES",
+      "reason": "Spain's Spanish-language immersion is highly beneficial for 12–18 year olds; international schools in Barcelona and Madrid are accredited to IB and British curricula; $6,000 is comfortable; Spain's Digital Nomad Visa provides a legal pathway for UK parents."
+    },
+    {
+      "countryCode": "NL",
+      "reason": "The Netherlands has some of Europe's best English-medium international schools (ISA, The British School); Dutch teen culture is socially progressive and safe; $6,000 covers a family apartment in Amsterdam-South or The Hague; UK passport enters Schengen visa-free."
+    },
+    {
+      "countryCode": "DE",
+      "reason": "Germany offers excellent public education and numerous English-medium international schools; Berlin is culturally stimulating for teenagers; $6,000 is generous in Germany outside Munich; UK passport has free movement through Schengen; safety scores are among Europe's highest."
+    },
+    {
+      "countryCode": "NZ",
+      "reason": "New Zealand's English-medium state schools are among the world's best-ranked for 12–18 year olds; safety scores are exceptional; the UK-NZ relationship means mutual recognition of qualifications; $6,000 is comfortable in Auckland or Wellington for a family of four."
+    }
+  ],
+  "zero_results": false
+}

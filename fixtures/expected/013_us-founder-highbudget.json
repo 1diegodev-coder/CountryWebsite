@@ -1,0 +1,25 @@
+{
+  "top5": [
+    {
+      "countryCode": "SG",
+      "reason": "Singapore is the #1 tech ecosystem in Asia by startup density and VC availability; EntrePass for founders is the most direct visa path; 17% top income tax rate and 0% capital gains tax serve lowTax; $12,000 covers a comfortable two-bedroom in Tanjong Pagar."
+    },
+    {
+      "countryCode": "AE",
+      "reason": "Dubai's 0% personal income tax and rapidly maturing startup ecosystem (Hub71, Dubai Future Foundation) satisfy both lowTax and techEco top priorities; US passport enters visa-free; $12,000 is very comfortable; world-class internet infrastructure (Starlink + Etisalat fibre)."
+    },
+    {
+      "countryCode": "EE",
+      "reason": "Estonia's e-Residency and Startup Visa provide the most EU-accessible founder path; 0% corporate tax on retained profits; Tallinn's tech scene punches above its weight (TransferWise, Pipedrive born here); $12,000 is extremely generous in a city averaging $2,500/month."
+    },
+    {
+      "countryCode": "PT",
+      "reason": "Lisbon's tech scene is booming (Web Summit permanent home, 300+ startups); NHR 2.0 gives a 20% flat rate on qualifying income; D8 Visa is straightforward for US passport; $12,000 supports a premium lifestyle with capital for runway; low airPollution risk."
+    },
+    {
+      "countryCode": "NL",
+      "reason": "Amsterdam is Europe's leading startup hub (Adyen, Booking.com origins); 30% ruling for highly skilled migrants reduces effective tax rate; excellent internet infrastructure; US passport enters Schengen visa-free; $12,000 covers a premium canal-house apartment."
+    }
+  ],
+  "zero_results": false
+}

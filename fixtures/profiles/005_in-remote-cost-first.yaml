@@ -1,0 +1,26 @@
+lifeStage: remoteEmployee
+household: solo
+pushFactors:
+  - costTooHigh
+  - career
+  - tax
+passports:
+  - IN
+budgetUsdMonthly: 2000
+languages:
+  - en
+  - hi
+languageFlexibility: openToLearning
+healthcareNeed: none
+nonNegotiables: []
+socialMode: independent
+environmentPreference: midCity
+culturalAppetite: radicallyDifferent
+topPriorities:
+  - cost
+  - internet
+  - visaEase
+dealbreakers:
+  - authoritarian
+  - noInternet
+locale: en-IN

@@ -1,0 +1,25 @@
+{
+  "top5": [
+    {
+      "countryCode": "AE",
+      "reason": "UAE's 0% personal income tax and 0% corporate tax (sub-$100k threshold) are the strongest lowTax match globally; Indian passport holders obtain UAE residence via founder/freelancer visa within 2–4 weeks; Dubai's tech ecosystem (Hub71, in5) directly serves techEco; $5,000 covers a furnished studio in Business Bay."
+    },
+    {
+      "countryCode": "GE",
+      "reason": "Georgia's Virtual Zone status grants 0% corporate tax on foreign IT revenue for registered IT companies; Indian nationals obtain a Georgian e-visa in 24 hours (visaEase top priority); Tbilisi costs ~$1,500/month, leaving $3,500 buffer from the $5,000 budget; flat 1% personal tax for small businesses."
+    },
+    {
+      "countryCode": "EE",
+      "reason": "Estonia's e-Residency provides EU company formation with 0% corporate tax on retained profits; the Digital Nomad Visa is available for Indian passport holders; Tallinn's startup scene (Skype, TransferWise origins) satisfies techEco; $5,000 is very generous in Tallinn."
+    },
+    {
+      "countryCode": "SG",
+      "reason": "Singapore's EntrePass for founders is specifically designed for tech entrepreneurs; 17% top personal income tax and 0% capital gains; strong India-Singapore ties mean many Indian founder communities exist; $5,000 covers a one-bedroom in an outer district."
+    },
+    {
+      "countryCode": "PT",
+      "reason": "Portugal's D8 Visa for digital nomads is accessible to Indian nationals; NHR 2.0 offers 20% flat rate on qualifying income; Lisbon's Web Summit founder ecosystem satisfies techEco; $5,000 is comfortable; lower visaEase friction than most Schengen countries."
+    }
+  ],
+  "zero_results": false
+}

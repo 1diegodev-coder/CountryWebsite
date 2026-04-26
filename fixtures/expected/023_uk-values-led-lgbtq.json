@@ -1,0 +1,25 @@
+{
+  "top5": [
+    {
+      "countryCode": "PT",
+      "reason": "Portugal satisfies all three non-negotiables: same-sex marriage since 2010 (LGBTQ), RSF press freedom index top-20 (pressFreedom), and WEF gender gap top-30 (genderEquality); $4,000 is very comfortable in Lisbon; UK passport enters Schengen visa-free; deepIntegration is genuinely achievable in an English-friendly city."
+    },
+    {
+      "countryCode": "NL",
+      "reason": "The Netherlands was the first country globally to legalise same-sex marriage (2001) and ranks top-5 for both press freedom and gender equality; $4,000 is achievable in Rotterdam, The Hague, or Utrecht (Amsterdam is tighter); UK passport Schengen visa-free; excellent English in daily life."
+    },
+    {
+      "countryCode": "DE",
+      "reason": "Germany's constitutional freedoms cover press and equality; same-sex marriage since 2017; Berlin is a global LGBTQ capital; $4,000 is comfortable in Berlin or Hamburg; UK passport Schengen visa-free; safety scores are high; corruption perception index top-15."
+    },
+    {
+      "countryCode": "ES",
+      "reason": "Spain legalised same-sex marriage in 2005 and consistently ranks free on press-freedom metrics; gender equality indicators are strong; $4,000 is comfortable in Madrid or Barcelona; UK passport Schengen visa-free; Spain's Digital Nomad Visa enables long-term stays."
+    },
+    {
+      "countryCode": "SE",
+      "reason": "Sweden is #1 globally for gender equality (WEF 2024), top-3 for press freedom (RSF), and a founding pillar of LGBTQ rights in Europe; $4,000 for a solo person in Malmö or Göteborg is feasible; UK passport enters Schengen visa-free; low corruption index."
+    }
+  ],
+  "zero_results": false
+}

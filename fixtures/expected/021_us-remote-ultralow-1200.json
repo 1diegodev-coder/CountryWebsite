@@ -1,0 +1,25 @@
+{
+  "top5": [
+    {
+      "countryCode": "VN",
+      "reason": "Vietnam is the reference ultra-budget destination: Hội An or Dalat all-in costs run $700–1,050/month for a solo remote worker; US passport 90-day e-visa; warm climate; fibre internet in all major cities; upgradeButFamiliar culture suits the mid-range culturalAppetite."
+    },
+    {
+      "countryCode": "GE",
+      "reason": "Tbilisi's market-rate long-stay rent runs $350–500/month for a one-bedroom; US passport visa-free 365 days at zero cost; total all-in costs $900–1,150/month; reliable fibre internet; 1% entrepreneur tax is a bonus if freelance income is generated locally."
+    },
+    {
+      "countryCode": "ID",
+      "reason": "Yogyakarta (Java) all-in costs run $600–900/month — well inside the $1,200 ceiling; US passport 30-day VOA; reliable co-working internet; warm climate satisfies the climate priority; independent socialMode is easy in a mid-sized Indonesian university city."
+    },
+    {
+      "countryCode": "TH",
+      "reason": "Chiang Mai is the canonical $1,000–1,200/month option: long-stay visa via METV or Thailand Elite for sustained stays; reliable co-working infrastructure; warm climate; US passport 30-day VOA."
+    },
+    {
+      "countryCode": "KH",
+      "reason": "Phnom Penh all-in costs run $800–1,100/month; USD is widely accepted so currency risk is zero; US passport receives 30-day e-visa; reliable internet in BKK1 neighbourhood; warm climate; note: the authoritarian dealbreaker is a risk factor given current political environment."
+    }
+  ],
+  "zero_results": false
+}

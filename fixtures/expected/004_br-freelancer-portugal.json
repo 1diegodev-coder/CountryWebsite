@@ -1,0 +1,25 @@
+{
+  "top5": [
+    {
+      "countryCode": "PT",
+      "reason": "Portugal is the highest-overlap match: BR-PT citizens enjoy a bilateral treaty that simplifies residency; same language eliminates the language barrier entirely; NHR 2.0 and D8 visa address visaEase, and Lisbon costs sit within the $2,800 budget."
+    },
+    {
+      "countryCode": "ES",
+      "reason": "Spanish is near-identical to Portuguese for Brazilian speakers (deepIntegration possible within weeks); Barcelona's freelancer tech scene and Spain's new Digital Nomad Visa provide the internet infrastructure and visa path needed; costs manageable at $2,800."
+    },
+    {
+      "countryCode": "CO",
+      "reason": "Colombia's shared Spanish language (easily acquired by Portuguese speakers), Medellín's strong freelancer co-working culture, and free-movement access for BR passport holders make it a natural deepIntegration destination within the $2,800 budget."
+    },
+    {
+      "countryCode": "MX",
+      "reason": "Mexico City has a dense tech and freelance community; BR passport is visa-free; Spanish acquisition for a Portuguese speaker is rapid; $2,800 is comfortable in Roma Norte or Condesa, satisfying the cost priority."
+    },
+    {
+      "countryCode": "GE",
+      "reason": "Georgia's 1% flat tax for individual entrepreneurs directly serves the cost priority; e-visa is straightforward for BR passport; Tbilisi costs ~$1,200/month, leaving $1,600 buffer from the $2,800 budget; strong English in tech spaces aids openToLearning transition."
+    }
+  ],
+  "zero_results": false
+}

@@ -1,0 +1,26 @@
+lifeStage: remoteEmployee
+household: solo
+pushFactors:
+  - costTooHigh
+  - career
+  - exploring
+passports:
+  - PH
+budgetUsdMonthly: 1200
+languages:
+  - en
+  - tl
+languageFlexibility: openToLearning
+healthcareNeed: none
+nonNegotiables: []
+socialMode: mixed
+environmentPreference: midCity
+culturalAppetite: upgradeButFamiliar
+topPriorities:
+  - cost
+  - internet
+  - visaEase
+dealbreakers:
+  - noInternet
+  - unstable
+locale: en-PH

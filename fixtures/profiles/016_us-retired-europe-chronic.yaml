@@ -1,0 +1,25 @@
+lifeStage: retired
+household: coupleNoKids
+pushFactors:
+  - costTooHigh
+  - lifestyle
+  - climate
+passports:
+  - US
+budgetUsdMonthly: 3000
+languages:
+  - en
+languageFlexibility: openToLearning
+healthcareNeed: chronic
+nonNegotiables: []
+socialMode: expatBubble
+environmentPreference: smallTown
+culturalAppetite: upgradeButFamiliar
+topPriorities:
+  - healthcare
+  - climate
+  - cost
+dealbreakers:
+  - extremeCold
+  - noInternet
+locale: en-US
