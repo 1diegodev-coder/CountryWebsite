@@ -16,7 +16,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Portugal", iso2: "PT", iso3: "PRT", region: "Europe", subregion: "Southern Europe",
     languages: ["Portuguese"], euMember: true, schengen: true, commonwealth: false,
-    descriptor: "A sun-drenched Atlantic nation where old-world charm meets modern digital infrastructure.",
+    descriptor: "A sun-drenched Atlantic nation where old-world charm meets a rapidly modernising digital infrastructure. It offers a relaxed Mediterranean lifestyle paired with high safety and excellent accessibility for remote professionals.",
     dimensions: { cost: 5.7, safety: 8.6, healthcare: 7.2, visaEase: 8, digitalInfra: 5.7, climate: 6.7, english: 4.8, lgbtqSafety: 8.3, techEcosystem: 7.1, naturalEnvironment: 5.2 },
     costBreakdown: { rentUsd: 1350, groceriesUsd: 280, transportUsd: 42, utilitiesUsd: 120, diningOutUsd: 280, healthInsuranceUsd: 90, totalEstimateUsd: 2162 },
     visaPathways: [
@@ -76,7 +76,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Mexico", iso2: "MX", iso3: "MEX", region: "Americas", subregion: "North America",
     languages: ["Spanish"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "A vast, diverse nation offering world-class culture, cuisine, and increasingly sophisticated expat infrastructure.",
+    descriptor: "A vast and diverse nation offering world-class culture, renowned cuisine, and an increasingly sophisticated infrastructure for international residents. It remains a premier choice for those seeking a vibrant lifestyle at an accessible cost.",
     dimensions: { cost: 7.4, safety: 5.2, healthcare: 6.4, visaEase: 4.5, digitalInfra: 4.8, climate: 6.1, english: 4.4, lgbtqSafety: 6.1, techEcosystem: 7.4, naturalEnvironment: 4.5 },
     costBreakdown: { rentUsd: 900, groceriesUsd: 200, transportUsd: 30, utilitiesUsd: 80, diningOutUsd: 160, healthInsuranceUsd: 70, totalEstimateUsd: 1440 },
     visaPathways: [
@@ -112,7 +112,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Switzerland", iso2: "CH", iso3: "CHE", region: "Europe", subregion: "Western Europe",
     languages: ["German", "French", "Italian", "Romansh"], euMember: false, schengen: true, commonwealth: false,
-    descriptor: "The world's most stable and prosperous small nation — impeccable infrastructure and exceptional healthcare.",
+    descriptor: "The world's most stable and prosperous small nation, providing impeccable infrastructure and exceptional healthcare. It is a premier global hub for finance and innovation, set against a backdrop of breathtaking alpine scenery.",
     dimensions: { cost: 2.1, safety: 9.4, healthcare: 9.6, visaEase: 2.5, digitalInfra: 8.7, climate: 5.1, english: 5.6, lgbtqSafety: 9.2, techEcosystem: 9.3, naturalEnvironment: 6.2 },
     costBreakdown: { rentUsd: 2900, groceriesUsd: 700, transportUsd: 90, utilitiesUsd: 300, diningOutUsd: 700, healthInsuranceUsd: 400, totalEstimateUsd: 5090 },
     visaPathways: [
@@ -212,7 +212,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Spain", iso2: "ES", iso3: "ESP", region: "Europe", subregion: "Southern Europe",
     languages: ["Spanish"], euMember: true, schengen: true, commonwealth: false,
-    descriptor: "A world leader in lifestyle quality, with exceptional high-speed rail and diverse regional cultures.",
+    descriptor: "A world leader in lifestyle quality, combining exceptional high-speed rail with a rich tapestry of diverse regional cultures. Its balanced climate and high standard of social services make it a top choice for families and professionals.",
     dimensions: { cost: 5.2, safety: 8.2, healthcare: 8.8, visaEase: 8, digitalInfra: 7.4, climate: 7.2, english: 4.2, lgbtqSafety: 8.9, techEcosystem: 7.8, naturalEnvironment: 5 },
     costBreakdown: { rentUsd: 1400, groceriesUsd: 300, transportUsd: 50, utilitiesUsd: 130, diningOutUsd: 300, healthInsuranceUsd: 100, totalEstimateUsd: 2280 },
     visaPathways: [
@@ -266,7 +266,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Netherlands", iso2: "NL", iso3: "NLD", region: "Europe", subregion: "Western Europe",
     languages: ["Dutch", "English"], euMember: true, schengen: true, commonwealth: false,
-    descriptor: "The highest English proficiency for a non-native country, combined with world-class design and infrastructure.",
+    descriptor: "Boasting the highest English proficiency for a non-native country, the Netherlands pairs world-class design with impeccable infrastructure. It is a highly stable, liberal society that serves as a major gateway for international trade and technology.",
     dimensions: { cost: 3.7, safety: 8.8, healthcare: 8.2, visaEase: 6, digitalInfra: 9.4, climate: 2.8, english: 9.7, lgbtqSafety: 9.4, techEcosystem: 8.5, naturalEnvironment: 2 },
     costBreakdown: { rentUsd: 2100, groceriesUsd: 400, transportUsd: 80, utilitiesUsd: 200, diningOutUsd: 400, healthInsuranceUsd: 150, totalEstimateUsd: 3330 },
     visaPathways: [
@@ -380,7 +380,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Vietnam", iso2: "VN", iso3: "VNM", region: "Asia", subregion: "Southeast Asia",
     languages: ["Vietnamese"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "Extraordinary value, rapid growth, and a world-renowned culinary scene.",
+    descriptor: "A nation of extraordinary value and rapid economic growth, home to a world-renowned culinary scene and vibrant cities. It is increasingly popular with those seeking a dynamic lifestyle in one of Asia's most energetic emerging markets.",
     dimensions: { cost: 8.9, safety: 5.5, healthcare: 4.8, visaEase: 5, digitalInfra: 5.6, climate: 3.8, english: 3.3, lgbtqSafety: 4.5, techEcosystem: 6.2, naturalEnvironment: 5.9 },
     costBreakdown: { rentUsd: 550, groceriesUsd: 180, transportUsd: 25, utilitiesUsd: 50, diningOutUsd: 120, healthInsuranceUsd: 40, totalEstimateUsd: 965 },
     visaPathways: [
@@ -411,7 +411,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Colombia", iso2: "CO", iso3: "COL", region: "Americas", subregion: "South America",
     languages: ["Spanish"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "Biodiversity and cultural vibrancy, with Medellín emerging as a top global hub for digital nomads.",
+    descriptor: "Offering immense biodiversity and cultural vibrancy, Colombia has seen Medellín emerge as a top global hub for digital nomads. It provides a warm, welcoming environment with a significantly lower cost of living than North American or European counterparts.",
     dimensions: { cost: 8.2, safety: 4.2, healthcare: 7.4, visaEase: 8.5, digitalInfra: 5.1, climate: 7.5, english: 2.7, lgbtqSafety: 6.4, techEcosystem: 6.8, naturalEnvironment: 8.5 },
     costBreakdown: { rentUsd: 650, groceriesUsd: 200, transportUsd: 30, utilitiesUsd: 60, diningOutUsd: 150, healthInsuranceUsd: 60, totalEstimateUsd: 1150 },
     cities: ["Medellin", "Bogota", "Cartagena"],
@@ -489,7 +489,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Costa Rica", iso2: "CR", iso3: "CRI", region: "Americas", subregion: "Central America",
     languages: ["Spanish"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "Pura Vida: a global leader in environmental sustainability and peaceful, democratic living.",
+    descriptor: "Pura Vida: a global leader in environmental sustainability and peaceful, democratic living. This Central American gem offers a high quality of life with a strong focus on wellness and the natural environment.",
     dimensions: { cost: 6.2, safety: 7.1, healthcare: 7.2, visaEase: 7.4, digitalInfra: 5.6, climate: 6.9, english: 4.9, lgbtqSafety: 8.1, techEcosystem: 5.4, naturalEnvironment: 9.2 },
     costBreakdown: { rentUsd: 1100, groceriesUsd: 300, transportUsd: 45, utilitiesUsd: 90, diningOutUsd: 220, healthInsuranceUsd: 100, totalEstimateUsd: 1855 },
     visaPathways: [
@@ -525,7 +525,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Uruguay", iso2: "UY", iso3: "URY", region: "Americas", subregion: "South America",
     languages: ["Spanish"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "The 'Switzerland of South America' — progressive, stable, and socially liberal.",
+    descriptor: "Known as the 'Switzerland of South America', Uruguay is a progressive, stable, and socially liberal nation. It offers a calm pace of life with strong legal protections and a high degree of social cohesion.",
     dimensions: { cost: 5.9, safety: 7.6, healthcare: 7.4, visaEase: 8.5, digitalInfra: 7.3, climate: 5.9, english: 4, lgbtqSafety: 8.8, techEcosystem: 7.2, naturalEnvironment: 3.7 },
     costBreakdown: { rentUsd: 1200, groceriesUsd: 350, transportUsd: 60, utilitiesUsd: 140, diningOutUsd: 300, healthInsuranceUsd: 90, totalEstimateUsd: 2140 },
     cities: ["Montevideo", "Punta del Este", "Colonia del Sacramento"],
@@ -535,7 +535,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Japan", iso2: "JP", iso3: "JPN", region: "Asia", subregion: "Eastern Asia",
     languages: ["Japanese"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "A perfect fusion of ultra-modern technology and timeless tradition, with world-class safety and service.",
+    descriptor: "A perfect fusion of ultra-modern technology and timeless tradition, Japan offers world-class safety, cleanliness, and exceptional service. It provides a unique living experience where ancient shrines sit alongside futuristic urban landscapes.",
     dimensions: { cost: 3.9, safety: 9.8, healthcare: 9.2, visaEase: 7, digitalInfra: 9.1, climate: 4.7, english: 2.6, lgbtqSafety: 7.2, techEcosystem: 7.8, naturalEnvironment: 5.5 },
     costBreakdown: { rentUsd: 1800, groceriesUsd: 500, transportUsd: 120, utilitiesUsd: 220, diningOutUsd: 450, healthInsuranceUsd: 150, totalEstimateUsd: 3240 },
     visaPathways: [
@@ -641,7 +641,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Singapore", iso2: "SG", iso3: "SGP", region: "Asia", subregion: "Southeast Asia",
     languages: ["English", "Mandarin", "Malay", "Tamil"], euMember: false, schengen: false, commonwealth: true,
-    descriptor: "The world's safest and most efficient city-state — a hyper-connected global financial hub.",
+    descriptor: "Consistently ranked as the world's safest and most efficient city-state, Singapore is a hyper-connected global financial hub. It offers a unique blend of diverse cultures, world-class education, and ultra-modern urban planning.",
     dimensions: { cost: 1.8, safety: 9.9, healthcare: 9.6, visaEase: 4, digitalInfra: 9.9, climate: 2.7, english: 9.4, lgbtqSafety: 5.1, techEcosystem: 9.8, naturalEnvironment: 2 },
     costBreakdown: { rentUsd: 3500, groceriesUsd: 600, transportUsd: 100, utilitiesUsd: 200, diningOutUsd: 600, healthInsuranceUsd: 250, totalEstimateUsd: 5250 },
     visaPathways: [
@@ -748,7 +748,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Philippines", iso2: "PH", iso3: "PHL", region: "Asia", subregion: "Southeast Asia",
     languages: ["Filipino", "English"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "Archipelagic beauty with legendary hospitality and widespread English proficiency.",
+    descriptor: "An archipelagic nation of stunning natural beauty, the Philippines is celebrated for its legendary hospitality and widespread English proficiency. It offers a warm tropical climate and a very low cost of living for international residents.",
     dimensions: { cost: 8.2, safety: 5.4, healthcare: 5.1, visaEase: 6, digitalInfra: 4.8, climate: 4, english: 8.3, lgbtqSafety: 6.2, techEcosystem: 5.8, naturalEnvironment: 8.5 },
     costBreakdown: { rentUsd: 600, groceriesUsd: 220, transportUsd: 30, utilitiesUsd: 80, diningOutUsd: 150, healthInsuranceUsd: 60, totalEstimateUsd: 1140 },
     visaPathways: [
@@ -785,7 +785,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Brazil", iso2: "BR", iso3: "BRA", region: "Americas", subregion: "South America",
     languages: ["Portuguese"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "A continental giant with unmatched cultural energy, biodiversity, and a growing digital ecosystem.",
+    descriptor: "A continental giant with unmatched cultural energy, biodiversity, and a growing digital ecosystem. It is a vibrant nation that offers a high degree of social openness and a rapidly developing infrastructure for remote professionals.",
     dimensions: { cost: 7.4, safety: 4.8, healthcare: 6.4, visaEase: 8, digitalInfra: 6.4, climate: 7.8, english: 2.7, lgbtqSafety: 7.4, techEcosystem: 8.2, naturalEnvironment: 9.2 },
     costBreakdown: { rentUsd: 800, groceriesUsd: 250, transportUsd: 40, utilitiesUsd: 90, diningOutUsd: 200, healthInsuranceUsd: 80, totalEstimateUsd: 1460 },
     visaPathways: [
@@ -821,7 +821,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Germany", iso2: "DE", iso3: "DEU", region: "Europe", subregion: "Western Europe",
     languages: ["German"], euMember: true, schengen: true, commonwealth: false,
-    descriptor: "Europe's economic engine, offering exceptional stability, social security, and a powerhouse of innovation.",
+    descriptor: "Europe's economic engine, Germany offers exceptional stability, social security, and a powerhouse of innovation. It provides a high standard of living, world-class public transportation, and a thriving cultural scene in cities like Berlin and Munich.",
     dimensions: { cost: 4.3, safety: 8.8, healthcare: 9.1, visaEase: 4.5, digitalInfra: 6.9, climate: 3.4, english: 6.4, lgbtqSafety: 9.1, techEcosystem: 9.4, naturalEnvironment: 3.4 },
     costBreakdown: { rentUsd: 1600, groceriesUsd: 350, transportUsd: 70, utilitiesUsd: 250, diningOutUsd: 350, healthInsuranceUsd: 300, totalEstimateUsd: 2920 },
     visaPathways: [
@@ -875,7 +875,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "France", iso2: "FR", iso3: "FRA", region: "Europe", subregion: "Western Europe",
     languages: ["French"], euMember: true, schengen: true, commonwealth: false,
-    descriptor: "A nation of extraordinary cultural depth, world-class healthcare, and an unmatched quality of life.",
+    descriptor: "A nation of extraordinary cultural depth, France offers world-class healthcare and an unmatched quality of life. It provides a unique blend of historic charm, culinary excellence, and a modern infrastructure that supports a diverse range of lifestyles.",
     dimensions: { cost: 4.7, safety: 7.8, healthcare: 9.2, visaEase: 7.5, digitalInfra: 7.7, climate: 5.4, english: 4.5, lgbtqSafety: 8.0, techEcosystem: 8.0, naturalEnvironment: 5.9 },
     costBreakdown: { rentUsd: 1600, groceriesUsd: 280, transportUsd: 75, utilitiesUsd: 150, diningOutUsd: 320, healthInsuranceUsd: 100, totalEstimateUsd: 2525 },
     visaPathways: [
@@ -912,7 +912,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Italy", iso2: "IT", iso3: "ITA", region: "Europe", subregion: "Southern Europe",
     languages: ["Italian"], euMember: true, schengen: true, commonwealth: false,
-    descriptor: "Unmatched beauty, food, and history — offering a lifestyle that prioritises pleasure and family.",
+    descriptor: "With unmatched beauty, food, and history, Italy offers a lifestyle that prioritises pleasure and family. It is a land of regional diversity, from the alpine north to the sun-drenched south, providing a rich cultural experience and a high standard of social services.",
     dimensions: { cost: 5.6, safety: 8.0, healthcare: 8.6, visaEase: 7, digitalInfra: 6.6, climate: 6.9, english: 4.2, lgbtqSafety: 7.1, techEcosystem: 6.6, naturalEnvironment: 7.2 },
     costBreakdown: { rentUsd: 1400, groceriesUsd: 250, transportUsd: 45, utilitiesUsd: 160, diningOutUsd: 240, healthInsuranceUsd: 90, totalEstimateUsd: 2185 },
     visaPathways: [
@@ -959,7 +959,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Poland", iso2: "PL", iso3: "POL", region: "Europe", subregion: "Central Europe",
     languages: ["Polish"], euMember: true, schengen: true, commonwealth: false,
-    descriptor: "A dynamic, rapidly modernising nation with a powerhouse economy and high quality of life.",
+    descriptor: "A dynamic and rapidly modernising nation, Poland boasts a powerhouse economy and a high quality of life. It offers a unique blend of historic charm and modern urban development, particularly attractive to tech professionals.",
     dimensions: { cost: 7.4, safety: 8.2, healthcare: 7.4, visaEase: 5.9, digitalInfra: 7.4, climate: 3.2, english: 5.2, lgbtqSafety: 4.4, techEcosystem: 7.8, naturalEnvironment: 2.7 },
     costBreakdown: { rentUsd: 800, groceriesUsd: 220, transportUsd: 35, utilitiesUsd: 140, diningOutUsd: 180, healthInsuranceUsd: 60, totalEstimateUsd: 1435 },
     visaPathways: [
@@ -1010,7 +1010,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Argentina", iso2: "AR", iso3: "ARG", region: "Americas", subregion: "South America",
     languages: ["Spanish"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "South America's most European culture, with world-class cities and extraordinary natural variety.",
+    descriptor: "Boasting South America's most European culture, Argentina features world-class cities and extraordinary natural variety. It remains a top choice for those seeking cultural depth and a high standard of living at a competitive cost.",
     dimensions: { cost: 8.6, safety: 6.2, healthcare: 7.2, visaEase: 7.5, digitalInfra: 5.1, climate: 5.4, english: 4.6, lgbtqSafety: 7.4, techEcosystem: 5.8, naturalEnvironment: 5 },
     costBreakdown: { rentUsd: 600, groceriesUsd: 180, transportUsd: 20, utilitiesUsd: 90, diningOutUsd: 120, healthInsuranceUsd: 50, totalEstimateUsd: 1060 },
     cities: ["Buenos Aires", "Cordoba", "Mendoza", "Rosario"],
@@ -1056,7 +1056,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Malaysia", iso2: "MY", iso3: "MYS", region: "Asia", subregion: "Southeast Asia",
     languages: ["Malay", "English"], euMember: false, schengen: false, commonwealth: true,
-    descriptor: "A hyper-modern tropical hub with English as a working language and exceptional infrastructure.",
+    descriptor: "A hyper-modern tropical hub with English as a working language, Malaysia offers exceptional infrastructure and a unique multicultural environment. It provides a high quality of life with modern amenities at a very competitive cost.",
     dimensions: { cost: 8, safety: 7.6, healthcare: 7.4, visaEase: 8, digitalInfra: 6.9, climate: 4, english: 5, lgbtqSafety: 1.0, techEcosystem: 7.8, naturalEnvironment: 3.7 },
     costBreakdown: { rentUsd: 700, groceriesUsd: 200, transportUsd: 35, utilitiesUsd: 110, diningOutUsd: 100, healthInsuranceUsd: 60, totalEstimateUsd: 1205 },
     visaPathways: [
@@ -1093,7 +1093,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "South Korea", iso2: "KR", iso3: "KOR", region: "Asia", subregion: "Eastern Asia",
     languages: ["Korean"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "The world's most wired country, offering hyper-efficiency and a dynamic creative culture.",
+    descriptor: "The world's most wired country, South Korea offers hyper-efficiency and a dynamic creative culture. It is a global leader in technology and innovation, providing a unique living experience where ultra-modern cities meet traditional Korean heritage.",
     dimensions: { cost: 6.1, safety: 8.4, healthcare: 9.2, visaEase: 7, digitalInfra: 9.7, climate: 4, english: 5.2, lgbtqSafety: 4.2, techEcosystem: 8.4, naturalEnvironment: 5 },
     costBreakdown: { rentUsd: 1200, groceriesUsd: 320, transportUsd: 50, utilitiesUsd: 180, diningOutUsd: 200, healthInsuranceUsd: 90, totalEstimateUsd: 2040 },
     visaPathways: [
@@ -1124,7 +1124,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Türkiye", iso2: "TR", iso3: "TUR", region: "Europe/Asia", subregion: "Western Asia",
     languages: ["Turkish"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "A vast cultural bridge between continents with extraordinary history and incredible value.",
+    descriptor: "A vast cultural bridge between continents, Türkiye offers an extraordinary history and incredible value for international residents. It is a land of vibrant markets, stunning coastal scenery, and a rich tapestry of Eastern and Western influences.",
     dimensions: { cost: 8.2, safety: 5.4, healthcare: 7.0, visaEase: 7.5, digitalInfra: 5.4, climate: 6.7, english: 4.3, lgbtqSafety: 3.5, techEcosystem: 6.8, naturalEnvironment: 4.1 },
     costBreakdown: { rentUsd: 650, groceriesUsd: 180, transportUsd: 25, utilitiesUsd: 100, diningOutUsd: 140, healthInsuranceUsd: 55, totalEstimateUsd: 1150 },
     visaPathways: [
@@ -1171,7 +1171,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "New Zealand", iso2: "NZ", iso3: "NZL", region: "Oceania", subregion: "Australasia",
     languages: ["English", "Maori"], euMember: false, schengen: false, commonwealth: true,
-    descriptor: "The ultimate remote sanctuary — safe, stable, and naturally breathtaking.",
+    descriptor: "Often described as the ultimate remote sanctuary, New Zealand is a safe, stable, and naturally breathtaking nation. It offers an unparalleled outdoor lifestyle and a high-trust society that values environmental preservation and community.",
     dimensions: { cost: 4.5, safety: 9.6, healthcare: 8.6, visaEase: 4, digitalInfra: 7.7, climate: 6.4, english: 5.9, lgbtqSafety: 8.7, techEcosystem: 7.6, naturalEnvironment: 7.7 },
     costBreakdown: { rentUsd: 1700, groceriesUsd: 380, transportUsd: 80, utilitiesUsd: 200, diningOutUsd: 360, healthInsuranceUsd: 80, totalEstimateUsd: 2800 },
     visaPathways: [
@@ -1201,7 +1201,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Australia", iso2: "AU", iso3: "AUS", region: "Oceania", subregion: "Australasia",
     languages: ["English"], euMember: false, schengen: false, commonwealth: true,
-    descriptor: "A sun-drenched continent with a powerhouse economy and an unmatched outdoor lifestyle.",
+    descriptor: "A sun-drenched continent with a powerhouse economy, Australia is renowned for its unmatched outdoor lifestyle and high-trust society. It offers exceptional safety, a world-leading education system, and a unique multicultural environment in its vibrant coastal cities.",
     dimensions: { cost: 3.4, safety: 9.2, healthcare: 8.8, visaEase: 4, digitalInfra: 7.7, climate: 6.9, english: 5.6, lgbtqSafety: 8.6, techEcosystem: 8.4, naturalEnvironment: 6.6 },
     costBreakdown: { rentUsd: 1900, groceriesUsd: 400, transportUsd: 90, utilitiesUsd: 230, diningOutUsd: 400, healthInsuranceUsd: 400, totalEstimateUsd: 3420 },
     visaPathways: [
@@ -1255,7 +1255,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Canada", iso2: "CA", iso3: "CAN", region: "Americas", subregion: "North America",
     languages: ["English", "French"], euMember: false, schengen: false, commonwealth: true,
-    descriptor: "A world-leading inclusive democracy with spectacular wilderness and high-growth cities.",
+    descriptor: "A world-leading inclusive democracy, Canada features spectacular wilderness and high-growth cities. It is characterised by its high quality of life, exceptional safety, and a welcoming environment for international residents, set against a backdrop of vast natural beauty.",
     dimensions: { cost: 4.5, safety: 9.0, healthcare: 8.6, visaEase: 4, digitalInfra: 8.3, climate: 2.8, english: 5.6, lgbtqSafety: 9.0, techEcosystem: 8.2, naturalEnvironment: 5 },
     costBreakdown: { rentUsd: 1600, groceriesUsd: 380, transportUsd: 90, utilitiesUsd: 220, diningOutUsd: 400, healthInsuranceUsd: 150, totalEstimateUsd: 2840 },
     visaPathways: [
@@ -1315,7 +1315,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Chile", iso2: "CL", iso3: "CHL", region: "Americas", subregion: "South America",
     languages: ["Spanish"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "South America's most stable economy, offering dramatic landscapes and strong institutions.",
+    descriptor: "South America's most stable economy, Chile offers dramatic landscapes ranging from the Atacama Desert to the glaciers of Patagonia. It is characterised by its strong institutions, high safety, and a very developed infrastructure for international residents.",
     dimensions: { cost: 6.6, safety: 7.2, healthcare: 7.4, visaEase: 6.4, digitalInfra: 5.9, climate: 5.1, english: 4.6, lgbtqSafety: 6.8, techEcosystem: 7.2, naturalEnvironment: 3.7 },
     costBreakdown: { rentUsd: 950, groceriesUsd: 260, transportUsd: 35, utilitiesUsd: 140, diningOutUsd: 220, healthInsuranceUsd: 75, totalEstimateUsd: 1680 },
     cities: ["Santiago", "Valparaiso", "Viña del Mar"],
@@ -1335,7 +1335,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Peru", iso2: "PE", iso3: "PER", region: "Americas", subregion: "South America",
     languages: ["Spanish"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "A culinary global leader with extraordinary geographic variety and very low cost of living.",
+    descriptor: "A culinary global leader with extraordinary geographic variety, Peru offers a very low cost of living and rich historical heritage. It is a land of dramatic landscapes, from the Andes to the Amazon rainforest.",
     dimensions: { cost: 8.7, safety: 5.8, healthcare: 6.0, visaEase: 6.9, digitalInfra: 3.7, climate: 5.4, english: 4, lgbtqSafety: 4.7, techEcosystem: 6.0, naturalEnvironment: 4.1 },
     costBreakdown: { rentUsd: 600, groceriesUsd: 170, transportUsd: 20, utilitiesUsd: 80, diningOutUsd: 120, healthInsuranceUsd: 50, totalEstimateUsd: 1040 },
     cities: ["Lima", "Cusco", "Arequipa"],
@@ -1345,7 +1345,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Afghanistan", iso2: "AF", iso3: "AFG", region: "Asia", subregion: "Southern Asia",
     languages: ["Pashto", "Dari"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "A rugged, landlocked nation currently facing extreme political and social challenges.",
+    descriptor: "A rugged, landlocked nation currently facing extreme political and social challenges. Its dramatic mountainous terrain and ancient history are contrasted by a complex and rapidly changing humanitarian environment.",
     dimensions: { cost: 9.9, safety: 1.0, healthcare: 2.1, visaEase: 0.5, digitalInfra: 1.5, climate: 2.8, english: 1.7, lgbtqSafety: 0.2, techEcosystem: 1.1, naturalEnvironment: 2.7 },
     costBreakdown: { rentUsd: 250, groceriesUsd: 120, transportUsd: 15, utilitiesUsd: 40, diningOutUsd: 60, healthInsuranceUsd: 30, totalEstimateUsd: 515 },
     cities: ["Kabul", "Herat"],
@@ -1355,7 +1355,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Albania", iso2: "AL", iso3: "ALB", region: "Europe", subregion: "Southern Europe",
     languages: ["Albanian"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "A burgeoning Balkan destination offering stunning coastlines and exceptional value in the Mediterranean.",
+    descriptor: "A burgeoning Balkan destination, Albania offers stunning Mediterranean coastlines and exceptional value for residents and travellers. It is rapidly developing its infrastructure while maintaining its unique cultural heritage and natural beauty.",
     dimensions: { cost: 8.4, safety: 7.8, healthcare: 5.4, visaEase: 8.5, digitalInfra: 5.6, climate: 6.9, english: 3.7, lgbtqSafety: 5.8, techEcosystem: 5.1, naturalEnvironment: 5.5 },
     costBreakdown: { rentUsd: 550, groceriesUsd: 220, transportUsd: 30, utilitiesUsd: 90, diningOutUsd: 180, healthInsuranceUsd: 60, totalEstimateUsd: 1130 },
     cities: ["Tirana", "Durrës", "Vlorë"],
@@ -1365,7 +1365,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Algeria", iso2: "DZ", iso3: "DZA", region: "Africa", subregion: "Northern Africa",
     languages: ["Arabic", "Berber", "French"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "Africa's largest country, blending Mediterranean coastlines with the vastness of the Sahara.",
+    descriptor: "As Africa's largest country, Algeria blends stunning Mediterranean coastlines with the vastness of the Sahara Desert. It offers a rich tapestry of Roman ruins, vibrant cities, and a unique North African culture.",
     dimensions: { cost: 9.3, safety: 5.5, healthcare: 4.8, visaEase: 2.2, digitalInfra: 4, climate: 5.9, english: 2.3, lgbtqSafety: 1.5, techEcosystem: 4.2, naturalEnvironment: 3.7 },
     costBreakdown: { rentUsd: 400, groceriesUsd: 180, transportUsd: 20, utilitiesUsd: 40, diningOutUsd: 100, healthInsuranceUsd: 50, totalEstimateUsd: 790 },
     cities: ["Algiers", "Oran", "Constantine"],
@@ -1375,7 +1375,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Andorra", iso2: "AD", iso3: "AND", region: "Europe", subregion: "Southern Europe",
     languages: ["Catalan", "Spanish", "French"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "A high-altitude tax haven in the Pyrenees known for safety, skiing, and retail.",
+    descriptor: "A high-altitude tax haven nestled in the Pyrenees, Andorra is renowned for its safety, world-class skiing, and duty-free retail. It provides a peaceful, mountainous sanctuary with a very high standard of living.",
     dimensions: { cost: 4.6, safety: 9.8, healthcare: 8.6, visaEase: 5.6, digitalInfra: 8.8, climate: 3.4, english: 4.9, lgbtqSafety: 8.4, techEcosystem: 6.5, naturalEnvironment: 7.7 },
     costBreakdown: { rentUsd: 1600, groceriesUsd: 400, transportUsd: 50, utilitiesUsd: 120, diningOutUsd: 350, healthInsuranceUsd: 120, totalEstimateUsd: 2640 },
     cities: ["Andorra la Vella", "Escaldes-Engordany"],
@@ -1385,7 +1385,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Angola", iso2: "AO", iso3: "AGO", region: "Africa", subregion: "Middle Africa",
     languages: ["Portuguese"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "A resource-rich nation with a rapidly developing capital and significant economic disparities.",
+    descriptor: "A resource-rich nation with a rapidly developing capital, Angola is characterised by its dramatic Atlantic coastline and significant economic disparities. It is a country in transition, offering both vast natural beauty and complex social challenges.",
     dimensions: { cost: 3.8, safety: 5.1, healthcare: 3.5, visaEase: 3.3, digitalInfra: 3.3, climate: 5.4, english: 1.5, lgbtqSafety: 5.2, techEcosystem: 4.1, naturalEnvironment: 4.5 },
     costBreakdown: { rentUsd: 2200, groceriesUsd: 450, transportUsd: 60, utilitiesUsd: 150, diningOutUsd: 300, healthInsuranceUsd: 150, totalEstimateUsd: 3310 },
     cities: ["Luanda", "Benguela", "Huambo"],
@@ -1395,7 +1395,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Antigua and Barbuda", iso2: "AG", iso3: "ATG", region: "Americas", subregion: "Caribbean",
     languages: ["English"], euMember: false, schengen: false, commonwealth: true,
-    descriptor: "A twin-island Caribbean paradise famous for its 365 beaches and yachting culture.",
+    descriptor: "A twin-island Caribbean paradise, Antigua and Barbuda is famous for its 365 beaches and a world-renowned yachting culture. It offers a relaxed island lifestyle with high-end tourism infrastructure and a warm, welcoming community.",
     dimensions: { cost: 4.1, safety: 7.8, healthcare: 6.2, visaEase: 6.6, digitalInfra: 5.2, climate: 7.8, english: 10, lgbtqSafety: 5.1, techEcosystem: 4.2, naturalEnvironment: 7.2 },
     costBreakdown: { rentUsd: 1800, groceriesUsd: 500, transportUsd: 80, utilitiesUsd: 250, diningOutUsd: 400, healthInsuranceUsd: 150, totalEstimateUsd: 3180 },
     cities: ["St. John's", "English Harbour"],
@@ -1415,7 +1415,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Austria", iso2: "AT", iso3: "AUT", region: "Europe", subregion: "Western Europe",
     languages: ["German"], euMember: true, schengen: true, commonwealth: false,
-    descriptor: "A central European powerhouse of culture, stability, and world-class alpine living.",
+    descriptor: "A central European powerhouse of culture, stability, and world-class alpine living. It offers a very high standard of living with exceptional safety, healthcare, and a deep appreciation for the arts and history.",
     dimensions: { cost: 4.8, safety: 9.4, healthcare: 9.2, visaEase: 5.2, digitalInfra: 8.3, climate: 4, english: 6.6, lgbtqSafety: 9.1, techEcosystem: 8.2, naturalEnvironment: 8.5 },
     costBreakdown: { rentUsd: 1400, groceriesUsd: 350, transportUsd: 60, utilitiesUsd: 180, diningOutUsd: 350, healthInsuranceUsd: 150, totalEstimateUsd: 2490 },
     visaPathways: [
@@ -1446,7 +1446,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Azerbaijan", iso2: "AZ", iso3: "AZE", region: "Asia", subregion: "Western Asia",
     languages: ["Azerbaijani"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "Where East meets West on the Caspian Sea, blending modern architecture with ancient history.",
+    descriptor: "Located where East meets West on the Caspian Sea, Azerbaijan blends futuristic modern architecture with a deeply ancient history. It is a resource-rich nation with a rapidly developing capital and a unique cultural identity.",
     dimensions: { cost: 8.7, safety: 5.5, healthcare: 5.2, visaEase: 5, digitalInfra: 6, climate: 5.1, english: 2.3, lgbtqSafety: 3.2, techEcosystem: 5.6, naturalEnvironment: 3 },
     costBreakdown: { rentUsd: 550, groceriesUsd: 200, transportUsd: 20, utilitiesUsd: 50, diningOutUsd: 150, healthInsuranceUsd: 40, totalEstimateUsd: 1010 },
     cities: ["Baku", "Ganja", "Sumqayit"],
@@ -1456,7 +1456,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Bahamas", iso2: "BS", iso3: "BHS", region: "Americas", subregion: "Caribbean",
     languages: ["English"], euMember: false, schengen: false, commonwealth: true,
-    descriptor: "A sprawling archipelago of white sands, tax-friendly regulations, and high-end tourism.",
+    descriptor: "A sprawling archipelago of white sands, the Bahamas is renowned for its tax-friendly regulations and high-end tourism. It offers a relaxed island lifestyle with close proximity to the North American market.",
     dimensions: { cost: 2.9, safety: 6.8, healthcare: 6.5, visaEase: 7.5, digitalInfra: 5.6, climate: 7.5, english: 10, lgbtqSafety: 5.8, techEcosystem: 4.8, naturalEnvironment: 7.7 },
     costBreakdown: { rentUsd: 2200, groceriesUsd: 600, transportUsd: 100, utilitiesUsd: 300, diningOutUsd: 500, healthInsuranceUsd: 180, totalEstimateUsd: 3880 },
     cities: ["Nassau", "Freeport"],
@@ -1476,7 +1476,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Bangladesh", iso2: "BD", iso3: "BGD", region: "Asia", subregion: "Southern Asia",
     languages: ["Bengali"], euMember: false, schengen: false, commonwealth: true,
-    descriptor: "A densely populated South Asian nation with a booming textile industry and deltaic landscapes.",
+    descriptor: "A densely populated South Asian nation, Bangladesh is known for its booming textile industry and vast deltaic landscapes. It is a country of immense resilience and rapid economic growth, set against a backdrop of rich cultural traditions.",
     dimensions: { cost: 9.4, safety: 5.8, healthcare: 4.1, visaEase: 3.7, digitalInfra: 4.2, climate: 3.8, english: 4, lgbtqSafety: 1.8, techEcosystem: 5.4, naturalEnvironment: 3.4 },
     costBreakdown: { rentUsd: 350, groceriesUsd: 180, transportUsd: 20, utilitiesUsd: 50, diningOutUsd: 100, healthInsuranceUsd: 40, totalEstimateUsd: 740 },
     cities: ["Dhaka", "Chittagong", "Sylhet"],
@@ -1506,7 +1506,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Belgium", iso2: "BE", iso3: "BEL", region: "Europe", subregion: "Western Europe",
     languages: ["Dutch", "French", "German"], euMember: true, schengen: true, commonwealth: false,
-    descriptor: "The heart of the European Union, offering a high quality of life and multilingual urban centers.",
+    descriptor: "The heart of the European Union, offering a high quality of life and multilingual urban centres.",
     dimensions: { cost: 5, safety: 8.1, healthcare: 9.1, visaEase: 3.5, digitalInfra: 8.8, climate: 3.4, english: 7.3, lgbtqSafety: 9.2, techEcosystem: 8.4, naturalEnvironment: 2.1 },
     costBreakdown: { rentUsd: 1200, groceriesUsd: 380, transportUsd: 60, utilitiesUsd: 220, diningOutUsd: 380, healthInsuranceUsd: 110, totalEstimateUsd: 2350 },
     visaPathways: [
@@ -1537,7 +1537,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Belize", iso2: "BZ", iso3: "BLZ", region: "Americas", subregion: "Central America",
     languages: ["English", "Spanish"], euMember: false, schengen: false, commonwealth: true,
-    descriptor: "A Caribbean-influenced Central American nation known for its barrier reef and laid-back lifestyle.",
+    descriptor: "A Caribbean-influenced Central American nation, Belize is world-renowned for its barrier reef and laid-back lifestyle. It is the only English-speaking country in Central America, offering a unique blend of cultures and natural wonders.",
     dimensions: { cost: 6.7, safety: 6.5, healthcare: 5.1, visaEase: 7.4, digitalInfra: 4.9, climate: 6.7, english: 10, lgbtqSafety: 6.1, techEcosystem: 3.8, naturalEnvironment: 8.5 },
     costBreakdown: { rentUsd: 800, groceriesUsd: 350, transportUsd: 40, utilitiesUsd: 150, diningOutUsd: 250, healthInsuranceUsd: 80, totalEstimateUsd: 1670 },
     cities: ["Belize City", "San Pedro", "Belmopan"],
@@ -1547,7 +1547,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Benin", iso2: "BJ", iso3: "BEN", region: "Africa", subregion: "Western Africa",
     languages: ["French"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "A West African nation with a rich cultural history and a growing coastal economy.",
+    descriptor: "A West African nation with a rich cultural history, Benin is home to the ancient Kingdom of Dahomey and a growing coastal economy. It offers a vibrant cultural scene and is a significant centre for traditional arts and history.",
     dimensions: { cost: 8.7, safety: 6.8, healthcare: 3.8, visaEase: 3.5, digitalInfra: 3.7, climate: 6.1, english: 1, lgbtqSafety: 4.8, techEcosystem: 4.5, naturalEnvironment: 3.7 },
     costBreakdown: { rentUsd: 500, groceriesUsd: 220, transportUsd: 30, utilitiesUsd: 80, diningOutUsd: 150, healthInsuranceUsd: 60, totalEstimateUsd: 1040 },
     cities: ["Cotonou", "Porto-Novo"],
@@ -1557,7 +1557,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Bhutan", iso2: "BT", iso3: "BTN", region: "Asia", subregion: "Southern Asia",
     languages: ["Dzongkha"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "The world's only carbon-negative nation, prioritizing Gross National Happiness and high-value tourism.",
+    descriptor: "The world's only carbon-negative nation, Bhutan prioritises Gross National Happiness and high-value, sustainable tourism. It offers a unique and peaceful living environment, deeply rooted in Buddhist traditions and pristine Himalayan landscapes.",
     dimensions: { cost: 8.1, safety: 9.5, healthcare: 5.8, visaEase: 1.5, digitalInfra: 5.6, climate: 3.8, english: 5.6, lgbtqSafety: 5.5, techEcosystem: 4.1, naturalEnvironment: 9.2 },
     costBreakdown: { rentUsd: 600, groceriesUsd: 250, transportUsd: 30, utilitiesUsd: 60, diningOutUsd: 180, healthInsuranceUsd: 50, totalEstimateUsd: 1170 },
     cities: ["Thimphu", "Paro", "Phuntsholing"],
@@ -1567,7 +1567,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Bolivia", iso2: "BO", iso3: "BOL", region: "Americas", subregion: "South America",
     languages: ["Spanish", "Quechua", "Aymara"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "A high-altitude nation of dramatic landscapes and some of the lowest costs in South America.",
+    descriptor: "A high-altitude nation of dramatic landscapes, Bolivia offers some of the lowest costs of living in South America. It is characterised by its rich indigenous heritage, breathtaking Andean peaks, and vibrant traditional markets.",
     dimensions: { cost: 9, safety: 6.2, healthcare: 4.5, visaEase: 6, digitalInfra: 4, climate: 4.7, english: 2.1, lgbtqSafety: 5.4, techEcosystem: 4.8, naturalEnvironment: 7.2 },
     costBreakdown: { rentUsd: 450, groceriesUsd: 180, transportUsd: 20, utilitiesUsd: 60, diningOutUsd: 120, healthInsuranceUsd: 50, totalEstimateUsd: 880 },
     cities: ["La Paz", "Santa Cruz", "Sucre"],
@@ -1577,7 +1577,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Bosnia and Herzegovina", iso2: "BA", iso3: "BIH", region: "Europe", subregion: "Southern Europe",
     languages: ["Bosnian", "Croatian", "Serbian"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "A stunningly mountainous Balkan nation where East meets West in historic Sarajevo.",
+    descriptor: "A stunningly mountainous Balkan nation, Bosnia and Herzegovina is where East meets West in the historic streets of Sarajevo. It offers an affordable cost of living, rich cultural diversity, and dramatic natural beauty.",
     dimensions: { cost: 8.9, safety: 8.2, healthcare: 5.6, visaEase: 7.3, digitalInfra: 5.6, climate: 3.8, english: 4.4, lgbtqSafety: 5.1, techEcosystem: 5.2, naturalEnvironment: 6.9 },
     costBreakdown: { rentUsd: 400, groceriesUsd: 200, transportUsd: 30, utilitiesUsd: 120, diningOutUsd: 150, healthInsuranceUsd: 50, totalEstimateUsd: 950 },
     cities: ["Sarajevo", "Mostar", "Banja Luka"],
@@ -1587,7 +1587,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Botswana", iso2: "BW", iso3: "BWA", region: "Africa", subregion: "Southern Africa",
     languages: ["English", "Tswana"], euMember: false, schengen: false, commonwealth: true,
-    descriptor: "A stable, middle-income democracy known for its extraordinary wildlife and diamond industry.",
+    descriptor: "A stable and prosperous middle-income democracy, Botswana is world-renowned for its extraordinary wildlife and thriving diamond industry. It offers one of the most stable social and political environments in Africa, set against the backdrop of the Okavango Delta.",
     dimensions: { cost: 7.4, safety: 8.4, healthcare: 5.2, visaEase: 6.1, digitalInfra: 5.6, climate: 5.1, english: 7.8, lgbtqSafety: 6.8, techEcosystem: 5.1, naturalEnvironment: 8.5 },
     costBreakdown: { rentUsd: 800, groceriesUsd: 250, transportUsd: 40, utilitiesUsd: 120, diningOutUsd: 200, healthInsuranceUsd: 80, totalEstimateUsd: 1490 },
     cities: ["Gaborone", "Francistown", "Maun"],
@@ -1597,7 +1597,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Brunei", iso2: "BN", iso3: "BRN", region: "Asia", subregion: "Southeast Asia",
     languages: ["Malay", "English"], euMember: false, schengen: false, commonwealth: true,
-    descriptor: "A small, oil-rich sultanate on the island of Borneo with zero personal income tax.",
+    descriptor: "A small and wealthy oil-rich sultanate on the island of Borneo, Brunei offers zero personal income tax and a high standard of living. It is characterised by its tranquil environment, extensive rainforests, and Islamic traditions.",
     dimensions: { cost: 7.1, safety: 5.5, healthcare: 7.8, visaEase: 1.5, digitalInfra: 7.4, climate: 3.8, english: 6.4, lgbtqSafety: 0.8, techEcosystem: 5.6, naturalEnvironment: 6.9 },
     costBreakdown: { rentUsd: 900, groceriesUsd: 300, transportUsd: 40, utilitiesUsd: 80, diningOutUsd: 200, healthInsuranceUsd: 60, totalEstimateUsd: 1580 },
     cities: ["Bandar Seri Begawan", "Kuala Belait"],
@@ -1617,7 +1617,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Burkina Faso", iso2: "BF", iso3: "BFA", region: "Africa", subregion: "Western Africa",
     languages: ["French"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "A landlocked Sahelian nation with a rich musical heritage, currently facing security challenges.",
+    descriptor: "A landlocked Sahelian nation with a rich musical heritage, Burkina Faso is currently navigating significant security challenges. It remains a country of immense cultural depth and artistic expression, particularly in cinema and traditional music.",
     dimensions: { cost: 9.2, safety: 2.5, healthcare: 3.1, visaEase: 2.7, digitalInfra: 3.3, climate: 3.4, english: 1, lgbtqSafety: 3.8, techEcosystem: 3.5, naturalEnvironment: 2 },
     costBreakdown: { rentUsd: 400, groceriesUsd: 180, transportUsd: 20, utilitiesUsd: 60, diningOutUsd: 100, healthInsuranceUsd: 40, totalEstimateUsd: 800 },
     cities: ["Ouagadougou", "Bobo-Dioulasso"],
@@ -1627,7 +1627,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Burundi", iso2: "BI", iso3: "BDI", region: "Africa", subregion: "Eastern Africa",
     languages: ["Kirundi", "French", "English"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "A small, densely populated nation in the Great Lakes region with significant economic hurdles.",
+    descriptor: "A small and densely populated nation in the Great Lakes region of Africa, Burundi faces significant economic and developmental hurdles. It is a country of rolling hills and lakeside beauty, characterised by its resilient population and rich oral traditions.",
     dimensions: { cost: 9.6, safety: 4.2, healthcare: 2.8, visaEase: 2.3, digitalInfra: 2.6, climate: 5.4, english: 1.7, lgbtqSafety: 1.2, techEcosystem: 2.8, naturalEnvironment: 5 },
     costBreakdown: { rentUsd: 300, groceriesUsd: 150, transportUsd: 15, utilitiesUsd: 40, diningOutUsd: 80, healthInsuranceUsd: 30, totalEstimateUsd: 615 },
     cities: ["Bujumbura", "Gitega"],
@@ -1647,7 +1647,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Cambodia", iso2: "KH", iso3: "KHM", region: "Asia", subregion: "Southeast Asia",
     languages: ["Khmer"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "An ancient kingdom offering remarkable value and a rapidly developing urban infrastructure.",
+    descriptor: "An ancient kingdom offering remarkable value, Cambodia features a rapidly developing urban infrastructure and a welcoming atmosphere for expats. It is a land of profound history, dominated by the majestic temples of Angkor Wat and a vibrant, young population.",
     dimensions: { cost: 9, safety: 6.8, healthcare: 4.2, visaEase: 5, digitalInfra: 5.1, climate: 4, english: 4.4, lgbtqSafety: 5.6, techEcosystem: 5.2, naturalEnvironment: 5.9 },
     costBreakdown: { rentUsd: 500, groceriesUsd: 180, transportUsd: 20, utilitiesUsd: 60, diningOutUsd: 120, healthInsuranceUsd: 50, totalEstimateUsd: 930 },
     cities: ["Phnom Penh", "Siem Reap", "Kampot"],
@@ -1657,7 +1657,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Cameroon", iso2: "CM", iso3: "CMR", region: "Africa", subregion: "Middle Africa",
     languages: ["French", "English"], euMember: false, schengen: false, commonwealth: true,
-    descriptor: "Known as 'Africa in miniature' for its diverse landscapes and cultural richness.",
+    descriptor: "Known as 'Africa in miniature' for its diverse landscapes and cultural richness, Cameroon offers a unique blend of French and English influences. It features everything from Atlantic beaches to desert plains and tropical rainforests.",
     dimensions: { cost: 8.7, safety: 4.8, healthcare: 4.1, visaEase: 2.1, digitalInfra: 3.7, climate: 5.1, english: 6.1, lgbtqSafety: 0.8, techEcosystem: 5.4, naturalEnvironment: 6.9 },
     costBreakdown: { rentUsd: 500, groceriesUsd: 220, transportUsd: 30, utilitiesUsd: 70, diningOutUsd: 150, healthInsuranceUsd: 60, totalEstimateUsd: 1030 },
     cities: ["Yaoundé", "Douala", "Buea"],
@@ -1667,7 +1667,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Central African Republic", iso2: "CF", iso3: "CAF", region: "Africa", subregion: "Middle Africa",
     languages: ["Sango", "French"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "A landlocked nation in the heart of Africa facing prolonged instability and extreme poverty.",
+    descriptor: "A landlocked nation in the heart of Africa, the Central African Republic is currently facing prolonged instability and significant social challenges. It possesses vast natural resources and biodiversity, though its infrastructure remains severely underdeveloped.",
     dimensions: { cost: 9.5, safety: 1.5, healthcare: 2.2, visaEase: 1.5, digitalInfra: 1.5, climate: 5.1, english: 1, lgbtqSafety: 3.1, techEcosystem: 1.8, naturalEnvironment: 5.9 },
     costBreakdown: { rentUsd: 350, groceriesUsd: 150, transportUsd: 15, utilitiesUsd: 50, diningOutUsd: 80, healthInsuranceUsd: 40, totalEstimateUsd: 685 },
     cities: ["Bangui", "Bimbo"],
@@ -1677,7 +1677,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Chad", iso2: "TD", iso3: "TCD", region: "Africa", subregion: "Middle Africa",
     languages: ["Arabic", "French"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "A vast Sahelian nation with dramatic desert landscapes and significant security concerns.",
+    descriptor: "A vast Sahelian nation with dramatic desert landscapes, Chad is a country of immense scale and significant security concerns. It is home to the stunning Tibesti Mountains and a diverse population of pastoralist and nomadic communities.",
     dimensions: { cost: 9.2, safety: 2.8, healthcare: 2.4, visaEase: 1.5, digitalInfra: 1.8, climate: 2.8, english: 1, lgbtqSafety: 1.2, techEcosystem: 2.1, naturalEnvironment: 3.7 },
     costBreakdown: { rentUsd: 400, groceriesUsd: 180, transportUsd: 20, utilitiesUsd: 60, diningOutUsd: 100, healthInsuranceUsd: 50, totalEstimateUsd: 810 },
     cities: ["N'Djamena", "Moundou"],
@@ -1697,7 +1697,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Congo (Brazzaville)", iso2: "CG", iso3: "COG", region: "Africa", subregion: "Middle Africa",
     languages: ["French"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "A central African nation with vast rainforests and a growing oil-based economy.",
+    descriptor: "A central African nation with vast rainforests, Congo (Brazzaville) is characterised by its significant natural resources and a growing oil-based economy. It offers a relatively stable urban environment in Brazzaville, contrasted by untouched wilderness.",
     dimensions: { cost: 7.7, safety: 5.2, healthcare: 3.2, visaEase: 2.6, digitalInfra: 3.6, climate: 5.1, english: 1, lgbtqSafety: 4.2, techEcosystem: 3.8, naturalEnvironment: 7.2 },
     costBreakdown: { rentUsd: 600, groceriesUsd: 250, transportUsd: 40, utilitiesUsd: 120, diningOutUsd: 180, healthInsuranceUsd: 80, totalEstimateUsd: 1270 },
     cities: ["Brazzaville", "Pointe-Noire"],
@@ -1707,7 +1707,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Congo (Kinshasa)", iso2: "CD", iso3: "COD", region: "Africa", subregion: "Middle Africa",
     languages: ["French"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "A resource-rich giant in the heart of Africa, facing immense logistical and security challenges.",
+    descriptor: "A resource-rich giant in the heart of Africa, the Democratic Republic of the Congo faces immense logistical and security challenges. It is a country of extraordinary potential, home to the second-largest rainforest in the world and vast mineral wealth.",
     dimensions: { cost: 7, safety: 2.4, healthcare: 2.5, visaEase: 1.7, digitalInfra: 2.7, climate: 5.1, english: 1.3, lgbtqSafety: 3.1, techEcosystem: 4.2, naturalEnvironment: 8.5 },
     costBreakdown: { rentUsd: 800, groceriesUsd: 300, transportUsd: 50, utilitiesUsd: 150, diningOutUsd: 200, healthInsuranceUsd: 100, totalEstimateUsd: 1600 },
     cities: ["Kinshasa", "Lubumbashi", "Goma"],
@@ -1727,7 +1727,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Cyprus", iso2: "CY", iso3: "CYP", region: "Europe", subregion: "Southern Europe",
     languages: ["Greek", "Turkish", "English"], euMember: true, schengen: false, commonwealth: true,
-    descriptor: "A sun-soaked Mediterranean island offering low taxes and a high quality of life.",
+    descriptor: "A sun-soaked Mediterranean island, Cyprus offers a favourable tax regime and a high quality of life for international residents. It is a stable, European Union member state with a rich history and a welcoming local culture.",
     dimensions: { cost: 5.8, safety: 8.8, healthcare: 7.6, visaEase: 7.3, digitalInfra: 6.9, climate: 8.4, english: 7.7, lgbtqSafety: 6.8, techEcosystem: 7.1, naturalEnvironment: 5 },
     costBreakdown: { rentUsd: 1200, groceriesUsd: 350, transportUsd: 50, utilitiesUsd: 150, diningOutUsd: 300, healthInsuranceUsd: 100, totalEstimateUsd: 2150 },
     cities: ["Nicosia", "Limassol", "Paphos", "Larnaca"],
@@ -1737,7 +1737,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Denmark", iso2: "DK", iso3: "DNK", region: "Europe", subregion: "Northern Europe",
     languages: ["Danish", "English"], euMember: true, schengen: true, commonwealth: false,
-    descriptor: "A world leader in social equality, sustainability, and high-trust societal living.",
+    descriptor: "A world leader in social equality and sustainability, Denmark is renowned for its high-trust society and exceptional quality of life. It offers impeccable public services, a thriving design culture, and a strong focus on work-life balance.",
     dimensions: { cost: 4.2, safety: 9.6, healthcare: 9.1, visaEase: 2.5, digitalInfra: 9.4, climate: 2.3, english: 9.1, lgbtqSafety: 9.6, techEcosystem: 8.8, naturalEnvironment: 2.7 },
     costBreakdown: { rentUsd: 1800, groceriesUsd: 450, transportUsd: 80, utilitiesUsd: 200, diningOutUsd: 500, healthInsuranceUsd: 80, totalEstimateUsd: 3110 },
     visaPathways: [
@@ -1768,7 +1768,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Djibouti", iso2: "DJ", iso3: "DJI", region: "Africa", subregion: "Eastern Africa",
     languages: ["Arabic", "French"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "A strategic hub on the Red Sea, hosting multiple international military bases.",
+    descriptor: "A strategic hub on the Red Sea, Djibouti hosts multiple international military bases and serves as a major gateway for maritime trade. It is a country of dramatic volcanic landscapes and a unique blend of African and Arab influences.",
     dimensions: { cost: 5.5, safety: 5.5, healthcare: 3.8, visaEase: 4, digitalInfra: 4.4, climate: 1.8, english: 1.7, lgbtqSafety: 4.4, techEcosystem: 3.5, naturalEnvironment: 2.1 },
     costBreakdown: { rentUsd: 1200, groceriesUsd: 400, transportUsd: 50, utilitiesUsd: 200, diningOutUsd: 250, healthInsuranceUsd: 100, totalEstimateUsd: 2200 },
     cities: ["Djibouti City", "Ali Sabieh"],
@@ -1778,7 +1778,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Dominica", iso2: "DM", iso3: "DMA", region: "Americas", subregion: "Caribbean",
     languages: ["English"], euMember: false, schengen: false, commonwealth: true,
-    descriptor: "The 'Nature Isle of the Caribbean' with lush rainforests and geothermal wonders.",
+    descriptor: "Known as the 'Nature Isle of the Caribbean', Dominica is characterised by its lush rainforests, volcanic peaks, and geothermal wonders. It offers a tranquil, eco-friendly lifestyle for those seeking a deep connection with nature and a sustainable way of living.",
     dimensions: { cost: 6.4, safety: 8.4, healthcare: 5.8, visaEase: 3.5, digitalInfra: 5.6, climate: 6.9, english: 10, lgbtqSafety: 5.4, techEcosystem: 3.8, naturalEnvironment: 9.2 },
     costBreakdown: { rentUsd: 900, groceriesUsd: 350, transportUsd: 50, utilitiesUsd: 180, diningOutUsd: 200, healthInsuranceUsd: 80, totalEstimateUsd: 1760 },
     cities: ["Roseau", "Portsmouth"],
@@ -1798,7 +1798,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Egypt", iso2: "EG", iso3: "EGY", region: "Africa", subregion: "Northern Africa",
     languages: ["Arabic"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "A transcontinental nation of ancient history, offering high value and a central global location.",
+    descriptor: "A transcontinental nation of ancient history, Egypt offers exceptional value and a central global location. It is a land of iconic monuments, vibrant cities like Cairo, and a rich cultural heritage that spans millennia.",
     dimensions: { cost: 9.2, safety: 5.5, healthcare: 5.2, visaEase: 4, digitalInfra: 5.6, climate: 6.1, english: 3.7, lgbtqSafety: 1.5, techEcosystem: 6.8, naturalEnvironment: 3 },
     costBreakdown: { rentUsd: 400, groceriesUsd: 180, transportUsd: 20, utilitiesUsd: 60, diningOutUsd: 120, healthInsuranceUsd: 50, totalEstimateUsd: 830 },
     cities: ["Cairo", "Alexandria", "Hurghada"],
@@ -1808,7 +1808,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "El Salvador", iso2: "SV", iso3: "SLV", region: "Americas", subregion: "Central America",
     languages: ["Spanish"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "The 'Land of Volcanoes', famously adopting Bitcoin as legal tender and improving security.",
+    descriptor: "Known as the 'Land of Volcanoes', El Salvador has gained international attention for adopting Bitcoin as legal tender and significantly improving its domestic security. It offers a warm climate, beautiful Pacific beaches, and a rapidly developing economy.",
     dimensions: { cost: 7.7, safety: 6.8, healthcare: 5.1, visaEase: 3.5, digitalInfra: 5.1, climate: 6.7, english: 3.3, lgbtqSafety: 4.8, techEcosystem: 6.2, naturalEnvironment: 6.9 },
     costBreakdown: { rentUsd: 700, groceriesUsd: 250, transportUsd: 30, utilitiesUsd: 100, diningOutUsd: 150, healthInsuranceUsd: 60, totalEstimateUsd: 1290 },
     cities: ["San Salvador", "El Tunco", "Santa Ana"],
@@ -1818,7 +1818,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Equatorial Guinea", iso2: "GQ", iso3: "GNQ", region: "Africa", subregion: "Middle Africa",
     languages: ["Spanish", "French", "Portuguese"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "The only Spanish-speaking nation in Africa, enriched by offshore oil reserves.",
+    descriptor: "The only Spanish-speaking nation in Africa, Equatorial Guinea has been significantly enriched by its extensive offshore oil reserves. It is a country of contrasts, featuring a modern capital on Bioko Island and vast tropical rainforests on the mainland.",
     dimensions: { cost: 5.8, safety: 4.5, healthcare: 3.5, visaEase: 1.5, digitalInfra: 3.7, climate: 5.4, english: 1.3, lgbtqSafety: 3.8, techEcosystem: 3.1, naturalEnvironment: 6.9 },
     costBreakdown: { rentUsd: 1200, groceriesUsd: 400, transportUsd: 50, utilitiesUsd: 150, diningOutUsd: 250, healthInsuranceUsd: 100, totalEstimateUsd: 2150 },
     cities: ["Malabo", "Bata"],
@@ -1848,7 +1848,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Ethiopia", iso2: "ET", iso3: "ETH", region: "Africa", subregion: "Eastern Africa",
     languages: ["Amharic"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "An ancient, landlocked giant with a fast-growing economy and diverse high-altitude landscapes.",
+    descriptor: "An ancient and landlocked giant, Ethiopia features a fast-growing economy and diverse high-altitude landscapes. It is a country of immense cultural depth, home to unique wildlife and the headquarters of the African Union.",
     dimensions: { cost: 9.2, safety: 5.4, healthcare: 3.8, visaEase: 3, digitalInfra: 4, climate: 6.7, english: 3.3, lgbtqSafety: 0.8, techEcosystem: 5.8, naturalEnvironment: 7.7 },
     costBreakdown: { rentUsd: 400, groceriesUsd: 180, transportUsd: 20, utilitiesUsd: 60, diningOutUsd: 120, healthInsuranceUsd: 50, totalEstimateUsd: 830 },
     cities: ["Addis Ababa", "Dire Dawa", "Bahir Dar"],
@@ -1858,7 +1858,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Fiji", iso2: "FJ", iso3: "FJI", region: "Oceania", subregion: "Melanesia",
     languages: ["English", "Fijian", "Fiji Hindi"], euMember: false, schengen: false, commonwealth: true,
-    descriptor: "A sprawling Pacific archipelago synonymous with tropical paradise and warm hospitality.",
+    descriptor: "A sprawling Pacific archipelago, Fiji is synonymous with tropical paradise and legendary warm hospitality. It offers a relaxed island lifestyle with stunning marine environments and a welcoming multicultural society.",
     dimensions: { cost: 7.3, safety: 7.6, healthcare: 5.4, visaEase: 4.5, digitalInfra: 5.2, climate: 6.7, english: 9.6, lgbtqSafety: 6.2, techEcosystem: 4.2, naturalEnvironment: 9.2 },
     costBreakdown: { rentUsd: 800, groceriesUsd: 300, transportUsd: 40, utilitiesUsd: 120, diningOutUsd: 180, healthInsuranceUsd: 60, totalEstimateUsd: 1500 },
     cities: ["Suva", "Nadi"],
@@ -1868,7 +1868,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Gabon", iso2: "GA", iso3: "GAB", region: "Africa", subregion: "Middle Africa",
     languages: ["French"], euMember: false, schengen: false, commonwealth: true,
-    descriptor: "One of Africa's most prosperous nations, covered largely by pristine tropical rainforest.",
+    descriptor: "One of Africa's most prosperous nations, Gabon is covered largely by pristine tropical rainforest and boasts significant oil reserves. It is a haven for biodiversity, featuring untouched Atlantic coastlines and diverse wildlife.",
     dimensions: { cost: 5.7, safety: 6.8, healthcare: 4.2, visaEase: 3.3, digitalInfra: 4.4, climate: 5.1, english: 1, lgbtqSafety: 5.8, techEcosystem: 4.1, naturalEnvironment: 9.2 },
     costBreakdown: { rentUsd: 1200, groceriesUsd: 400, transportUsd: 50, utilitiesUsd: 180, diningOutUsd: 250, healthInsuranceUsd: 100, totalEstimateUsd: 2180 },
     cities: ["Libreville", "Port-Gentil"],
@@ -1898,7 +1898,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Grenada", iso2: "GD", iso3: "GRD", region: "Americas", subregion: "Caribbean",
     languages: ["English"], euMember: false, schengen: false, commonwealth: true,
-    descriptor: "The 'Spice Isle', offering a sophisticated lifestyle, world-class sailing, and a top-tier medical school.",
+    descriptor: "Known as the 'Spice Isle', Grenada offers a sophisticated lifestyle, world-class sailing, and a top-tier medical school. It is a lush, volcanic island with a friendly community and a relatively high standard of living.",
     dimensions: { cost: 5.3, safety: 8.6, healthcare: 6.4, visaEase: 7.4, digitalInfra: 6.4, climate: 7.5, english: 10, lgbtqSafety: 2.0, techEcosystem: 4.5, naturalEnvironment: 8.5 },
     costBreakdown: { rentUsd: 1200, groceriesUsd: 400, transportUsd: 50, utilitiesUsd: 200, diningOutUsd: 300, healthInsuranceUsd: 100, totalEstimateUsd: 2250 },
     cities: ["St. George's", "Grand Anse"],
@@ -1908,7 +1908,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Guatemala", iso2: "GT", iso3: "GTM", region: "Americas", subregion: "Central America",
     languages: ["Spanish"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "The heart of the Maya world, characterized by volcanoes, colonial towns, and exceptional value.",
+    descriptor: "The heart of the Maya world, Guatemala is characterised by its dramatic volcanoes, beautiful colonial towns, and exceptional value. It offers a rich cultural experience and stunning natural beauty at a very accessible cost.",
     dimensions: { cost: 8.3, safety: 5.4, healthcare: 5.2, visaEase: 3.5, digitalInfra: 4.9, climate: 7.5, english: 3.3, lgbtqSafety: 4.4, techEcosystem: 5.4, naturalEnvironment: 7.7 },
     costBreakdown: { rentUsd: 600, groceriesUsd: 220, transportUsd: 25, utilitiesUsd: 90, diningOutUsd: 140, healthInsuranceUsd: 60, totalEstimateUsd: 1135 },
     cities: ["Guatemala City", "Antigua", "Quetzaltenango"],
@@ -1918,7 +1918,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Guinea", iso2: "GN", iso3: "GIN", region: "Africa", subregion: "Western Africa",
     languages: ["French"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "A West African nation with immense mineral wealth and diverse cultural traditions.",
+    descriptor: "A West African nation with immense mineral wealth, Guinea is characterised by its diverse cultural traditions and rugged landscapes. It is a country of significant potential, featuring the source of several major West African rivers.",
     dimensions: { cost: 8.7, safety: 4.5, healthcare: 3.1, visaEase: 2.3, digitalInfra: 3.3, climate: 5.1, english: 1, lgbtqSafety: 0.8, techEcosystem: 3.8, naturalEnvironment: 7.2 },
     costBreakdown: { rentUsd: 500, groceriesUsd: 220, transportUsd: 30, utilitiesUsd: 80, diningOutUsd: 150, healthInsuranceUsd: 60, totalEstimateUsd: 1040 },
     cities: ["Conakry", "Nzérékoré"],
@@ -1928,7 +1928,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Guinea-Bissau", iso2: "GW", iso3: "GNB", region: "Africa", subregion: "Western Africa",
     languages: ["Portuguese"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "A small West African nation known for its archipelago and Portuguese colonial history.",
+    descriptor: "A small West African nation, Guinea-Bissau is known for its stunning Bijagós Archipelago and its rich Portuguese colonial history. It offers a unique cultural blend and a tranquil, rural lifestyle along the Atlantic coast.",
     dimensions: { cost: 9.3, safety: 5.4, healthcare: 2.8, visaEase: 2.6, digitalInfra: 2.6, climate: 6.1, english: 1, lgbtqSafety: 4.8, techEcosystem: 2.5, naturalEnvironment: 7.7 },
     costBreakdown: { rentUsd: 400, groceriesUsd: 180, transportUsd: 20, utilitiesUsd: 60, diningOutUsd: 100, healthInsuranceUsd: 40, totalEstimateUsd: 800 },
     cities: ["Bissau", "Bafatá"],
@@ -1938,7 +1938,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Guyana", iso2: "GY", iso3: "GUY", region: "Americas", subregion: "South America",
     languages: ["English"], euMember: false, schengen: false, commonwealth: true,
-    descriptor: "An English-speaking South American nation with a booming oil economy and vast rainforests.",
+    descriptor: "An English-speaking South American nation, Guyana is currently experiencing a booming oil economy and rapid development. It remains largely covered by vast, untouched rainforests and is characterised by its unique Caribbean cultural influences.",
     dimensions: { cost: 7.1, safety: 5.8, healthcare: 4.8, visaEase: 6.1, digitalInfra: 4.9, climate: 6.1, english: 10, lgbtqSafety: 3.2, techEcosystem: 4.8, naturalEnvironment: 9.2 },
     costBreakdown: { rentUsd: 800, groceriesUsd: 300, transportUsd: 40, utilitiesUsd: 120, diningOutUsd: 200, healthInsuranceUsd: 70, totalEstimateUsd: 1530 },
     cities: ["Georgetown", "Linden", "New Amsterdam"],
@@ -1968,7 +1968,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Iceland", iso2: "IS", iso3: "ISL", region: "Europe", subregion: "Northern Europe",
     languages: ["Icelandic"], euMember: false, schengen: true, commonwealth: false,
-    descriptor: "The world's safest nation—a land of dramatic volcanic landscapes and exceptional social equality.",
+    descriptor: "The world's safest nation, Iceland is a land of dramatic volcanic landscapes, geothermal wonders, and exceptional social equality. It offers a very high standard of living, impeccable public services, and a unique, close-knit community.",
     dimensions: { cost: 3, safety: 9.8, healthcare: 9.2, visaEase: 2.5, digitalInfra: 9.3, climate: 1.8, english: 8.8, lgbtqSafety: 9.8, techEcosystem: 7.8, naturalEnvironment: 9.6 },
     costBreakdown: { rentUsd: 2300, groceriesUsd: 550, transportUsd: 100, utilitiesUsd: 150, diningOutUsd: 450, healthInsuranceUsd: 120, totalEstimateUsd: 3670 },
     cities: ["Reykjavik", "Akureyri"],
@@ -1978,7 +1978,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "India", iso2: "IN", iso3: "IND", region: "Asia", subregion: "Southern Asia",
     languages: ["Hindi", "English"], euMember: false, schengen: false, commonwealth: true,
-    descriptor: "A global tech powerhouse offering incredible diversity and unmatched value for the adventurous professional.",
+    descriptor: "A global tech powerhouse, India offers incredible cultural diversity and unmatched value for the adventurous professional. It is a land of rapid economic growth, home to ultra-modern IT hubs and ancient historical monuments.",
     dimensions: { cost: 9, safety: 5.8, healthcare: 5.5, visaEase: 4.9, digitalInfra: 6.1, climate: 4.2, english: 6.5, lgbtqSafety: 4.8, techEcosystem: 8.5, naturalEnvironment: 3.7 },
     costBreakdown: { rentUsd: 450, groceriesUsd: 180, transportUsd: 40, utilitiesUsd: 70, diningOutUsd: 130, healthInsuranceUsd: 60, totalEstimateUsd: 930 },
     visaPathways: [
@@ -2015,7 +2015,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Iran", iso2: "IR", iso3: "IRN", region: "Asia", subregion: "Southern Asia",
     languages: ["Persian"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "A cradle of civilization with immense cultural depth, currently restricted by complex geopolitical constraints.",
+    descriptor: "An ancient civilisation with immense cultural depth, Iran is characterised by its stunning Islamic architecture, vast deserts, and hospitable people. It is a country of significant historical importance, currently navigating complex geopolitical and economic constraints.",
     dimensions: { cost: 9.4, safety: 4.5, healthcare: 6.8, visaEase: 1.5, digitalInfra: 3.7, climate: 4.2, english: 2.1, lgbtqSafety: 0.5, techEcosystem: 6.5, naturalEnvironment: 4.5 },
     costBreakdown: { rentUsd: 400, groceriesUsd: 140, transportUsd: 20, utilitiesUsd: 45, diningOutUsd: 110, healthInsuranceUsd: 45, totalEstimateUsd: 760 },
     cities: ["Tehran", "Isfahan", "Shiraz"],
@@ -2035,7 +2035,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Ireland", iso2: "IE", iso3: "IRL", region: "Europe", subregion: "Northern Europe",
     languages: ["English", "Irish"], euMember: true, schengen: false, commonwealth: false,
-    descriptor: "Europe's tech gateway—a friendly, English-speaking nation with exceptional corporate connectivity.",
+    descriptor: "Europe's tech gateway, Ireland is a friendly and prosperous English-speaking nation with exceptional corporate connectivity. It offers a very high quality of life, world-class education, and a strong sense of community and heritage.",
     dimensions: { cost: 3.5, safety: 8.8, healthcare: 7.5, visaEase: 2.5, digitalInfra: 8.3, climate: 2.7, english: 10, lgbtqSafety: 9.2, techEcosystem: 8.2, naturalEnvironment: 5.9 },
     costBreakdown: { rentUsd: 2100, groceriesUsd: 450, transportUsd: 90, utilitiesUsd: 180, diningOutUsd: 400, healthInsuranceUsd: 120, totalEstimateUsd: 3340 },
     visaPathways: [
@@ -2103,7 +2103,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Ivory Coast", iso2: "CI", iso3: "CIV", region: "Africa", subregion: "Western Africa",
     languages: ["French"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "Francophone West Africa's economic engine, featuring a rapidly developing infrastructure and vibrant urban culture.",
+    descriptor: "Francophone West Africa's economic engine, the Ivory Coast features a rapidly developing infrastructure and vibrant urban culture in Abidjan. It offers a unique blend of tropical beauty and modern growth, serving as a significant regional hub for trade and technology.",
     dimensions: { cost: 7.9, safety: 5.2, healthcare: 3.8, visaEase: 4.1, digitalInfra: 4.1, climate: 3.8, english: 1, lgbtqSafety: 3.5, techEcosystem: 4.8, naturalEnvironment: 4.1 },
     costBreakdown: { rentUsd: 650, groceriesUsd: 220, transportUsd: 40, utilitiesUsd: 100, diningOutUsd: 150, healthInsuranceUsd: 80, totalEstimateUsd: 1240 },
     cities: ["Abidjan", "Yamoussoukro"],
@@ -2133,7 +2133,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Kazakhstan", iso2: "KZ", iso3: "KAZ", region: "Asia", subregion: "Central Asia",
     languages: ["Kazakh", "Russian"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "Central Asia's powerhouse—a vast, resource-rich nation rapidly modernizing its digital and urban infrastructure.",
+    descriptor: "Central Asia's economic powerhouse, Kazakhstan is a vast and resource-rich nation that is rapidly modernising its digital and urban infrastructure. It offers a unique blend of nomadic traditions and futuristic cities like Astana.",
     dimensions: { cost: 8.5, safety: 5.5, healthcare: 5.5, visaEase: 7.5, digitalInfra: 6.9, climate: 2, english: 1.8, lgbtqSafety: 4.5, techEcosystem: 6.5, naturalEnvironment: 5.2 },
     costBreakdown: { rentUsd: 600, groceriesUsd: 200, transportUsd: 30, utilitiesUsd: 70, diningOutUsd: 140, healthInsuranceUsd: 50, totalEstimateUsd: 1090 },
     cities: ["Almaty", "Astana", "Shymkent"],
@@ -2163,7 +2163,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Kuwait", iso2: "KW", iso3: "KWT", region: "Asia", subregion: "Western Asia",
     languages: ["Arabic", "English"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "A wealthy Gulf nation offering a blend of traditional culture and high-end modern amenities.",
+    descriptor: "A wealthy Gulf nation, Kuwait offers a sophisticated blend of traditional Arab culture and high-end modern amenities. It is a major global oil producer with a very high standard of living and ultra-modern infrastructure.",
     dimensions: { cost: 4.9, safety: 5.5, healthcare: 7.5, visaEase: 3, digitalInfra: 8.3, climate: 1.5, english: 5.6, lgbtqSafety: 1.8, techEcosystem: 6.2, naturalEnvironment: 2 },
     costBreakdown: { rentUsd: 1500, groceriesUsd: 400, transportUsd: 50, utilitiesUsd: 80, diningOutUsd: 300, healthInsuranceUsd: 100, totalEstimateUsd: 2430 },
     cities: ["Kuwait City", "Salmiya"],
@@ -2183,7 +2183,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Laos", iso2: "LA", iso3: "LAO", region: "Asia", subregion: "Southeast Asia",
     languages: ["Lao"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "A landlocked nation of serene landscapes and a relaxed pace of life, slowly modernizing its core infrastructure.",
+    descriptor: "A landlocked nation of serene landscapes and a relaxed pace of life, slowly modernising its core infrastructure.",
     dimensions: { cost: 9, safety: 5.5, healthcare: 3.2, visaEase: 4.5, digitalInfra: 3.7, climate: 4.7, english: 2.1, lgbtqSafety: 4.5, techEcosystem: 3.2, naturalEnvironment: 6.6 },
     costBreakdown: { rentUsd: 450, groceriesUsd: 180, transportUsd: 30, utilitiesUsd: 60, diningOutUsd: 120, healthInsuranceUsd: 40, totalEstimateUsd: 880 },
     cities: ["Vientiane", "Luang Prabang"],
@@ -2193,7 +2193,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Latvia", iso2: "LV", iso3: "LVA", region: "Europe", subregion: "Northern Europe",
     languages: ["Latvian"], euMember: true, schengen: true, commonwealth: false,
-    descriptor: "A Baltic gem offering high-speed internet, a thriving startup scene, and beautiful forest landscapes.",
+    descriptor: "A Baltic gem, Latvia offers exceptionally high-speed internet, a thriving startup scene, and beautiful forest landscapes. It is a stable, European Union member state with a rich cultural heritage and a high quality of life.",
     dimensions: { cost: 7.2, safety: 8.5, healthcare: 7.0, visaEase: 3.5, digitalInfra: 8.5, climate: 2.3, english: 5.6, lgbtqSafety: 6.5, techEcosystem: 7.5, naturalEnvironment: 4.5 },
     costBreakdown: { rentUsd: 750, groceriesUsd: 280, transportUsd: 40, utilitiesUsd: 180, diningOutUsd: 220, healthInsuranceUsd: 60, totalEstimateUsd: 1530 },
     cities: ["Riga", "Jurmala", "Liepaja"],
@@ -2203,7 +2203,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Lebanon", iso2: "LB", iso3: "LBN", region: "Asia", subregion: "Western Asia",
     languages: ["Arabic", "French", "English"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "A culturally rich Mediterranean crossroads currently navigating a severe economic and political crisis.",
+    descriptor: "A culturally rich Mediterranean crossroads, Lebanon is currently navigating a severe economic and political crisis. It remains a country of extraordinary resilience, famous for its diverse heritage, world-class cuisine, and vibrant social scene.",
     dimensions: { cost: 7.8, safety: 4.2, healthcare: 5.5, visaEase: 3, digitalInfra: 2.5, climate: 7.2, english: 6.5, lgbtqSafety: 3.0, techEcosystem: 5.2, naturalEnvironment: 3.7 },
     costBreakdown: { rentUsd: 600, groceriesUsd: 250, transportUsd: 40, utilitiesUsd: 120, diningOutUsd: 180, healthInsuranceUsd: 70, totalEstimateUsd: 1260 },
     cities: ["Beirut", "Byblos", "Tripoli"],
@@ -2233,7 +2233,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Libya", iso2: "LY", iso3: "LBY", region: "Africa", subregion: "Northern Africa",
     languages: ["Arabic"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "A resource-rich Mediterranean nation facing persistent stability and security challenges during its transition.",
+    descriptor: "A resource-rich Mediterranean nation, Libya is currently facing persistent stability and security challenges during its political transition. It possesses an extraordinary coastline and ancient Roman ruins, though travel remains highly restricted due to the current environment.",
     dimensions: { cost: 9.3, safety: 1.8, healthcare: 2.5, visaEase: 0.5, digitalInfra: 1.6, climate: 5.6, english: 1.3, lgbtqSafety: 1.0, techEcosystem: 2.5, naturalEnvironment: 2 },
     costBreakdown: { rentUsd: 400, groceriesUsd: 150, transportUsd: 30, utilitiesUsd: 60, diningOutUsd: 100, healthInsuranceUsd: 50, totalEstimateUsd: 790 },
     cities: ["Tripoli", "Benghazi"],
@@ -2243,7 +2243,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Liechtenstein", iso2: "LI", iso3: "LIE", region: "Europe", subregion: "Western Europe",
     languages: ["German"], euMember: false, schengen: true, commonwealth: false,
-    descriptor: "A tiny, ultra-wealthy alpine principality offering exceptional safety, stability, and high-tech manufacturing.",
+    descriptor: "A tiny and ultra-wealthy alpine principality, Liechtenstein offers exceptional safety, political stability, and a highly advanced high-tech manufacturing sector. It provides a unique living experience nestled between Switzerland and Austria with stunning mountain vistas.",
     dimensions: { cost: 2.4, safety: 9.6, healthcare: 9.4, visaEase: 1.5, digitalInfra: 8.8, climate: 4.2, english: 5.2, lgbtqSafety: 8.8, techEcosystem: 8.2, naturalEnvironment: 8.1 },
     costBreakdown: { rentUsd: 2800, groceriesUsd: 650, transportUsd: 80, utilitiesUsd: 250, diningOutUsd: 600, healthInsuranceUsd: 350, totalEstimateUsd: 4730 },
     cities: ["Vaduz", "Schaan"],
@@ -2273,7 +2273,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Madagascar", iso2: "MG", iso3: "MDG", region: "Africa", subregion: "Eastern Africa",
     languages: ["Malagasy", "French"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "A biodiversity hotspot with unique flora and fauna, offering a rugged and adventurous lifestyle.",
+    descriptor: "A global biodiversity hotspot with unique flora and fauna, Madagascar offers a rugged and adventurous lifestyle for international residents. It is the world's fourth-largest island, characterised by its extraordinary landscapes and unique cultural blend.",
     dimensions: { cost: 9.8, safety: 5.5, healthcare: 3.2, visaEase: 3.5, digitalInfra: 2.7, climate: 5.6, english: 2.1, lgbtqSafety: 4.0, techEcosystem: 3.2, naturalEnvironment: 8.5 },
     costBreakdown: { rentUsd: 250, groceriesUsd: 150, transportUsd: 20, utilitiesUsd: 50, diningOutUsd: 80, healthInsuranceUsd: 40, totalEstimateUsd: 590 },
     cities: ["Antananarivo", "Nosy Be", "Toamasina"],
@@ -2293,7 +2293,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Maldives", iso2: "MV", iso3: "MDV", region: "Asia", subregion: "Southern Asia",
     languages: ["Dhivehi"], euMember: false, schengen: false, commonwealth: true,
-    descriptor: "An archipelago of coral islands offering unparalleled marine beauty and a unique island lifestyle.",
+    descriptor: "An archipelago of stunning coral islands, the Maldives offers unparalleled marine beauty and a unique luxury island lifestyle. It is a world-renowned destination for diving and water sports, committed to environmental preservation.",
     dimensions: { cost: 5.1, safety: 8.2, healthcare: 5.4, visaEase: 2, digitalInfra: 5.2, climate: 7.2, english: 5.6, lgbtqSafety: 1.2, techEcosystem: 4.5, naturalEnvironment: 9.2 },
     costBreakdown: { rentUsd: 1200, groceriesUsd: 400, transportUsd: 50, utilitiesUsd: 150, diningOutUsd: 400, healthInsuranceUsd: 100, totalEstimateUsd: 2300 },
     cities: ["Malé", "Hulhumalé", "Maafushi"],
@@ -2313,7 +2313,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Marshall Islands", iso2: "MH", iso3: "MHL", region: "Oceania", subregion: "Micronesia",
     languages: ["Marshallese", "English"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "A sprawling chain of volcanic islands and coral atolls in the central Pacific Ocean.",
+    descriptor: "A sprawling chain of volcanic islands and coral atolls in the central Pacific Ocean, the Marshall Islands are renowned for their stunning marine life and unique cultural heritage. It offers a remote island lifestyle with deep ties to the ocean.",
     dimensions: { cost: 5.7, safety: 8.5, healthcare: 4.2, visaEase: 2.5, digitalInfra: 3.7, climate: 6.1, english: 7.8, lgbtqSafety: 5.3, techEcosystem: 3.5, naturalEnvironment: 7.2 },
     costBreakdown: { rentUsd: 1000, groceriesUsd: 500, transportUsd: 60, utilitiesUsd: 200, diningOutUsd: 300, healthInsuranceUsd: 120, totalEstimateUsd: 2180 },
     cities: ["Majuro", "Ebeye"],
@@ -2323,7 +2323,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Mauritania", iso2: "MR", iso3: "MRT", region: "Africa", subregion: "Western Africa",
     languages: ["Arabic", "French"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "A bridge between Arab North Africa and Sub-Saharan Africa, dominated by the Sahara Desert.",
+    descriptor: "A bridge between Arab North Africa and Sub-Saharan Africa, Mauritania is a vast nation largely dominated by the Sahara Desert. It features a unique cultural blend and a stunning Atlantic coastline, though its infrastructure remains relatively underdeveloped.",
     dimensions: { cost: 8.8, safety: 4.8, healthcare: 3.0, visaEase: 2.7, digitalInfra: 2.3, climate: 1.8, english: 1.8, lgbtqSafety: 0.5, techEcosystem: 3.0, naturalEnvironment: 2 },
     costBreakdown: { rentUsd: 450, groceriesUsd: 220, transportUsd: 40, utilitiesUsd: 90, diningOutUsd: 120, healthInsuranceUsd: 60, totalEstimateUsd: 980 },
     cities: ["Nouakchott", "Nouadhibou"],
@@ -2363,7 +2363,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Monaco", iso2: "MC", iso3: "MCO", region: "Europe", subregion: "Southern Europe",
     languages: ["French"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "A sovereign city-state on the French Riviera, synonymous with wealth, safety, and luxury.",
+    descriptor: "A sovereign city-state on the French Riviera, Monaco is synonymous with extraordinary wealth, exceptional safety, and a luxury lifestyle. It is one of the world's most exclusive destinations, offering a unique Mediterranean living experience with no personal income tax.",
     dimensions: { cost: 1, safety: 9.8, healthcare: 9.5, visaEase: 3.7, digitalInfra: 9.3, climate: 7.8, english: 6.9, lgbtqSafety: 6.5, techEcosystem: 8.5, naturalEnvironment: 3.1 },
     costBreakdown: { rentUsd: 7000, groceriesUsd: 1200, transportUsd: 150, utilitiesUsd: 400, diningOutUsd: 1500, healthInsuranceUsd: 500, totalEstimateUsd: 10750 },
     cities: ["Monaco City", "Monte Carlo"],
@@ -2403,7 +2403,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Namibia", iso2: "NA", iso3: "NAM", region: "Africa", subregion: "Southern Africa",
     languages: ["English"], euMember: false, schengen: false, commonwealth: true,
-    descriptor: "A land of dramatic desert landscapes, wildlife, and a remarkably stable social environment.",
+    descriptor: "A land of dramatic desert landscapes and extraordinary wildlife, Namibia offers a remarkably stable social and political environment. It is one of the least densely populated countries on Earth, providing a unique sense of space and tranquility.",
     dimensions: { cost: 6.8, safety: 7.8, healthcare: 5.5, visaEase: 7, digitalInfra: 5.2, climate: 6.7, english: 8.3, lgbtqSafety: 5.8, techEcosystem: 4.5, naturalEnvironment: 9.2 },
     costBreakdown: { rentUsd: 850, groceriesUsd: 320, transportUsd: 50, utilitiesUsd: 130, diningOutUsd: 220, healthInsuranceUsd: 80, totalEstimateUsd: 1650 },
     cities: ["Windhoek", "Swakopmund", "Walvis Bay"],
@@ -2413,7 +2413,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Nauru", iso2: "NR", iso3: "NRU", region: "Oceania", subregion: "Micronesia",
     languages: ["Nauruan", "English"], euMember: false, schengen: false, commonwealth: true,
-    descriptor: "One of the world's smallest nations, a single coral island in the South Pacific.",
+    descriptor: "One of the world's smallest nations, Nauru is a single coral island in the South Pacific with a unique history and phosphate-rich interior. It offers a remote island lifestyle, though it faces significant economic and environmental challenges.",
     dimensions: { cost: 5.6, safety: 7.5, healthcare: 3.5, visaEase: 2.1, digitalInfra: 2.7, climate: 5.6, english: 7.8, lgbtqSafety: 5.6, techEcosystem: 2.0, naturalEnvironment: 2 },
     costBreakdown: { rentUsd: 900, groceriesUsd: 600, transportUsd: 40, utilitiesUsd: 250, diningOutUsd: 250, healthInsuranceUsd: 150, totalEstimateUsd: 2190 },
     cities: ["Yaren", "Denigomodu"],
@@ -2433,7 +2433,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Nicaragua", iso2: "NI", iso3: "NIC", region: "Americas", subregion: "Central America",
     languages: ["Spanish"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "The land of lakes and volcanoes, offering extreme affordability and natural beauty.",
+    descriptor: "Known as the land of lakes and volcanoes, Nicaragua offers extreme affordability and stunning natural beauty for international residents. It features a unique colonial heritage and a warm, welcoming environment despite its current political complexities.",
     dimensions: { cost: 8.8, safety: 5.5, healthcare: 4.5, visaEase: 4, digitalInfra: 4.4, climate: 6.1, english: 2.7, lgbtqSafety: 5.5, techEcosystem: 4.0, naturalEnvironment: 7.2 },
     costBreakdown: { rentUsd: 450, groceriesUsd: 220, transportUsd: 30, utilitiesUsd: 90, diningOutUsd: 150, healthInsuranceUsd: 50, totalEstimateUsd: 990 },
     cities: ["Managua", "Granada", "San Juan del Sur"],
@@ -2463,7 +2463,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "North Korea", iso2: "KP", iso3: "PRK", region: "Asia", subregion: "Eastern Asia",
     languages: ["Korean"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "The most isolated nation on Earth, highly centralized and strictly controlled.",
+    descriptor: "The most isolated nation on Earth, North Korea is a highly centralized and strictly controlled state. It offers a unique and extremely restricted environment, with limited contact with the outside world and significant travel warnings.",
     dimensions: { cost: 9.8, safety: 3.5, healthcare: 3.5, visaEase: 0.5, digitalInfra: 1.5, climate: 3, english: 1, lgbtqSafety: 1, techEcosystem: 1.5, naturalEnvironment: 3.1 },
     costBreakdown: { rentUsd: 300, groceriesUsd: 150, transportUsd: 10, utilitiesUsd: 30, diningOutUsd: 50, healthInsuranceUsd: 20, totalEstimateUsd: 560 },
     cities: ["Pyongyang", "Kaesong"],
@@ -2504,7 +2504,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Oman", iso2: "OM", iso3: "OMN", region: "Asia", subregion: "Western Asia",
     languages: ["Arabic"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "A peaceful and welcoming Sultanate with a rich history and dramatic landscapes.",
+    descriptor: "A peaceful and welcoming Sultanate, Oman is renowned for its rich history, traditional architecture, and dramatic landscapes. It offers a very high standard of living, exceptional safety, and a unique, authentic Arab experience.",
     dimensions: { cost: 6, safety: 9.4, healthcare: 7.5, visaEase: 3, digitalInfra: 7.4, climate: 2.3, english: 5.2, lgbtqSafety: 2.5, techEcosystem: 6.2, naturalEnvironment: 5.2 },
     costBreakdown: { rentUsd: 1100, groceriesUsd: 350, transportUsd: 70, utilitiesUsd: 130, diningOutUsd: 300, healthInsuranceUsd: 100, totalEstimateUsd: 2050 },
     cities: ["Muscat", "Salalah", "Sohar"],
@@ -2514,7 +2514,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Pakistan", iso2: "PK", iso3: "PAK", region: "Asia", subregion: "Southern Asia",
     languages: ["Urdu", "English"], euMember: false, schengen: false, commonwealth: true,
-    descriptor: "A diverse nation with ancient history, towering peaks, and a fast-growing tech sector.",
+    descriptor: "A diverse nation with an ancient history and towering Himalayan peaks, Pakistan features a fast-growing tech sector and legendary hospitality. It offers a very low cost of living and a rich tapestry of cultural traditions and natural beauty.",
     dimensions: { cost: 8.9, safety: 4.5, healthcare: 4.8, visaEase: 4.4, digitalInfra: 4.9, climate: 4.2, english: 7.2, lgbtqSafety: 1.8, techEcosystem: 6.5, naturalEnvironment: 8.1 },
     costBreakdown: { rentUsd: 400, groceriesUsd: 220, transportUsd: 40, utilitiesUsd: 100, diningOutUsd: 150, healthInsuranceUsd: 60, totalEstimateUsd: 970 },
     cities: ["Karachi", "Lahore", "Islamabad"],
@@ -2524,7 +2524,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Palau", iso2: "PW", iso3: "PLW", region: "Oceania", subregion: "Micronesia",
     languages: ["Palauan", "English"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "An island nation famous for its pristine marine environments and Jellyfish Lake.",
+    descriptor: "An island nation famous for its pristine marine environments and the unique Jellyfish Lake, Palau is a global leader in marine conservation. It offers a remote, tropical island lifestyle with world-class diving and a strong commitment to environmental sustainability.",
     dimensions: { cost: 5.1, safety: 9.0, healthcare: 4.5, visaEase: 3, digitalInfra: 4.1, climate: 6.7, english: 8.3, lgbtqSafety: 5.7, techEcosystem: 3.5, naturalEnvironment: 9.2 },
     costBreakdown: { rentUsd: 1000, groceriesUsd: 550, transportUsd: 60, utilitiesUsd: 220, diningOutUsd: 350, healthInsuranceUsd: 150, totalEstimateUsd: 2330 },
     cities: ["Ngerulmud", "Koror"],
@@ -2534,7 +2534,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Palestine", iso2: "PS", iso3: "PSE", region: "Asia", subregion: "Western Asia",
     languages: ["Arabic"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "A region with profound historical and religious significance, currently facing complex geopolitical challenges.",
+    descriptor: "A region with profound historical and religious significance, Palestine is currently navigating complex and deeply-rooted geopolitical challenges. It remains a land of extraordinary cultural depth and resilience, home to some of the world's most significant historical sites.",
     dimensions: { cost: 8, safety: 3.0, healthcare: 4.2, visaEase: 1.5, digitalInfra: 4.1, climate: 5.6, english: 3.3, lgbtqSafety: 2.2, techEcosystem: 4.5, naturalEnvironment: 3.7 },
     costBreakdown: { rentUsd: 550, groceriesUsd: 280, transportUsd: 40, utilitiesUsd: 110, diningOutUsd: 180, healthInsuranceUsd: 60, totalEstimateUsd: 1220 },
     cities: ["Ramallah", "Gaza City", "Bethlehem"],
@@ -2554,7 +2554,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Paraguay", iso2: "PY", iso3: "PRY", region: "Americas", subregion: "South America",
     languages: ["Spanish", "Guarani"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "A tranquil South American heartland offering exceptional value and a growing digital footprint.",
+    descriptor: "A tranquil South American heartland, Paraguay offers exceptional value and a growing digital footprint for international residents. It is known for its relaxed pace of life, friendly local culture, and a very accessible residency pathway.",
     dimensions: { cost: 7.9, safety: 6.4, healthcare: 5.2, visaEase: 8, digitalInfra: 4.4, climate: 5.4, english: 2.3, lgbtqSafety: 4.2, techEcosystem: 5.1, naturalEnvironment: 3.7 },
     costBreakdown: { rentUsd: 650, groceriesUsd: 220, transportUsd: 35, utilitiesUsd: 70, diningOutUsd: 180, healthInsuranceUsd: 80, totalEstimateUsd: 1235 },
     cities: ["Asunción", "Ciudad del Este", "Encarnación"],
@@ -2564,7 +2564,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Qatar", iso2: "QA", iso3: "QAT", region: "Asia", subregion: "Western Asia",
     languages: ["Arabic", "English"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "A hyper-modern Gulf state blending traditional culture with ambitious technological investment.",
+    descriptor: "A hyper-modern Gulf state, Qatar blends traditional culture with ambitious technological investment and world-class infrastructure. It offers a very high standard of living, exceptional safety, and a thriving economy for international professionals.",
     dimensions: { cost: 2.8, safety: 5.5, healthcare: 8.4, visaEase: 2.5, digitalInfra: 9.4, climate: 1.5, english: 6.4, lgbtqSafety: 1.2, techEcosystem: 7.8, naturalEnvironment: 2 },
     costBreakdown: { rentUsd: 2400, groceriesUsd: 500, transportUsd: 60, utilitiesUsd: 280, diningOutUsd: 550, healthInsuranceUsd: 130, totalEstimateUsd: 3920 },
     cities: ["Doha", "Al Wakrah", "Lusail"],
@@ -2584,7 +2584,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Rwanda", iso2: "RW", iso3: "RWA", region: "Africa", subregion: "Eastern Africa",
     languages: ["Kinyarwanda", "English", "French", "Swahili"], euMember: false, schengen: false, commonwealth: true,
-    descriptor: "The 'Land of a Thousand Hills'—a model of African stability and digital-first governance.",
+    descriptor: "Known as the 'Land of a Thousand Hills', Rwanda is a model of African stability and digital-first governance. It offers an exceptionally clean and safe urban environment in Kigali, paired with a rapidly growing economy and world-class conservation efforts.",
     dimensions: { cost: 7.3, safety: 8.8, healthcare: 5.4, visaEase: 5, digitalInfra: 5.6, climate: 7.2, english: 5.6, lgbtqSafety: 4.8, techEcosystem: 6.5, naturalEnvironment: 7.2 },
     costBreakdown: { rentUsd: 850, groceriesUsd: 280, transportUsd: 30, utilitiesUsd: 90, diningOutUsd: 200, healthInsuranceUsd: 60, totalEstimateUsd: 1510 },
     cities: ["Kigali", "Gisenyi", "Butare"],
@@ -2594,7 +2594,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Saint Kitts and Nevis", iso2: "KN", iso3: "KNA", region: "Americas", subregion: "Caribbean",
     languages: ["English"], euMember: false, schengen: false, commonwealth: true,
-    descriptor: "A tranquil Caribbean twin-island nation with a burgeoning tech-for-citizenship pathway.",
+    descriptor: "A twin-island Caribbean nation, Saint Kitts and Nevis is famous for its cloud-shrouded mountains and pristine white sand beaches. It offers a relaxed island lifestyle with a well-established citizenship-by-investment program and a friendly community.",
     dimensions: { cost: 4, safety: 7.8, healthcare: 5.8, visaEase: 3.5, digitalInfra: 5.1, climate: 7.8, english: 10, lgbtqSafety: 4.6, techEcosystem: 4.8, naturalEnvironment: 8.1 },
     costBreakdown: { rentUsd: 1800, groceriesUsd: 550, transportUsd: 70, utilitiesUsd: 220, diningOutUsd: 450, healthInsuranceUsd: 110, totalEstimateUsd: 3200 },
     cities: ["Basseterre", "Charlestown"],
@@ -2604,7 +2604,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Saint Lucia", iso2: "LC", iso3: "LCA", region: "Americas", subregion: "Caribbean",
     languages: ["English", "French Patois"], euMember: false, schengen: false, commonwealth: true,
-    descriptor: "Dramatic volcanic landscapes and stunning natural beauty in the heart of the Eastern Caribbean.",
+    descriptor: "Featuring dramatic volcanic landscapes and stunning natural beauty, Saint Lucia is a jewel in the heart of the Eastern Caribbean. It offers a sophisticated island lifestyle with high-end resorts, lush rainforests, and a welcoming local community.",
     dimensions: { cost: 4.4, safety: 7.6, healthcare: 5.6, visaEase: 6.4, digitalInfra: 4.9, climate: 7.8, english: 9.7, lgbtqSafety: 2.0, techEcosystem: 4.5, naturalEnvironment: 9.2 },
     costBreakdown: { rentUsd: 1600, groceriesUsd: 500, transportUsd: 60, utilitiesUsd: 190, diningOutUsd: 420, healthInsuranceUsd: 100, totalEstimateUsd: 2870 },
     cities: ["Castries", "Soufrière", "Rodney Bay"],
@@ -2614,7 +2614,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Saint Vincent and the Grenadines", iso2: "VC", iso3: "VCT", region: "Americas", subregion: "Caribbean",
     languages: ["English"], euMember: false, schengen: false, commonwealth: true,
-    descriptor: "An authentic Caribbean archipelago focused on agricultural tech and climate resilience.",
+    descriptor: "An authentic Caribbean archipelago, Saint Vincent and the Grenadines is increasingly focused on agricultural technology and climate resilience. It offers a peaceful island lifestyle with stunning marine environments and a strong sense of community and heritage.",
     dimensions: { cost: 4.8, safety: 7.2, healthcare: 5.2, visaEase: 3.5, digitalInfra: 4.4, climate: 7.8, english: 10, lgbtqSafety: 3.2, techEcosystem: 3.8, naturalEnvironment: 8.5 },
     costBreakdown: { rentUsd: 1300, groceriesUsd: 480, transportUsd: 50, utilitiesUsd: 170, diningOutUsd: 380, healthInsuranceUsd: 90, totalEstimateUsd: 2470 },
     cities: ["Kingstown", "Bequia"],
@@ -2624,7 +2624,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Samoa", iso2: "WS", iso3: "WSM", region: "Oceania", subregion: "Polynesia",
     languages: ["Samoan", "English"], euMember: false, schengen: false, commonwealth: true,
-    descriptor: "A peaceful Pacific paradise where traditional culture meets improved digital connectivity.",
+    descriptor: "A peaceful Pacific paradise, Samoa is where traditional Fa'a Samoa culture meets improved digital connectivity. It offers a unique island lifestyle characterised by its communal values, stunning natural landscapes, and legendary warm hospitality.",
     dimensions: { cost: 6.6, safety: 8.5, healthcare: 4.8, visaEase: 3.5, digitalInfra: 3.7, climate: 6.7, english: 7.4, lgbtqSafety: 2, techEcosystem: 3.5, naturalEnvironment: 8.1 },
     costBreakdown: { rentUsd: 900, groceriesUsd: 350, transportUsd: 40, utilitiesUsd: 120, diningOutUsd: 220, healthInsuranceUsd: 70, totalEstimateUsd: 1700 },
     cities: ["Apia", "Salelologa"],
@@ -2634,7 +2634,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "San Marino", iso2: "SM", iso3: "SMR", region: "Europe", subregion: "Southern Europe",
     languages: ["Italian"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "The world's oldest republic, offering a safe, micro-state sanctuary within the Italian peninsula.",
+    descriptor: "A mountainous microstate surrounded by north-central Italy, San Marino is among the world's oldest republics. It offers a unique and peaceful living environment with exceptional safety, a rich history, and stunning panoramic views of the surrounding landscape.",
     dimensions: { cost: 5.8, safety: 9.8, healthcare: 8.6, visaEase: 1.5, digitalInfra: 7.4, climate: 5.6, english: 4.4, lgbtqSafety: 7.0, techEcosystem: 6.2, naturalEnvironment: 2.7 },
     costBreakdown: { rentUsd: 1100, groceriesUsd: 380, transportUsd: 50, utilitiesUsd: 160, diningOutUsd: 350, healthInsuranceUsd: 120, totalEstimateUsd: 2160 },
     cities: ["San Marino City", "Dogana", "Borgo Maggiore"],
@@ -2644,7 +2644,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Sao Tome and Principe", iso2: "ST", iso3: "STP", region: "Africa", subregion: "Middle Africa",
     languages: ["Portuguese"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "An emerald island nation in the Gulf of Guinea, currently expanding its digital horizons.",
+    descriptor: "An emerald island nation in the Gulf of Guinea, Sao Tome and Principe is currently expanding its digital horizons and eco-tourism sector. It offers a tranquil, remote lifestyle with extraordinary biodiversity and a unique Portuguese-influenced culture.",
     dimensions: { cost: 7.5, safety: 8.2, healthcare: 3.8, visaEase: 3.5, digitalInfra: 2.7, climate: 6.9, english: 1.8, lgbtqSafety: 5.8, techEcosystem: 2.8, naturalEnvironment: 8.8 },
     costBreakdown: { rentUsd: 700, groceriesUsd: 320, transportUsd: 30, utilitiesUsd: 90, diningOutUsd: 180, healthInsuranceUsd: 60, totalEstimateUsd: 1380 },
     cities: ["São Tomé", "Santo António"],
@@ -2654,7 +2654,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Saudi Arabia", iso2: "SA", iso3: "SAU", region: "Asia", subregion: "Western Asia",
     languages: ["Arabic", "English"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "A Kingdom in transition, leveraging massive capital for global technological leadership.",
+    descriptor: "A Kingdom in transition, Saudi Arabia is leveraging massive capital for global technological leadership and social reform. It offers ultra-modern cities, a very high standard of living, and a unique blend of ancient history and futuristic development.",
     dimensions: { cost: 4.4, safety: 5.2, healthcare: 7.8, visaEase: 2.5, digitalInfra: 9.1, climate: 1.5, english: 4.9, lgbtqSafety: 0.5, techEcosystem: 8.4, naturalEnvironment: 2 },
     costBreakdown: { rentUsd: 1600, groceriesUsd: 450, transportUsd: 50, utilitiesUsd: 240, diningOutUsd: 400, healthInsuranceUsd: 120, totalEstimateUsd: 2860 },
     visaPathways: [
@@ -2691,7 +2691,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Senegal", iso2: "SN", iso3: "SEN", region: "Africa", subregion: "Western Africa",
     languages: ["French", "Wolof"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "West Africa's cultural beacon and a rapidly emerging tech hub for the Francophone world.",
+    descriptor: "West Africa's cultural beacon, Senegal is a rapidly emerging tech hub for the Francophone world. It offers a stable democratic environment, vibrant arts and music scenes, and beautiful Atlantic coastlines that attract international residents.",
     dimensions: { cost: 6.8, safety: 6.8, healthcare: 4.5, visaEase: 3.5, digitalInfra: 5.2, climate: 6.1, english: 2.7, lgbtqSafety: 1.2, techEcosystem: 6.8, naturalEnvironment: 4.5 },
     costBreakdown: { rentUsd: 900, groceriesUsd: 320, transportUsd: 40, utilitiesUsd: 110, diningOutUsd: 220, healthInsuranceUsd: 70, totalEstimateUsd: 1660 },
     cities: ["Dakar", "Saint-Louis", "Thiès"],
@@ -2701,7 +2701,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Seychelles", iso2: "SC", iso3: "SYC", region: "Africa", subregion: "Eastern Africa",
     languages: ["Seychellois Creole", "English", "French"], euMember: false, schengen: false, commonwealth: true,
-    descriptor: "A high-income island nation leading in the blue economy and digital transformation.",
+    descriptor: "A high-income island nation, the Seychelles is a global leader in the blue economy and sustainable digital transformation. It offers a very high standard of living, exceptional natural beauty, and a peaceful environment for international professionals.",
     dimensions: { cost: 3.2, safety: 8.8, healthcare: 6.8, visaEase: 7, digitalInfra: 6.4, climate: 7.2, english: 8.8, lgbtqSafety: 6.5, techEcosystem: 5.2, naturalEnvironment: 9.6 },
     costBreakdown: { rentUsd: 2100, groceriesUsd: 550, transportUsd: 60, utilitiesUsd: 220, diningOutUsd: 480, healthInsuranceUsd: 120, totalEstimateUsd: 3530 },
     cities: ["Victoria", "Beau Vallon"],
@@ -2711,7 +2711,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Sierra Leone", iso2: "SL", iso3: "SLE", region: "Africa", subregion: "Western Africa",
     languages: ["English", "Krio"], euMember: false, schengen: false, commonwealth: true,
-    descriptor: "A resilient nation focused on digital literacy and agricultural self-sufficiency.",
+    descriptor: "A resilient nation, Sierra Leone is increasingly focused on digital literacy and agricultural self-sufficiency. It offers stunning Atlantic beaches, a warm and welcoming population, and a wealth of natural resources within its lush tropical landscapes.",
     dimensions: { cost: 8, safety: 6.2, healthcare: 3.2, visaEase: 3, digitalInfra: 3, climate: 5.9, english: 8.3, lgbtqSafety: 2.2, techEcosystem: 3.5, naturalEnvironment: 6.6 },
     costBreakdown: { rentUsd: 600, groceriesUsd: 280, transportUsd: 30, utilitiesUsd: 80, diningOutUsd: 150, healthInsuranceUsd: 50, totalEstimateUsd: 1190 },
     cities: ["Freetown", "Bo", "Kenema"],
@@ -2721,7 +2721,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Slovakia", iso2: "SK", iso3: "SVK", region: "Europe", subregion: "Central Europe",
     languages: ["Slovak"], euMember: true, schengen: true, commonwealth: false,
-    descriptor: "A robust industrial heart of Europe with high safety and a strong technical workforce.",
+    descriptor: "A robust industrial heart of Europe, Slovakia offers high safety and a strong technical workforce. It is a stable, European Union member state with dramatic mountain landscapes and a rich heritage of medieval architecture and historic castles.",
     dimensions: { cost: 6.3, safety: 8.4, healthcare: 7.2, visaEase: 5.5, digitalInfra: 7.3, climate: 3.8, english: 5.2, lgbtqSafety: 5.5, techEcosystem: 7.4, naturalEnvironment: 5 },
     costBreakdown: { rentUsd: 950, groceriesUsd: 320, transportUsd: 40, utilitiesUsd: 180, diningOutUsd: 280, healthInsuranceUsd: 80, totalEstimateUsd: 1850 },
     cities: ["Bratislava", "Košice", "Žilina"],
@@ -2731,7 +2731,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Slovenia", iso2: "SI", iso3: "SVN", region: "Europe", subregion: "Southern Europe",
     languages: ["Slovenian"], euMember: true, schengen: true, commonwealth: false,
-    descriptor: "Europe's hidden gem—exceptional safety, green landscapes, and progressive social values.",
+    descriptor: "Europe's hidden gem, Slovenia offers exceptional safety, lush green landscapes, and progressive social values. It provides a very high quality of life with easy access to both alpine mountains and Mediterranean coastlines in a stable, efficient society.",
     dimensions: { cost: 5.9, safety: 9.6, healthcare: 8.4, visaEase: 7.8, digitalInfra: 8.3, climate: 5.1, english: 6.9, lgbtqSafety: 9.2, techEcosystem: 7.8, naturalEnvironment: 8.1 },
     costBreakdown: { rentUsd: 1100, groceriesUsd: 350, transportUsd: 50, utilitiesUsd: 170, diningOutUsd: 320, healthInsuranceUsd: 100, totalEstimateUsd: 2090 },
     cities: ["Ljubljana", "Maribor", "Koper"],
@@ -2741,7 +2741,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Solomon Islands", iso2: "SB", iso3: "SLB", region: "Oceania", subregion: "Melanesia",
     languages: ["English", "Solomons Pijin"], euMember: false, schengen: false, commonwealth: true,
-    descriptor: "An archipelago of stunning biodiversity, currently navigating digital expansion challenges.",
+    descriptor: "An archipelago of stunning biodiversity, the Solomon Islands are currently navigating digital expansion challenges while preserving their rich Melanesian heritage. It offers a remote Pacific lifestyle with world-class diving and a deep connection to the ocean.",
     dimensions: { cost: 6, safety: 6.4, healthcare: 3.5, visaEase: 2.5, digitalInfra: 2.7, climate: 6.4, english: 7.8, lgbtqSafety: 2.1, techEcosystem: 2.5, naturalEnvironment: 9.2 },
     costBreakdown: { rentUsd: 1100, groceriesUsd: 420, transportUsd: 40, utilitiesUsd: 150, diningOutUsd: 250, healthInsuranceUsd: 90, totalEstimateUsd: 2050 },
     cities: ["Honiara", "Gizo"],
@@ -2761,7 +2761,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "South Sudan", iso2: "SS", iso3: "SSD", region: "Africa", subregion: "Eastern Africa",
     languages: ["English"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "The world's youngest nation, facing profound developmental and security hurdles.",
+    descriptor: "The world's youngest nation, South Sudan is currently facing profound developmental and security hurdles during its transition. It remains a land of immense potential with a resilient population and vast natural resources, though travel is restricted.",
     dimensions: { cost: 7.2, safety: 1.5, healthcare: 1.8, visaEase: 0.5, digitalInfra: 1.5, climate: 5.1, english: 7.4, lgbtqSafety: 0.8, techEcosystem: 1.8, naturalEnvironment: 5.9 },
     costBreakdown: { rentUsd: 700, groceriesUsd: 350, transportUsd: 40, utilitiesUsd: 110, diningOutUsd: 180, healthInsuranceUsd: 150, totalEstimateUsd: 1530 },
     cities: ["Juba", "Wau", "Malakal"],
@@ -2771,7 +2771,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Sri Lanka", iso2: "LK", iso3: "LKA", region: "Asia", subregion: "Southern Asia",
     languages: ["Sinhala", "Tamil", "English"], euMember: false, schengen: false, commonwealth: true,
-    descriptor: "A tropical island powerhouse for tech talent and affordable remote work infrastructure.",
+    descriptor: "A tropical island powerhouse for tech talent and affordable remote work infrastructure, Sri Lanka offers extraordinary value and natural beauty. It is a land of diverse landscapes, ancient historical sites, and a welcoming culture for international professionals.",
     dimensions: { cost: 7.9, safety: 7.2, healthcare: 6.4, visaEase: 5, digitalInfra: 6.1, climate: 6.1, english: 6.5, lgbtqSafety: 3.8, techEcosystem: 7.1, naturalEnvironment: 7.7 },
     costBreakdown: { rentUsd: 650, groceriesUsd: 220, transportUsd: 30, utilitiesUsd: 80, diningOutUsd: 180, healthInsuranceUsd: 70, totalEstimateUsd: 1230 },
     cities: ["Colombo", "Kandy", "Galle", "Jaffna"],
@@ -2781,7 +2781,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Sudan", iso2: "SD", iso3: "SDN", region: "Africa", subregion: "Northern Africa",
     languages: ["Arabic", "English"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "A nation currently enduring severe conflict, impacting all aspects of safety and infrastructure.",
+    descriptor: "A nation currently enduring severe internal conflict, Sudan's safety and infrastructure are profoundly impacted. It is a country of immense historical significance with ancient pyramids and a diverse cultural heritage, though travel is currently discouraged.",
     dimensions: { cost: 7.6, safety: 1.2, healthcare: 2.2, visaEase: 0.5, digitalInfra: 1.8, climate: 4.7, english: 3.3, lgbtqSafety: 0.5, techEcosystem: 2.5, naturalEnvironment: 2.7 },
     costBreakdown: { rentUsd: 600, groceriesUsd: 320, transportUsd: 35, utilitiesUsd: 90, diningOutUsd: 160, healthInsuranceUsd: 150, totalEstimateUsd: 1355 },
     cities: ["Khartoum", "Omdurman", "Port Sudan"],
@@ -2791,7 +2791,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Suriname", iso2: "SR", iso3: "SUR", region: "Americas", subregion: "South America",
     languages: ["Dutch", "English", "Sranan Tongo"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "A diverse South American nation with vast rainforests and a unique Dutch-Caribbean heritage.",
+    descriptor: "A diverse South American nation with vast rainforests, Suriname possesses a unique Dutch-Caribbean heritage and a multicultural society. It offers a tranquil lifestyle and extraordinary biodiversity, with most of its territory remaining untouched wilderness.",
     dimensions: { cost: 7.2, safety: 6.8, healthcare: 4.8, visaEase: 3.5, digitalInfra: 3.7, climate: 6.7, english: 6.1, lgbtqSafety: 6.4, techEcosystem: 3.8, naturalEnvironment: 9.2 },
     costBreakdown: { rentUsd: 800, groceriesUsd: 300, transportUsd: 35, utilitiesUsd: 100, diningOutUsd: 200, healthInsuranceUsd: 80, totalEstimateUsd: 1515 },
     cities: ["Paramaribo", "Nieuw Nickerie"],
@@ -2801,7 +2801,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Sweden", iso2: "SE", iso3: "SWE", region: "Europe", subregion: "Northern Europe",
     languages: ["Swedish", "English"], euMember: true, schengen: true, commonwealth: false,
-    descriptor: "A global leader in innovation, sustainability, and high-quality social welfare.",
+    descriptor: "A global leader in innovation and sustainability, Sweden offers a high-quality social welfare system and exceptional safety. It provides a high standard of living, world-class design, and a deep connection to the outdoors amidst stunning Nordic landscapes.",
     dimensions: { cost: 4.2, safety: 8.6, healthcare: 9.2, visaEase: 3, digitalInfra: 9.4, climate: 1.8, english: 9.3, lgbtqSafety: 10.0, techEcosystem: 9, naturalEnvironment: 5.9 },
     costBreakdown: { rentUsd: 1800, groceriesUsd: 450, transportUsd: 90, utilitiesUsd: 220, diningOutUsd: 400, healthInsuranceUsd: 60, totalEstimateUsd: 3020 },
     visaPathways: [
@@ -2837,7 +2837,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "China", iso2: "CN", iso3: "CHN", region: "Asia", subregion: "Eastern Asia",
     languages: ["Mandarin"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "A global powerhouse offering ultra-modern megacities, deep history, and a world-leading digital ecosystem.",
+    descriptor: "A global powerhouse offering ultra-modern megacities, deep history, and a world-leading digital ecosystem. China provides a unique living experience where ancient traditions are seamlessly integrated with futuristic urban planning and technology.",
     dimensions: { cost: 6.9, safety: 4.8, healthcare: 7.2, visaEase: 2, digitalInfra: 9.1, climate: 4.2, english: 2.3, lgbtqSafety: 3.8, techEcosystem: 7.5, naturalEnvironment: 3 },
     costBreakdown: { rentUsd: 850, groceriesUsd: 280, transportUsd: 45, utilitiesUsd: 90, diningOutUsd: 250, healthInsuranceUsd: 120, totalEstimateUsd: 1635 },
     visaPathways: [
@@ -2868,7 +2868,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Finland", iso2: "FI", iso3: "FIN", region: "Europe", subregion: "Northern Europe",
     languages: ["Finnish", "Swedish"], euMember: true, schengen: true, commonwealth: false,
-    descriptor: "Consistently ranked as the world's happiest country, with pristine nature and a high-trust society.",
+    descriptor: "Consistently ranked as the world's happiest country, Finland offers pristine nature and a high-trust society. It provides exceptional public services, a world-leading education system, and a deep connection to the outdoors.",
     dimensions: { cost: 5.4, safety: 9.6, healthcare: 8.8, visaEase: 4.5, digitalInfra: 8.8, climate: 1.5, english: 8.8, lgbtqSafety: 9.4, techEcosystem: 8.8, naturalEnvironment: 8.1 },
     costBreakdown: { rentUsd: 1200, groceriesUsd: 350, transportUsd: 65, utilitiesUsd: 180, diningOutUsd: 350, healthInsuranceUsd: 80, totalEstimateUsd: 2225 },
     cities: ["Helsinki", "Tampere", "Oulu"],
@@ -2878,7 +2878,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "United Kingdom", iso2: "GB", iso3: "GBR", region: "Europe", subregion: "Northern Europe",
     languages: ["English"], euMember: false, schengen: false, commonwealth: true,
-    descriptor: "A global financial and cultural hub with top-tier education and a mature technology ecosystem.",
+    descriptor: "A global financial and cultural hub, the United Kingdom offers top-tier education and a mature technology ecosystem. It provides a diverse range of living environments, from hyper-connected London to historic regional cities and stunning rural landscapes.",
     dimensions: { cost: 4.1, safety: 8.2, healthcare: 7.8, visaEase: 2.5, digitalInfra: 8.3, climate: 2.7, english: 10, lgbtqSafety: 9.0, techEcosystem: 9.6, naturalEnvironment: 2.7 },
     costBreakdown: { rentUsd: 1850, groceriesUsd: 400, transportUsd: 120, utilitiesUsd: 250, diningOutUsd: 450, healthInsuranceUsd: 100, totalEstimateUsd: 3170 },
     visaPathways: [
@@ -2942,7 +2942,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "North Macedonia", iso2: "MK", iso3: "MKD", region: "Europe", subregion: "Southern Europe",
     languages: ["Macedonian"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "A hidden Balkan gem offering dramatic mountains, ancient history, and exceptional affordability.",
+    descriptor: "A hidden Balkan gem, North Macedonia offers dramatic mountain landscapes, a deeply ancient history, and exceptional affordability for residents. It is a land of stunning lakes and vibrant multicultural traditions, providing a high quality of life at a lower cost.",
     dimensions: { cost: 8.7, safety: 7.8, healthcare: 5.2, visaEase: 4, digitalInfra: 6.1, climate: 4.7, english: 4.1, lgbtqSafety: 4.8, techEcosystem: 4.8, naturalEnvironment: 5 },
     costBreakdown: { rentUsd: 450, groceriesUsd: 200, transportUsd: 25, utilitiesUsd: 110, diningOutUsd: 180, healthInsuranceUsd: 50, totalEstimateUsd: 1015 },
     cities: ["Skopje", "Ohrid"],
@@ -2952,7 +2952,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Syria", iso2: "SY", iso3: "SYR", region: "Asia", subregion: "Western Asia",
     languages: ["Arabic"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "An ancient civilization still facing severe conflict damage, authoritarian rule, and major travel warnings.",
+    descriptor: "An ancient civilisation still facing severe conflict damage and authoritarian rule, Syria is currently under major international travel warnings. It remains a land of extraordinary historical and cultural significance, though its infrastructure is profoundly impacted by ongoing instability.",
     dimensions: { cost: 9.7, safety: 1.5, healthcare: 2.2, visaEase: 0.5, digitalInfra: 1.5, climate: 5.1, english: 2.1, lgbtqSafety: 1.2, techEcosystem: 1.5, naturalEnvironment: 2 },
     costBreakdown: { rentUsd: 300, groceriesUsd: 150, transportUsd: 15, utilitiesUsd: 40, diningOutUsd: 80, healthInsuranceUsd: 30, totalEstimateUsd: 615 },
     cities: ["Damascus", "Aleppo"],
@@ -2962,7 +2962,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Togo", iso2: "TG", iso3: "TGO", region: "Africa", subregion: "Western Africa",
     languages: ["French"], euMember: false, schengen: false, commonwealth: true,
-    descriptor: "A narrow West African nation known for its palm-lined beaches and hilltop villages.",
+    descriptor: "A narrow West African nation, Togo is known for its palm-lined beaches and traditional hilltop villages. It offers a unique cultural blend and a growing coastal economy, serving as a significant regional gateway for trade in West Africa.",
     dimensions: { cost: 8.6, safety: 5.5, healthcare: 3.2, visaEase: 3.5, digitalInfra: 2.7, climate: 3.8, english: 1.5, lgbtqSafety: 1.8, techEcosystem: 2.8, naturalEnvironment: 2.7 },
     costBreakdown: { rentUsd: 550, groceriesUsd: 220, transportUsd: 30, utilitiesUsd: 70, diningOutUsd: 140, healthInsuranceUsd: 50, totalEstimateUsd: 1060 },
     cities: ["Lomé", "Kpalimé"],
@@ -2972,7 +2972,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Tajikistan", iso2: "TJ", iso3: "TJK", region: "Asia", subregion: "Central Asia",
     languages: ["Tajik", "Russian"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "A mountainous landlocked nation offering some of the world's most spectacular high-altitude scenery.",
+    descriptor: "A mountainous landlocked nation, Tajikistan offers some of the world's most spectacular high-altitude scenery and traditional Pamiri culture. It is a land of dramatic peaks and turquoise lakes, providing a unique and adventurous environment for residents.",
     dimensions: { cost: 9.3, safety: 5.5, healthcare: 3.5, visaEase: 4, digitalInfra: 2.3, climate: 3.4, english: 1.3, lgbtqSafety: 4.3, techEcosystem: 2.2, naturalEnvironment: 7.7 },
     costBreakdown: { rentUsd: 400, groceriesUsd: 180, transportUsd: 20, utilitiesUsd: 50, diningOutUsd: 100, healthInsuranceUsd: 40, totalEstimateUsd: 790 },
     cities: ["Dushanbe", "Khujand"],
@@ -2982,7 +2982,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Timor-Leste", iso2: "TL", iso3: "TLS", region: "Asia", subregion: "South-Eastern Asia",
     languages: ["Tetum", "Portuguese"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "One of the world's newest nations, featuring untouched coral reefs and rugged mountains.",
+    descriptor: "One of the world's newest nations, Timor-Leste features untouched coral reefs and rugged mountain landscapes. It offers a unique island lifestyle with a rich history of resilience and a warm, welcoming community on the eastern half of Timor island.",
     dimensions: { cost: 7.5, safety: 6.8, healthcare: 2.8, visaEase: 3.5, digitalInfra: 1.8, climate: 4.2, english: 2.1, lgbtqSafety: 5.2, techEcosystem: 1.8, naturalEnvironment: 5.9 },
     costBreakdown: { rentUsd: 750, groceriesUsd: 250, transportUsd: 40, utilitiesUsd: 90, diningOutUsd: 180, healthInsuranceUsd: 60, totalEstimateUsd: 1370 },
     cities: ["Dili", "Baucau"],
@@ -3002,7 +3002,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Tunisia", iso2: "TN", iso3: "TUN", region: "Africa", subregion: "Northern Africa",
     languages: ["Arabic", "French"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "A Mediterranean bridge between Europe and Africa, with world-class ruins and golden beaches.",
+    descriptor: "A Mediterranean bridge between Europe and Africa, Tunisia is characterised by its world-class Roman ruins, golden beaches, and vibrant urban culture. It offers exceptional value and a rich history, set against a backdrop of a transitioning democracy.",
     dimensions: { cost: 9, safety: 6.8, healthcare: 5.8, visaEase: 4.5, digitalInfra: 4.9, climate: 5.6, english: 2.7, lgbtqSafety: 2.2, techEcosystem: 5.2, naturalEnvironment: 3.7 },
     costBreakdown: { rentUsd: 450, groceriesUsd: 180, transportUsd: 25, utilitiesUsd: 60, diningOutUsd: 140, healthInsuranceUsd: 60, totalEstimateUsd: 915 },
     cities: ["Tunis", "Sousse", "Sfax"],
@@ -3012,7 +3012,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Tonga", iso2: "TO", iso3: "TON", region: "Oceania", subregion: "Polynesia",
     languages: ["Tongan", "English"], euMember: false, schengen: false, commonwealth: true,
-    descriptor: "The 'Friendly Islands' — a Polynesian kingdom of authentic culture and pristine marine life.",
+    descriptor: "Known as the 'Friendly Islands', Tonga is a Polynesian kingdom with a rich authentic culture and pristine marine life. It offers a peaceful island lifestyle and is one of the few countries in the South Pacific with a traditional monarchy.",
     dimensions: { cost: 6.5, safety: 8.5, healthcare: 4.5, visaEase: 3, digitalInfra: 3.3, climate: 5.1, english: 7.4, lgbtqSafety: 2.8, techEcosystem: 2.8, naturalEnvironment: 7.2 },
     costBreakdown: { rentUsd: 900, groceriesUsd: 350, transportUsd: 40, utilitiesUsd: 150, diningOutUsd: 200, healthInsuranceUsd: 80, totalEstimateUsd: 1720 },
     cities: ["Nuku'alofa", "Neiafu"],
@@ -3022,7 +3022,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Trinidad and Tobago", iso2: "TT", iso3: "TTO", region: "Americas", subregion: "Caribbean",
     languages: ["English"], euMember: false, schengen: false, commonwealth: true,
-    descriptor: "A vibrant twin-island nation blending industrial strength with Carnival energy and lush rainforests.",
+    descriptor: "A vibrant twin-island nation, Trinidad and Tobago blends industrial strength with world-famous Carnival energy and lush tropical rainforests. It offers a unique cultural mix and a dynamic economy, particularly in the energy sector.",
     dimensions: { cost: 6.4, safety: 5.2, healthcare: 5.5, visaEase: 3.5, digitalInfra: 6.1, climate: 6.1, english: 10, lgbtqSafety: 4.8, techEcosystem: 5.5, naturalEnvironment: 5.2 },
     costBreakdown: { rentUsd: 950, groceriesUsd: 320, transportUsd: 60, utilitiesUsd: 80, diningOutUsd: 250, healthInsuranceUsd: 90, totalEstimateUsd: 1750 },
     cities: ["Port of Spain", "San Fernando", "Scarborough"],
@@ -3072,7 +3072,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "United States", iso2: "US", iso3: "USA", region: "Americas", subregion: "North America",
     languages: ["English"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "The world's largest economy and premier technology hub, offering unparalleled regional diversity.",
+    descriptor: "The world's largest economy and a premier global technology hub, the United States offers unparalleled regional diversity and innovation. It provides a vast range of living environments, from hyper-connected megacities to quiet rural communities.",
     dimensions: { cost: 2.5, safety: 7.5, healthcare: 7.2, visaEase: 2, digitalInfra: 9.1, climate: 4.2, english: 10, lgbtqSafety: 7.5, techEcosystem: 10.0, naturalEnvironment: 8.1 },
     costBreakdown: { rentUsd: 2200, groceriesUsd: 500, transportUsd: 150, utilitiesUsd: 250, diningOutUsd: 600, healthInsuranceUsd: 450, totalEstimateUsd: 4150 },
     visaPathways: [
@@ -3144,7 +3144,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Uzbekistan", iso2: "UZ", iso3: "UZB", region: "Asia", subregion: "Central Asia",
     languages: ["Uzbek", "Russian"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "A Silk Road treasure trove rapidly modernizing its economy and opening to the world.",
+    descriptor: "A Silk Road treasure trove, Uzbekistan is rapidly modernising its economy and opening itself to the world. It offers a rich tapestry of ancient Islamic architecture, vibrant markets, and a growing infrastructure for international visitors.",
     dimensions: { cost: 9.1, safety: 5.5, healthcare: 4.5, visaEase: 4.5, digitalInfra: 4.9, climate: 3, english: 1.8, lgbtqSafety: 1.2, techEcosystem: 4.5, naturalEnvironment: 3.7 },
     costBreakdown: { rentUsd: 450, groceriesUsd: 180, transportUsd: 20, utilitiesUsd: 50, diningOutUsd: 120, healthInsuranceUsd: 50, totalEstimateUsd: 870 },
     cities: ["Tashkent", "Samarkand", "Bukhara"],
@@ -3154,7 +3154,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Vatican City", iso2: "VA", iso3: "VAT", region: "Europe", subregion: "Southern Europe",
     languages: ["Latin", "Italian"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "The world's smallest sovereign state, an enclave of immense cultural and spiritual significance.",
+    descriptor: "The world's smallest sovereign state, Vatican City is an enclave within Rome of immense cultural and spiritual significance. It serves as the spiritual and administrative centre of the Roman Catholic Church, home to world-class art and architecture.",
     dimensions: { cost: 1.5, safety: 9.8, healthcare: 9.2, visaEase: 1.5, digitalInfra: 7.8, climate: 6.1, english: 6.5, lgbtqSafety: 3, techEcosystem: 4.2, naturalEnvironment: 2 },
     costBreakdown: { rentUsd: 3500, groceriesUsd: 600, transportUsd: 50, utilitiesUsd: 200, diningOutUsd: 800, healthInsuranceUsd: 200, totalEstimateUsd: 5350 },
     cities: ["Vatican City", "St. Peter Square"],
@@ -3174,7 +3174,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Vanuatu", iso2: "VU", iso3: "VUT", region: "Oceania", subregion: "Melanesia",
     languages: ["Bislama", "French", "English"], euMember: false, schengen: false, commonwealth: true,
-    descriptor: "A South Pacific archipelago known for its active volcanoes, diverse cultures, and 'blue holes'.",
+    descriptor: "A South Pacific archipelago known for its active volcanoes, diverse cultures, and stunning 'blue holes', Vanuatu offers a unique island lifestyle. It is a land of extraordinary natural beauty and warm hospitality, committed to preserving its traditional customs.",
     dimensions: { cost: 6, safety: 8.8, healthcare: 3.5, visaEase: 5, digitalInfra: 2.7, climate: 5.1, english: 7.4, lgbtqSafety: 5.5, techEcosystem: 2.5, naturalEnvironment: 9.2 },
     costBreakdown: { rentUsd: 1100, groceriesUsd: 400, transportUsd: 50, utilitiesUsd: 180, diningOutUsd: 250, healthInsuranceUsd: 90, totalEstimateUsd: 2070 },
     cities: ["Port Vila", "Luganville"],
@@ -3184,7 +3184,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Yemen", iso2: "YE", iso3: "YEM", region: "Asia", subregion: "Western Asia",
     languages: ["Arabic"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "A country of profound history and unique architecture, currently facing an extreme humanitarian crisis.",
+    descriptor: "A country of profound history and unique architecture, Yemen is currently facing an extreme humanitarian crisis and prolonged conflict. It remains a land of extraordinary cultural heritage, though travel is highly discouraged due to the current security situation.",
     dimensions: { cost: 9.1, safety: 1.2, healthcare: 1.5, visaEase: 0.5, digitalInfra: 1.5, climate: 5.6, english: 1.5, lgbtqSafety: 0.8, techEcosystem: 1.2, naturalEnvironment: 3.7 },
     costBreakdown: { rentUsd: 400, groceriesUsd: 250, transportUsd: 30, utilitiesUsd: 50, diningOutUsd: 100, healthInsuranceUsd: 40, totalEstimateUsd: 870 },
     cities: ["Sana'a", "Aden"],
@@ -3194,7 +3194,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Zambia", iso2: "ZM", iso3: "ZMB", region: "Africa", subregion: "Eastern Africa",
     languages: ["English"], euMember: false, schengen: false, commonwealth: true,
-    descriptor: "A stable South-Central African nation home to the Victoria Falls and vast wilderness.",
+    descriptor: "A stable and welcoming South-Central African nation, Zambia is home to the majestic Victoria Falls and vast wilderness areas. It offers one of the most stable social environments in the region, with a strong focus on wildlife conservation and community development.",
     dimensions: { cost: 8.8, safety: 7.5, healthcare: 4.2, visaEase: 3.5, digitalInfra: 4.1, climate: 5.1, english: 8.8, lgbtqSafety: 1.5, techEcosystem: 4.2, naturalEnvironment: 7.7 },
     costBreakdown: { rentUsd: 500, groceriesUsd: 200, transportUsd: 35, utilitiesUsd: 70, diningOutUsd: 140, healthInsuranceUsd: 60, totalEstimateUsd: 1005 },
     cities: ["Lusaka", "Livingstone", "Ndola"],
@@ -3204,7 +3204,7 @@ export const COUNTRIES: Country[] = [
   {
     name: "Zimbabwe", iso2: "ZW", iso3: "ZWE", region: "Africa", subregion: "Eastern Africa",
     languages: ["English", "Shona", "Ndebele"], euMember: false, schengen: false, commonwealth: false,
-    descriptor: "A nation of dramatic landscapes and resilient people, possessing significant agricultural and mineral wealth.",
+    descriptor: "A nation of dramatic landscapes and resilient people, Zimbabwe possesses significant agricultural and mineral wealth. It is home to iconic landmarks like the Great Zimbabwe ruins and Hwange National Park, offering a unique blend of history and natural beauty.",
     dimensions: { cost: 7.3, safety: 5.5, healthcare: 3.8, visaEase: 5.2, digitalInfra: 4.4, climate: 5.6, english: 9.1, lgbtqSafety: 1.8, techEcosystem: 4.5, naturalEnvironment: 7.2 },
     costBreakdown: { rentUsd: 750, groceriesUsd: 320, transportUsd: 45, utilitiesUsd: 120, diningOutUsd: 200, healthInsuranceUsd: 80, totalEstimateUsd: 1515 },
     cities: ["Harare", "Bulawayo", "Victoria Falls"],

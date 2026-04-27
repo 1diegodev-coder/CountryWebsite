@@ -57,6 +57,29 @@ describe('Country Data Validation', () => {
     });
   });
 
+  it('every descriptor is between 15 and 50 words', () => {
+    const exemptions = new Set([
+      // No exemptions planned, but keeping structure for future if needed
+    ]);
+
+    COUNTRIES.forEach(country => {
+      if (exemptions.has(country.name)) return;
+
+      const wordCount = country.descriptor.trim().split(/\s+/).length;
+      expect(wordCount, `${country.name} descriptor has ${wordCount} words (expected 15-50)`).toBeGreaterThanOrEqual(15);
+      expect(wordCount, `${country.name} descriptor has ${wordCount} words (expected 15-50)`).toBeLessThanOrEqual(50);
+    });
+  });
+
+  it('every descriptor is 1-2 complete sentences ending in a full stop', () => {
+    COUNTRIES.forEach(country => {
+      expect(country.descriptor).toMatch(/[.!?]$/);
+      const sentences = country.descriptor.split(/[.!?]\s+/).filter(Boolean);
+      expect(sentences.length, `${country.name} should have 1-2 sentences`).toBeGreaterThanOrEqual(1);
+      expect(sentences.length, `${country.name} should have 1-2 sentences`).toBeLessThanOrEqual(2);
+    });
+  });
+
   it('does not award high safety to highly authoritarian countries', () => {
     COUNTRIES
       .filter(country => country.rawIndicators.authoritarianRisk > 9)
