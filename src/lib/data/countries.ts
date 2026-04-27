@@ -19,6 +19,56 @@ export const COUNTRIES: Country[] = [
     descriptor: "A sun-drenched Atlantic nation where old-world charm meets modern digital infrastructure.",
     dimensions: { cost: 5.7, safety: 8.6, healthcare: 7.2, visaEase: 8, digitalInfra: 5.7, climate: 6.7, english: 4.8, lgbtqSafety: 8.3, techEcosystem: 7.1, naturalEnvironment: 5.2 },
     costBreakdown: { rentUsd: 1350, groceriesUsd: 280, transportUsd: 42, utilitiesUsd: 120, diningOutUsd: 280, healthInsuranceUsd: 90, totalEstimateUsd: 2162 },
+    visaPathways: [
+      {
+        pathwayId: "PT-D8-DIGITAL-NOMAD",
+        countryCode: "PT",
+        visaType: "digital-nomad",
+        name: "Digital Nomad Visa (D8)",
+        eligibleLifeStages: ["remoteEmployee", "freelancer"],
+        incomeRequirement: {
+          amount: 3280,
+          currencyCode: "EUR",
+          period: "monthly",
+          notes: "Requires 4x the Portuguese minimum wage."
+        },
+        durationMonths: 12,
+        renewable: true,
+        leadsToResidency: true,
+        residencyYearsRequired: 5,
+        processingWeeks: [8, 12],
+        difficultyRating: 2,
+        requiresEmployer: false,
+        requiresMinIncome: true,
+        notes: "Allows for remote work for non-Portuguese companies.",
+        sourceUrl: "https://vistos.mne.gov.pt/en/national-visas/general-information/type-of-visa#digital-nomad",
+        lastVerified: "2026-04-27"
+      },
+      {
+        pathwayId: "PT-D7-PASSIVE-INCOME",
+        countryCode: "PT",
+        visaType: "passive-income",
+        name: "D7 Visa (Passive Income)",
+        eligibleLifeStages: ["retired", "semiRetired"],
+        incomeRequirement: {
+          amount: 820,
+          currencyCode: "EUR",
+          period: "monthly",
+          notes: "Requires 1x the Portuguese minimum wage in passive income."
+        },
+        durationMonths: 24,
+        renewable: true,
+        leadsToResidency: true,
+        residencyYearsRequired: 5,
+        processingWeeks: [12, 16],
+        difficultyRating: 3,
+        requiresEmployer: false,
+        requiresMinIncome: true,
+        notes: "Ideal for retirees with pension or rental income.",
+        sourceUrl: "https://vistos.mne.gov.pt/en/national-visas/general-information/type-of-visa#residency",
+        lastVerified: "2026-04-27"
+      }
+    ],
     cities: ["Lisbon", "Porto", "Lagos"],
     rawIndicators: { summerHighC: 28, winterLowC: 8, humidityAvg: 65, airQualityIndex: 35, seismicZone: 3, internetReliability: 8.5, englishDailyLife: 7.2, stability: 8.8, authoritarianRisk: 1.5, corruptionRisk: 2.1 },
     dataConfidence: "high", lastUpdated: "2026-04-21"
@@ -29,6 +79,32 @@ export const COUNTRIES: Country[] = [
     descriptor: "A vast, diverse nation offering world-class culture, cuisine, and increasingly sophisticated expat infrastructure.",
     dimensions: { cost: 7.4, safety: 5.2, healthcare: 6.4, visaEase: 4.5, digitalInfra: 4.8, climate: 6.1, english: 4.4, lgbtqSafety: 6.1, techEcosystem: 7.4, naturalEnvironment: 4.5 },
     costBreakdown: { rentUsd: 900, groceriesUsd: 200, transportUsd: 30, utilitiesUsd: 80, diningOutUsd: 160, healthInsuranceUsd: 70, totalEstimateUsd: 1440 },
+    visaPathways: [
+      {
+        pathwayId: "MX-TEMPORARY-RESIDENT",
+        countryCode: "MX",
+        visaType: "temporary-resident",
+        name: "Temporary Resident Visa",
+        eligibleLifeStages: ["remoteEmployee", "freelancer", "retired"],
+        incomeRequirement: {
+          amount: 2600,
+          currencyCode: "USD",
+          period: "monthly",
+          notes: "Approximate monthly income requirement based on 300 days of minimum wage."
+        },
+        durationMonths: 12,
+        renewable: true,
+        leadsToResidency: true,
+        residencyYearsRequired: 4,
+        processingWeeks: [1, 4],
+        difficultyRating: 2,
+        requiresEmployer: false,
+        requiresMinIncome: true,
+        notes: "Can be renewed for up to 4 years, then leads to permanent residency.",
+        sourceUrl: "https://www.gob.mx/tramites/ficha/visa-de-residencia-temporal/SRE260",
+        lastVerified: "2026-04-27"
+      }
+    ],
     cities: ["Mexico City", "Playa del Carmen", "Oaxaca"],
     rawIndicators: { summerHighC: 27, winterLowC: 6, humidityAvg: 50, airQualityIndex: 120, seismicZone: 4, internetReliability: 7.2, englishDailyLife: 5.5, stability: 6.5, authoritarianRisk: 4.2, corruptionRisk: 6.8 },
     dataConfidence: "high", lastUpdated: "2026-04-21"
@@ -39,6 +115,26 @@ export const COUNTRIES: Country[] = [
     descriptor: "The world's most stable and prosperous small nation — impeccable infrastructure and exceptional healthcare.",
     dimensions: { cost: 2.1, safety: 9.4, healthcare: 9.6, visaEase: 2.5, digitalInfra: 8.7, climate: 5.1, english: 5.6, lgbtqSafety: 9.2, techEcosystem: 9.3, naturalEnvironment: 6.2 },
     costBreakdown: { rentUsd: 2900, groceriesUsd: 700, transportUsd: 90, utilitiesUsd: 300, diningOutUsd: 700, healthInsuranceUsd: 400, totalEstimateUsd: 5090 },
+    visaPathways: [
+      {
+        pathwayId: "CH-NON-EU-WORK",
+        countryCode: "CH",
+        visaType: "skilled-worker",
+        name: "Work Permit (Non-EU/EFTA)",
+        eligibleLifeStages: ["localEmployee"],
+        durationMonths: 12,
+        renewable: true,
+        leadsToResidency: true,
+        residencyYearsRequired: 10,
+        processingWeeks: [8, 24],
+        difficultyRating: 5,
+        requiresEmployer: true,
+        requiresMinIncome: false,
+        notes: "Strict quotas apply. Only for highly qualified non-EU/EFTA nationals.",
+        sourceUrl: "https://www.sem.admin.ch/sem/en/home/themen/arbeit/nicht-eu_efta-angehoerige.html",
+        lastVerified: "2026-04-27"
+      }
+    ],
     cities: ["Zurich", "Geneva", "Basel"],
     rawIndicators: { summerHighC: 24, winterLowC: -2, humidityAvg: 70, airQualityIndex: 25, seismicZone: 2, internetReliability: 9.8, englishDailyLife: 8.1, stability: 9.9, authoritarianRisk: 0.5, corruptionRisk: 0.8 },
     dataConfidence: "high", lastUpdated: "2026-04-21"
@@ -49,6 +145,56 @@ export const COUNTRIES: Country[] = [
     descriptor: "Asia's premier expat destination, now with marriage equality alongside exceptional value, world-class food, and warm culture.",
     dimensions: { cost: 8.2, safety: 6.8, healthcare: 7.6, visaEase: 8, digitalInfra: 6.1, climate: 4, english: 4.2, lgbtqSafety: 7.0, techEcosystem: 5.8, naturalEnvironment: 6.9 },
     costBreakdown: { rentUsd: 650, groceriesUsd: 200, transportUsd: 30, utilitiesUsd: 60, diningOutUsd: 150, healthInsuranceUsd: 60, totalEstimateUsd: 1150 },
+    visaPathways: [
+      {
+        pathwayId: "TH-DTV",
+        countryCode: "TH",
+        visaType: "digital-nomad",
+        name: "Destination Thailand Visa (DTV)",
+        eligibleLifeStages: ["remoteEmployee", "freelancer"],
+        incomeRequirement: {
+          amount: 500000,
+          currencyCode: "THB",
+          period: "oneTime",
+          notes: "Proof of funds (savings) of at least 500,000 THB."
+        },
+        durationMonths: 60,
+        renewable: true,
+        leadsToResidency: false,
+        residencyYearsRequired: null,
+        processingWeeks: [1, 4],
+        difficultyRating: 1,
+        requiresEmployer: false,
+        requiresMinIncome: true,
+        notes: "Allows 180-day stays, extendable once for another 180 days per entry. Multiple entry for 5 years.",
+        sourceUrl: "https://thaievisa.go.th/",
+        lastVerified: "2026-04-27"
+      },
+      {
+        pathwayId: "TH-LTR-REMOTE",
+        countryCode: "TH",
+        visaType: "digital-nomad",
+        name: "LTR Visa (Remote Professional)",
+        eligibleLifeStages: ["remoteEmployee"],
+        incomeRequirement: {
+          amount: 80000,
+          currencyCode: "USD",
+          period: "annual",
+          notes: "Personal income of at least $80,000/year in the past two years."
+        },
+        durationMonths: 120,
+        renewable: true,
+        leadsToResidency: false,
+        residencyYearsRequired: null,
+        processingWeeks: [4, 12],
+        difficultyRating: 4,
+        requiresEmployer: true,
+        requiresMinIncome: true,
+        notes: "For employees of large, established companies.",
+        sourceUrl: "https://ltr.boi.go.th/",
+        lastVerified: "2026-04-27"
+      }
+    ],
     cities: ["Bangkok", "Chiang Mai", "Phuket"],
     rawIndicators: { summerHighC: 35, winterLowC: 21, humidityAvg: 75, airQualityIndex: 110, seismicZone: 1, internetReliability: 8.8, englishDailyLife: 4.8, stability: 5.5, authoritarianRisk: 6.2, corruptionRisk: 5.8 },
     dataConfidence: "high", lastUpdated: "2026-04-21"
@@ -69,6 +215,50 @@ export const COUNTRIES: Country[] = [
     descriptor: "A world leader in lifestyle quality, with exceptional high-speed rail and diverse regional cultures.",
     dimensions: { cost: 5.2, safety: 8.2, healthcare: 8.8, visaEase: 8, digitalInfra: 7.4, climate: 7.2, english: 4.2, lgbtqSafety: 8.9, techEcosystem: 7.8, naturalEnvironment: 5 },
     costBreakdown: { rentUsd: 1400, groceriesUsd: 300, transportUsd: 50, utilitiesUsd: 130, diningOutUsd: 300, healthInsuranceUsd: 100, totalEstimateUsd: 2280 },
+    visaPathways: [
+      {
+        pathwayId: "ES-DIGITAL-NOMAD",
+        countryCode: "ES",
+        visaType: "digital-nomad",
+        name: "Digital Nomad Visa",
+        eligibleLifeStages: ["remoteEmployee", "freelancer"],
+        incomeRequirement: {
+          amount: 2646,
+          currencyCode: "EUR",
+          period: "monthly",
+          notes: "200% of the Spanish minimum wage (SMI)."
+        },
+        durationMonths: 12,
+        renewable: true,
+        leadsToResidency: true,
+        residencyYearsRequired: 5,
+        processingWeeks: [3, 8],
+        difficultyRating: 2,
+        requiresEmployer: false,
+        requiresMinIncome: true,
+        notes: "Allows remote workers to live in Spain while working for non-Spanish companies.",
+        sourceUrl: "https://www.exteriores.gob.es/Consulados/londres/en/ServiciosConsulares/Paginas/Consular/Digital-Nomad-Visa.aspx",
+        lastVerified: "2026-04-27"
+      },
+      {
+        pathwayId: "ES-ENTREPRENEUR",
+        countryCode: "ES",
+        visaType: "entrepreneur",
+        name: "Entrepreneur Visa",
+        eligibleLifeStages: ["founder"],
+        durationMonths: 36,
+        renewable: true,
+        leadsToResidency: true,
+        residencyYearsRequired: 5,
+        processingWeeks: [4, 12],
+        difficultyRating: 4,
+        requiresEmployer: false,
+        requiresMinIncome: false,
+        notes: "For innovative business projects of special economic interest to Spain.",
+        sourceUrl: "https://www.exteriores.gob.es/Consulados/londres/en/ServiciosConsulares/Paginas/Consular/Entrepreneur-visa.aspx",
+        lastVerified: "2026-04-27"
+      }
+    ],
     cities: ["Madrid", "Barcelona", "Valencia", "Malaga"],
     rawIndicators: { summerHighC: 32, winterLowC: 5, humidityAvg: 55, airQualityIndex: 40, seismicZone: 2, internetReliability: 9.2, englishDailyLife: 6.2, stability: 8.4, authoritarianRisk: 1.8, corruptionRisk: 2.8 },
     dataConfidence: "high", lastUpdated: "2026-04-21"
@@ -79,6 +269,50 @@ export const COUNTRIES: Country[] = [
     descriptor: "The highest English proficiency for a non-native country, combined with world-class design and infrastructure.",
     dimensions: { cost: 3.7, safety: 8.8, healthcare: 8.2, visaEase: 6, digitalInfra: 9.4, climate: 2.8, english: 9.7, lgbtqSafety: 9.4, techEcosystem: 8.5, naturalEnvironment: 2 },
     costBreakdown: { rentUsd: 2100, groceriesUsd: 400, transportUsd: 80, utilitiesUsd: 200, diningOutUsd: 400, healthInsuranceUsd: 150, totalEstimateUsd: 3330 },
+    visaPathways: [
+      {
+        pathwayId: "NL-HIGHLY-SKILLED",
+        countryCode: "NL",
+        visaType: "skilled-worker",
+        name: "Highly Skilled Migrant",
+        eligibleLifeStages: ["localEmployee"],
+        incomeRequirement: {
+          amount: 5331,
+          currencyCode: "EUR",
+          period: "monthly",
+          notes: "Minimum gross monthly salary for applicants aged 30 or older (2024)."
+        },
+        durationMonths: 60,
+        renewable: true,
+        leadsToResidency: true,
+        residencyYearsRequired: 5,
+        processingWeeks: [2, 6],
+        difficultyRating: 2,
+        requiresEmployer: true,
+        requiresMinIncome: true,
+        notes: "Employer must be a recognized sponsor with the IND.",
+        sourceUrl: "https://ind.nl/en/residence-permits/work/highly-skilled-migrant",
+        lastVerified: "2026-04-27"
+      },
+      {
+        pathwayId: "NL-STARTUP",
+        countryCode: "NL",
+        visaType: "entrepreneur",
+        name: "Startup Visa",
+        eligibleLifeStages: ["founder"],
+        durationMonths: 12,
+        renewable: true,
+        leadsToResidency: true,
+        residencyYearsRequired: 5,
+        processingWeeks: [4, 12],
+        difficultyRating: 3,
+        requiresEmployer: false,
+        requiresMinIncome: false,
+        notes: "Requires a business plan and a facilitator.",
+        sourceUrl: "https://ind.nl/en/residence-permits/work/start-up",
+        lastVerified: "2026-04-27"
+      }
+    ],
     cities: ["Amsterdam", "Rotterdam", "Utrecht", "The Hague"],
     rawIndicators: { summerHighC: 22, winterLowC: 1, humidityAvg: 80, airQualityIndex: 30, seismicZone: 1, internetReliability: 9.8, englishDailyLife: 9.8, stability: 9.5, authoritarianRisk: 0.8, corruptionRisk: 1.1 },
     dataConfidence: "high", lastUpdated: "2026-04-21"
@@ -89,6 +323,56 @@ export const COUNTRIES: Country[] = [
     descriptor: "A global hub for finance and technology with zero personal income tax and ultra-modern cities.",
     dimensions: { cost: 3.1, safety: 5.5, healthcare: 7.8, visaEase: 6.5, digitalInfra: 9.7, climate: 1.5, english: 6.1, lgbtqSafety: 2.1, techEcosystem: 8.8, naturalEnvironment: 2 },
     costBreakdown: { rentUsd: 2200, groceriesUsd: 450, transportUsd: 70, utilitiesUsd: 250, diningOutUsd: 500, healthInsuranceUsd: 120, totalEstimateUsd: 3590 },
+    visaPathways: [
+      {
+        pathwayId: "AE-REMOTE-WORK",
+        countryCode: "AE",
+        visaType: "digital-nomad",
+        name: "Remote Work Visa",
+        eligibleLifeStages: ["remoteEmployee", "freelancer"],
+        incomeRequirement: {
+          amount: 3500,
+          currencyCode: "USD",
+          period: "monthly",
+          notes: "Minimum monthly income of $3,500."
+        },
+        durationMonths: 12,
+        renewable: true,
+        leadsToResidency: false,
+        residencyYearsRequired: null,
+        processingWeeks: [1, 2],
+        difficultyRating: 1,
+        requiresEmployer: false,
+        requiresMinIncome: true,
+        notes: "Apply via Dubai's Work Without Borders program.",
+        sourceUrl: "https://u.ae/en/information-and-services/visa-and-emirates-id/residency-visas/remote-work-visa",
+        lastVerified: "2026-04-27"
+      },
+      {
+        pathwayId: "AE-GOLDEN-VISA",
+        countryCode: "AE",
+        visaType: "exceptional-talent",
+        name: "Golden Visa (Professionals)",
+        eligibleLifeStages: ["localEmployee", "founder"],
+        incomeRequirement: {
+          amount: 30000,
+          currencyCode: "AED",
+          period: "monthly",
+          notes: "Minimum monthly salary for skilled professionals (Category 1 or 2)."
+        },
+        durationMonths: 120,
+        renewable: true,
+        leadsToResidency: true,
+        residencyYearsRequired: 0,
+        processingWeeks: [2, 4],
+        difficultyRating: 3,
+        requiresEmployer: true,
+        requiresMinIncome: true,
+        notes: "Long-term residency for talented individuals and investors.",
+        sourceUrl: "https://u.ae/en/information-and-services/visa-and-emirates-id/residency-visas/golden-visa",
+        lastVerified: "2026-04-27"
+      }
+    ],
     cities: ["Dubai", "Abu Dhabi"],
     rawIndicators: { summerHighC: 41, winterLowC: 14, humidityAvg: 60, airQualityIndex: 140, seismicZone: 1, internetReliability: 9.9, englishDailyLife: 9.2, stability: 9.1, authoritarianRisk: 7.5, corruptionRisk: 3.2 },
     dataConfidence: "high", lastUpdated: "2026-04-21"
@@ -98,8 +382,29 @@ export const COUNTRIES: Country[] = [
     languages: ["Vietnamese"], euMember: false, schengen: false, commonwealth: false,
     descriptor: "Extraordinary value, rapid growth, and a world-renowned culinary scene.",
     dimensions: { cost: 8.9, safety: 5.5, healthcare: 4.8, visaEase: 5, digitalInfra: 5.6, climate: 3.8, english: 3.3, lgbtqSafety: 4.5, techEcosystem: 6.2, naturalEnvironment: 5.9 },
-    costBreakdown: { rentUsd: 550, groceriesUsd: 180, transportUsd: 25, utilitiesUsd: 50, diningOutUsd: 120, healthInsuranceUsd: 40, totalEstimateUsd: 965 },
+    costBreakdown: { rentUsd: 550, groceriesUsd: 180, transportUsd: 25, utilitiesUsd: 50, diningOutUsd: 120, healthInsuranceUsd: 50, totalEstimateUsd: 975 },
+    visaPathways: [
+      {
+        pathwayId: "VN-WORK-PERMIT",
+        countryCode: "VN",
+        visaType: "skilled-worker",
+        name: "Work Permit",
+        eligibleLifeStages: ["localEmployee"],
+        durationMonths: 24,
+        renewable: true,
+        leadsToResidency: true,
+        residencyYearsRequired: 3,
+        processingWeeks: [4, 8],
+        difficultyRating: 4,
+        requiresEmployer: true,
+        requiresMinIncome: false,
+        notes: "Requires a labor contract and specific professional qualifications.",
+        sourceUrl: "https://lanhsuvietnam.gov.vn/Lists/HuongDanVeThiThuc/View_Detail.aspx?ItemID=1",
+        lastVerified: "2026-04-27"
+      }
+    ],
     cities: ["Ho Chi Minh City", "Hanoi", "Da Nang"],
+
     rawIndicators: { summerHighC: 33, winterLowC: 15, humidityAvg: 80, airQualityIndex: 150, seismicZone: 1, internetReliability: 8.2, englishDailyLife: 4.2, stability: 8.5, authoritarianRisk: 7.8, corruptionRisk: 6.2 },
     dataConfidence: "medium", lastUpdated: "2026-04-21"
   },
@@ -118,8 +423,29 @@ export const COUNTRIES: Country[] = [
     languages: ["Czech"], euMember: true, schengen: true, commonwealth: false,
     descriptor: "The heart of Europe, combining historic beauty with high safety and a strong manufacturing and tech base.",
     dimensions: { cost: 6.1, safety: 9.2, healthcare: 8.1, visaEase: 6.9, digitalInfra: 7.7, climate: 3.8, english: 5.1, lgbtqSafety: 7, techEcosystem: 7.6, naturalEnvironment: 2.7 },
-    costBreakdown: { rentUsd: 1100, groceriesUsd: 300, transportUsd: 35, utilitiesUsd: 180, diningOutUsd: 250, healthInsuranceUsd: 80, totalEstimateUsd: 1945 },
+    costBreakdown: { rentUsd: 1100, groceriesUsd: 280, transportUsd: 30, utilitiesUsd: 180, diningOutUsd: 220, healthInsuranceUsd: 60, totalEstimateUsd: 1870 },
+    visaPathways: [
+      {
+        pathwayId: "CZ-EMPLOYEE-CARD",
+        countryCode: "CZ",
+        visaType: "skilled-worker",
+        name: "Employee Card",
+        eligibleLifeStages: ["localEmployee"],
+        durationMonths: 24,
+        renewable: true,
+        leadsToResidency: true,
+        residencyYearsRequired: 5,
+        processingWeeks: [8, 12],
+        difficultyRating: 3,
+        requiresEmployer: true,
+        requiresMinIncome: false,
+        notes: "Dual-purpose permit for both residence and employment.",
+        sourceUrl: "https://www.mvcr.cz/mvcren/article/employee-card.aspx",
+        lastVerified: "2026-04-27"
+      }
+    ],
     cities: ["Prague", "Brno", "Ostrava"],
+
     rawIndicators: { summerHighC: 25, winterLowC: -3, humidityAvg: 65, airQualityIndex: 45, seismicZone: 1, internetReliability: 9.1, englishDailyLife: 7.2, stability: 9.2, authoritarianRisk: 2.1, corruptionRisk: 3.8 },
     dataConfidence: "high", lastUpdated: "2026-04-21"
   },
@@ -128,8 +454,35 @@ export const COUNTRIES: Country[] = [
     languages: ["Greek"], euMember: true, schengen: true, commonwealth: false,
     descriptor: "The cradle of Western civilisation, pairing marriage equality with an unmatched Mediterranean lifestyle and islands for every pace of life.",
     dimensions: { cost: 6.7, safety: 7.8, healthcare: 7.1, visaEase: 6.4, digitalInfra: 4.9, climate: 7.8, english: 5.6, lgbtqSafety: 8.5, techEcosystem: 6.1, naturalEnvironment: 7.2 },
-    costBreakdown: { rentUsd: 850, groceriesUsd: 280, transportUsd: 40, utilitiesUsd: 150, diningOutUsd: 280, healthInsuranceUsd: 70, totalEstimateUsd: 1670 },
-    cities: ["Athens", "Thessaloniki", "Chania", "Heraklion"],
+    costBreakdown: { rentUsd: 950, groceriesUsd: 280, transportUsd: 35, utilitiesUsd: 150, diningOutUsd: 250, healthInsuranceUsd: 70, totalEstimateUsd: 1735 },
+    visaPathways: [
+      {
+        pathwayId: "GR-DIGITAL-NOMAD",
+        countryCode: "GR",
+        visaType: "digital-nomad",
+        name: "Digital Nomad Visa",
+        eligibleLifeStages: ["remoteEmployee", "freelancer"],
+        incomeRequirement: {
+          amount: 3500,
+          currencyCode: "EUR",
+          period: "monthly",
+          notes: "Minimum monthly income of €3,500."
+        },
+        durationMonths: 12,
+        renewable: true,
+        leadsToResidency: true,
+        residencyYearsRequired: 7,
+        processingWeeks: [2, 8],
+        difficultyRating: 2,
+        requiresEmployer: false,
+        requiresMinIncome: true,
+        notes: "Can be renewed for an additional year.",
+        sourceUrl: "https://www.mfa.gr/en/visas/visa-types/national-visas.html",
+        lastVerified: "2026-04-27"
+      }
+    ],
+    cities: ["Athens", "Thessaloniki", "Chania"],
+
     rawIndicators: { summerHighC: 33, winterLowC: 7, humidityAvg: 50, airQualityIndex: 55, seismicZone: 4, internetReliability: 7.5, englishDailyLife: 7.8, stability: 7.8, authoritarianRisk: 2.5, corruptionRisk: 4.8 },
     dataConfidence: "high", lastUpdated: "2026-04-21"
   },
@@ -139,6 +492,32 @@ export const COUNTRIES: Country[] = [
     descriptor: "Pura Vida: a global leader in environmental sustainability and peaceful, democratic living.",
     dimensions: { cost: 6.2, safety: 7.1, healthcare: 7.2, visaEase: 7.4, digitalInfra: 5.6, climate: 6.9, english: 4.9, lgbtqSafety: 8.1, techEcosystem: 5.4, naturalEnvironment: 9.2 },
     costBreakdown: { rentUsd: 1100, groceriesUsd: 300, transportUsd: 45, utilitiesUsd: 90, diningOutUsd: 220, healthInsuranceUsd: 100, totalEstimateUsd: 1855 },
+    visaPathways: [
+      {
+        pathwayId: "CR-DIGITAL-NOMAD",
+        countryCode: "CR",
+        visaType: "digital-nomad",
+        name: "Digital Nomad Visa",
+        eligibleLifeStages: ["remoteEmployee", "freelancer"],
+        incomeRequirement: {
+          amount: 3000,
+          currencyCode: "USD",
+          period: "monthly",
+          notes: "Minimum monthly income of $3,000 for a single applicant."
+        },
+        durationMonths: 12,
+        renewable: true,
+        leadsToResidency: false,
+        residencyYearsRequired: null,
+        processingWeeks: [2, 4],
+        difficultyRating: 1,
+        requiresEmployer: false,
+        requiresMinIncome: true,
+        notes: "Allows for a 1-year stay, extendable for one additional year.",
+        sourceUrl: "https://www.migracion.go.cr/Paginas/N%C3%B3madas-Digitales.aspx",
+        lastVerified: "2026-04-27"
+      }
+    ],
     cities: ["San Jose", "Tamarindo", "Escazu"],
     rawIndicators: { summerHighC: 28, winterLowC: 18, humidityAvg: 75, airQualityIndex: 30, seismicZone: 4, internetReliability: 8.1, englishDailyLife: 6.8, stability: 8.8, authoritarianRisk: 1.2, corruptionRisk: 2.5 },
     dataConfidence: "high", lastUpdated: "2026-04-21"
@@ -158,8 +537,53 @@ export const COUNTRIES: Country[] = [
     languages: ["Japanese"], euMember: false, schengen: false, commonwealth: false,
     descriptor: "A perfect fusion of ultra-modern technology and timeless tradition, with world-class safety and service.",
     dimensions: { cost: 3.9, safety: 9.8, healthcare: 9.2, visaEase: 7, digitalInfra: 9.1, climate: 4.7, english: 2.6, lgbtqSafety: 7.2, techEcosystem: 7.8, naturalEnvironment: 5.5 },
-    costBreakdown: { rentUsd: 1800, groceriesUsd: 500, transportUsd: 120, utilitiesUsd: 220, diningOutUsd: 450, healthInsuranceUsd: 150, totalEstimateUsd: 3240 },
+    costBreakdown: { rentUsd: 1200, groceriesUsd: 350, transportUsd: 80, utilitiesUsd: 150, diningOutUsd: 400, healthInsuranceUsd: 100, totalEstimateUsd: 2280 },
+    visaPathways: [
+      {
+        pathwayId: "JP-HSP",
+        countryCode: "JP",
+        visaType: "exceptional-talent",
+        name: "Highly Skilled Professional",
+        eligibleLifeStages: ["localEmployee", "founder"],
+        durationMonths: 60,
+        renewable: true,
+        leadsToResidency: true,
+        residencyYearsRequired: 3,
+        processingWeeks: [4, 12],
+        difficultyRating: 4,
+        requiresEmployer: true,
+        requiresMinIncome: false,
+        notes: "Points-based system for high-level talent.",
+        sourceUrl: "https://www.isa.go.jp/en/publications/materials/newimmiact_3_index.html",
+        lastVerified: "2026-04-27"
+      },
+      {
+        pathwayId: "JP-J-FIND",
+        countryCode: "JP",
+        visaType: "job-seeker",
+        name: "J-Find Visa",
+        eligibleLifeStages: ["student"],
+        incomeRequirement: {
+          amount: 200000,
+          currencyCode: "JPY",
+          period: "monthly",
+          notes: "Must have at least 200,000 JPY for initial stay."
+        },
+        durationMonths: 24,
+        renewable: false,
+        leadsToResidency: true,
+        residencyYearsRequired: 10,
+        processingWeeks: [4, 8],
+        difficultyRating: 2,
+        requiresEmployer: false,
+        requiresMinIncome: true,
+        notes: "For graduates of top 100 world universities.",
+        sourceUrl: "https://www.mofa.go.jp/ca/fna/page22e_001037.html",
+        lastVerified: "2026-04-27"
+      }
+    ],
     cities: ["Tokyo", "Osaka", "Kyoto", "Fukuoka"],
+
     rawIndicators: { summerHighC: 31, winterLowC: 1, humidityAvg: 65, airQualityIndex: 35, seismicZone: 5, internetReliability: 9.8, englishDailyLife: 4.5, stability: 9.6, authoritarianRisk: 1.2, corruptionRisk: 1.5 },
     dataConfidence: "high", lastUpdated: "2026-04-21"
   },
@@ -178,8 +602,29 @@ export const COUNTRIES: Country[] = [
     languages: ["Spanish"], euMember: false, schengen: false, commonwealth: false,
     descriptor: "The 'Hub of the Americas' — a global financial centre with tropical rain forests and a friendly tax regime.",
     dimensions: { cost: 5.3, safety: 7.4, healthcare: 7.1, visaEase: 8.3, digitalInfra: 7.4, climate: 5.1, english: 4.4, lgbtqSafety: 6.2, techEcosystem: 6.1, naturalEnvironment: 6.2 },
-    costBreakdown: { rentUsd: 1400, groceriesUsd: 350, transportUsd: 40, utilitiesUsd: 110, diningOutUsd: 250, healthInsuranceUsd: 90, totalEstimateUsd: 2240 },
-    cities: ["Panama City", "Boquete", "Coronado"],
+    costBreakdown: { rentUsd: 1300, groceriesUsd: 280, transportUsd: 40, utilitiesUsd: 110, diningOutUsd: 220, healthInsuranceUsd: 90, totalEstimateUsd: 2040 },
+    visaPathways: [
+      {
+        pathwayId: "PA-FRIENDLY-NATIONS",
+        countryCode: "PA",
+        visaType: "skilled-worker",
+        name: "Friendly Nations Visa",
+        eligibleLifeStages: ["localEmployee", "founder"],
+        durationMonths: 24,
+        renewable: true,
+        leadsToResidency: true,
+        residencyYearsRequired: 2,
+        processingWeeks: [8, 16],
+        difficultyRating: 3,
+        requiresEmployer: true,
+        requiresMinIncome: false,
+        notes: "Open to citizens of 50+ 'friendly' nations. Requires a job offer or real estate investment.",
+        sourceUrl: "https://www.migracion.gob.pa/index.php/permisos-y-requisitos-para-visas/permisos-migratorios",
+        lastVerified: "2026-04-27"
+      }
+    ],
+    cities: ["Panama City", "Coronado", "Boquete"],
+
     rawIndicators: { summerHighC: 32, winterLowC: 23, humidityAvg: 80, airQualityIndex: 30, seismicZone: 3, internetReliability: 8.8, englishDailyLife: 6.5, stability: 8.2, authoritarianRisk: 2.5, corruptionRisk: 5.2 },
     dataConfidence: "high", lastUpdated: "2026-04-21"
   },
@@ -199,6 +644,56 @@ export const COUNTRIES: Country[] = [
     descriptor: "The world's safest and most efficient city-state — a hyper-connected global financial hub.",
     dimensions: { cost: 1.8, safety: 9.9, healthcare: 9.6, visaEase: 4, digitalInfra: 9.9, climate: 2.7, english: 9.4, lgbtqSafety: 5.1, techEcosystem: 9.8, naturalEnvironment: 2 },
     costBreakdown: { rentUsd: 3500, groceriesUsd: 600, transportUsd: 100, utilitiesUsd: 200, diningOutUsd: 600, healthInsuranceUsd: 250, totalEstimateUsd: 5250 },
+    visaPathways: [
+      {
+        pathwayId: "SG-EMPLOYMENT-PASS",
+        countryCode: "SG",
+        visaType: "skilled-worker",
+        name: "Employment Pass",
+        eligibleLifeStages: ["localEmployee"],
+        incomeRequirement: {
+          amount: 5000,
+          currencyCode: "SGD",
+          period: "monthly",
+          notes: "Benchmark for professionals (increases with age/sector)."
+        },
+        durationMonths: 24,
+        renewable: true,
+        leadsToResidency: true,
+        residencyYearsRequired: 2,
+        processingWeeks: [2, 8],
+        difficultyRating: 4,
+        requiresEmployer: true,
+        requiresMinIncome: true,
+        notes: "Requires a job offer and COMPASS points criteria.",
+        sourceUrl: "https://www.mom.gov.sg/passes-and-permits/employment-pass",
+        lastVerified: "2026-04-27"
+      },
+      {
+        pathwayId: "SG-ONE-PASS",
+        countryCode: "SG",
+        visaType: "exceptional-talent",
+        name: "ONE Pass",
+        eligibleLifeStages: ["founder", "localEmployee"],
+        incomeRequirement: {
+          amount: 30000,
+          currencyCode: "SGD",
+          period: "monthly",
+          notes: "Fixed monthly salary of at least S$30,000."
+        },
+        durationMonths: 60,
+        renewable: true,
+        leadsToResidency: true,
+        residencyYearsRequired: 2,
+        processingWeeks: [4, 8],
+        difficultyRating: 5,
+        requiresEmployer: false,
+        requiresMinIncome: true,
+        notes: "For top talent across all sectors.",
+        sourceUrl: "https://www.mom.gov.sg/passes-and-permits/overseas-networks-and-expertise-pass",
+        lastVerified: "2026-04-27"
+      }
+    ],
     cities: ["Singapore", "Sentosa Island"],
     rawIndicators: { summerHighC: 32, winterLowC: 24, humidityAvg: 80, airQualityIndex: 45, seismicZone: 0, internetReliability: 9.9, englishDailyLife: 9.8, stability: 9.8, authoritarianRisk: 4.5, corruptionRisk: 0.5 },
     dataConfidence: "high", lastUpdated: "2026-04-21"
@@ -209,7 +704,34 @@ export const COUNTRIES: Country[] = [
     descriptor: "The 'Rainbow Nation' — offering incredible wildlife, world-class cities, and exceptional value for high-budget expats.",
     dimensions: { cost: 6.1, safety: 3.1, healthcare: 6.8, visaEase: 4.9, digitalInfra: 6, climate: 7.8, english: 8.8, lgbtqSafety: 8.4, techEcosystem: 7.4, naturalEnvironment: 9.6 },
     costBreakdown: { rentUsd: 1100, groceriesUsd: 320, transportUsd: 60, utilitiesUsd: 130, diningOutUsd: 280, healthInsuranceUsd: 150, totalEstimateUsd: 2040 },
-    cities: ["Cape Town", "Johannesburg", "Durban"],
+    visaPathways: [
+      {
+        pathwayId: "ZA-DIGITAL-NOMAD",
+        countryCode: "ZA",
+        visaType: "digital-nomad",
+        name: "Remote Work Visa",
+        eligibleLifeStages: ["remoteEmployee", "freelancer"],
+        incomeRequirement: {
+          amount: 1000000,
+          currencyCode: "ZAR",
+          period: "annual",
+          notes: "Minimum annual income of R1,000,000."
+        },
+        durationMonths: 36,
+        renewable: true,
+        leadsToResidency: false,
+        residencyYearsRequired: null,
+        processingWeeks: [8, 16],
+        difficultyRating: 3,
+        requiresEmployer: false,
+        requiresMinIncome: true,
+        notes: "Targeted at digital nomads working for foreign employers.",
+        sourceUrl: "https://www.dha.gov.za/index.php/immigration-services/types-of-visas",
+        lastVerified: "2026-04-27"
+      }
+    ],
+    cities: ["Cape Town", "Johannesburg", "Stellenbosch"],
+
     rawIndicators: { summerHighC: 26, winterLowC: 7, humidityAvg: 60, airQualityIndex: 50, seismicZone: 1, internetReliability: 7.5, englishDailyLife: 9.5, stability: 5.8, authoritarianRisk: 2.8, corruptionRisk: 7.2 },
     dataConfidence: "high", lastUpdated: "2026-04-21"
   },
@@ -228,8 +750,35 @@ export const COUNTRIES: Country[] = [
     languages: ["Filipino", "English"], euMember: false, schengen: false, commonwealth: false,
     descriptor: "Archipelagic beauty with legendary hospitality and widespread English proficiency.",
     dimensions: { cost: 8.2, safety: 5.4, healthcare: 5.1, visaEase: 6, digitalInfra: 4.8, climate: 4, english: 8.3, lgbtqSafety: 6.2, techEcosystem: 5.8, naturalEnvironment: 8.5 },
-    costBreakdown: { rentUsd: 600, groceriesUsd: 220, transportUsd: 30, utilitiesUsd: 80, diningOutUsd: 150, healthInsuranceUsd: 60, totalEstimateUsd: 1140 },
+    costBreakdown: { rentUsd: 750, groceriesUsd: 220, transportUsd: 35, utilitiesUsd: 80, diningOutUsd: 150, healthInsuranceUsd: 60, totalEstimateUsd: 1295 },
+    visaPathways: [
+      {
+        pathwayId: "PH-SRRV",
+        countryCode: "PH",
+        visaType: "retirement",
+        name: "Special Resident Retiree's Visa (SRRV)",
+        eligibleLifeStages: ["retired", "semiRetired"],
+        incomeRequirement: {
+          amount: 20000,
+          currencyCode: "USD",
+          period: "oneTime",
+          notes: "Time deposit required (varies by category and pension)."
+        },
+        durationMonths: 120,
+        renewable: true,
+        leadsToResidency: true,
+        residencyYearsRequired: 10,
+        processingWeeks: [4, 8],
+        difficultyRating: 2,
+        requiresEmployer: false,
+        requiresMinIncome: true,
+        notes: "For retirees aged 50 and above.",
+        sourceUrl: "https://pra.gov.ph/srrv/",
+        lastVerified: "2026-04-27"
+      }
+    ],
     cities: ["Manila", "Cebu City", "Davao City"],
+
     rawIndicators: { summerHighC: 33, winterLowC: 23, humidityAvg: 80, airQualityIndex: 80, seismicZone: 5, internetReliability: 7.2, englishDailyLife: 9.1, stability: 6.8, authoritarianRisk: 5.2, corruptionRisk: 6.8 },
     dataConfidence: "high", lastUpdated: "2026-04-21"
   },
@@ -239,6 +788,32 @@ export const COUNTRIES: Country[] = [
     descriptor: "A continental giant with unmatched cultural energy, biodiversity, and a growing digital ecosystem.",
     dimensions: { cost: 7.4, safety: 4.8, healthcare: 6.4, visaEase: 8, digitalInfra: 6.4, climate: 7.8, english: 2.7, lgbtqSafety: 7.4, techEcosystem: 8.2, naturalEnvironment: 9.2 },
     costBreakdown: { rentUsd: 800, groceriesUsd: 250, transportUsd: 40, utilitiesUsd: 90, diningOutUsd: 200, healthInsuranceUsd: 80, totalEstimateUsd: 1460 },
+    visaPathways: [
+      {
+        pathwayId: "BR-DIGITAL-NOMAD",
+        countryCode: "BR",
+        visaType: "digital-nomad",
+        name: "Digital Nomad Visa",
+        eligibleLifeStages: ["remoteEmployee", "freelancer"],
+        incomeRequirement: {
+          amount: 1500,
+          currencyCode: "USD",
+          period: "monthly",
+          notes: "Minimum monthly income of $1,500 or $18,000 in bank funds."
+        },
+        durationMonths: 12,
+        renewable: true,
+        leadsToResidency: false,
+        residencyYearsRequired: null,
+        processingWeeks: [2, 6],
+        difficultyRating: 2,
+        requiresEmployer: false,
+        requiresMinIncome: true,
+        notes: "Allows remote workers to stay in Brazil for up to one year, renewable.",
+        sourceUrl: "https://www.gov.br/mre/pt-br/embaixada-helsinque/consular-services/visas/digital-nomad-visa-vicom",
+        lastVerified: "2026-04-27"
+      }
+    ],
     cities: ["Sao Paulo", "Rio de Janeiro", "Florianopolis"],
     rawIndicators: { summerHighC: 30, winterLowC: 13, humidityAvg: 75, airQualityIndex: 65, seismicZone: 0, internetReliability: 8.5, englishDailyLife: 4.5, stability: 7.5, authoritarianRisk: 3.5, corruptionRisk: 6.1 },
     dataConfidence: "high", lastUpdated: "2026-04-21"
@@ -249,6 +824,50 @@ export const COUNTRIES: Country[] = [
     descriptor: "Europe's economic engine, offering exceptional stability, social security, and a powerhouse of innovation.",
     dimensions: { cost: 4.3, safety: 8.8, healthcare: 9.1, visaEase: 4.5, digitalInfra: 6.9, climate: 3.4, english: 6.4, lgbtqSafety: 9.1, techEcosystem: 9.4, naturalEnvironment: 3.4 },
     costBreakdown: { rentUsd: 1600, groceriesUsd: 350, transportUsd: 70, utilitiesUsd: 250, diningOutUsd: 350, healthInsuranceUsd: 300, totalEstimateUsd: 2920 },
+    visaPathways: [
+      {
+        pathwayId: "DE-CHANCENKARTE",
+        countryCode: "DE",
+        visaType: "job-seeker",
+        name: "Opportunity Card (Chancenkarte)",
+        eligibleLifeStages: ["localEmployee"],
+        incomeRequirement: {
+          amount: 1027,
+          currencyCode: "EUR",
+          period: "monthly",
+          notes: "Proof of means of subsistence (approx. €1,027 per month)."
+        },
+        durationMonths: 12,
+        renewable: false,
+        leadsToResidency: true,
+        residencyYearsRequired: 5,
+        processingWeeks: [4, 12],
+        difficultyRating: 2,
+        requiresEmployer: false,
+        requiresMinIncome: true,
+        notes: "Points-based card for job seeking in Germany.",
+        sourceUrl: "https://www.make-it-in-germany.com/en/visa-residence/types/opportunity-card",
+        lastVerified: "2026-04-27"
+      },
+      {
+        pathwayId: "DE-SKILLED-WORKER",
+        countryCode: "DE",
+        visaType: "skilled-worker",
+        name: "Skilled Worker Visa",
+        eligibleLifeStages: ["localEmployee"],
+        durationMonths: 48,
+        renewable: true,
+        leadsToResidency: true,
+        residencyYearsRequired: 5,
+        processingWeeks: [8, 16],
+        difficultyRating: 3,
+        requiresEmployer: true,
+        requiresMinIncome: false,
+        notes: "For qualified professionals with a recognized degree and job offer.",
+        sourceUrl: "https://www.make-it-in-germany.com/en/visa-residence/types/work-qualified-professionals",
+        lastVerified: "2026-04-27"
+      }
+    ],
     cities: ["Berlin", "Munich", "Hamburg", "Frankfurt"],
     rawIndicators: { summerHighC: 24, winterLowC: -2, humidityAvg: 70, airQualityIndex: 30, seismicZone: 1, internetReliability: 9.1, englishDailyLife: 8.2, stability: 9.4, authoritarianRisk: 1.1, corruptionRisk: 1.5 },
     dataConfidence: "high", lastUpdated: "2026-04-21"
@@ -258,8 +877,35 @@ export const COUNTRIES: Country[] = [
     languages: ["French"], euMember: true, schengen: true, commonwealth: false,
     descriptor: "A nation of extraordinary cultural depth, world-class healthcare, and an unmatched quality of life.",
     dimensions: { cost: 4.7, safety: 7.8, healthcare: 9.2, visaEase: 7.5, digitalInfra: 7.7, climate: 5.4, english: 4.5, lgbtqSafety: 8.0, techEcosystem: 8.0, naturalEnvironment: 5.9 },
-    costBreakdown: { rentUsd: 1600, groceriesUsd: 280, transportUsd: 75, utilitiesUsd: 150, diningOutUsd: 320, healthInsuranceUsd: 100, totalEstimateUsd: 2525 },
-    cities: ["Paris", "Lyon", "Marseille", "Nice"],
+    costBreakdown: { rentUsd: 1400, groceriesUsd: 350, transportUsd: 70, utilitiesUsd: 180, diningOutUsd: 350, healthInsuranceUsd: 80, totalEstimateUsd: 2430 },
+    visaPathways: [
+      {
+        pathwayId: "FR-TALENT-PASSPORT",
+        countryCode: "FR",
+        visaType: "skilled-worker",
+        name: "Talent Passport",
+        eligibleLifeStages: ["localEmployee", "founder"],
+        incomeRequirement: {
+          amount: 41931,
+          currencyCode: "EUR",
+          period: "annual",
+          notes: "Minimum salary requirement for the 'qualified employee' category (1.8x SMIC)."
+        },
+        durationMonths: 48,
+        renewable: true,
+        leadsToResidency: true,
+        residencyYearsRequired: 5,
+        processingWeeks: [4, 12],
+        difficultyRating: 3,
+        requiresEmployer: true,
+        requiresMinIncome: true,
+        notes: "Designed for highly skilled non-EU nationals.",
+        sourceUrl: "https://www.service-public.fr/particuliers/vosdroits/F16922?lang=en",
+        lastVerified: "2026-04-27"
+      }
+    ],
+    cities: ["Paris", "Lyon", "Bordeaux", "Nice"],
+
     rawIndicators: { summerHighC: 25, winterLowC: 2, humidityAvg: 70, airQualityIndex: 35, seismicZone: 2, internetReliability: 9.4, englishDailyLife: 6.5, stability: 8.8, authoritarianRisk: 1.5, corruptionRisk: 2.1 },
     dataConfidence: "high", lastUpdated: "2026-04-21"
   },
@@ -268,8 +914,35 @@ export const COUNTRIES: Country[] = [
     languages: ["Italian"], euMember: true, schengen: true, commonwealth: false,
     descriptor: "Unmatched beauty, food, and history — offering a lifestyle that prioritises pleasure and family.",
     dimensions: { cost: 5.6, safety: 8.0, healthcare: 8.6, visaEase: 7, digitalInfra: 6.6, climate: 6.9, english: 4.2, lgbtqSafety: 7.1, techEcosystem: 6.6, naturalEnvironment: 7.2 },
-    costBreakdown: { rentUsd: 1400, groceriesUsd: 250, transportUsd: 45, utilitiesUsd: 160, diningOutUsd: 240, healthInsuranceUsd: 90, totalEstimateUsd: 2185 },
-    cities: ["Rome", "Milan", "Florence", "Naples"],
+    costBreakdown: { rentUsd: 1100, groceriesUsd: 320, transportUsd: 45, utilitiesUsd: 180, diningOutUsd: 300, healthInsuranceUsd: 80, totalEstimateUsd: 2025 },
+    visaPathways: [
+      {
+        pathwayId: "IT-DIGITAL-NOMAD",
+        countryCode: "IT",
+        visaType: "digital-nomad",
+        name: "Digital Nomad Visa",
+        eligibleLifeStages: ["remoteEmployee", "freelancer"],
+        incomeRequirement: {
+          amount: 28000,
+          currencyCode: "EUR",
+          period: "annual",
+          notes: "Minimum annual income required (approx. 3x the minimum exempt level)."
+        },
+        durationMonths: 12,
+        renewable: true,
+        leadsToResidency: true,
+        residencyYearsRequired: 5,
+        processingWeeks: [4, 12],
+        difficultyRating: 3,
+        requiresEmployer: false,
+        requiresMinIncome: true,
+        notes: "For highly skilled remote workers from non-EU countries.",
+        sourceUrl: "https://vistoperitalia.esteri.it/home/en",
+        lastVerified: "2026-04-27"
+      }
+    ],
+    cities: ["Rome", "Milan", "Florence", "Bologna"],
+
     rawIndicators: { summerHighC: 31, winterLowC: 2, humidityAvg: 65, airQualityIndex: 50, seismicZone: 4, internetReliability: 8.8, englishDailyLife: 6.2, stability: 8.1, authoritarianRisk: 2.1, corruptionRisk: 4.5 },
     dataConfidence: "high", lastUpdated: "2026-04-21"
   },
@@ -288,8 +961,29 @@ export const COUNTRIES: Country[] = [
     languages: ["Polish"], euMember: true, schengen: true, commonwealth: false,
     descriptor: "A dynamic, rapidly modernising nation with a powerhouse economy and high quality of life.",
     dimensions: { cost: 7.4, safety: 8.2, healthcare: 7.4, visaEase: 5.9, digitalInfra: 7.4, climate: 3.2, english: 5.2, lgbtqSafety: 4.4, techEcosystem: 7.8, naturalEnvironment: 2.7 },
-    costBreakdown: { rentUsd: 800, groceriesUsd: 220, transportUsd: 35, utilitiesUsd: 140, diningOutUsd: 180, healthInsuranceUsd: 60, totalEstimateUsd: 1435 },
+    costBreakdown: { rentUsd: 1000, groceriesUsd: 250, transportUsd: 25, utilitiesUsd: 150, diningOutUsd: 180, healthInsuranceUsd: 50, totalEstimateUsd: 1655 },
+    visaPathways: [
+      {
+        pathwayId: "PL-WORK-PERMIT",
+        countryCode: "PL",
+        visaType: "skilled-worker",
+        name: "Work Permit (Type A)",
+        eligibleLifeStages: ["localEmployee"],
+        durationMonths: 36,
+        renewable: true,
+        leadsToResidency: true,
+        residencyYearsRequired: 5,
+        processingWeeks: [4, 12],
+        difficultyRating: 2,
+        requiresEmployer: true,
+        requiresMinIncome: false,
+        notes: "For foreigners working for a Polish employer.",
+        sourceUrl: "https://www.gov.pl/web/uw-mazowiecki/zezwolenie-na-prace",
+        lastVerified: "2026-04-27"
+      }
+    ],
     cities: ["Warsaw", "Krakow", "Wroclaw", "Gdansk"],
+
     rawIndicators: { summerHighC: 24, winterLowC: -4, humidityAvg: 75, airQualityIndex: 65, seismicZone: 1, internetReliability: 9.2, englishDailyLife: 7.8, stability: 8.5, authoritarianRisk: 3.2, corruptionRisk: 3.5 },
     dataConfidence: "high", lastUpdated: "2026-04-21"
   },
@@ -329,6 +1023,32 @@ export const COUNTRIES: Country[] = [
     descriptor: "The heart of digital nomad culture in Bali, offering tropical paradise at an unbeatable price.",
     dimensions: { cost: 8.6, safety: 6.6, healthcare: 5.6, visaEase: 6, digitalInfra: 3.5, climate: 4.9, english: 3.7, lgbtqSafety: 1.3, techEcosystem: 5.8, naturalEnvironment: 7.2 },
     costBreakdown: { rentUsd: 600, groceriesUsd: 180, transportUsd: 25, utilitiesUsd: 90, diningOutUsd: 100, healthInsuranceUsd: 55, totalEstimateUsd: 1050 },
+    visaPathways: [
+      {
+        pathwayId: "ID-REMOTE-WORK",
+        countryCode: "ID",
+        visaType: "digital-nomad",
+        name: "Remote Worker Visa (E33G)",
+        eligibleLifeStages: ["remoteEmployee", "freelancer"],
+        incomeRequirement: {
+          amount: 60000,
+          currencyCode: "USD",
+          period: "annual",
+          notes: "Minimum annual income of $60,000."
+        },
+        durationMonths: 12,
+        renewable: true,
+        leadsToResidency: false,
+        residencyYearsRequired: null,
+        processingWeeks: [2, 4],
+        difficultyRating: 2,
+        requiresEmployer: false,
+        requiresMinIncome: true,
+        notes: "Specific visa for remote workers (digital nomads) in Indonesia.",
+        sourceUrl: "https://molina.imigrasi.go.id/",
+        lastVerified: "2026-04-27"
+      }
+    ],
     cities: ["Canggu", "Ubud", "Jakarta", "Seminyak"],
     rawIndicators: { summerHighC: 31, winterLowC: 22, humidityAvg: 80, airQualityIndex: 90, seismicZone: 5, internetReliability: 6.5, englishDailyLife: 6.2, stability: 7.8, authoritarianRisk: 4.8, corruptionRisk: 6.5 },
     dataConfidence: "high", lastUpdated: "2026-04-21"
@@ -338,8 +1058,35 @@ export const COUNTRIES: Country[] = [
     languages: ["Malay", "English"], euMember: false, schengen: false, commonwealth: true,
     descriptor: "A hyper-modern tropical hub with English as a working language and exceptional infrastructure.",
     dimensions: { cost: 8, safety: 7.6, healthcare: 7.4, visaEase: 8, digitalInfra: 6.9, climate: 4, english: 5, lgbtqSafety: 1.0, techEcosystem: 7.8, naturalEnvironment: 3.7 },
-    costBreakdown: { rentUsd: 700, groceriesUsd: 200, transportUsd: 35, utilitiesUsd: 110, diningOutUsd: 100, healthInsuranceUsd: 60, totalEstimateUsd: 1205 },
+    costBreakdown: { rentUsd: 650, groceriesUsd: 180, transportUsd: 30, utilitiesUsd: 60, diningOutUsd: 150, healthInsuranceUsd: 60, totalEstimateUsd: 1130 },
+    visaPathways: [
+      {
+        pathwayId: "MY-DE-RANTAU",
+        countryCode: "MY",
+        visaType: "digital-nomad",
+        name: "DE Rantau Nomad Pass",
+        eligibleLifeStages: ["remoteEmployee", "freelancer"],
+        incomeRequirement: {
+          amount: 24000,
+          currencyCode: "USD",
+          period: "annual",
+          notes: "Minimum annual income of $24,000 for digital nomads."
+        },
+        durationMonths: 12,
+        renewable: true,
+        leadsToResidency: false,
+        residencyYearsRequired: null,
+        processingWeeks: [4, 8],
+        difficultyRating: 2,
+        requiresEmployer: false,
+        requiresMinIncome: true,
+        notes: "Open to digital nomads, remote workers, and freelancers in IT and digital domains.",
+        sourceUrl: "https://mdec.my/derantau",
+        lastVerified: "2026-04-27"
+      }
+    ],
     cities: ["Kuala Lumpur", "Penang", "Johor Bahru"],
+
     rawIndicators: { summerHighC: 33, winterLowC: 23, humidityAvg: 80, airQualityIndex: 60, seismicZone: 1, internetReliability: 8.8, englishDailyLife: 8.8, stability: 8.2, authoritarianRisk: 5.8, corruptionRisk: 5.1 },
     dataConfidence: "high", lastUpdated: "2026-04-21"
   },
@@ -348,8 +1095,29 @@ export const COUNTRIES: Country[] = [
     languages: ["Korean"], euMember: false, schengen: false, commonwealth: false,
     descriptor: "The world's most wired country, offering hyper-efficiency and a dynamic creative culture.",
     dimensions: { cost: 6.1, safety: 8.4, healthcare: 9.2, visaEase: 7, digitalInfra: 9.7, climate: 4, english: 5.2, lgbtqSafety: 4.2, techEcosystem: 8.4, naturalEnvironment: 5 },
-    costBreakdown: { rentUsd: 1200, groceriesUsd: 320, transportUsd: 50, utilitiesUsd: 180, diningOutUsd: 200, healthInsuranceUsd: 90, totalEstimateUsd: 2040 },
+    costBreakdown: { rentUsd: 1100, groceriesUsd: 400, transportUsd: 70, utilitiesUsd: 150, diningOutUsd: 350, healthInsuranceUsd: 100, totalEstimateUsd: 2170 },
+    visaPathways: [
+      {
+        pathwayId: "KR-D10-JOB-SEEKER",
+        countryCode: "KR",
+        visaType: "job-seeker",
+        name: "D-10 Job Seeker Visa",
+        eligibleLifeStages: ["student"],
+        durationMonths: 6,
+        renewable: true,
+        leadsToResidency: true,
+        residencyYearsRequired: 5,
+        processingWeeks: [2, 4],
+        difficultyRating: 2,
+        requiresEmployer: false,
+        requiresMinIncome: false,
+        notes: "For those seeking employment in fields covered by E-1 through E-7 visas.",
+        sourceUrl: "https://www.hikorea.go.kr/Main.pt",
+        lastVerified: "2026-04-27"
+      }
+    ],
     cities: ["Seoul", "Busan", "Incheon", "Jeju City"],
+
     rawIndicators: { summerHighC: 30, winterLowC: -6, humidityAvg: 65, airQualityIndex: 80, seismicZone: 1, internetReliability: 9.9, englishDailyLife: 7.1, stability: 9.2, authoritarianRisk: 1.8, corruptionRisk: 2.2 },
     dataConfidence: "high", lastUpdated: "2026-04-21"
   },
@@ -358,8 +1126,35 @@ export const COUNTRIES: Country[] = [
     languages: ["Turkish"], euMember: false, schengen: false, commonwealth: false,
     descriptor: "A vast cultural bridge between continents with extraordinary history and incredible value.",
     dimensions: { cost: 8.2, safety: 5.4, healthcare: 7.0, visaEase: 7.5, digitalInfra: 5.4, climate: 6.7, english: 4.3, lgbtqSafety: 3.5, techEcosystem: 6.8, naturalEnvironment: 4.1 },
-    costBreakdown: { rentUsd: 650, groceriesUsd: 180, transportUsd: 25, utilitiesUsd: 100, diningOutUsd: 140, healthInsuranceUsd: 55, totalEstimateUsd: 1150 },
-    cities: ["Istanbul", "Antalya", "Izmir", "Ankara"],
+    costBreakdown: { rentUsd: 700, groceriesUsd: 180, transportUsd: 30, utilitiesUsd: 70, diningOutUsd: 150, healthInsuranceUsd: 50, totalEstimateUsd: 1180 },
+    visaPathways: [
+      {
+        pathwayId: "TR-DIGITAL-NOMAD",
+        countryCode: "TR",
+        visaType: "digital-nomad",
+        name: "Digital Nomad Visa",
+        eligibleLifeStages: ["remoteEmployee", "freelancer"],
+        incomeRequirement: {
+          amount: 3000,
+          currencyCode: "USD",
+          period: "monthly",
+          notes: "Minimum monthly income of $3,000 or $36,000 annually."
+        },
+        durationMonths: 12,
+        renewable: true,
+        leadsToResidency: false,
+        residencyYearsRequired: null,
+        processingWeeks: [2, 6],
+        difficultyRating: 1,
+        requiresEmployer: false,
+        requiresMinIncome: true,
+        notes: "Apply via the GoTürkiye Digital Nomad portal.",
+        sourceUrl: "https://digitalnomads.goturkiye.com/",
+        lastVerified: "2026-04-27"
+      }
+    ],
+    cities: ["Istanbul", "Antalya", "Bodrum", "Izmir"],
+
     rawIndicators: { summerHighC: 29, winterLowC: 5, humidityAvg: 60, airQualityIndex: 65, seismicZone: 5, internetReliability: 8.1, englishDailyLife: 6.2, stability: 6.2, authoritarianRisk: 7.2, corruptionRisk: 6.5 },
     dataConfidence: "high", lastUpdated: "2026-04-21"
   },
@@ -379,6 +1174,26 @@ export const COUNTRIES: Country[] = [
     descriptor: "The ultimate remote sanctuary — safe, stable, and naturally breathtaking.",
     dimensions: { cost: 4.5, safety: 9.6, healthcare: 8.6, visaEase: 4, digitalInfra: 7.7, climate: 6.4, english: 5.9, lgbtqSafety: 8.7, techEcosystem: 7.6, naturalEnvironment: 7.7 },
     costBreakdown: { rentUsd: 1700, groceriesUsd: 380, transportUsd: 80, utilitiesUsd: 200, diningOutUsd: 360, healthInsuranceUsd: 80, totalEstimateUsd: 2800 },
+    visaPathways: [
+      {
+        pathwayId: "NZ-ACCREDITED-EMPLOYER",
+        countryCode: "NZ",
+        visaType: "skilled-worker",
+        name: "Accredited Employer Work Visa",
+        eligibleLifeStages: ["localEmployee"],
+        durationMonths: 60,
+        renewable: true,
+        leadsToResidency: true,
+        residencyYearsRequired: 2,
+        processingWeeks: [8, 16],
+        difficultyRating: 3,
+        requiresEmployer: true,
+        requiresMinIncome: false,
+        notes: "Must have a job offer from an accredited employer.",
+        sourceUrl: "https://www.immigration.govt.nz/assist-migrants-and-students/assist-migrants/employer-accreditation/accredited-employer-work-visa",
+        lastVerified: "2026-04-27"
+      }
+    ],
     cities: ["Auckland", "Wellington", "Christchurch", "Queenstown"],
     rawIndicators: { summerHighC: 23, winterLowC: 7, humidityAvg: 75, airQualityIndex: 15, seismicZone: 5, internetReliability: 9.4, englishDailyLife: 9.8, stability: 9.8, authoritarianRisk: 0.5, corruptionRisk: 0.8 },
     dataConfidence: "high", lastUpdated: "2026-04-21"
@@ -389,6 +1204,50 @@ export const COUNTRIES: Country[] = [
     descriptor: "A sun-drenched continent with a powerhouse economy and an unmatched outdoor lifestyle.",
     dimensions: { cost: 3.4, safety: 9.2, healthcare: 8.8, visaEase: 4, digitalInfra: 7.7, climate: 6.9, english: 5.6, lgbtqSafety: 8.6, techEcosystem: 8.4, naturalEnvironment: 6.6 },
     costBreakdown: { rentUsd: 1900, groceriesUsd: 400, transportUsd: 90, utilitiesUsd: 230, diningOutUsd: 400, healthInsuranceUsd: 400, totalEstimateUsd: 3420 },
+    visaPathways: [
+      {
+        pathwayId: "AU-SKILLED-INDEPENDENT-189",
+        countryCode: "AU",
+        visaType: "skilled-worker",
+        name: "Skilled Independent (189)",
+        eligibleLifeStages: ["localEmployee"],
+        durationMonths: 120,
+        renewable: true,
+        leadsToResidency: true,
+        residencyYearsRequired: 4,
+        processingWeeks: [24, 72],
+        difficultyRating: 5,
+        requiresEmployer: false,
+        requiresMinIncome: false,
+        notes: "Points-tested permanent residency for invited skilled workers.",
+        sourceUrl: "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/skilled-independent-189",
+        lastVerified: "2026-04-27"
+      },
+      {
+        pathwayId: "AU-STUDENT-500",
+        countryCode: "AU",
+        visaType: "student",
+        name: "Student Visa (500)",
+        eligibleLifeStages: ["student"],
+        incomeRequirement: {
+          amount: 29710,
+          currencyCode: "AUD",
+          period: "oneTime",
+          notes: "Evidence of financial capacity for stay."
+        },
+        durationMonths: 60,
+        renewable: true,
+        leadsToResidency: true,
+        residencyYearsRequired: 4,
+        processingWeeks: [4, 12],
+        difficultyRating: 2,
+        requiresEmployer: false,
+        requiresMinIncome: true,
+        notes: "For students enrolled in registered courses.",
+        sourceUrl: "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+        lastVerified: "2026-04-27"
+      }
+    ],
     cities: ["Sydney", "Melbourne", "Brisbane", "Perth", "Gold Coast"],
     rawIndicators: { summerHighC: 26, winterLowC: 8, humidityAvg: 60, airQualityIndex: 25, seismicZone: 1, internetReliability: 9.1, englishDailyLife: 9.9, stability: 9.5, authoritarianRisk: 0.8, corruptionRisk: 1.2 },
     dataConfidence: "high", lastUpdated: "2026-04-21"
@@ -399,6 +1258,56 @@ export const COUNTRIES: Country[] = [
     descriptor: "A world-leading inclusive democracy with spectacular wilderness and high-growth cities.",
     dimensions: { cost: 4.5, safety: 9.0, healthcare: 8.6, visaEase: 4, digitalInfra: 8.3, climate: 2.8, english: 5.6, lgbtqSafety: 9.0, techEcosystem: 8.2, naturalEnvironment: 5 },
     costBreakdown: { rentUsd: 1600, groceriesUsd: 380, transportUsd: 90, utilitiesUsd: 220, diningOutUsd: 400, healthInsuranceUsd: 150, totalEstimateUsd: 2840 },
+    visaPathways: [
+      {
+        pathwayId: "CA-FEDERAL-SKILLED",
+        countryCode: "CA",
+        visaType: "skilled-worker",
+        name: "Express Entry (FSW)",
+        eligibleLifeStages: ["localEmployee"],
+        incomeRequirement: {
+          amount: 14690,
+          currencyCode: "CAD",
+          period: "oneTime",
+          notes: "Minimum settlement funds for a single applicant."
+        },
+        durationMonths: 120,
+        renewable: true,
+        leadsToResidency: true,
+        residencyYearsRequired: 3,
+        processingWeeks: [24, 52],
+        difficultyRating: 4,
+        requiresEmployer: false,
+        requiresMinIncome: true,
+        notes: "Points-based system (CRS) for permanent residency.",
+        sourceUrl: "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry.html",
+        lastVerified: "2026-04-27"
+      },
+      {
+        pathwayId: "CA-STUDY-PERMIT",
+        countryCode: "CA",
+        visaType: "student",
+        name: "Study Permit",
+        eligibleLifeStages: ["student"],
+        incomeRequirement: {
+          amount: 20635,
+          currencyCode: "CAD",
+          period: "oneTime",
+          notes: "Proof of financial support for one person (excluding tuition)."
+        },
+        durationMonths: 36,
+        renewable: true,
+        leadsToResidency: true,
+        residencyYearsRequired: 3,
+        processingWeeks: [8, 16],
+        difficultyRating: 2,
+        requiresEmployer: false,
+        requiresMinIncome: true,
+        notes: "Allows working up to 20 hours per week off-campus.",
+        sourceUrl: "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit.html",
+        lastVerified: "2026-04-27"
+      }
+    ],
     cities: ["Toronto", "Vancouver", "Montreal", "Calgary"],
     rawIndicators: { summerHighC: 26, winterLowC: -7, humidityAvg: 65, airQualityIndex: 25, seismicZone: 2, internetReliability: 9.5, englishDailyLife: 9.8, stability: 9.4, authoritarianRisk: 0.8, corruptionRisk: 1.1 },
     dataConfidence: "high", lastUpdated: "2026-04-21"
@@ -508,8 +1417,29 @@ export const COUNTRIES: Country[] = [
     languages: ["German"], euMember: true, schengen: true, commonwealth: false,
     descriptor: "A central European powerhouse of culture, stability, and world-class alpine living.",
     dimensions: { cost: 4.8, safety: 9.4, healthcare: 9.2, visaEase: 5.2, digitalInfra: 8.3, climate: 4, english: 6.6, lgbtqSafety: 9.1, techEcosystem: 8.2, naturalEnvironment: 8.5 },
-    costBreakdown: { rentUsd: 1400, groceriesUsd: 350, transportUsd: 60, utilitiesUsd: 180, diningOutUsd: 350, healthInsuranceUsd: 150, totalEstimateUsd: 2490 },
+    costBreakdown: { rentUsd: 1300, groceriesUsd: 320, transportUsd: 60, utilitiesUsd: 180, diningOutUsd: 300, healthInsuranceUsd: 120, totalEstimateUsd: 2280 },
+    visaPathways: [
+      {
+        pathwayId: "AT-RED-WHITE-RED",
+        countryCode: "AT",
+        visaType: "skilled-worker",
+        name: "Red-White-Red Card",
+        eligibleLifeStages: ["localEmployee", "founder"],
+        durationMonths: 24,
+        renewable: true,
+        leadsToResidency: true,
+        residencyYearsRequired: 5,
+        processingWeeks: [8, 20],
+        difficultyRating: 4,
+        requiresEmployer: true,
+        requiresMinIncome: false,
+        notes: "Points-based system for highly qualified workers and founders.",
+        sourceUrl: "https://www.migration.gv.at/en/types-of-immigration/permanent-immigration/",
+        lastVerified: "2026-04-27"
+      }
+    ],
     cities: ["Vienna", "Salzburg", "Innsbruck", "Graz"],
+
     rawIndicators: { summerHighC: 26, winterLowC: -2, humidityAvg: 70, airQualityIndex: 30, seismicZone: 2, internetReliability: 9.6, englishDailyLife: 8.2, stability: 9.6, authoritarianRisk: 1.1, corruptionRisk: 1.4 },
     dataConfidence: "high", lastUpdated: "2026-04-24"
   },
@@ -578,8 +1508,29 @@ export const COUNTRIES: Country[] = [
     languages: ["Dutch", "French", "German"], euMember: true, schengen: true, commonwealth: false,
     descriptor: "The heart of the European Union, offering a high quality of life and multilingual urban centers.",
     dimensions: { cost: 5, safety: 8.1, healthcare: 9.1, visaEase: 3.5, digitalInfra: 8.8, climate: 3.4, english: 7.3, lgbtqSafety: 9.2, techEcosystem: 8.4, naturalEnvironment: 2.1 },
-    costBreakdown: { rentUsd: 1200, groceriesUsd: 380, transportUsd: 60, utilitiesUsd: 220, diningOutUsd: 380, healthInsuranceUsd: 110, totalEstimateUsd: 2350 },
+    costBreakdown: { rentUsd: 1200, groceriesUsd: 320, transportUsd: 55, utilitiesUsd: 180, diningOutUsd: 280, healthInsuranceUsd: 90, totalEstimateUsd: 2125 },
+    visaPathways: [
+      {
+        pathwayId: "BE-SINGLE-PERMIT",
+        countryCode: "BE",
+        visaType: "skilled-worker",
+        name: "Single Permit",
+        eligibleLifeStages: ["localEmployee"],
+        durationMonths: 12,
+        renewable: true,
+        leadsToResidency: true,
+        residencyYearsRequired: 5,
+        processingWeeks: [8, 16],
+        difficultyRating: 3,
+        requiresEmployer: true,
+        requiresMinIncome: false,
+        notes: "Combines work and residence permit in a single application.",
+        sourceUrl: "https://www.belgium.be/en/work/coming_to_work_in_belgium/single_permit",
+        lastVerified: "2026-04-27"
+      }
+    ],
     cities: ["Brussels", "Antwerp", "Ghent", "Bruges"],
+
     rawIndicators: { summerHighC: 23, winterLowC: 1, humidityAvg: 80, airQualityIndex: 35, seismicZone: 2, internetReliability: 9.6, englishDailyLife: 8.5, stability: 9.1, authoritarianRisk: 1.1, corruptionRisk: 1.4 },
     dataConfidence: "high", lastUpdated: "2026-04-24"
   },
@@ -788,8 +1739,29 @@ export const COUNTRIES: Country[] = [
     languages: ["Danish", "English"], euMember: true, schengen: true, commonwealth: false,
     descriptor: "A world leader in social equality, sustainability, and high-trust societal living.",
     dimensions: { cost: 4.2, safety: 9.6, healthcare: 9.1, visaEase: 2.5, digitalInfra: 9.4, climate: 2.3, english: 9.1, lgbtqSafety: 9.6, techEcosystem: 8.8, naturalEnvironment: 2.7 },
-    costBreakdown: { rentUsd: 1800, groceriesUsd: 450, transportUsd: 80, utilitiesUsd: 200, diningOutUsd: 500, healthInsuranceUsd: 80, totalEstimateUsd: 3110 },
+    costBreakdown: { rentUsd: 1500, groceriesUsd: 380, transportUsd: 70, utilitiesUsd: 220, diningOutUsd: 350, healthInsuranceUsd: 100, totalEstimateUsd: 2620 },
+    visaPathways: [
+      {
+        pathwayId: "DK-POSITIVE-LIST",
+        countryCode: "DK",
+        visaType: "skilled-worker",
+        name: "Positive List",
+        eligibleLifeStages: ["localEmployee"],
+        durationMonths: 48,
+        renewable: true,
+        leadsToResidency: true,
+        residencyYearsRequired: 8,
+        processingWeeks: [4, 12],
+        difficultyRating: 3,
+        requiresEmployer: true,
+        requiresMinIncome: false,
+        notes: "For professions experiencing a shortage of qualified professionals in Denmark.",
+        sourceUrl: "https://www.nyidanmark.dk/en-GB/You-want-to-apply/Work/The-Positive-Lists",
+        lastVerified: "2026-04-27"
+      }
+    ],
     cities: ["Copenhagen", "Aarhus", "Odense"],
+
     rawIndicators: { summerHighC: 21, winterLowC: -1, humidityAvg: 80, airQualityIndex: 25, seismicZone: 0, internetReliability: 9.8, englishDailyLife: 9.5, stability: 9.8, authoritarianRisk: 0.5, corruptionRisk: 0.5 },
     dataConfidence: "high", lastUpdated: "2026-04-24"
   },
@@ -1008,8 +1980,35 @@ export const COUNTRIES: Country[] = [
     languages: ["Hindi", "English"], euMember: false, schengen: false, commonwealth: true,
     descriptor: "A global tech powerhouse offering incredible diversity and unmatched value for the adventurous professional.",
     dimensions: { cost: 9, safety: 5.8, healthcare: 5.5, visaEase: 4.9, digitalInfra: 6.1, climate: 4.2, english: 6.5, lgbtqSafety: 4.8, techEcosystem: 8.5, naturalEnvironment: 3.7 },
-    costBreakdown: { rentUsd: 450, groceriesUsd: 180, transportUsd: 40, utilitiesUsd: 70, diningOutUsd: 130, healthInsuranceUsd: 60, totalEstimateUsd: 930 },
-    cities: ["Bangalore", "Mumbai", "Delhi", "Hyderabad"],
+    costBreakdown: { rentUsd: 500, groceriesUsd: 150, transportUsd: 20, utilitiesUsd: 50, diningOutUsd: 120, healthInsuranceUsd: 40, totalEstimateUsd: 880 },
+    visaPathways: [
+      {
+        pathwayId: "IN-EMPLOYMENT",
+        countryCode: "IN",
+        visaType: "skilled-worker",
+        name: "Employment Visa",
+        eligibleLifeStages: ["localEmployee"],
+        incomeRequirement: {
+          amount: 1625000,
+          currencyCode: "INR",
+          period: "annual",
+          notes: "Minimum annual salary of ₹16.25 lakhs (approx. $19,500)."
+        },
+        durationMonths: 12,
+        renewable: true,
+        leadsToResidency: false,
+        residencyYearsRequired: null,
+        processingWeeks: [4, 12],
+        difficultyRating: 4,
+        requiresEmployer: true,
+        requiresMinIncome: true,
+        notes: "For highly skilled professionals with a job offer in India.",
+        sourceUrl: "https://indianvisaonline.gov.in/visa/index.html",
+        lastVerified: "2026-04-27"
+      }
+    ],
+    cities: ["Bangalore", "Mumbai", "Pune", "Hyderabad"],
+
     rawIndicators: { summerHighC: 36, winterLowC: 12, humidityAvg: 60, airQualityIndex: 160, seismicZone: 3, internetReliability: 8.5, englishDailyLife: 7.8, stability: 6.2, authoritarianRisk: 5.5, corruptionRisk: 6.8 },
     dataConfidence: "high", lastUpdated: "2026-04-24"
   },
@@ -1038,8 +2037,35 @@ export const COUNTRIES: Country[] = [
     languages: ["English", "Irish"], euMember: true, schengen: false, commonwealth: false,
     descriptor: "Europe's tech gateway—a friendly, English-speaking nation with exceptional corporate connectivity.",
     dimensions: { cost: 3.5, safety: 8.8, healthcare: 7.5, visaEase: 2.5, digitalInfra: 8.3, climate: 2.7, english: 10, lgbtqSafety: 9.2, techEcosystem: 8.2, naturalEnvironment: 5.9 },
-    costBreakdown: { rentUsd: 2100, groceriesUsd: 450, transportUsd: 90, utilitiesUsd: 180, diningOutUsd: 400, healthInsuranceUsd: 120, totalEstimateUsd: 3340 },
+    costBreakdown: { rentUsd: 1900, groceriesUsd: 400, transportUsd: 85, utilitiesUsd: 220, diningOutUsd: 400, healthInsuranceUsd: 100, totalEstimateUsd: 3105 },
+    visaPathways: [
+      {
+        pathwayId: "IE-CRITICAL-SKILLS",
+        countryCode: "IE",
+        visaType: "skilled-worker",
+        name: "Critical Skills Employment Permit",
+        eligibleLifeStages: ["localEmployee"],
+        incomeRequirement: {
+          amount: 38000,
+          currencyCode: "EUR",
+          period: "annual",
+          notes: "Minimum annual salary for roles on the Critical Skills Occupations List."
+        },
+        durationMonths: 24,
+        renewable: true,
+        leadsToResidency: true,
+        residencyYearsRequired: 5,
+        processingWeeks: [8, 16],
+        difficultyRating: 3,
+        requiresEmployer: true,
+        requiresMinIncome: true,
+        notes: "Designed to attract highly skilled people to the labor market.",
+        sourceUrl: "https://enterprise.gov.ie/en/what-we-do/workplace-and-skills/employment-permits/permit-types/critical-skills-employment-permit/",
+        lastVerified: "2026-04-27"
+      }
+    ],
     cities: ["Dublin", "Cork", "Galway"],
+
     rawIndicators: { summerHighC: 20, winterLowC: 3, humidityAvg: 82, airQualityIndex: 22, seismicZone: 0, internetReliability: 9.5, englishDailyLife: 10, stability: 9.4, authoritarianRisk: 0.8, corruptionRisk: 1.2 },
     dataConfidence: "high", lastUpdated: "2026-04-24"
   },
@@ -1048,8 +2074,29 @@ export const COUNTRIES: Country[] = [
     languages: ["Hebrew", "Arabic"], euMember: false, schengen: false, commonwealth: false,
     descriptor: "The 'Start-up Nation'—a global leader in innovation and venture capital despite a volatile regional context.",
     dimensions: { cost: 3.6, safety: 6.5, healthcare: 8.8, visaEase: 4.4, digitalInfra: 8.8, climate: 6.7, english: 6.9, lgbtqSafety: 7.5, techEcosystem: 9.8, naturalEnvironment: 3.1 },
-    costBreakdown: { rentUsd: 2000, groceriesUsd: 550, transportUsd: 80, utilitiesUsd: 160, diningOutUsd: 450, healthInsuranceUsd: 100, totalEstimateUsd: 3340 },
+    costBreakdown: { rentUsd: 1800, groceriesUsd: 450, transportUsd: 65, utilitiesUsd: 220, diningOutUsd: 450, healthInsuranceUsd: 120, totalEstimateUsd: 3105 },
+    visaPathways: [
+      {
+        pathwayId: "IL-B1-WORK",
+        countryCode: "IL",
+        visaType: "skilled-worker",
+        name: "B/1 Work Visa",
+        eligibleLifeStages: ["localEmployee"],
+        durationMonths: 12,
+        renewable: true,
+        leadsToResidency: false,
+        residencyYearsRequired: null,
+        processingWeeks: [8, 16],
+        difficultyRating: 4,
+        requiresEmployer: true,
+        requiresMinIncome: false,
+        notes: "For experts in high-tech or other essential industries.",
+        sourceUrl: "https://www.gov.il/en/service/b1-expert-worker-visa",
+        lastVerified: "2026-04-27"
+      }
+    ],
     cities: ["Tel Aviv", "Jerusalem", "Haifa"],
+
     rawIndicators: { summerHighC: 31, winterLowC: 9, humidityAvg: 65, airQualityIndex: 55, seismicZone: 3, internetReliability: 9.4, englishDailyLife: 8.5, stability: 5.5, authoritarianRisk: 3.5, corruptionRisk: 3.2 },
     dataConfidence: "high", lastUpdated: "2026-04-24"
   },
@@ -1428,8 +2475,29 @@ export const COUNTRIES: Country[] = [
     languages: ["Norwegian"], euMember: false, schengen: true, commonwealth: false,
     descriptor: "A wealthy, stable Nordic nation with incredible fjords and a very high standard of living.",
     dimensions: { cost: 2.6, safety: 9.6, healthcare: 9.2, visaEase: 3.5, digitalInfra: 9.4, climate: 2, english: 8.8, lgbtqSafety: 9.6, techEcosystem: 8.8, naturalEnvironment: 9.2 },
-    costBreakdown: { rentUsd: 2200, groceriesUsd: 600, transportUsd: 120, utilitiesUsd: 250, diningOutUsd: 600, healthInsuranceUsd: 200, totalEstimateUsd: 3970 },
+    costBreakdown: { rentUsd: 1400, groceriesUsd: 450, transportUsd: 85, utilitiesUsd: 180, diningOutUsd: 400, healthInsuranceUsd: 120, totalEstimateUsd: 2635 },
+    visaPathways: [
+      {
+        pathwayId: "NO-SKILLED-WORKER",
+        countryCode: "NO",
+        visaType: "skilled-worker",
+        name: "Skilled Worker Visa",
+        eligibleLifeStages: ["localEmployee"],
+        durationMonths: 36,
+        renewable: true,
+        leadsToResidency: true,
+        residencyYearsRequired: 3,
+        processingWeeks: [4, 12],
+        difficultyRating: 3,
+        requiresEmployer: true,
+        requiresMinIncome: false,
+        notes: "Requires a job offer and a degree or vocational training.",
+        sourceUrl: "https://www.udi.no/en/want-to-apply/work/skilled-workers/",
+        lastVerified: "2026-04-27"
+      }
+    ],
     cities: ["Oslo", "Bergen", "Stavanger", "Trondheim"],
+
     rawIndicators: { summerHighC: 21, winterLowC: -5, humidityAvg: 70, airQualityIndex: 15, seismicZone: 1, internetReliability: 9.9, englishDailyLife: 9.5, stability: 9.8, authoritarianRisk: 0.5, corruptionRisk: 0.8 },
     dataConfidence: "high", lastUpdated: "2026-04-24"
   },
@@ -1588,8 +2656,35 @@ export const COUNTRIES: Country[] = [
     languages: ["Arabic", "English"], euMember: false, schengen: false, commonwealth: false,
     descriptor: "A Kingdom in transition, leveraging massive capital for global technological leadership.",
     dimensions: { cost: 4.4, safety: 5.2, healthcare: 7.8, visaEase: 2.5, digitalInfra: 9.1, climate: 1.5, english: 4.9, lgbtqSafety: 0.5, techEcosystem: 8.4, naturalEnvironment: 2 },
-    costBreakdown: { rentUsd: 1600, groceriesUsd: 450, transportUsd: 50, utilitiesUsd: 240, diningOutUsd: 400, healthInsuranceUsd: 120, totalEstimateUsd: 2860 },
-    cities: ["Riyadh", "Jeddah", "Dammam", "NEOM"],
+    costBreakdown: { rentUsd: 1200, groceriesUsd: 350, transportUsd: 50, utilitiesUsd: 200, diningOutUsd: 300, healthInsuranceUsd: 80, totalEstimateUsd: 2180 },
+    visaPathways: [
+      {
+        pathwayId: "SA-PREMIUM-RESIDENCY",
+        countryCode: "SA",
+        visaType: "entrepreneur",
+        name: "Premium Residency (Entrepreneur)",
+        eligibleLifeStages: ["founder"],
+        incomeRequirement: {
+          amount: 400000,
+          currencyCode: "SAR",
+          period: "oneTime",
+          notes: "Minimum investment or funding for startup category."
+        },
+        durationMonths: 12,
+        renewable: true,
+        leadsToResidency: true,
+        residencyYearsRequired: 0,
+        processingWeeks: [4, 12],
+        difficultyRating: 4,
+        requiresEmployer: false,
+        requiresMinIncome: true,
+        notes: "Allows for self-sponsored residency in Saudi Arabia.",
+        sourceUrl: "https://pr.gov.sa/main-residence-types",
+        lastVerified: "2026-04-27"
+      }
+    ],
+    cities: ["Riyadh", "Jeddah", "Dammam"],
+
     rawIndicators: { summerHighC: 43, winterLowC: 9, humidityAvg: 30, airQualityIndex: 125, seismicZone: 2, internetReliability: 9.7, englishDailyLife: 6.8, stability: 9.0, authoritarianRisk: 8.8, corruptionRisk: 3.8 },
     dataConfidence: "high", lastUpdated: "2026-04-24"
   },
@@ -1709,6 +2804,32 @@ export const COUNTRIES: Country[] = [
     descriptor: "A global leader in innovation, sustainability, and high-quality social welfare.",
     dimensions: { cost: 4.2, safety: 8.6, healthcare: 9.2, visaEase: 3, digitalInfra: 9.4, climate: 1.8, english: 9.3, lgbtqSafety: 10.0, techEcosystem: 9, naturalEnvironment: 5.9 },
     costBreakdown: { rentUsd: 1800, groceriesUsd: 450, transportUsd: 90, utilitiesUsd: 220, diningOutUsd: 400, healthInsuranceUsd: 60, totalEstimateUsd: 3020 },
+    visaPathways: [
+      {
+        pathwayId: "SE-WORK-PERMIT",
+        countryCode: "SE",
+        visaType: "skilled-worker",
+        name: "Work Permit",
+        eligibleLifeStages: ["localEmployee"],
+        incomeRequirement: {
+          amount: 27360,
+          currencyCode: "SEK",
+          period: "monthly",
+          notes: "Minimum monthly salary before taxes (80% of median salary)."
+        },
+        durationMonths: 24,
+        renewable: true,
+        leadsToResidency: true,
+        residencyYearsRequired: 4,
+        processingWeeks: [4, 16],
+        difficultyRating: 2,
+        requiresEmployer: true,
+        requiresMinIncome: true,
+        notes: "Requires a job offer with terms equal to Swedish collective agreements.",
+        sourceUrl: "https://www.migrationsverket.se/English/Private-individuals/Working-in-Sweden/Employment-permit.html",
+        lastVerified: "2026-04-27"
+      }
+    ],
     cities: ["Stockholm", "Gothenburg", "Malmö", "Uppsala"],
     rawIndicators: { summerHighC: 22, winterLowC: -5, humidityAvg: 70, airQualityIndex: 25, seismicZone: 1, internetReliability: 9.8, englishDailyLife: 9.5, stability: 9.2, authoritarianRisk: 0.8, corruptionRisk: 1.0 },
     dataConfidence: "high", lastUpdated: "2026-04-24"
@@ -1718,8 +2839,29 @@ export const COUNTRIES: Country[] = [
     languages: ["Mandarin"], euMember: false, schengen: false, commonwealth: false,
     descriptor: "A global powerhouse offering ultra-modern megacities, deep history, and a world-leading digital ecosystem.",
     dimensions: { cost: 6.9, safety: 4.8, healthcare: 7.2, visaEase: 2, digitalInfra: 9.1, climate: 4.2, english: 2.3, lgbtqSafety: 3.8, techEcosystem: 7.5, naturalEnvironment: 3 },
-    costBreakdown: { rentUsd: 850, groceriesUsd: 280, transportUsd: 45, utilitiesUsd: 90, diningOutUsd: 250, healthInsuranceUsd: 120, totalEstimateUsd: 1635 },
-    cities: ["Shanghai", "Beijing", "Shenzhen", "Chengdu"],
+    costBreakdown: { rentUsd: 1100, groceriesUsd: 300, transportUsd: 40, utilitiesUsd: 100, diningOutUsd: 250, healthInsuranceUsd: 80, totalEstimateUsd: 1870 },
+    visaPathways: [
+      {
+        pathwayId: "CN-Z-VISA",
+        countryCode: "CN",
+        visaType: "skilled-worker",
+        name: "Z Visa (Work Visa)",
+        eligibleLifeStages: ["localEmployee"],
+        durationMonths: 12,
+        renewable: true,
+        leadsToResidency: true,
+        residencyYearsRequired: 5,
+        processingWeeks: [4, 8],
+        difficultyRating: 4,
+        requiresEmployer: true,
+        requiresMinIncome: false,
+        notes: "Primary work visa for foreign nationals. Requires a Work Permit from the Ministry of HR.",
+        sourceUrl: "https://www.mps.gov.cn/",
+        lastVerified: "2026-04-27"
+      }
+    ],
+    cities: ["Shanghai", "Beijing", "Shenzhen", "Hangzhou"],
+
     rawIndicators: { summerHighC: 32, winterLowC: -4, humidityAvg: 70, airQualityIndex: 85, seismicZone: 3, internetReliability: 9.2, englishDailyLife: 3.2, stability: 8.5, authoritarianRisk: 8.8, corruptionRisk: 4.1 },
     dataConfidence: "medium", lastUpdated: "2026-04-24"
   },
@@ -1739,6 +2881,50 @@ export const COUNTRIES: Country[] = [
     descriptor: "A global financial and cultural hub with top-tier education and a mature technology ecosystem.",
     dimensions: { cost: 4.1, safety: 8.2, healthcare: 7.8, visaEase: 2.5, digitalInfra: 8.3, climate: 2.7, english: 10, lgbtqSafety: 9.0, techEcosystem: 9.6, naturalEnvironment: 2.7 },
     costBreakdown: { rentUsd: 1850, groceriesUsd: 400, transportUsd: 120, utilitiesUsd: 250, diningOutUsd: 450, healthInsuranceUsd: 100, totalEstimateUsd: 3170 },
+    visaPathways: [
+      {
+        pathwayId: "GB-SKILLED-WORKER",
+        countryCode: "GB",
+        visaType: "skilled-worker",
+        name: "Skilled Worker Visa",
+        eligibleLifeStages: ["localEmployee"],
+        incomeRequirement: {
+          amount: 38700,
+          currencyCode: "GBP",
+          period: "annual",
+          notes: "Minimum salary requirement for most roles."
+        },
+        durationMonths: 60,
+        renewable: true,
+        leadsToResidency: true,
+        residencyYearsRequired: 5,
+        processingWeeks: [3, 8],
+        difficultyRating: 3,
+        requiresEmployer: true,
+        requiresMinIncome: true,
+        notes: "Requires a job offer from an approved UK employer.",
+        sourceUrl: "https://www.gov.uk/skilled-worker-visa",
+        lastVerified: "2026-04-27"
+      },
+      {
+        pathwayId: "GB-GLOBAL-TALENT",
+        countryCode: "GB",
+        visaType: "exceptional-talent",
+        name: "Global Talent Visa",
+        eligibleLifeStages: ["founder", "localEmployee"],
+        durationMonths: 60,
+        renewable: true,
+        leadsToResidency: true,
+        residencyYearsRequired: 3,
+        processingWeeks: [4, 12],
+        difficultyRating: 4,
+        requiresEmployer: false,
+        requiresMinIncome: false,
+        notes: "For leaders or potential leaders in academia, arts, or tech.",
+        sourceUrl: "https://www.gov.uk/global-talent",
+        lastVerified: "2026-04-27"
+      }
+    ],
     cities: ["London", "Manchester", "Edinburgh", "Bristol"],
     rawIndicators: { summerHighC: 22, winterLowC: 2, humidityAvg: 80, airQualityIndex: 35, seismicZone: 1, internetReliability: 9.4, englishDailyLife: 10.0, stability: 8.2, authoritarianRisk: 1.2, corruptionRisk: 1.8 },
     dataConfidence: "high", lastUpdated: "2026-04-24"
@@ -1889,6 +3075,68 @@ export const COUNTRIES: Country[] = [
     descriptor: "The world's largest economy and premier technology hub, offering unparalleled regional diversity.",
     dimensions: { cost: 2.5, safety: 7.5, healthcare: 7.2, visaEase: 2, digitalInfra: 9.1, climate: 4.2, english: 10, lgbtqSafety: 7.5, techEcosystem: 10.0, naturalEnvironment: 8.1 },
     costBreakdown: { rentUsd: 2200, groceriesUsd: 500, transportUsd: 150, utilitiesUsd: 250, diningOutUsd: 600, healthInsuranceUsd: 450, totalEstimateUsd: 4150 },
+    visaPathways: [
+      {
+        pathwayId: "US-H1B-SKILLED",
+        countryCode: "US",
+        visaType: "skilled-worker",
+        name: "H-1B Specialty Occupation",
+        eligibleLifeStages: ["localEmployee"],
+        durationMonths: 36,
+        renewable: true,
+        leadsToResidency: true,
+        residencyYearsRequired: 5,
+        processingWeeks: [12, 52],
+        difficultyRating: 5,
+        requiresEmployer: true,
+        requiresMinIncome: false,
+        notes: "Subject to annual lottery. Employer sponsorship required.",
+        sourceUrl: "https://www.uscis.gov/working-in-the-united-states/temporary-workers/h-1b-specialty-occupations",
+        lastVerified: "2026-04-27"
+      },
+      {
+        pathwayId: "US-O1-EXTRAORDINARY",
+        countryCode: "US",
+        visaType: "exceptional-talent",
+        name: "O-1 Extraordinary Ability",
+        eligibleLifeStages: ["founder", "localEmployee"],
+        durationMonths: 36,
+        renewable: true,
+        leadsToResidency: true,
+        residencyYearsRequired: 5,
+        processingWeeks: [2, 12],
+        difficultyRating: 4,
+        requiresEmployer: true,
+        requiresMinIncome: false,
+        notes: "Requires proof of extraordinary ability in field.",
+        sourceUrl: "https://www.uscis.gov/working-in-the-united-states/temporary-workers/o-1-visa-individuals-with-extraordinary-ability-or-achievement",
+        lastVerified: "2026-04-27"
+      },
+      {
+        pathwayId: "US-F1-STUDENT",
+        countryCode: "US",
+        visaType: "student",
+        name: "F-1 Student Visa",
+        eligibleLifeStages: ["student"],
+        durationMonths: 48,
+        renewable: true,
+        leadsToResidency: false,
+        residencyYearsRequired: null,
+        processingWeeks: [4, 12],
+        difficultyRating: 2,
+        requiresEmployer: false,
+        requiresMinIncome: true,
+        incomeRequirement: {
+          amount: 25000,
+          currencyCode: "USD",
+          period: "oneTime",
+          notes: "Must demonstrate sufficient funds for tuition and living expenses."
+        },
+        notes: "For full-time students at accredited institutions.",
+        sourceUrl: "https://www.uscis.gov/working-in-the-united-states/students-and-employment",
+        lastVerified: "2026-04-27"
+      }
+    ],
     cities: ["New York City", "San Francisco", "Austin", "Miami"],
     rawIndicators: { summerHighC: 28, winterLowC: 0, humidityAvg: 55, airQualityIndex: 35, seismicZone: 3, internetReliability: 9.6, englishDailyLife: 10.0, stability: 7.8, authoritarianRisk: 3.2, corruptionRisk: 1.5 },
     dataConfidence: "high", lastUpdated: "2026-04-24"

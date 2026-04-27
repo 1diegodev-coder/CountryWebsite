@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { COUNTRIES } from '../data/countries';
 import { CountrySchema } from '../schema/country';
+import { VisaSchema } from '../schema/visa';
 
 describe('Country Data Validation', () => {
   it('all 195 countries satisfy the expanded schema', () => {
@@ -13,6 +14,8 @@ describe('Country Data Validation', () => {
       expect(result.success).toBe(true);
     });
   });
+
+  // ... (rest of existing tests)
 
   it('every country has all 10 required dimensions', () => {
     COUNTRIES.forEach(country => {
@@ -137,6 +140,58 @@ describe('Country Data Validation', () => {
       const country = COUNTRIES.find(country => country.name === name);
 
       expect(country?.dimensions.visaEase, name).toBeGreaterThanOrEqual(2);
+    });
+  });
+
+  describe('Visa Pathways Coverage', () => {
+    const TOP_40_COUNTRIES = [
+      'United States', 'United Kingdom', 'Canada', 'Australia', 'Germany',
+      'Spain', 'Portugal', 'United Arab Emirates', 'Singapore', 'Switzerland',
+      'France', 'Netherlands', 'Mexico', 'Thailand', 'Japan', 'Italy',
+      'New Zealand', 'Ireland', 'Vietnam', 'Malaysia', 'Costa Rica',
+      'Indonesia', 'Philippines', 'Brazil', 'Panama', 'Türkiye',
+      'South Africa', 'China', 'India', 'Greece', 'Austria', 'Sweden',
+      'Norway', 'Denmark', 'Belgium', 'Poland', 'Czech Republic', 'Israel',
+      'Saudi Arabia', 'South Korea'
+    ];
+
+    it('every top 40 country has between 1 and 4 visa pathways', () => {
+      TOP_40_COUNTRIES.forEach(name => {
+        const country = COUNTRIES.find(c => c.name === name);
+        expect(country, `${name} not found in COUNTRIES`).toBeDefined();
+        expect(country?.visaPathways, `${name} missing visaPathways`).toBeDefined();
+        expect(country?.visaPathways?.length).toBeGreaterThanOrEqual(1);
+        expect(country?.visaPathways?.length).toBeLessThanOrEqual(4);
+      });
+    });
+
+    it('every visa pathway is valid according to VisaSchema', () => {
+      COUNTRIES.forEach(country => {
+        country.visaPathways?.forEach(pathway => {
+          const result = VisaSchema.safeParse(pathway);
+          if (!result.success) {
+            console.error(`Visa validation failed for ${country.name} / ${pathway.pathwayId}:`, result.error.format());
+          }
+          expect(result.success).toBe(true);
+        });
+      });
+    });
+
+    it('every visa pathway countryCode matches the containing country iso2', () => {
+      COUNTRIES.forEach(country => {
+        country.visaPathways?.forEach(pathway => {
+          expect(pathway.countryCode).toBe(country.iso2);
+        });
+      });
+    });
+
+    it('every visa pathway has an official HTTPS sourceUrl and recent lastVerified date', () => {
+      COUNTRIES.forEach(country => {
+        country.visaPathways?.forEach(pathway => {
+          expect(pathway.sourceUrl).toMatch(/^https:\/\//);
+          expect(pathway.lastVerified).toMatch(/^2026-04/);
+        });
+      });
     });
   });
 });
