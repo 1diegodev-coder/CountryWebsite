@@ -155,6 +155,52 @@ describe('Country Data Validation', () => {
       'Saudi Arabia', 'South Korea'
     ];
 
+    const OFFICIAL_OR_AUTHORIZED_VISA_HOSTS = new Set([
+      'digitalnomads.goturkiye.com',
+      'enterprise.gov.ie',
+      'immi.homeaffairs.gov.au',
+      'ind.nl',
+      'indianvisaonline.gov.in',
+      'lanhsuvietnam.gov.vn',
+      'ltr.boi.go.th',
+      'mdec.my',
+      'molina.imigrasi.go.id',
+      'pg.china-embassy.gov.cn',
+      'pr.gov.sa',
+      'pra.gov.ph',
+      'thaievisa.go.th',
+      'travel.state.gov',
+      'u.ae',
+      'vistoperitalia.esteri.it',
+      'vistos.mne.gov.pt',
+      'www.belgium.be',
+      'www.canada.ca',
+      'www.dha.gov.za',
+      'www.exteriores.gob.es',
+      'www.gob.mx',
+      'www.gov.br',
+      'www.gov.il',
+      'www.gov.pl',
+      'www.gov.uk',
+      'www.hikorea.go.kr',
+      'www.immigration.govt.nz',
+      'www.isa.go.jp',
+      'www.make-it-in-germany.com',
+      'www.mfa.gr',
+      'www.migracion.go.cr',
+      'www.migracion.gob.pa',
+      'www.migration.gv.at',
+      'www.migrationsverket.se',
+      'www.mofa.go.jp',
+      'www.mom.gov.sg',
+      'www.mvcr.cz',
+      'www.nyidanmark.dk',
+      'www.sem.admin.ch',
+      'www.service-public.fr',
+      'www.udi.no',
+      'www.uscis.gov',
+    ]);
+
     it('every top 40 country has between 1 and 4 visa pathways', () => {
       TOP_40_COUNTRIES.forEach(name => {
         const country = COUNTRIES.find(c => c.name === name);
@@ -188,7 +234,11 @@ describe('Country Data Validation', () => {
     it('every visa pathway has an official HTTPS sourceUrl and recent lastVerified date', () => {
       COUNTRIES.forEach(country => {
         country.visaPathways?.forEach(pathway => {
-          expect(pathway.sourceUrl).toMatch(/^https:\/\//);
+          const sourceUrl = new URL(pathway.sourceUrl);
+          expect(sourceUrl.protocol).toBe('https:');
+          expect(OFFICIAL_OR_AUTHORIZED_VISA_HOSTS.has(sourceUrl.hostname), pathway.sourceUrl).toBe(true);
+          expect(pathway.sourceUrl).not.toBe('https://www.mps.gov.cn/');
+          expect(pathway.sourceUrl).not.toContain('/students-and-employment');
           expect(pathway.lastVerified).toMatch(/^2026-04/);
         });
       });

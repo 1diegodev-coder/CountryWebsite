@@ -481,7 +481,7 @@ export const COUNTRIES: Country[] = [
         lastVerified: "2026-04-27"
       }
     ],
-    cities: ["Athens", "Thessaloniki", "Chania"],
+    cities: ["Athens", "Thessaloniki", "Chania", "Heraklion"],
 
     rawIndicators: { summerHighC: 33, winterLowC: 7, humidityAvg: 50, airQualityIndex: 55, seismicZone: 4, internetReliability: 7.5, englishDailyLife: 7.8, stability: 7.8, authoritarianRisk: 2.5, corruptionRisk: 4.8 },
     dataConfidence: "high", lastUpdated: "2026-04-21"
@@ -623,7 +623,7 @@ export const COUNTRIES: Country[] = [
         lastVerified: "2026-04-27"
       }
     ],
-    cities: ["Panama City", "Coronado", "Boquete"],
+    cities: ["Panama City", "Boquete", "Coronado"],
 
     rawIndicators: { summerHighC: 32, winterLowC: 23, humidityAvg: 80, airQualityIndex: 30, seismicZone: 3, internetReliability: 8.8, englishDailyLife: 6.5, stability: 8.2, authoritarianRisk: 2.5, corruptionRisk: 5.2 },
     dataConfidence: "high", lastUpdated: "2026-04-21"
@@ -730,7 +730,7 @@ export const COUNTRIES: Country[] = [
         lastVerified: "2026-04-27"
       }
     ],
-    cities: ["Cape Town", "Johannesburg", "Stellenbosch"],
+    cities: ["Cape Town", "Johannesburg", "Durban"],
 
     rawIndicators: { summerHighC: 26, winterLowC: 7, humidityAvg: 60, airQualityIndex: 50, seismicZone: 1, internetReliability: 7.5, englishDailyLife: 9.5, stability: 5.8, authoritarianRisk: 2.8, corruptionRisk: 7.2 },
     dataConfidence: "high", lastUpdated: "2026-04-21"
@@ -904,7 +904,7 @@ export const COUNTRIES: Country[] = [
         lastVerified: "2026-04-27"
       }
     ],
-    cities: ["Paris", "Lyon", "Bordeaux", "Nice"],
+    cities: ["Paris", "Lyon", "Marseille", "Nice"],
 
     rawIndicators: { summerHighC: 25, winterLowC: 2, humidityAvg: 70, airQualityIndex: 35, seismicZone: 2, internetReliability: 9.4, englishDailyLife: 6.5, stability: 8.8, authoritarianRisk: 1.5, corruptionRisk: 2.1 },
     dataConfidence: "high", lastUpdated: "2026-04-21"
@@ -941,7 +941,7 @@ export const COUNTRIES: Country[] = [
         lastVerified: "2026-04-27"
       }
     ],
-    cities: ["Rome", "Milan", "Florence", "Bologna"],
+    cities: ["Rome", "Milan", "Florence", "Naples"],
 
     rawIndicators: { summerHighC: 31, winterLowC: 2, humidityAvg: 65, airQualityIndex: 50, seismicZone: 4, internetReliability: 8.8, englishDailyLife: 6.2, stability: 8.1, authoritarianRisk: 2.1, corruptionRisk: 4.5 },
     dataConfidence: "high", lastUpdated: "2026-04-21"
@@ -1153,7 +1153,7 @@ export const COUNTRIES: Country[] = [
         lastVerified: "2026-04-27"
       }
     ],
-    cities: ["Istanbul", "Antalya", "Bodrum", "Izmir"],
+    cities: ["Istanbul", "Antalya", "Izmir", "Ankara"],
 
     rawIndicators: { summerHighC: 29, winterLowC: 5, humidityAvg: 60, airQualityIndex: 65, seismicZone: 5, internetReliability: 8.1, englishDailyLife: 6.2, stability: 6.2, authoritarianRisk: 7.2, corruptionRisk: 6.5 },
     dataConfidence: "high", lastUpdated: "2026-04-21"
@@ -2007,7 +2007,7 @@ export const COUNTRIES: Country[] = [
         lastVerified: "2026-04-27"
       }
     ],
-    cities: ["Bangalore", "Mumbai", "Pune", "Hyderabad"],
+    cities: ["Bangalore", "Mumbai", "Delhi", "Hyderabad"],
 
     rawIndicators: { summerHighC: 36, winterLowC: 12, humidityAvg: 60, airQualityIndex: 160, seismicZone: 3, internetReliability: 8.5, englishDailyLife: 7.8, stability: 6.2, authoritarianRisk: 5.5, corruptionRisk: 6.8 },
     dataConfidence: "high", lastUpdated: "2026-04-24"
@@ -2683,7 +2683,7 @@ export const COUNTRIES: Country[] = [
         lastVerified: "2026-04-27"
       }
     ],
-    cities: ["Riyadh", "Jeddah", "Dammam"],
+    cities: ["Riyadh", "Jeddah", "Dammam", "NEOM"],
 
     rawIndicators: { summerHighC: 43, winterLowC: 9, humidityAvg: 30, airQualityIndex: 125, seismicZone: 2, internetReliability: 9.7, englishDailyLife: 6.8, stability: 9.0, authoritarianRisk: 8.8, corruptionRisk: 3.8 },
     dataConfidence: "high", lastUpdated: "2026-04-24"
@@ -2856,11 +2856,11 @@ export const COUNTRIES: Country[] = [
         requiresEmployer: true,
         requiresMinIncome: false,
         notes: "Primary work visa for foreign nationals. Requires a Work Permit from the Ministry of HR.",
-        sourceUrl: "https://www.mps.gov.cn/",
+        sourceUrl: "https://pg.china-embassy.gov.cn/eng/lsyw/zjfw/202412/t20241223_11515014.htm",
         lastVerified: "2026-04-27"
       }
     ],
-    cities: ["Shanghai", "Beijing", "Shenzhen", "Hangzhou"],
+    cities: ["Shanghai", "Beijing", "Shenzhen", "Chengdu"],
 
     rawIndicators: { summerHighC: 32, winterLowC: -4, humidityAvg: 70, airQualityIndex: 85, seismicZone: 3, internetReliability: 9.2, englishDailyLife: 3.2, stability: 8.5, authoritarianRisk: 8.8, corruptionRisk: 4.1 },
     dataConfidence: "medium", lastUpdated: "2026-04-24"
@@ -3133,7 +3133,7 @@ export const COUNTRIES: Country[] = [
           notes: "Must demonstrate sufficient funds for tuition and living expenses."
         },
         notes: "For full-time students at accredited institutions.",
-        sourceUrl: "https://www.uscis.gov/working-in-the-united-states/students-and-employment",
+        sourceUrl: "https://travel.state.gov/content/travel/en/us-visas/study/student-visa.html",
         lastVerified: "2026-04-27"
       }
     ],
