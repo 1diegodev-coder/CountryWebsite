@@ -10,7 +10,7 @@
 | 5 | Observability + data parity | gemini | claude | #10 | [x] |
 | 6 | Visa Pathways v1 | gemini | codex/claude | phase/6-visa-pathways | [x] |
 | 7 | Country metadata expansion | gemini | codex/claude | direct-to-main | [x] |
-| 8 | Descriptor quality pass | gemini | codex/claude | TBD | [ ] |
+| 8 | Descriptor quality pass | gemini | codex/claude | phase/8-descriptor-quality | [x] |
 | 9 | Deep Dive confidence caveats | gemini | codex/claude | TBD | [ ] |
 
 ## Phase notes
@@ -52,9 +52,11 @@ Coverage: `capitalCity` and `currency` (ISO 4217) added to all 195 countries and
 Also adds compact metadata bar to DeepDive UI (out of strict Phase 7 scope but accepted — clean, additive).
 Review fix: Gemini false-reported 41/41 passing; test fixture missing new required fields crashed jsdom suite. Fixed in review.
 
-### Phase 8 — planned
-Prompt: `docs/phase8-gemini-prompt.md`.
-Gemini-owned content phase rewriting under-length country descriptors to PRD §10.1 quality.
+### Phase 8 — complete
+Branch: `phase/8-descriptor-quality` off `main`.
+Merged at 29581c3. Verified: `npm test` (45/45), `npm run build` (clean), `npm run lint` (exit 0).
+131 descriptors rewritten to 15-42 words. Word-count/sentence-count gate added to data.test.ts.
+Codex review fixed trailing whitespace, 3 lowercase sentence starts, and American spellings before merge.
 
 ### Phase 9 — planned
 Prompt: `docs/phase9-gemini-prompt.md`.
