@@ -137,4 +137,127 @@ describe('ResultsView', () => {
 
     expect(screen.getByText(/Low confidence/i)).toBeDefined();
   });
+
+  it('opens Deep Dive directly to visa pathway content', async () => {
+    window.HTMLElement.prototype.scrollIntoView = vi.fn();
+    vi.stubGlobal(
+      'fetch',
+      vi.fn().mockResolvedValue({
+        ok: true,
+        json: async () => ({
+          name: 'Portugal',
+          iso2: 'PT',
+          descriptor: 'A sun-drenched Atlantic nation where old-world charm meets modern digital infrastructure.',
+          dataConfidence: 'medium',
+          costBreakdown: {
+            rentUsd: 1350,
+            groceriesUsd: 280,
+            transportUsd: 42,
+            utilitiesUsd: 120,
+            diningOutUsd: 280,
+            healthInsuranceUsd: 90,
+            totalEstimateUsd: 2162,
+          },
+          dimensions: {
+            cost: 5.7,
+            safety: 8.6,
+            healthcare: 7.2,
+            visaEase: 8,
+            digitalInfra: 5.7,
+            climate: 6.7,
+            english: 4.8,
+            lgbtqSafety: 8.3,
+            techEcosystem: 7.1,
+            naturalEnvironment: 5.2,
+          },
+          visaPathways: [
+            {
+              pathwayId: 'PT-D8',
+              countryCode: 'PT',
+              visaType: 'digital-nomad',
+              name: 'D8 Digital Nomad Visa',
+              eligibleLifeStages: ['remoteEmployee', 'freelancer'],
+              incomeRequirement: {
+                amount: 3480,
+                currencyCode: 'EUR',
+                period: 'monthly',
+              },
+              durationMonths: 12,
+              renewable: true,
+              leadsToResidency: true,
+              residencyYearsRequired: 5,
+              processingWeeks: [4, 12],
+              difficultyRating: 3,
+              requiresEmployer: false,
+              requiresMinIncome: true,
+              sourceUrl: 'https://vistos.mne.gov.pt/',
+              lastVerified: '2026-04-27',
+            },
+          ],
+        }),
+      }),
+    );
+
+    render(
+      <ResultsView
+        result={{
+          sessionToken: 'test-token',
+          shareReady: false,
+          candidateCount: 1,
+          eliminatedCount: 0,
+          matches: [{
+            countryCode: 'PT',
+            countryName: 'Portugal',
+            countryDescriptor: 'A sun-drenched Atlantic nation where old-world charm meets modern digital infrastructure.',
+            dataConfidence: 'medium',
+            score: 88,
+            rank: 1,
+            whyFit: ['Strong visa access.'],
+            watchOut: ['Housing costs can be high.'],
+            costRealityText: 'Fits the stated budget.',
+            dimensionScores: {
+              cost: 5.7,
+              safety: 8.6,
+              healthcare: 7.2,
+              visaEase: 8,
+              digitalInfra: 5.7,
+              climate: 6.7,
+              english: 4.8,
+              lgbtqSafety: 8.3,
+              techEcosystem: 7.1,
+              naturalEnvironment: 5.2,
+            },
+          }],
+          eliminated: [],
+          profileSummary: 'Test profile',
+          computedWeights: {
+            cost: 0.15,
+            safety: 0.10,
+            healthcare: 0.08,
+            visaEase: 0.15,
+            digitalInfra: 0.18,
+            climate: 0.08,
+            english: 0.08,
+            lgbtqSafety: 0.08,
+            techEcosystem: 0.08,
+            naturalEnvironment: 0.02,
+          },
+          generatedAt: new Date().toISOString(),
+        }}
+        onRetake={vi.fn()}
+        tweaks={{}}
+        profile={profile as any}
+        onUpdateResult={vi.fn()}
+        isReadOnly
+      />,
+    );
+
+    fireEvent.click(screen.getByText('Visa Guide'));
+
+    expect(await screen.findByText('D8 Digital Nomad Visa')).toBeDefined();
+    expect(screen.getByText(/Visa information is for general guidance only/i)).toBeDefined();
+    expect(screen.getAllByText(/Medium confidence/i).length).toBeGreaterThanOrEqual(2);
+
+    vi.unstubAllGlobals();
+  });
 });

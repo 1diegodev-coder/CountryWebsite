@@ -8,6 +8,10 @@
 | 3 | SSR /r/[token] + OG tags | gemini | claude | #6 | [x] |
 | 4 | Deploy + Sentry + ratelimit | gemini | claude | #8 | [x] |
 | 5 | Observability + data parity | gemini | claude | #10 | [x] |
+| 6 | Visa Pathways v1 | gemini | codex/claude | TBD | [ ] |
+| 7 | Country metadata expansion | gemini | codex/claude | TBD | [ ] |
+| 8 | Descriptor quality pass | gemini | codex/claude | TBD | [ ] |
+| 9 | Deep Dive confidence caveats | gemini | codex/claude | TBD | [ ] |
 
 ## Phase notes
 
@@ -35,6 +39,22 @@ Merged in PR #8. Verified: `npm test` (33/33), `npm run build` (clean, `/api/hea
 ### Phase 5 — complete
 New worktree off `main` at any point after Phase 0.
 Merged in PR #10. Output: `docs/data-parity-2026-04.md` before any YAML is touched.
+
+### Phase 6 — planned
+Prompt: `docs/phase6-gemini-prompt.md`.
+Gemini-owned bulk research/data phase for official-source visa pathway records across the data-parity top 40 launch destinations.
+
+### Phase 7 — planned
+Prompt: `docs/phase7-gemini-prompt.md`.
+Gemini-owned country metadata phase adding `capitalCity` and `currency` to all 195 country records.
+
+### Phase 8 — planned
+Prompt: `docs/phase8-gemini-prompt.md`.
+Gemini-owned content phase rewriting under-length country descriptors to PRD §10.1 quality.
+
+### Phase 9 — planned
+Prompt: `docs/phase9-gemini-prompt.md`.
+Gemini-owned UI caveat phase for medium/low confidence Deep Dive messaging.
 
 ## Orchestration rules
 

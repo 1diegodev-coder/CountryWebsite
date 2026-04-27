@@ -30,7 +30,10 @@ export default function ResultsView({
   const [isSharing, setIsSharing] = useState(false);
   const [shareUrl, setShareUrl] = useState<string | null>(null);
   const [isWhatIfLoading, setIsWhatIfLoading] = useState(false);
-  const [selectedCountryCode, setSelectedCountryCode] = useState<string | null>(null);
+  const [selectedCountry, setSelectedCountry] = useState<{
+    code: string;
+    initialSection?: "overview" | "visa";
+  } | null>(null);
 
   const groupedEliminated = React.useMemo(() => {
     return result.eliminated.reduce((acc, curr) => {
@@ -241,11 +244,16 @@ export default function ResultsView({
                   <div className="card-actions mt-4 pt-4 border-t border-bg-elevated flex gap-3">
                     <button 
                       className="btn-card-primary"
-                      onClick={() => setSelectedCountryCode(match.countryCode)}
+                      onClick={() => setSelectedCountry({ code: match.countryCode, initialSection: "overview" })}
                     >
                       Deep Dive Details
                     </button>
-                    <button className="btn-card-ghost">Visa Guide</button>
+                    <button
+                      className="btn-card-ghost"
+                      onClick={() => setSelectedCountry({ code: match.countryCode, initialSection: "visa" })}
+                    >
+                      Visa Guide
+                    </button>
                   </div>
                 </motion.div>
               );
@@ -420,10 +428,11 @@ export default function ResultsView({
       </div>
 
       <AnimatePresence>
-        {selectedCountryCode && (
+        {selectedCountry && (
           <DeepDive 
-            code={selectedCountryCode} 
-            onClose={() => setSelectedCountryCode(null)} 
+            code={selectedCountry.code}
+            initialSection={selectedCountry.initialSection}
+            onClose={() => setSelectedCountry(null)} 
           />
         )}
       </AnimatePresence>
@@ -518,10 +527,19 @@ export default function ResultsView({
   );
 }
 
-function DeepDive({ code, onClose }: { code: string; onClose: () => void }) {
+function DeepDive({
+  code,
+  initialSection = "overview",
+  onClose,
+}: {
+  code: string;
+  initialSection?: "overview" | "visa";
+  onClose: () => void;
+}) {
   const [data, setData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const visaSectionRef = React.useRef<HTMLElement | null>(null);
 
   React.useEffect(() => {
     setLoading(true);
@@ -541,6 +559,14 @@ function DeepDive({ code, onClose }: { code: string; onClose: () => void }) {
         setLoading(false);
       });
   }, [code]);
+
+  React.useEffect(() => {
+    if (!loading && initialSection === "visa") {
+      visaSectionRef.current?.scrollIntoView({ block: "start" });
+    }
+  }, [initialSection, loading]);
+
+  const hasConfidenceCaveat = data?.dataConfidence && data.dataConfidence !== "high";
 
   return (
     <motion.div
@@ -566,6 +592,12 @@ function DeepDive({ code, onClose }: { code: string; onClose: () => void }) {
                 <h2 className="text-3xl font-bold font-display">{data?.name || code}</h2>
               </div>
               <p className="text-text-secondary">{data?.descriptor}</p>
+              {hasConfidenceCaveat && (
+                <div className="inline-flex items-center gap-1 mt-3 text-[10px] font-mono text-accent-warning bg-accent-warning/10 border border-accent-warning/20 px-2 py-1 rounded uppercase">
+                  <Info size={10} />
+                  {data.dataConfidence} confidence
+                </div>
+              )}
             </div>
             <button onClick={onClose} className="p-2 hover:bg-bg-elevated rounded-full transition-colors">
               <X size={24} />
@@ -602,6 +634,83 @@ function DeepDive({ code, onClose }: { code: string; onClose: () => void }) {
                     <div className="text-2xl font-mono font-bold text-accent-green">${data?.costBreakdown?.totalEstimateUsd}</div>
                   </div>
                 </div>
+              </section>
+
+              <section ref={visaSectionRef}>
+                <h3 className="text-[11px] font-mono text-text-muted uppercase tracking-widest mb-4">Visa Pathways</h3>
+                {data?.visaPathways?.length ? (
+                  <div className="space-y-4">
+                    {data.visaPathways.map((pathway: any) => (
+                      <div key={pathway.pathwayId} className="p-5 bg-bg-elevated/40 rounded-xl border border-bg-elevated space-y-4">
+                        <div className="flex items-start justify-between gap-4">
+                          <div>
+                            <h4 className="text-sm font-bold text-text-primary">{pathway.name}</h4>
+                            <div className="text-[10px] font-mono text-text-muted uppercase mt-1">
+                              {pathway.visaType.replace(/-/g, " ")} • Difficulty {pathway.difficultyRating}/5
+                            </div>
+                          </div>
+                          <a
+                            href={pathway.sourceUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="text-[10px] font-mono text-accent-green uppercase hover:underline"
+                          >
+                            Source
+                          </a>
+                        </div>
+                        <div className="grid grid-cols-2 gap-3 text-[11px]">
+                          <div>
+                            <div className="text-text-muted uppercase mb-1">Duration</div>
+                            <div className="font-mono">{pathway.durationMonths} months</div>
+                          </div>
+                          <div>
+                            <div className="text-text-muted uppercase mb-1">Processing</div>
+                            <div className="font-mono">{pathway.processingWeeks[0]}-{pathway.processingWeeks[1]} weeks</div>
+                          </div>
+                          <div>
+                            <div className="text-text-muted uppercase mb-1">Renewable</div>
+                            <div className="font-mono">{pathway.renewable ? "Yes" : "No"}</div>
+                          </div>
+                          <div>
+                            <div className="text-text-muted uppercase mb-1">Residency Path</div>
+                            <div className="font-mono">
+                              {pathway.leadsToResidency
+                                ? `${pathway.residencyYearsRequired ?? "Varies"} years`
+                                : "No"}
+                            </div>
+                          </div>
+                        </div>
+                        {pathway.incomeRequirement && (
+                          <div className="p-3 bg-bg-primary/40 rounded-lg border border-bg-elevated">
+                            <div className="text-[10px] text-text-muted uppercase mb-1">Income Requirement</div>
+                            <div className="font-mono text-sm">
+                              {pathway.incomeRequirement.currencyCode} {pathway.incomeRequirement.amount.toLocaleString()} / {pathway.incomeRequirement.period}
+                            </div>
+                            {pathway.incomeRequirement.notes && (
+                              <p className="text-[10px] text-text-muted mt-1">{pathway.incomeRequirement.notes}</p>
+                            )}
+                          </div>
+                        )}
+                        {pathway.notes && (
+                          <p className="text-[11px] text-text-secondary leading-relaxed">{pathway.notes}</p>
+                        )}
+                        <div className="text-[9px] text-text-muted font-mono uppercase">
+                          Last verified {pathway.lastVerified}
+                        </div>
+                      </div>
+                    ))}
+                    <div className="p-4 bg-accent-warning/5 rounded-xl border border-accent-warning/20 flex items-start gap-3">
+                      <AlertTriangle size={14} className="text-accent-warning mt-0.5" />
+                      <p className="text-[10px] text-text-muted leading-relaxed">
+                        Visa information is for general guidance only and may be out of date. Always verify with official sources. This is not legal advice.
+                      </p>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="p-5 bg-bg-elevated/20 rounded-xl border border-bg-elevated text-[11px] text-text-muted leading-relaxed">
+                    Visa pathway data is not available for this country yet.
+                  </div>
+                )}
               </section>
 
               <section>

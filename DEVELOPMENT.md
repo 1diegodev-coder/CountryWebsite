@@ -12,6 +12,7 @@ CountryDNA is a modern web application for country relocation matching.
 - **Backend:** Next.js Route Handlers (API Routes) in `src/app/api`.
 - **Database/Persistence:** Upstash Redis (for sharing/token persistence).
 - **Matching Engine:** TypeScript-based multi-phase engine in `src/lib/engine.ts`.
+- **Visa Pathways:** Structured `VisaSchema` exists for PRD-level pathway records; top 40 launch-destination population is tracked in Phase 6.
 
 ## Legacy Status
 Root-level files (`CountryDNA.html`, `index.html`), legacy scripts (`js/*.js`), and legacy JSX components (`components/*.jsx`) are deprecated and maintained only for parity verification. They will be archived in `archive/legacy-static-v1/` once functional parity is confirmed in the stable beta milestone. No new features should be implemented in the legacy codebase.
@@ -49,6 +50,12 @@ See `.env.example` for reference.
 2. **Weighted Scoring:** Inferred from Life Stage + User Priorities + Household modifiers.
 3. **Narrative Generation:** Templated "Why Fit" and "Watch Out" bullets based on dimension score bands.
 4. **Overrides:** Users can override eliminations to see how a country scores.
+
+## Launch Data Backlog
+- Phase 6: populate official-source visa pathways for the data-parity top 40 countries.
+- Phase 7: add `capitalCity` and `currency` to all 195 countries.
+- Phase 8: rewrite under-length descriptors to PRD §10.1 quality.
+- Phase 9: strengthen medium/low confidence caveats in Deep Dive.
 
 ## Design System
 - **Theme:** Dark mode by default (`#0A0E14`).
