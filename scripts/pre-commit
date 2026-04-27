@@ -1,0 +1,6 @@
+#!/bin/sh
+# Pre-commit hook: runs the full test suite before every commit.
+# Installed via: npm run prepare
+# To bypass in an emergency: git commit --no-verify (requires explicit decision)
+echo "pre-commit: running npm test..."
+npm test

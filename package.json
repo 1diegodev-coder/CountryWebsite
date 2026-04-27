@@ -8,7 +8,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "test": "vitest run"
+    "test": "vitest run",
+    "verify": "git diff --check && npm test && npm run build && npm run lint",
+    "verify:phase": "bash scripts/verify-phase.sh",
+    "prepare": "cp scripts/pre-commit .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit"
   },
   "dependencies": {
     "@sentry/nextjs": "^10.50.0",

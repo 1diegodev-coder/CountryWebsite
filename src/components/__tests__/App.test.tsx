@@ -3,6 +3,7 @@ import { render, screen, fireEvent, cleanup } from '@testing-library/react';
 import React from 'react';
 import App from '../App';
 import ResultsView from '../ResultsView';
+import { mockCountryPT } from '../../lib/__tests__/fixtures/country.fixture';
 
 // Mock GlobeViewer
 vi.mock('../GlobeViewer', () => ({
@@ -144,59 +145,7 @@ describe('ResultsView', () => {
       'fetch',
       vi.fn().mockResolvedValue({
         ok: true,
-        json: async () => ({
-          name: 'Portugal',
-          iso2: 'PT',
-          descriptor: 'A sun-drenched Atlantic nation where old-world charm meets modern digital infrastructure.',
-          capitalCity: 'Lisbon',
-          currency: { code: 'EUR', name: 'Euro' },
-          dataConfidence: 'medium',
-          costBreakdown: {
-            rentUsd: 1350,
-            groceriesUsd: 280,
-            transportUsd: 42,
-            utilitiesUsd: 120,
-            diningOutUsd: 280,
-            healthInsuranceUsd: 90,
-            totalEstimateUsd: 2162,
-          },
-          dimensions: {
-            cost: 5.7,
-            safety: 8.6,
-            healthcare: 7.2,
-            visaEase: 8,
-            digitalInfra: 5.7,
-            climate: 6.7,
-            english: 4.8,
-            lgbtqSafety: 8.3,
-            techEcosystem: 7.1,
-            naturalEnvironment: 5.2,
-          },
-          visaPathways: [
-            {
-              pathwayId: 'PT-D8',
-              countryCode: 'PT',
-              visaType: 'digital-nomad',
-              name: 'D8 Digital Nomad Visa',
-              eligibleLifeStages: ['remoteEmployee', 'freelancer'],
-              incomeRequirement: {
-                amount: 3480,
-                currencyCode: 'EUR',
-                period: 'monthly',
-              },
-              durationMonths: 12,
-              renewable: true,
-              leadsToResidency: true,
-              residencyYearsRequired: 5,
-              processingWeeks: [4, 12],
-              difficultyRating: 3,
-              requiresEmployer: false,
-              requiresMinIncome: true,
-              sourceUrl: 'https://vistos.mne.gov.pt/',
-              lastVerified: '2026-04-27',
-            },
-          ],
-        }),
+        json: async () => mockCountryPT,
       }),
     );
 
