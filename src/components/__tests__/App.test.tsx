@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from 'vitest';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, cleanup } from '@testing-library/react';
 import React from 'react';
 import App from '../App';
 import ResultsView from '../ResultsView';
@@ -261,5 +261,82 @@ describe('ResultsView', () => {
     expect(screen.getAllByText(/Medium confidence/i).length).toBeGreaterThanOrEqual(2);
 
     vi.unstubAllGlobals();
+  });
+
+  it('shows appropriate confidence caveats in Deep Dive', async () => {
+    const mockCountryData = (confidence: string) => ({
+      name: 'Test Country',
+      iso2: 'TC',
+      descriptor: 'A test country.',
+      capitalCity: 'Test City',
+      currency: { code: 'TST', name: 'Test' },
+      dataConfidence: confidence,
+      costBreakdown: { totalEstimateUsd: 2000 },
+      dimensions: {},
+      visaPathways: [],
+    });
+
+    const setupDeepDive = async (confidence: string) => {
+      vi.stubGlobal('fetch', vi.fn().mockResolvedValue({
+        ok: true,
+        json: async () => mockCountryData(confidence),
+      }));
+
+      render(
+        <ResultsView
+          result={{
+            sessionToken: 'test-token',
+            shareReady: false,
+            candidateCount: 1,
+            eliminatedCount: 0,
+            matches: [{
+              countryCode: 'TC',
+              countryName: 'Test Country',
+              countryDescriptor: 'A test country.',
+              dataConfidence: confidence as any,
+              score: 80,
+              rank: 1,
+              whyFit: [],
+              watchOut: [],
+              costRealityText: 'Fits budget',
+              dimensionScores: {} as any,
+            }],
+            eliminated: [],
+            profileSummary: 'Test',
+            computedWeights: {} as any,
+            generatedAt: new Date().toISOString(),
+          }}
+          onRetake={vi.fn()}
+          tweaks={{}}
+          profile={profile as any}
+          onUpdateResult={vi.fn()}
+          isReadOnly
+        />
+      );
+
+      fireEvent.click(screen.getByText('Deep Dive Details'));
+      await screen.findByText('Test Country');
+    };
+
+    // Case 1: Medium Confidence
+    await setupDeepDive('medium');
+    expect(screen.getAllByText(/Medium confidence/i).length).toBeGreaterThanOrEqual(2);
+    expect(screen.getByText(/Some country-level data uses blended or estimated sources/i)).toBeDefined();
+    vi.unstubAllGlobals();
+    cleanup();
+
+    // Case 2: Low Confidence
+    await setupDeepDive('low');
+    expect(screen.getAllByText(/Low confidence/i).length).toBeGreaterThanOrEqual(2);
+    expect(screen.getByText(/This country has limited or unstable source data/i)).toBeDefined();
+    vi.unstubAllGlobals();
+    cleanup();
+
+    // Case 3: High Confidence (should not show caveat)
+    await setupDeepDive('high');
+    expect(screen.queryByText(/Some country-level data uses blended or estimated sources/i)).toBeNull();
+    expect(screen.queryByText(/This country has limited or unstable source data/i)).toBeNull();
+    vi.unstubAllGlobals();
+    cleanup();
   });
 });

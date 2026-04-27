@@ -605,9 +605,17 @@ function DeepDive({
               )}
               <p className="text-text-secondary">{data?.descriptor}</p>
               {hasConfidenceCaveat && (
-                <div className="inline-flex items-center gap-1 mt-3 text-[10px] font-mono text-accent-warning bg-accent-warning/10 border border-accent-warning/20 px-2 py-1 rounded uppercase">
-                  <Info size={10} />
-                  {data.dataConfidence} confidence
+                <div className="mt-4 space-y-2">
+                  <div className="inline-flex items-center gap-1 text-[10px] font-mono text-accent-warning bg-accent-warning/10 border border-accent-warning/20 px-2 py-1 rounded uppercase">
+                    <Info size={10} />
+                    {data.dataConfidence} confidence
+                  </div>
+                  <p className="text-[11px] text-accent-warning/90 leading-relaxed max-w-sm">
+                    {data.dataConfidence === "medium"
+                      ? "Some country-level data uses blended or estimated sources. Verify details before making decisions."
+                      : "This country has limited or unstable source data. Treat scores as directional and verify details before making decisions."
+                    }
+                  </p>
                 </div>
               )}
             </div>
