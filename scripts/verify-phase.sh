@@ -11,10 +11,13 @@
 # FORBIDDEN_FIELDS — comma-separated list of field names that must not appear
 #                    as new additions (+) in the countries.ts diff.
 #                    If unset, field check is skipped.
+#
+# NOTE: All phase work must be committed before running this script.
+# Uncommitted changes are not inspected by the main...HEAD checks and will
+# cause this script to abort.
 
 set -e
 
-PASS=0
 FAIL=0
 
 ok()   { echo "  ✓ $1"; }
@@ -24,8 +27,26 @@ echo ""
 echo "=== verify:phase ==="
 echo ""
 
+# ── 0. Uncommitted-changes guard ──────────────────────────────────────────────
+echo "0. Working tree clean"
+UNSTAGED=$(git diff --name-only 2>/dev/null)
+STAGED=$(git diff --cached --name-only 2>/dev/null)
+if [ -n "$UNSTAGED" ] || [ -n "$STAGED" ]; then
+  fail "Uncommitted changes detected — commit everything before running verify:phase"
+  if [ -n "$STAGED" ];   then echo "   Staged:   $STAGED";   fi
+  if [ -n "$UNSTAGED" ]; then echo "   Unstaged: $UNSTAGED"; fi
+  echo ""
+  echo "=== Summary ==="
+  echo "1 check(s) failed. Commit all changes first."
+  echo ""
+  exit 1
+else
+  ok "Working tree is clean — all changes committed"
+fi
+
 # ── 1. Whitespace gate ────────────────────────────────────────────────────────
-echo "1. Whitespace (git diff --check)"
+echo ""
+echo "1. Whitespace (git diff --check main...HEAD)"
 if git diff --check main...HEAD > /tmp/vp_whitespace.txt 2>&1; then
   ok "No whitespace violations"
 else
@@ -48,7 +69,6 @@ else
     VIOLATIONS=""
     for f in $CHANGED; do
       MATCH=0
-      # Split ALLOWED_FILES on commas and check each
       OLD_IFS="$IFS"
       IFS=','
       for allowed in $ALLOWED_FILES; do
@@ -82,13 +102,10 @@ echo "3. Forbidden fields in countries.ts diff (FORBIDDEN_FIELDS)"
 if [ -z "$FORBIDDEN_FIELDS" ]; then
   echo "   FORBIDDEN_FIELDS not set — skipping field check"
 else
-  # Check if countries.ts is in the diff at all
   if ! git diff --name-only main...HEAD | grep -q "countries.ts"; then
     ok "countries.ts not changed — field check not applicable"
   else
-    # Build grep pattern from comma-separated list
     PATTERN=$(echo "$FORBIDDEN_FIELDS" | tr ',' '|')
-    # Look for lines added (+) that contain any forbidden field name
     FIELD_VIOLATIONS=$(git diff main...HEAD -- src/lib/data/countries.ts \
       | grep "^+" | grep -v "^+++" \
       | grep -E "$PATTERN" || true)
