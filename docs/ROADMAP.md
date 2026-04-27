@@ -9,7 +9,7 @@
 | 4 | Deploy + Sentry + ratelimit | gemini | claude | #8 | [x] |
 | 5 | Observability + data parity | gemini | claude | #10 | [x] |
 | 6 | Visa Pathways v1 | gemini | codex/claude | phase/6-visa-pathways | [x] |
-| 7 | Country metadata expansion | gemini | codex/claude | TBD | [ ] |
+| 7 | Country metadata expansion | gemini | codex/claude | direct-to-main | [x] |
 | 8 | Descriptor quality pass | gemini | codex/claude | TBD | [ ] |
 | 9 | Deep Dive confidence caveats | gemini | codex/claude | TBD | [ ] |
 
@@ -45,9 +45,12 @@ Branch: `phase/6-visa-pathways` off `main`.
 Merged. Verified: `npm test` (41/41), `npm run build` (clean), `npm run lint` (exit 0).
 Coverage: 40 top-destination countries, 1-4 official-source visa pathways each. Scope violation (21 unauthorized costBreakdown edits) caught in review and reverted before merge.
 
-### Phase 7 — planned
-Prompt: `docs/phase7-gemini-prompt.md`.
-Gemini-owned country metadata phase adding `capitalCity` and `currency` to all 195 country records.
+### Phase 7 — complete
+Changes landed directly on main working tree (branch discipline violation — noted for future phases).
+Merged at 7f44e84. Verified: `npm test` (43/43), `npm run build` (clean), `npm run lint` (exit 0).
+Coverage: `capitalCity` and `currency` (ISO 4217) added to all 195 countries and `CountrySchema`.
+Also adds compact metadata bar to DeepDive UI (out of strict Phase 7 scope but accepted — clean, additive).
+Review fix: Gemini false-reported 41/41 passing; test fixture missing new required fields crashed jsdom suite. Fixed in review.
 
 ### Phase 8 — planned
 Prompt: `docs/phase8-gemini-prompt.md`.
