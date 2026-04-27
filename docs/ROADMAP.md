@@ -8,7 +8,7 @@
 | 3 | SSR /r/[token] + OG tags | gemini | claude | #6 | [x] |
 | 4 | Deploy + Sentry + ratelimit | gemini | claude | #8 | [x] |
 | 5 | Observability + data parity | gemini | claude | #10 | [x] |
-| 6 | Visa Pathways v1 | gemini | codex/claude | TBD | [ ] |
+| 6 | Visa Pathways v1 | gemini | codex/claude | phase/6-visa-pathways | [x] |
 | 7 | Country metadata expansion | gemini | codex/claude | TBD | [ ] |
 | 8 | Descriptor quality pass | gemini | codex/claude | TBD | [ ] |
 | 9 | Deep Dive confidence caveats | gemini | codex/claude | TBD | [ ] |
@@ -40,9 +40,10 @@ Merged in PR #8. Verified: `npm test` (33/33), `npm run build` (clean, `/api/hea
 New worktree off `main` at any point after Phase 0.
 Merged in PR #10. Output: `docs/data-parity-2026-04.md` before any YAML is touched.
 
-### Phase 6 — planned
-Prompt: `docs/phase6-gemini-prompt.md`.
-Gemini-owned bulk research/data phase for official-source visa pathway records across the data-parity top 40 launch destinations.
+### Phase 6 — complete
+Branch: `phase/6-visa-pathways` off `main`.
+Merged. Verified: `npm test` (41/41), `npm run build` (clean), `npm run lint` (exit 0).
+Coverage: 40 top-destination countries, 1-4 official-source visa pathways each. Scope violation (21 unauthorized costBreakdown edits) caught in review and reverted before merge.
 
 ### Phase 7 — planned
 Prompt: `docs/phase7-gemini-prompt.md`.
