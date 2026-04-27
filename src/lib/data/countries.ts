@@ -382,7 +382,7 @@ export const COUNTRIES: Country[] = [
     languages: ["Vietnamese"], euMember: false, schengen: false, commonwealth: false,
     descriptor: "Extraordinary value, rapid growth, and a world-renowned culinary scene.",
     dimensions: { cost: 8.9, safety: 5.5, healthcare: 4.8, visaEase: 5, digitalInfra: 5.6, climate: 3.8, english: 3.3, lgbtqSafety: 4.5, techEcosystem: 6.2, naturalEnvironment: 5.9 },
-    costBreakdown: { rentUsd: 550, groceriesUsd: 180, transportUsd: 25, utilitiesUsd: 50, diningOutUsd: 120, healthInsuranceUsd: 50, totalEstimateUsd: 975 },
+    costBreakdown: { rentUsd: 550, groceriesUsd: 180, transportUsd: 25, utilitiesUsd: 50, diningOutUsd: 120, healthInsuranceUsd: 40, totalEstimateUsd: 965 },
     visaPathways: [
       {
         pathwayId: "VN-WORK-PERMIT",
@@ -423,7 +423,7 @@ export const COUNTRIES: Country[] = [
     languages: ["Czech"], euMember: true, schengen: true, commonwealth: false,
     descriptor: "The heart of Europe, combining historic beauty with high safety and a strong manufacturing and tech base.",
     dimensions: { cost: 6.1, safety: 9.2, healthcare: 8.1, visaEase: 6.9, digitalInfra: 7.7, climate: 3.8, english: 5.1, lgbtqSafety: 7, techEcosystem: 7.6, naturalEnvironment: 2.7 },
-    costBreakdown: { rentUsd: 1100, groceriesUsd: 280, transportUsd: 30, utilitiesUsd: 180, diningOutUsd: 220, healthInsuranceUsd: 60, totalEstimateUsd: 1870 },
+    costBreakdown: { rentUsd: 1100, groceriesUsd: 300, transportUsd: 35, utilitiesUsd: 180, diningOutUsd: 250, healthInsuranceUsd: 80, totalEstimateUsd: 1945 },
     visaPathways: [
       {
         pathwayId: "CZ-EMPLOYEE-CARD",
@@ -454,7 +454,7 @@ export const COUNTRIES: Country[] = [
     languages: ["Greek"], euMember: true, schengen: true, commonwealth: false,
     descriptor: "The cradle of Western civilisation, pairing marriage equality with an unmatched Mediterranean lifestyle and islands for every pace of life.",
     dimensions: { cost: 6.7, safety: 7.8, healthcare: 7.1, visaEase: 6.4, digitalInfra: 4.9, climate: 7.8, english: 5.6, lgbtqSafety: 8.5, techEcosystem: 6.1, naturalEnvironment: 7.2 },
-    costBreakdown: { rentUsd: 950, groceriesUsd: 280, transportUsd: 35, utilitiesUsd: 150, diningOutUsd: 250, healthInsuranceUsd: 70, totalEstimateUsd: 1735 },
+    costBreakdown: { rentUsd: 850, groceriesUsd: 280, transportUsd: 40, utilitiesUsd: 150, diningOutUsd: 280, healthInsuranceUsd: 70, totalEstimateUsd: 1670 },
     visaPathways: [
       {
         pathwayId: "GR-DIGITAL-NOMAD",
@@ -537,7 +537,7 @@ export const COUNTRIES: Country[] = [
     languages: ["Japanese"], euMember: false, schengen: false, commonwealth: false,
     descriptor: "A perfect fusion of ultra-modern technology and timeless tradition, with world-class safety and service.",
     dimensions: { cost: 3.9, safety: 9.8, healthcare: 9.2, visaEase: 7, digitalInfra: 9.1, climate: 4.7, english: 2.6, lgbtqSafety: 7.2, techEcosystem: 7.8, naturalEnvironment: 5.5 },
-    costBreakdown: { rentUsd: 1200, groceriesUsd: 350, transportUsd: 80, utilitiesUsd: 150, diningOutUsd: 400, healthInsuranceUsd: 100, totalEstimateUsd: 2280 },
+    costBreakdown: { rentUsd: 1800, groceriesUsd: 500, transportUsd: 120, utilitiesUsd: 220, diningOutUsd: 450, healthInsuranceUsd: 150, totalEstimateUsd: 3240 },
     visaPathways: [
       {
         pathwayId: "JP-HSP",
@@ -602,7 +602,7 @@ export const COUNTRIES: Country[] = [
     languages: ["Spanish"], euMember: false, schengen: false, commonwealth: false,
     descriptor: "The 'Hub of the Americas' — a global financial centre with tropical rain forests and a friendly tax regime.",
     dimensions: { cost: 5.3, safety: 7.4, healthcare: 7.1, visaEase: 8.3, digitalInfra: 7.4, climate: 5.1, english: 4.4, lgbtqSafety: 6.2, techEcosystem: 6.1, naturalEnvironment: 6.2 },
-    costBreakdown: { rentUsd: 1300, groceriesUsd: 280, transportUsd: 40, utilitiesUsd: 110, diningOutUsd: 220, healthInsuranceUsd: 90, totalEstimateUsd: 2040 },
+    costBreakdown: { rentUsd: 1400, groceriesUsd: 350, transportUsd: 40, utilitiesUsd: 110, diningOutUsd: 250, healthInsuranceUsd: 90, totalEstimateUsd: 2240 },
     visaPathways: [
       {
         pathwayId: "PA-FRIENDLY-NATIONS",
@@ -750,7 +750,7 @@ export const COUNTRIES: Country[] = [
     languages: ["Filipino", "English"], euMember: false, schengen: false, commonwealth: false,
     descriptor: "Archipelagic beauty with legendary hospitality and widespread English proficiency.",
     dimensions: { cost: 8.2, safety: 5.4, healthcare: 5.1, visaEase: 6, digitalInfra: 4.8, climate: 4, english: 8.3, lgbtqSafety: 6.2, techEcosystem: 5.8, naturalEnvironment: 8.5 },
-    costBreakdown: { rentUsd: 750, groceriesUsd: 220, transportUsd: 35, utilitiesUsd: 80, diningOutUsd: 150, healthInsuranceUsd: 60, totalEstimateUsd: 1295 },
+    costBreakdown: { rentUsd: 600, groceriesUsd: 220, transportUsd: 30, utilitiesUsd: 80, diningOutUsd: 150, healthInsuranceUsd: 60, totalEstimateUsd: 1140 },
     visaPathways: [
       {
         pathwayId: "PH-SRRV",
@@ -877,7 +877,7 @@ export const COUNTRIES: Country[] = [
     languages: ["French"], euMember: true, schengen: true, commonwealth: false,
     descriptor: "A nation of extraordinary cultural depth, world-class healthcare, and an unmatched quality of life.",
     dimensions: { cost: 4.7, safety: 7.8, healthcare: 9.2, visaEase: 7.5, digitalInfra: 7.7, climate: 5.4, english: 4.5, lgbtqSafety: 8.0, techEcosystem: 8.0, naturalEnvironment: 5.9 },
-    costBreakdown: { rentUsd: 1400, groceriesUsd: 350, transportUsd: 70, utilitiesUsd: 180, diningOutUsd: 350, healthInsuranceUsd: 80, totalEstimateUsd: 2430 },
+    costBreakdown: { rentUsd: 1600, groceriesUsd: 280, transportUsd: 75, utilitiesUsd: 150, diningOutUsd: 320, healthInsuranceUsd: 100, totalEstimateUsd: 2525 },
     visaPathways: [
       {
         pathwayId: "FR-TALENT-PASSPORT",
@@ -914,7 +914,7 @@ export const COUNTRIES: Country[] = [
     languages: ["Italian"], euMember: true, schengen: true, commonwealth: false,
     descriptor: "Unmatched beauty, food, and history — offering a lifestyle that prioritises pleasure and family.",
     dimensions: { cost: 5.6, safety: 8.0, healthcare: 8.6, visaEase: 7, digitalInfra: 6.6, climate: 6.9, english: 4.2, lgbtqSafety: 7.1, techEcosystem: 6.6, naturalEnvironment: 7.2 },
-    costBreakdown: { rentUsd: 1100, groceriesUsd: 320, transportUsd: 45, utilitiesUsd: 180, diningOutUsd: 300, healthInsuranceUsd: 80, totalEstimateUsd: 2025 },
+    costBreakdown: { rentUsd: 1400, groceriesUsd: 250, transportUsd: 45, utilitiesUsd: 160, diningOutUsd: 240, healthInsuranceUsd: 90, totalEstimateUsd: 2185 },
     visaPathways: [
       {
         pathwayId: "IT-DIGITAL-NOMAD",
@@ -961,7 +961,7 @@ export const COUNTRIES: Country[] = [
     languages: ["Polish"], euMember: true, schengen: true, commonwealth: false,
     descriptor: "A dynamic, rapidly modernising nation with a powerhouse economy and high quality of life.",
     dimensions: { cost: 7.4, safety: 8.2, healthcare: 7.4, visaEase: 5.9, digitalInfra: 7.4, climate: 3.2, english: 5.2, lgbtqSafety: 4.4, techEcosystem: 7.8, naturalEnvironment: 2.7 },
-    costBreakdown: { rentUsd: 1000, groceriesUsd: 250, transportUsd: 25, utilitiesUsd: 150, diningOutUsd: 180, healthInsuranceUsd: 50, totalEstimateUsd: 1655 },
+    costBreakdown: { rentUsd: 800, groceriesUsd: 220, transportUsd: 35, utilitiesUsd: 140, diningOutUsd: 180, healthInsuranceUsd: 60, totalEstimateUsd: 1435 },
     visaPathways: [
       {
         pathwayId: "PL-WORK-PERMIT",
@@ -1058,7 +1058,7 @@ export const COUNTRIES: Country[] = [
     languages: ["Malay", "English"], euMember: false, schengen: false, commonwealth: true,
     descriptor: "A hyper-modern tropical hub with English as a working language and exceptional infrastructure.",
     dimensions: { cost: 8, safety: 7.6, healthcare: 7.4, visaEase: 8, digitalInfra: 6.9, climate: 4, english: 5, lgbtqSafety: 1.0, techEcosystem: 7.8, naturalEnvironment: 3.7 },
-    costBreakdown: { rentUsd: 650, groceriesUsd: 180, transportUsd: 30, utilitiesUsd: 60, diningOutUsd: 150, healthInsuranceUsd: 60, totalEstimateUsd: 1130 },
+    costBreakdown: { rentUsd: 700, groceriesUsd: 200, transportUsd: 35, utilitiesUsd: 110, diningOutUsd: 100, healthInsuranceUsd: 60, totalEstimateUsd: 1205 },
     visaPathways: [
       {
         pathwayId: "MY-DE-RANTAU",
@@ -1095,7 +1095,7 @@ export const COUNTRIES: Country[] = [
     languages: ["Korean"], euMember: false, schengen: false, commonwealth: false,
     descriptor: "The world's most wired country, offering hyper-efficiency and a dynamic creative culture.",
     dimensions: { cost: 6.1, safety: 8.4, healthcare: 9.2, visaEase: 7, digitalInfra: 9.7, climate: 4, english: 5.2, lgbtqSafety: 4.2, techEcosystem: 8.4, naturalEnvironment: 5 },
-    costBreakdown: { rentUsd: 1100, groceriesUsd: 400, transportUsd: 70, utilitiesUsd: 150, diningOutUsd: 350, healthInsuranceUsd: 100, totalEstimateUsd: 2170 },
+    costBreakdown: { rentUsd: 1200, groceriesUsd: 320, transportUsd: 50, utilitiesUsd: 180, diningOutUsd: 200, healthInsuranceUsd: 90, totalEstimateUsd: 2040 },
     visaPathways: [
       {
         pathwayId: "KR-D10-JOB-SEEKER",
@@ -1126,7 +1126,7 @@ export const COUNTRIES: Country[] = [
     languages: ["Turkish"], euMember: false, schengen: false, commonwealth: false,
     descriptor: "A vast cultural bridge between continents with extraordinary history and incredible value.",
     dimensions: { cost: 8.2, safety: 5.4, healthcare: 7.0, visaEase: 7.5, digitalInfra: 5.4, climate: 6.7, english: 4.3, lgbtqSafety: 3.5, techEcosystem: 6.8, naturalEnvironment: 4.1 },
-    costBreakdown: { rentUsd: 700, groceriesUsd: 180, transportUsd: 30, utilitiesUsd: 70, diningOutUsd: 150, healthInsuranceUsd: 50, totalEstimateUsd: 1180 },
+    costBreakdown: { rentUsd: 650, groceriesUsd: 180, transportUsd: 25, utilitiesUsd: 100, diningOutUsd: 140, healthInsuranceUsd: 55, totalEstimateUsd: 1150 },
     visaPathways: [
       {
         pathwayId: "TR-DIGITAL-NOMAD",
@@ -1417,7 +1417,7 @@ export const COUNTRIES: Country[] = [
     languages: ["German"], euMember: true, schengen: true, commonwealth: false,
     descriptor: "A central European powerhouse of culture, stability, and world-class alpine living.",
     dimensions: { cost: 4.8, safety: 9.4, healthcare: 9.2, visaEase: 5.2, digitalInfra: 8.3, climate: 4, english: 6.6, lgbtqSafety: 9.1, techEcosystem: 8.2, naturalEnvironment: 8.5 },
-    costBreakdown: { rentUsd: 1300, groceriesUsd: 320, transportUsd: 60, utilitiesUsd: 180, diningOutUsd: 300, healthInsuranceUsd: 120, totalEstimateUsd: 2280 },
+    costBreakdown: { rentUsd: 1400, groceriesUsd: 350, transportUsd: 60, utilitiesUsd: 180, diningOutUsd: 350, healthInsuranceUsd: 150, totalEstimateUsd: 2490 },
     visaPathways: [
       {
         pathwayId: "AT-RED-WHITE-RED",
@@ -1508,7 +1508,7 @@ export const COUNTRIES: Country[] = [
     languages: ["Dutch", "French", "German"], euMember: true, schengen: true, commonwealth: false,
     descriptor: "The heart of the European Union, offering a high quality of life and multilingual urban centers.",
     dimensions: { cost: 5, safety: 8.1, healthcare: 9.1, visaEase: 3.5, digitalInfra: 8.8, climate: 3.4, english: 7.3, lgbtqSafety: 9.2, techEcosystem: 8.4, naturalEnvironment: 2.1 },
-    costBreakdown: { rentUsd: 1200, groceriesUsd: 320, transportUsd: 55, utilitiesUsd: 180, diningOutUsd: 280, healthInsuranceUsd: 90, totalEstimateUsd: 2125 },
+    costBreakdown: { rentUsd: 1200, groceriesUsd: 380, transportUsd: 60, utilitiesUsd: 220, diningOutUsd: 380, healthInsuranceUsd: 110, totalEstimateUsd: 2350 },
     visaPathways: [
       {
         pathwayId: "BE-SINGLE-PERMIT",
@@ -1739,7 +1739,7 @@ export const COUNTRIES: Country[] = [
     languages: ["Danish", "English"], euMember: true, schengen: true, commonwealth: false,
     descriptor: "A world leader in social equality, sustainability, and high-trust societal living.",
     dimensions: { cost: 4.2, safety: 9.6, healthcare: 9.1, visaEase: 2.5, digitalInfra: 9.4, climate: 2.3, english: 9.1, lgbtqSafety: 9.6, techEcosystem: 8.8, naturalEnvironment: 2.7 },
-    costBreakdown: { rentUsd: 1500, groceriesUsd: 380, transportUsd: 70, utilitiesUsd: 220, diningOutUsd: 350, healthInsuranceUsd: 100, totalEstimateUsd: 2620 },
+    costBreakdown: { rentUsd: 1800, groceriesUsd: 450, transportUsd: 80, utilitiesUsd: 200, diningOutUsd: 500, healthInsuranceUsd: 80, totalEstimateUsd: 3110 },
     visaPathways: [
       {
         pathwayId: "DK-POSITIVE-LIST",
@@ -1980,7 +1980,7 @@ export const COUNTRIES: Country[] = [
     languages: ["Hindi", "English"], euMember: false, schengen: false, commonwealth: true,
     descriptor: "A global tech powerhouse offering incredible diversity and unmatched value for the adventurous professional.",
     dimensions: { cost: 9, safety: 5.8, healthcare: 5.5, visaEase: 4.9, digitalInfra: 6.1, climate: 4.2, english: 6.5, lgbtqSafety: 4.8, techEcosystem: 8.5, naturalEnvironment: 3.7 },
-    costBreakdown: { rentUsd: 500, groceriesUsd: 150, transportUsd: 20, utilitiesUsd: 50, diningOutUsd: 120, healthInsuranceUsd: 40, totalEstimateUsd: 880 },
+    costBreakdown: { rentUsd: 450, groceriesUsd: 180, transportUsd: 40, utilitiesUsd: 70, diningOutUsd: 130, healthInsuranceUsd: 60, totalEstimateUsd: 930 },
     visaPathways: [
       {
         pathwayId: "IN-EMPLOYMENT",
@@ -2037,7 +2037,7 @@ export const COUNTRIES: Country[] = [
     languages: ["English", "Irish"], euMember: true, schengen: false, commonwealth: false,
     descriptor: "Europe's tech gateway—a friendly, English-speaking nation with exceptional corporate connectivity.",
     dimensions: { cost: 3.5, safety: 8.8, healthcare: 7.5, visaEase: 2.5, digitalInfra: 8.3, climate: 2.7, english: 10, lgbtqSafety: 9.2, techEcosystem: 8.2, naturalEnvironment: 5.9 },
-    costBreakdown: { rentUsd: 1900, groceriesUsd: 400, transportUsd: 85, utilitiesUsd: 220, diningOutUsd: 400, healthInsuranceUsd: 100, totalEstimateUsd: 3105 },
+    costBreakdown: { rentUsd: 2100, groceriesUsd: 450, transportUsd: 90, utilitiesUsd: 180, diningOutUsd: 400, healthInsuranceUsd: 120, totalEstimateUsd: 3340 },
     visaPathways: [
       {
         pathwayId: "IE-CRITICAL-SKILLS",
@@ -2074,7 +2074,7 @@ export const COUNTRIES: Country[] = [
     languages: ["Hebrew", "Arabic"], euMember: false, schengen: false, commonwealth: false,
     descriptor: "The 'Start-up Nation'—a global leader in innovation and venture capital despite a volatile regional context.",
     dimensions: { cost: 3.6, safety: 6.5, healthcare: 8.8, visaEase: 4.4, digitalInfra: 8.8, climate: 6.7, english: 6.9, lgbtqSafety: 7.5, techEcosystem: 9.8, naturalEnvironment: 3.1 },
-    costBreakdown: { rentUsd: 1800, groceriesUsd: 450, transportUsd: 65, utilitiesUsd: 220, diningOutUsd: 450, healthInsuranceUsd: 120, totalEstimateUsd: 3105 },
+    costBreakdown: { rentUsd: 2000, groceriesUsd: 550, transportUsd: 80, utilitiesUsd: 160, diningOutUsd: 450, healthInsuranceUsd: 100, totalEstimateUsd: 3340 },
     visaPathways: [
       {
         pathwayId: "IL-B1-WORK",
@@ -2475,7 +2475,7 @@ export const COUNTRIES: Country[] = [
     languages: ["Norwegian"], euMember: false, schengen: true, commonwealth: false,
     descriptor: "A wealthy, stable Nordic nation with incredible fjords and a very high standard of living.",
     dimensions: { cost: 2.6, safety: 9.6, healthcare: 9.2, visaEase: 3.5, digitalInfra: 9.4, climate: 2, english: 8.8, lgbtqSafety: 9.6, techEcosystem: 8.8, naturalEnvironment: 9.2 },
-    costBreakdown: { rentUsd: 1400, groceriesUsd: 450, transportUsd: 85, utilitiesUsd: 180, diningOutUsd: 400, healthInsuranceUsd: 120, totalEstimateUsd: 2635 },
+    costBreakdown: { rentUsd: 2200, groceriesUsd: 600, transportUsd: 120, utilitiesUsd: 250, diningOutUsd: 600, healthInsuranceUsd: 200, totalEstimateUsd: 3970 },
     visaPathways: [
       {
         pathwayId: "NO-SKILLED-WORKER",
@@ -2656,7 +2656,7 @@ export const COUNTRIES: Country[] = [
     languages: ["Arabic", "English"], euMember: false, schengen: false, commonwealth: false,
     descriptor: "A Kingdom in transition, leveraging massive capital for global technological leadership.",
     dimensions: { cost: 4.4, safety: 5.2, healthcare: 7.8, visaEase: 2.5, digitalInfra: 9.1, climate: 1.5, english: 4.9, lgbtqSafety: 0.5, techEcosystem: 8.4, naturalEnvironment: 2 },
-    costBreakdown: { rentUsd: 1200, groceriesUsd: 350, transportUsd: 50, utilitiesUsd: 200, diningOutUsd: 300, healthInsuranceUsd: 80, totalEstimateUsd: 2180 },
+    costBreakdown: { rentUsd: 1600, groceriesUsd: 450, transportUsd: 50, utilitiesUsd: 240, diningOutUsd: 400, healthInsuranceUsd: 120, totalEstimateUsd: 2860 },
     visaPathways: [
       {
         pathwayId: "SA-PREMIUM-RESIDENCY",
@@ -2839,7 +2839,7 @@ export const COUNTRIES: Country[] = [
     languages: ["Mandarin"], euMember: false, schengen: false, commonwealth: false,
     descriptor: "A global powerhouse offering ultra-modern megacities, deep history, and a world-leading digital ecosystem.",
     dimensions: { cost: 6.9, safety: 4.8, healthcare: 7.2, visaEase: 2, digitalInfra: 9.1, climate: 4.2, english: 2.3, lgbtqSafety: 3.8, techEcosystem: 7.5, naturalEnvironment: 3 },
-    costBreakdown: { rentUsd: 1100, groceriesUsd: 300, transportUsd: 40, utilitiesUsd: 100, diningOutUsd: 250, healthInsuranceUsd: 80, totalEstimateUsd: 1870 },
+    costBreakdown: { rentUsd: 850, groceriesUsd: 280, transportUsd: 45, utilitiesUsd: 90, diningOutUsd: 250, healthInsuranceUsd: 120, totalEstimateUsd: 1635 },
     visaPathways: [
       {
         pathwayId: "CN-Z-VISA",
