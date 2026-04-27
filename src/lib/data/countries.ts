@@ -71,7 +71,7 @@ export const COUNTRIES: Country[] = [
     ],
     cities: ["Lisbon", "Porto", "Lagos"],
     rawIndicators: { summerHighC: 28, winterLowC: 8, humidityAvg: 65, airQualityIndex: 35, seismicZone: 3, internetReliability: 8.5, englishDailyLife: 7.2, stability: 8.8, authoritarianRisk: 1.5, corruptionRisk: 2.1 },
-    dataConfidence: "high", lastUpdated: "2026-04-21"
+    dataConfidence: "high", lastUpdated: "2026-04-21", capitalCity: "Lisbon", currency: { code: "EUR", name: "Euro" }
   },
   {
     name: "Mexico", iso2: "MX", iso3: "MEX", region: "Americas", subregion: "North America",
@@ -107,7 +107,7 @@ export const COUNTRIES: Country[] = [
     ],
     cities: ["Mexico City", "Playa del Carmen", "Oaxaca"],
     rawIndicators: { summerHighC: 27, winterLowC: 6, humidityAvg: 50, airQualityIndex: 120, seismicZone: 4, internetReliability: 7.2, englishDailyLife: 5.5, stability: 6.5, authoritarianRisk: 4.2, corruptionRisk: 6.8 },
-    dataConfidence: "high", lastUpdated: "2026-04-21"
+    dataConfidence: "high", lastUpdated: "2026-04-21", capitalCity: "Mexico City", currency: { code: "MXN", name: "Mexican Peso" }
   },
   {
     name: "Switzerland", iso2: "CH", iso3: "CHE", region: "Europe", subregion: "Western Europe",
@@ -137,7 +137,7 @@ export const COUNTRIES: Country[] = [
     ],
     cities: ["Zurich", "Geneva", "Basel"],
     rawIndicators: { summerHighC: 24, winterLowC: -2, humidityAvg: 70, airQualityIndex: 25, seismicZone: 2, internetReliability: 9.8, englishDailyLife: 8.1, stability: 9.9, authoritarianRisk: 0.5, corruptionRisk: 0.8 },
-    dataConfidence: "high", lastUpdated: "2026-04-21"
+    dataConfidence: "high", lastUpdated: "2026-04-21", capitalCity: "Bern", currency: { code: "CHF", name: "Swiss Franc" }
   },
   {
     name: "Thailand", iso2: "TH", iso3: "THA", region: "Asia", subregion: "Southeast Asia",
@@ -197,7 +197,7 @@ export const COUNTRIES: Country[] = [
     ],
     cities: ["Bangkok", "Chiang Mai", "Phuket"],
     rawIndicators: { summerHighC: 35, winterLowC: 21, humidityAvg: 75, airQualityIndex: 110, seismicZone: 1, internetReliability: 8.8, englishDailyLife: 4.8, stability: 5.5, authoritarianRisk: 6.2, corruptionRisk: 5.8 },
-    dataConfidence: "high", lastUpdated: "2026-04-21"
+    dataConfidence: "high", lastUpdated: "2026-04-21", capitalCity: "Bangkok", currency: { code: "THB", name: "Thai Baht" }
   },
   {
     name: "Estonia", iso2: "EE", iso3: "EST", region: "Europe", subregion: "Northern Europe",
@@ -207,7 +207,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 800, groceriesUsd: 250, transportUsd: 30, utilitiesUsd: 150, diningOutUsd: 240, healthInsuranceUsd: 50, totalEstimateUsd: 1520 },
     cities: ["Tallinn", "Tartu"],
     rawIndicators: { summerHighC: 21, winterLowC: -8, humidityAvg: 80, airQualityIndex: 15, seismicZone: 0, internetReliability: 9.9, englishDailyLife: 8.5, stability: 9.1, authoritarianRisk: 1.2, corruptionRisk: 1.5 },
-    dataConfidence: "high", lastUpdated: "2026-04-21"
+    dataConfidence: "high", lastUpdated: "2026-04-21", capitalCity: "Tallinn", currency: { code: "EUR", name: "Euro" }
   },
   {
     name: "Spain", iso2: "ES", iso3: "ESP", region: "Europe", subregion: "Southern Europe",
@@ -261,7 +261,7 @@ export const COUNTRIES: Country[] = [
     ],
     cities: ["Madrid", "Barcelona", "Valencia", "Malaga"],
     rawIndicators: { summerHighC: 32, winterLowC: 5, humidityAvg: 55, airQualityIndex: 40, seismicZone: 2, internetReliability: 9.2, englishDailyLife: 6.2, stability: 8.4, authoritarianRisk: 1.8, corruptionRisk: 2.8 },
-    dataConfidence: "high", lastUpdated: "2026-04-21"
+    dataConfidence: "high", lastUpdated: "2026-04-21", capitalCity: "Madrid", currency: { code: "EUR", name: "Euro" }
   },
   {
     name: "Netherlands", iso2: "NL", iso3: "NLD", region: "Europe", subregion: "Western Europe",
@@ -315,7 +315,7 @@ export const COUNTRIES: Country[] = [
     ],
     cities: ["Amsterdam", "Rotterdam", "Utrecht", "The Hague"],
     rawIndicators: { summerHighC: 22, winterLowC: 1, humidityAvg: 80, airQualityIndex: 30, seismicZone: 1, internetReliability: 9.8, englishDailyLife: 9.8, stability: 9.5, authoritarianRisk: 0.8, corruptionRisk: 1.1 },
-    dataConfidence: "high", lastUpdated: "2026-04-21"
+    dataConfidence: "high", lastUpdated: "2026-04-21", capitalCity: "Amsterdam", currency: { code: "EUR", name: "Euro" }
   },
   {
     name: "United Arab Emirates", iso2: "AE", iso3: "ARE", region: "Asia", subregion: "Western Asia",
@@ -375,7 +375,7 @@ export const COUNTRIES: Country[] = [
     ],
     cities: ["Dubai", "Abu Dhabi"],
     rawIndicators: { summerHighC: 41, winterLowC: 14, humidityAvg: 60, airQualityIndex: 140, seismicZone: 1, internetReliability: 9.9, englishDailyLife: 9.2, stability: 9.1, authoritarianRisk: 7.5, corruptionRisk: 3.2 },
-    dataConfidence: "high", lastUpdated: "2026-04-21"
+    dataConfidence: "high", lastUpdated: "2026-04-21", capitalCity: "Abu Dhabi", currency: { code: "AED", name: "UAE Dirham" }
   },
   {
     name: "Vietnam", iso2: "VN", iso3: "VNM", region: "Asia", subregion: "Southeast Asia",
@@ -406,7 +406,7 @@ export const COUNTRIES: Country[] = [
     cities: ["Ho Chi Minh City", "Hanoi", "Da Nang"],
 
     rawIndicators: { summerHighC: 33, winterLowC: 15, humidityAvg: 80, airQualityIndex: 150, seismicZone: 1, internetReliability: 8.2, englishDailyLife: 4.2, stability: 8.5, authoritarianRisk: 7.8, corruptionRisk: 6.2 },
-    dataConfidence: "medium", lastUpdated: "2026-04-21"
+    dataConfidence: "medium", lastUpdated: "2026-04-21", capitalCity: "Hanoi", currency: { code: "VND", name: "Vietnamese Dong" }
   },
   {
     name: "Colombia", iso2: "CO", iso3: "COL", region: "Americas", subregion: "South America",
@@ -416,7 +416,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 650, groceriesUsd: 200, transportUsd: 30, utilitiesUsd: 60, diningOutUsd: 150, healthInsuranceUsd: 60, totalEstimateUsd: 1150 },
     cities: ["Medellin", "Bogota", "Cartagena"],
     rawIndicators: { summerHighC: 28, winterLowC: 7, humidityAvg: 70, airQualityIndex: 60, seismicZone: 4, internetReliability: 7.8, englishDailyLife: 4.1, stability: 6.2, authoritarianRisk: 3.8, corruptionRisk: 6.5 },
-    dataConfidence: "high", lastUpdated: "2026-04-21"
+    dataConfidence: "high", lastUpdated: "2026-04-21", capitalCity: "Bogotá", currency: { code: "COP", name: "Colombian Peso" }
   },
   {
     name: "Czech Republic", iso2: "CZ", iso3: "CZE", region: "Europe", subregion: "Eastern Europe",
@@ -447,7 +447,7 @@ export const COUNTRIES: Country[] = [
     cities: ["Prague", "Brno", "Ostrava"],
 
     rawIndicators: { summerHighC: 25, winterLowC: -3, humidityAvg: 65, airQualityIndex: 45, seismicZone: 1, internetReliability: 9.1, englishDailyLife: 7.2, stability: 9.2, authoritarianRisk: 2.1, corruptionRisk: 3.8 },
-    dataConfidence: "high", lastUpdated: "2026-04-21"
+    dataConfidence: "high", lastUpdated: "2026-04-21", capitalCity: "Prague", currency: { code: "CZK", name: "Czech Koruna" }
   },
   {
     name: "Greece", iso2: "GR", iso3: "GRC", region: "Europe", subregion: "Southern Europe",
@@ -484,7 +484,7 @@ export const COUNTRIES: Country[] = [
     cities: ["Athens", "Thessaloniki", "Chania", "Heraklion"],
 
     rawIndicators: { summerHighC: 33, winterLowC: 7, humidityAvg: 50, airQualityIndex: 55, seismicZone: 4, internetReliability: 7.5, englishDailyLife: 7.8, stability: 7.8, authoritarianRisk: 2.5, corruptionRisk: 4.8 },
-    dataConfidence: "high", lastUpdated: "2026-04-21"
+    dataConfidence: "high", lastUpdated: "2026-04-21", capitalCity: "Athens", currency: { code: "EUR", name: "Euro" }
   },
   {
     name: "Costa Rica", iso2: "CR", iso3: "CRI", region: "Americas", subregion: "Central America",
@@ -520,7 +520,7 @@ export const COUNTRIES: Country[] = [
     ],
     cities: ["San Jose", "Tamarindo", "Escazu"],
     rawIndicators: { summerHighC: 28, winterLowC: 18, humidityAvg: 75, airQualityIndex: 30, seismicZone: 4, internetReliability: 8.1, englishDailyLife: 6.8, stability: 8.8, authoritarianRisk: 1.2, corruptionRisk: 2.5 },
-    dataConfidence: "high", lastUpdated: "2026-04-21"
+    dataConfidence: "high", lastUpdated: "2026-04-21", capitalCity: "San José", currency: { code: "CRC", name: "Costa Rican Colón" }
   },
   {
     name: "Uruguay", iso2: "UY", iso3: "URY", region: "Americas", subregion: "South America",
@@ -530,7 +530,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 1200, groceriesUsd: 350, transportUsd: 60, utilitiesUsd: 140, diningOutUsd: 300, healthInsuranceUsd: 90, totalEstimateUsd: 2140 },
     cities: ["Montevideo", "Punta del Este", "Colonia del Sacramento"],
     rawIndicators: { summerHighC: 28, winterLowC: 7, humidityAvg: 70, airQualityIndex: 20, seismicZone: 0, internetReliability: 9.2, englishDailyLife: 5.8, stability: 9.2, authoritarianRisk: 1.1, corruptionRisk: 1.8 },
-    dataConfidence: "high", lastUpdated: "2026-04-21"
+    dataConfidence: "high", lastUpdated: "2026-04-21", capitalCity: "Montevideo", currency: { code: "UYU", name: "Uruguayan Peso" }
   },
   {
     name: "Japan", iso2: "JP", iso3: "JPN", region: "Asia", subregion: "Eastern Asia",
@@ -585,7 +585,7 @@ export const COUNTRIES: Country[] = [
     cities: ["Tokyo", "Osaka", "Kyoto", "Fukuoka"],
 
     rawIndicators: { summerHighC: 31, winterLowC: 1, humidityAvg: 65, airQualityIndex: 35, seismicZone: 5, internetReliability: 9.8, englishDailyLife: 4.5, stability: 9.6, authoritarianRisk: 1.2, corruptionRisk: 1.5 },
-    dataConfidence: "high", lastUpdated: "2026-04-21"
+    dataConfidence: "high", lastUpdated: "2026-04-21", capitalCity: "Tokyo", currency: { code: "JPY", name: "Japanese Yen" }
   },
   {
     name: "Georgia", iso2: "GE", iso3: "GEO", region: "Asia", subregion: "Western Asia",
@@ -595,7 +595,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 750, groceriesUsd: 220, transportUsd: 20, utilitiesUsd: 70, diningOutUsd: 180, healthInsuranceUsd: 50, totalEstimateUsd: 1290 },
     cities: ["Tbilisi", "Batumi", "Kutaisi"],
     rawIndicators: { summerHighC: 31, winterLowC: 1, humidityAvg: 60, airQualityIndex: 70, seismicZone: 4, internetReliability: 8.2, englishDailyLife: 6.1, stability: 7.2, authoritarianRisk: 4.8, corruptionRisk: 4.2 },
-    dataConfidence: "high", lastUpdated: "2026-04-21"
+    dataConfidence: "high", lastUpdated: "2026-04-21", capitalCity: "Tbilisi", currency: { code: "GEL", name: "Georgian Lari" }
   },
   {
     name: "Panama", iso2: "PA", iso3: "PAN", region: "Americas", subregion: "Central America",
@@ -626,7 +626,7 @@ export const COUNTRIES: Country[] = [
     cities: ["Panama City", "Boquete", "Coronado"],
 
     rawIndicators: { summerHighC: 32, winterLowC: 23, humidityAvg: 80, airQualityIndex: 30, seismicZone: 3, internetReliability: 8.8, englishDailyLife: 6.5, stability: 8.2, authoritarianRisk: 2.5, corruptionRisk: 5.2 },
-    dataConfidence: "high", lastUpdated: "2026-04-21"
+    dataConfidence: "high", lastUpdated: "2026-04-21", capitalCity: "Panama City", currency: { code: "USD", name: "US Dollar" }
   },
   {
     name: "Croatia", iso2: "HR", iso3: "HRV", region: "Europe", subregion: "Southern Europe",
@@ -636,7 +636,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 950, groceriesUsd: 300, transportUsd: 45, utilitiesUsd: 140, diningOutUsd: 220, healthInsuranceUsd: 70, totalEstimateUsd: 1725 },
     cities: ["Zagreb", "Split", "Zadar", "Dubrovnik"],
     rawIndicators: { summerHighC: 28, winterLowC: 0, humidityAvg: 60, airQualityIndex: 35, seismicZone: 4, internetReliability: 8.5, englishDailyLife: 7.5, stability: 8.9, authoritarianRisk: 1.8, corruptionRisk: 4.1 },
-    dataConfidence: "high", lastUpdated: "2026-04-21"
+    dataConfidence: "high", lastUpdated: "2026-04-21", capitalCity: "Zagreb", currency: { code: "EUR", name: "Euro" }
   },
   {
     name: "Singapore", iso2: "SG", iso3: "SGP", region: "Asia", subregion: "Southeast Asia",
@@ -696,7 +696,7 @@ export const COUNTRIES: Country[] = [
     ],
     cities: ["Singapore", "Sentosa Island"],
     rawIndicators: { summerHighC: 32, winterLowC: 24, humidityAvg: 80, airQualityIndex: 45, seismicZone: 0, internetReliability: 9.9, englishDailyLife: 9.8, stability: 9.8, authoritarianRisk: 4.5, corruptionRisk: 0.5 },
-    dataConfidence: "high", lastUpdated: "2026-04-21"
+    dataConfidence: "high", lastUpdated: "2026-04-21", capitalCity: "Singapore", currency: { code: "SGD", name: "Singapore Dollar" }
   },
   {
     name: "South Africa", iso2: "ZA", iso3: "ZAF", region: "Africa", subregion: "Southern Africa",
@@ -733,7 +733,7 @@ export const COUNTRIES: Country[] = [
     cities: ["Cape Town", "Johannesburg", "Durban"],
 
     rawIndicators: { summerHighC: 26, winterLowC: 7, humidityAvg: 60, airQualityIndex: 50, seismicZone: 1, internetReliability: 7.5, englishDailyLife: 9.5, stability: 5.8, authoritarianRisk: 2.8, corruptionRisk: 7.2 },
-    dataConfidence: "high", lastUpdated: "2026-04-21"
+    dataConfidence: "high", lastUpdated: "2026-04-21", capitalCity: "Pretoria", currency: { code: "ZAR", name: "South African Rand" }
   },
   {
     name: "Malta", iso2: "MT", iso3: "MLT", region: "Europe", subregion: "Southern Europe",
@@ -743,7 +743,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 1350, groceriesUsd: 350, transportUsd: 35, utilitiesUsd: 110, diningOutUsd: 350, healthInsuranceUsd: 90, totalEstimateUsd: 2285 },
     cities: ["Valletta", "Sliema", "St. Julian's"],
     rawIndicators: { summerHighC: 31, winterLowC: 9, humidityAvg: 70, airQualityIndex: 40, seismicZone: 2, internetReliability: 9.2, englishDailyLife: 9.5, stability: 9.1, authoritarianRisk: 1.5, corruptionRisk: 3.5 },
-    dataConfidence: "high", lastUpdated: "2026-04-21"
+    dataConfidence: "high", lastUpdated: "2026-04-21", capitalCity: "Valletta", currency: { code: "EUR", name: "Euro" }
   },
   {
     name: "Philippines", iso2: "PH", iso3: "PHL", region: "Asia", subregion: "Southeast Asia",
@@ -780,7 +780,7 @@ export const COUNTRIES: Country[] = [
     cities: ["Manila", "Cebu City", "Davao City"],
 
     rawIndicators: { summerHighC: 33, winterLowC: 23, humidityAvg: 80, airQualityIndex: 80, seismicZone: 5, internetReliability: 7.2, englishDailyLife: 9.1, stability: 6.8, authoritarianRisk: 5.2, corruptionRisk: 6.8 },
-    dataConfidence: "high", lastUpdated: "2026-04-21"
+    dataConfidence: "high", lastUpdated: "2026-04-21", capitalCity: "Manila", currency: { code: "PHP", name: "Philippine Peso" }
   },
   {
     name: "Brazil", iso2: "BR", iso3: "BRA", region: "Americas", subregion: "South America",
@@ -816,7 +816,7 @@ export const COUNTRIES: Country[] = [
     ],
     cities: ["Sao Paulo", "Rio de Janeiro", "Florianopolis"],
     rawIndicators: { summerHighC: 30, winterLowC: 13, humidityAvg: 75, airQualityIndex: 65, seismicZone: 0, internetReliability: 8.5, englishDailyLife: 4.5, stability: 7.5, authoritarianRisk: 3.5, corruptionRisk: 6.1 },
-    dataConfidence: "high", lastUpdated: "2026-04-21"
+    dataConfidence: "high", lastUpdated: "2026-04-21", capitalCity: "Brasília", currency: { code: "BRL", name: "Brazilian Real" }
   },
   {
     name: "Germany", iso2: "DE", iso3: "DEU", region: "Europe", subregion: "Western Europe",
@@ -870,7 +870,7 @@ export const COUNTRIES: Country[] = [
     ],
     cities: ["Berlin", "Munich", "Hamburg", "Frankfurt"],
     rawIndicators: { summerHighC: 24, winterLowC: -2, humidityAvg: 70, airQualityIndex: 30, seismicZone: 1, internetReliability: 9.1, englishDailyLife: 8.2, stability: 9.4, authoritarianRisk: 1.1, corruptionRisk: 1.5 },
-    dataConfidence: "high", lastUpdated: "2026-04-21"
+    dataConfidence: "high", lastUpdated: "2026-04-21", capitalCity: "Berlin", currency: { code: "EUR", name: "Euro" }
   },
   {
     name: "France", iso2: "FR", iso3: "FRA", region: "Europe", subregion: "Western Europe",
@@ -907,7 +907,7 @@ export const COUNTRIES: Country[] = [
     cities: ["Paris", "Lyon", "Marseille", "Nice"],
 
     rawIndicators: { summerHighC: 25, winterLowC: 2, humidityAvg: 70, airQualityIndex: 35, seismicZone: 2, internetReliability: 9.4, englishDailyLife: 6.5, stability: 8.8, authoritarianRisk: 1.5, corruptionRisk: 2.1 },
-    dataConfidence: "high", lastUpdated: "2026-04-21"
+    dataConfidence: "high", lastUpdated: "2026-04-21", capitalCity: "Paris", currency: { code: "EUR", name: "Euro" }
   },
   {
     name: "Italy", iso2: "IT", iso3: "ITA", region: "Europe", subregion: "Southern Europe",
@@ -944,7 +944,7 @@ export const COUNTRIES: Country[] = [
     cities: ["Rome", "Milan", "Florence", "Naples"],
 
     rawIndicators: { summerHighC: 31, winterLowC: 2, humidityAvg: 65, airQualityIndex: 50, seismicZone: 4, internetReliability: 8.8, englishDailyLife: 6.2, stability: 8.1, authoritarianRisk: 2.1, corruptionRisk: 4.5 },
-    dataConfidence: "high", lastUpdated: "2026-04-21"
+    dataConfidence: "high", lastUpdated: "2026-04-21", capitalCity: "Rome", currency: { code: "EUR", name: "Euro" }
   },
   {
     name: "Romania", iso2: "RO", iso3: "ROU", region: "Europe", subregion: "Eastern Europe",
@@ -954,7 +954,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 700, groceriesUsd: 200, transportUsd: 25, utilitiesUsd: 120, diningOutUsd: 160, healthInsuranceUsd: 55, totalEstimateUsd: 1260 },
     cities: ["Bucharest", "Cluj-Napoca", "Timisoara"],
     rawIndicators: { summerHighC: 30, winterLowC: -5, humidityAvg: 65, airQualityIndex: 75, seismicZone: 4, internetReliability: 9.6, englishDailyLife: 7.4, stability: 8.2, authoritarianRisk: 2.8, corruptionRisk: 5.8 },
-    dataConfidence: "high", lastUpdated: "2026-04-21"
+    dataConfidence: "high", lastUpdated: "2026-04-21", capitalCity: "Bucharest", currency: { code: "RON", name: "Romanian Leu" }
   },
   {
     name: "Poland", iso2: "PL", iso3: "POL", region: "Europe", subregion: "Central Europe",
@@ -985,7 +985,7 @@ export const COUNTRIES: Country[] = [
     cities: ["Warsaw", "Krakow", "Wroclaw", "Gdansk"],
 
     rawIndicators: { summerHighC: 24, winterLowC: -4, humidityAvg: 75, airQualityIndex: 65, seismicZone: 1, internetReliability: 9.2, englishDailyLife: 7.8, stability: 8.5, authoritarianRisk: 3.2, corruptionRisk: 3.5 },
-    dataConfidence: "high", lastUpdated: "2026-04-21"
+    dataConfidence: "high", lastUpdated: "2026-04-21", capitalCity: "Warsaw", currency: { code: "PLN", name: "Polish Zloty" }
   },
   {
     name: "Montenegro", iso2: "ME", iso3: "MNE", region: "Europe", subregion: "Balkans",
@@ -995,7 +995,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 650, groceriesUsd: 200, transportUsd: 25, utilitiesUsd: 100, diningOutUsd: 180, healthInsuranceUsd: 60, totalEstimateUsd: 1215 },
     cities: ["Podgorica", "Kotor", "Budva"],
     rawIndicators: { summerHighC: 32, winterLowC: 1, humidityAvg: 60, airQualityIndex: 30, seismicZone: 4, internetReliability: 7.1, englishDailyLife: 6.8, stability: 7.8, authoritarianRisk: 3.5, corruptionRisk: 5.5 },
-    dataConfidence: "high", lastUpdated: "2026-04-21"
+    dataConfidence: "high", lastUpdated: "2026-04-21", capitalCity: "Podgorica", currency: { code: "EUR", name: "Euro" }
   },
   {
     name: "Serbia", iso2: "RS", iso3: "SRB", region: "Europe", subregion: "Balkans",
@@ -1005,7 +1005,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 600, groceriesUsd: 190, transportUsd: 25, utilitiesUsd: 110, diningOutUsd: 160, healthInsuranceUsd: 50, totalEstimateUsd: 1135 },
     cities: ["Belgrade", "Novi Sad", "Nis"],
     rawIndicators: { summerHighC: 29, winterLowC: -2, humidityAvg: 65, airQualityIndex: 85, seismicZone: 3, internetReliability: 8.4, englishDailyLife: 7.2, stability: 7.1, authoritarianRisk: 5.5, corruptionRisk: 6.2 },
-    dataConfidence: "high", lastUpdated: "2026-04-21"
+    dataConfidence: "high", lastUpdated: "2026-04-21", capitalCity: "Belgrade", currency: { code: "RSD", name: "Serbian Dinar" }
   },
   {
     name: "Argentina", iso2: "AR", iso3: "ARG", region: "Americas", subregion: "South America",
@@ -1015,7 +1015,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 600, groceriesUsd: 180, transportUsd: 20, utilitiesUsd: 90, diningOutUsd: 120, healthInsuranceUsd: 50, totalEstimateUsd: 1060 },
     cities: ["Buenos Aires", "Cordoba", "Mendoza", "Rosario"],
     rawIndicators: { summerHighC: 29, winterLowC: 8, humidityAvg: 65, airQualityIndex: 40, seismicZone: 3, internetReliability: 7.8, englishDailyLife: 6.8, stability: 6.1, authoritarianRisk: 3.2, corruptionRisk: 5.8 },
-    dataConfidence: "high", lastUpdated: "2026-04-21"
+    dataConfidence: "high", lastUpdated: "2026-04-21", capitalCity: "Buenos Aires", currency: { code: "ARS", name: "Argentine Peso" }
   },
   {
     name: "Indonesia", iso2: "ID", iso3: "IDN", region: "Asia", subregion: "Southeast Asia",
@@ -1051,7 +1051,7 @@ export const COUNTRIES: Country[] = [
     ],
     cities: ["Canggu", "Ubud", "Jakarta", "Seminyak"],
     rawIndicators: { summerHighC: 31, winterLowC: 22, humidityAvg: 80, airQualityIndex: 90, seismicZone: 5, internetReliability: 6.5, englishDailyLife: 6.2, stability: 7.8, authoritarianRisk: 4.8, corruptionRisk: 6.5 },
-    dataConfidence: "high", lastUpdated: "2026-04-21"
+    dataConfidence: "high", lastUpdated: "2026-04-21", capitalCity: "Jakarta", currency: { code: "IDR", name: "Indonesian Rupiah" }
   },
   {
     name: "Malaysia", iso2: "MY", iso3: "MYS", region: "Asia", subregion: "Southeast Asia",
@@ -1088,7 +1088,7 @@ export const COUNTRIES: Country[] = [
     cities: ["Kuala Lumpur", "Penang", "Johor Bahru"],
 
     rawIndicators: { summerHighC: 33, winterLowC: 23, humidityAvg: 80, airQualityIndex: 60, seismicZone: 1, internetReliability: 8.8, englishDailyLife: 8.8, stability: 8.2, authoritarianRisk: 5.8, corruptionRisk: 5.1 },
-    dataConfidence: "high", lastUpdated: "2026-04-21"
+    dataConfidence: "high", lastUpdated: "2026-04-21", capitalCity: "Kuala Lumpur", currency: { code: "MYR", name: "Malaysian Ringgit" }
   },
   {
     name: "South Korea", iso2: "KR", iso3: "KOR", region: "Asia", subregion: "Eastern Asia",
@@ -1119,7 +1119,7 @@ export const COUNTRIES: Country[] = [
     cities: ["Seoul", "Busan", "Incheon", "Jeju City"],
 
     rawIndicators: { summerHighC: 30, winterLowC: -6, humidityAvg: 65, airQualityIndex: 80, seismicZone: 1, internetReliability: 9.9, englishDailyLife: 7.1, stability: 9.2, authoritarianRisk: 1.8, corruptionRisk: 2.2 },
-    dataConfidence: "high", lastUpdated: "2026-04-21"
+    dataConfidence: "high", lastUpdated: "2026-04-21", capitalCity: "Seoul", currency: { code: "KRW", name: "South Korean Won" }
   },
   {
     name: "Türkiye", iso2: "TR", iso3: "TUR", region: "Europe/Asia", subregion: "Western Asia",
@@ -1156,7 +1156,7 @@ export const COUNTRIES: Country[] = [
     cities: ["Istanbul", "Antalya", "Izmir", "Ankara"],
 
     rawIndicators: { summerHighC: 29, winterLowC: 5, humidityAvg: 60, airQualityIndex: 65, seismicZone: 5, internetReliability: 8.1, englishDailyLife: 6.2, stability: 6.2, authoritarianRisk: 7.2, corruptionRisk: 6.5 },
-    dataConfidence: "high", lastUpdated: "2026-04-21"
+    dataConfidence: "high", lastUpdated: "2026-04-21", capitalCity: "Ankara", currency: { code: "TRY", name: "Turkish Lira" }
   },
   {
     name: "Morocco", iso2: "MA", iso3: "MAR", region: "Africa", subregion: "North Africa",
@@ -1166,7 +1166,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 600, groceriesUsd: 180, transportUsd: 22, utilitiesUsd: 90, diningOutUsd: 140, healthInsuranceUsd: 55, totalEstimateUsd: 1087 },
     cities: ["Marrakech", "Casablanca", "Taghazout", "Rabat"],
     rawIndicators: { summerHighC: 37, winterLowC: 8, humidityAvg: 50, airQualityIndex: 45, seismicZone: 3, internetReliability: 7.5, englishDailyLife: 5.5, stability: 7.8, authoritarianRisk: 6.5, corruptionRisk: 5.8 },
-    dataConfidence: "high", lastUpdated: "2026-04-21"
+    dataConfidence: "high", lastUpdated: "2026-04-21", capitalCity: "Rabat", currency: { code: "MAD", name: "Moroccan Dirham" }
   },
   {
     name: "New Zealand", iso2: "NZ", iso3: "NZL", region: "Oceania", subregion: "Australasia",
@@ -1196,7 +1196,7 @@ export const COUNTRIES: Country[] = [
     ],
     cities: ["Auckland", "Wellington", "Christchurch", "Queenstown"],
     rawIndicators: { summerHighC: 23, winterLowC: 7, humidityAvg: 75, airQualityIndex: 15, seismicZone: 5, internetReliability: 9.4, englishDailyLife: 9.8, stability: 9.8, authoritarianRisk: 0.5, corruptionRisk: 0.8 },
-    dataConfidence: "high", lastUpdated: "2026-04-21"
+    dataConfidence: "high", lastUpdated: "2026-04-21", capitalCity: "Wellington", currency: { code: "NZD", name: "New Zealand Dollar" }
   },
   {
     name: "Australia", iso2: "AU", iso3: "AUS", region: "Oceania", subregion: "Australasia",
@@ -1250,7 +1250,7 @@ export const COUNTRIES: Country[] = [
     ],
     cities: ["Sydney", "Melbourne", "Brisbane", "Perth", "Gold Coast"],
     rawIndicators: { summerHighC: 26, winterLowC: 8, humidityAvg: 60, airQualityIndex: 25, seismicZone: 1, internetReliability: 9.1, englishDailyLife: 9.9, stability: 9.5, authoritarianRisk: 0.8, corruptionRisk: 1.2 },
-    dataConfidence: "high", lastUpdated: "2026-04-21"
+    dataConfidence: "high", lastUpdated: "2026-04-21", capitalCity: "Canberra", currency: { code: "AUD", name: "Australian Dollar" }
   },
   {
     name: "Canada", iso2: "CA", iso3: "CAN", region: "Americas", subregion: "North America",
@@ -1310,7 +1310,7 @@ export const COUNTRIES: Country[] = [
     ],
     cities: ["Toronto", "Vancouver", "Montreal", "Calgary"],
     rawIndicators: { summerHighC: 26, winterLowC: -7, humidityAvg: 65, airQualityIndex: 25, seismicZone: 2, internetReliability: 9.5, englishDailyLife: 9.8, stability: 9.4, authoritarianRisk: 0.8, corruptionRisk: 1.1 },
-    dataConfidence: "high", lastUpdated: "2026-04-21"
+    dataConfidence: "high", lastUpdated: "2026-04-21", capitalCity: "Ottawa", currency: { code: "CAD", name: "Canadian Dollar" }
   },
   {
     name: "Chile", iso2: "CL", iso3: "CHL", region: "Americas", subregion: "South America",
@@ -1320,7 +1320,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 950, groceriesUsd: 260, transportUsd: 35, utilitiesUsd: 140, diningOutUsd: 220, healthInsuranceUsd: 75, totalEstimateUsd: 1680 },
     cities: ["Santiago", "Valparaiso", "Viña del Mar"],
     rawIndicators: { summerHighC: 30, winterLowC: 3, humidityAvg: 55, airQualityIndex: 85, seismicZone: 5, internetReliability: 9.2, englishDailyLife: 6.5, stability: 8.5, authoritarianRisk: 1.8, corruptionRisk: 2.5 },
-    dataConfidence: "high", lastUpdated: "2026-04-21"
+    dataConfidence: "high", lastUpdated: "2026-04-21", capitalCity: "Santiago", currency: { code: "CLP", name: "Chilean Peso" }
   },
   {
     name: "Ecuador", iso2: "EC", iso3: "ECU", region: "Americas", subregion: "South America",
@@ -1330,7 +1330,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 600, groceriesUsd: 180, transportUsd: 20, utilitiesUsd: 80, diningOutUsd: 120, healthInsuranceUsd: 50, totalEstimateUsd: 1050 },
     cities: ["Quito", "Cuenca", "Guayaquil"],
     rawIndicators: { summerHighC: 20, winterLowC: 9, humidityAvg: 70, airQualityIndex: 40, seismicZone: 4, internetReliability: 7.1, englishDailyLife: 5.2, stability: 6.5, authoritarianRisk: 4.5, corruptionRisk: 6.2 },
-    dataConfidence: "high", lastUpdated: "2026-04-21"
+    dataConfidence: "high", lastUpdated: "2026-04-21", capitalCity: "Quito", currency: { code: "USD", name: "US Dollar" }
   },
   {
     name: "Peru", iso2: "PE", iso3: "PER", region: "Americas", subregion: "South America",
@@ -1340,7 +1340,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 600, groceriesUsd: 170, transportUsd: 20, utilitiesUsd: 80, diningOutUsd: 120, healthInsuranceUsd: 50, totalEstimateUsd: 1040 },
     cities: ["Lima", "Cusco", "Arequipa"],
     rawIndicators: { summerHighC: 27, winterLowC: 15, humidityAvg: 80, airQualityIndex: 110, seismicZone: 5, internetReliability: 7.4, englishDailyLife: 5.5, stability: 5.2, authoritarianRisk: 5.8, corruptionRisk: 6.8 },
-    dataConfidence: "high", lastUpdated: "2026-04-21"
+    dataConfidence: "high", lastUpdated: "2026-04-21", capitalCity: "Lima", currency: { code: "PEN", name: "Peruvian Sol" }
   },
   {
     name: "Afghanistan", iso2: "AF", iso3: "AFG", region: "Asia", subregion: "Southern Asia",
@@ -1350,7 +1350,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 250, groceriesUsd: 120, transportUsd: 15, utilitiesUsd: 40, diningOutUsd: 60, healthInsuranceUsd: 30, totalEstimateUsd: 515 },
     cities: ["Kabul", "Herat"],
     rawIndicators: { summerHighC: 33, winterLowC: -2, humidityAvg: 45, airQualityIndex: 180, seismicZone: 5, internetReliability: 3.2, englishDailyLife: 2.5, stability: 1.2, authoritarianRisk: 9.8, corruptionRisk: 8.5 },
-    dataConfidence: "low", lastUpdated: "2026-04-24"
+    dataConfidence: "low", lastUpdated: "2026-04-24", capitalCity: "Kabul", currency: { code: "AFN", name: "Afghan Afghani" }
   },
   {
     name: "Albania", iso2: "AL", iso3: "ALB", region: "Europe", subregion: "Southern Europe",
@@ -1360,7 +1360,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 550, groceriesUsd: 220, transportUsd: 30, utilitiesUsd: 90, diningOutUsd: 180, healthInsuranceUsd: 60, totalEstimateUsd: 1130 },
     cities: ["Tirana", "Durrës", "Vlorë"],
     rawIndicators: { summerHighC: 31, winterLowC: 2, humidityAvg: 65, airQualityIndex: 55, seismicZone: 4, internetReliability: 8.1, englishDailyLife: 4.8, stability: 7.2, authoritarianRisk: 3.5, corruptionRisk: 5.8 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Tirana", currency: { code: "ALL", name: "Albanian Lek" }
   },
   {
     name: "Algeria", iso2: "DZ", iso3: "DZA", region: "Africa", subregion: "Northern Africa",
@@ -1370,7 +1370,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 400, groceriesUsd: 180, transportUsd: 20, utilitiesUsd: 40, diningOutUsd: 100, healthInsuranceUsd: 50, totalEstimateUsd: 790 },
     cities: ["Algiers", "Oran", "Constantine"],
     rawIndicators: { summerHighC: 31, winterLowC: 5, humidityAvg: 60, airQualityIndex: 75, seismicZone: 4, internetReliability: 6.5, englishDailyLife: 2.8, stability: 6.1, authoritarianRisk: 7.2, corruptionRisk: 6.5 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Algiers", currency: { code: "DZD", name: "Algerian Dinar" }
   },
   {
     name: "Andorra", iso2: "AD", iso3: "AND", region: "Europe", subregion: "Southern Europe",
@@ -1380,7 +1380,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 1600, groceriesUsd: 400, transportUsd: 50, utilitiesUsd: 120, diningOutUsd: 350, healthInsuranceUsd: 120, totalEstimateUsd: 2640 },
     cities: ["Andorra la Vella", "Escaldes-Engordany"],
     rawIndicators: { summerHighC: 24, winterLowC: -2, humidityAvg: 65, airQualityIndex: 20, seismicZone: 2, internetReliability: 9.7, englishDailyLife: 5.8, stability: 9.8, authoritarianRisk: 0.8, corruptionRisk: 1.2 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Andorra la Vella", currency: { code: "EUR", name: "Euro" }
   },
   {
     name: "Angola", iso2: "AO", iso3: "AGO", region: "Africa", subregion: "Middle Africa",
@@ -1390,7 +1390,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 2200, groceriesUsd: 450, transportUsd: 60, utilitiesUsd: 150, diningOutUsd: 300, healthInsuranceUsd: 150, totalEstimateUsd: 3310 },
     cities: ["Luanda", "Benguela", "Huambo"],
     rawIndicators: { summerHighC: 30, winterLowC: 18, humidityAvg: 80, airQualityIndex: 85, seismicZone: 1, internetReliability: 6.1, englishDailyLife: 2.1, stability: 6.2, authoritarianRisk: 6.8, corruptionRisk: 7.5 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Luanda", currency: { code: "AOA", name: "Angolan Kwanza" }
   },
   {
     name: "Antigua and Barbuda", iso2: "AG", iso3: "ATG", region: "Americas", subregion: "Caribbean",
@@ -1400,7 +1400,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 1800, groceriesUsd: 500, transportUsd: 80, utilitiesUsd: 250, diningOutUsd: 400, healthInsuranceUsd: 150, totalEstimateUsd: 3180 },
     cities: ["St. John's", "English Harbour"],
     rawIndicators: { summerHighC: 31, winterLowC: 23, humidityAvg: 75, airQualityIndex: 25, seismicZone: 3, internetReliability: 7.8, englishDailyLife: 10.0, stability: 8.5, authoritarianRisk: 1.5, corruptionRisk: 2.8 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Saint John's", currency: { code: "XCD", name: "East Caribbean Dollar" }
   },
   {
     name: "Armenia", iso2: "AM", iso3: "ARM", region: "Asia", subregion: "Western Asia",
@@ -1410,7 +1410,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 700, groceriesUsd: 250, transportUsd: 25, utilitiesUsd: 80, diningOutUsd: 200, healthInsuranceUsd: 50, totalEstimateUsd: 1305 },
     cities: ["Yerevan", "Gyumri", "Dilijan"],
     rawIndicators: { summerHighC: 33, winterLowC: -5, humidityAvg: 55, airQualityIndex: 65, seismicZone: 4, internetReliability: 8.9, englishDailyLife: 4.5, stability: 6.8, authoritarianRisk: 4.1, corruptionRisk: 4.5 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Yerevan", currency: { code: "AMD", name: "Armenian Dram" }
   },
   {
     name: "Austria", iso2: "AT", iso3: "AUT", region: "Europe", subregion: "Western Europe",
@@ -1441,7 +1441,7 @@ export const COUNTRIES: Country[] = [
     cities: ["Vienna", "Salzburg", "Innsbruck", "Graz"],
 
     rawIndicators: { summerHighC: 26, winterLowC: -2, humidityAvg: 70, airQualityIndex: 30, seismicZone: 2, internetReliability: 9.6, englishDailyLife: 8.2, stability: 9.6, authoritarianRisk: 1.1, corruptionRisk: 1.4 },
-    dataConfidence: "high", lastUpdated: "2026-04-24"
+    dataConfidence: "high", lastUpdated: "2026-04-24", capitalCity: "Vienna", currency: { code: "EUR", name: "Euro" }
   },
   {
     name: "Azerbaijan", iso2: "AZ", iso3: "AZE", region: "Asia", subregion: "Western Asia",
@@ -1451,7 +1451,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 550, groceriesUsd: 200, transportUsd: 20, utilitiesUsd: 50, diningOutUsd: 150, healthInsuranceUsd: 40, totalEstimateUsd: 1010 },
     cities: ["Baku", "Ganja", "Sumqayit"],
     rawIndicators: { summerHighC: 31, winterLowC: 2, humidityAvg: 65, airQualityIndex: 70, seismicZone: 3, internetReliability: 7.8, englishDailyLife: 3.5, stability: 7.1, authoritarianRisk: 7.8, corruptionRisk: 6.2 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Baku", currency: { code: "AZN", name: "Azerbaijani Manat" }
   },
   {
     name: "Bahamas", iso2: "BS", iso3: "BHS", region: "Americas", subregion: "Caribbean",
@@ -1461,7 +1461,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 2200, groceriesUsd: 600, transportUsd: 100, utilitiesUsd: 300, diningOutUsd: 500, healthInsuranceUsd: 180, totalEstimateUsd: 3880 },
     cities: ["Nassau", "Freeport"],
     rawIndicators: { summerHighC: 32, winterLowC: 18, humidityAvg: 75, airQualityIndex: 20, seismicZone: 1, internetReliability: 8.1, englishDailyLife: 10.0, stability: 8.8, authoritarianRisk: 1.2, corruptionRisk: 2.5 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Nassau", currency: { code: "BSD", name: "Bahamian Dollar" }
   },
   {
     name: "Bahrain", iso2: "BH", iso3: "BHR", region: "Asia", subregion: "Western Asia",
@@ -1471,7 +1471,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 1400, groceriesUsd: 350, transportUsd: 60, utilitiesUsd: 180, diningOutUsd: 350, healthInsuranceUsd: 100, totalEstimateUsd: 2440 },
     cities: ["Manama", "Riffa", "Muharraq"],
     rawIndicators: { summerHighC: 40, winterLowC: 14, humidityAvg: 60, airQualityIndex: 110, seismicZone: 1, internetReliability: 9.6, englishDailyLife: 9.1, stability: 8.5, authoritarianRisk: 7.2, corruptionRisk: 3.8 },
-    dataConfidence: "high", lastUpdated: "2026-04-24"
+    dataConfidence: "high", lastUpdated: "2026-04-24", capitalCity: "Manama", currency: { code: "BHD", name: "Bahraini Dinar" }
   },
   {
     name: "Bangladesh", iso2: "BD", iso3: "BGD", region: "Asia", subregion: "Southern Asia",
@@ -1481,7 +1481,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 350, groceriesUsd: 180, transportUsd: 20, utilitiesUsd: 50, diningOutUsd: 100, healthInsuranceUsd: 40, totalEstimateUsd: 740 },
     cities: ["Dhaka", "Chittagong", "Sylhet"],
     rawIndicators: { summerHighC: 34, winterLowC: 12, humidityAvg: 80, airQualityIndex: 180, seismicZone: 4, internetReliability: 6.8, englishDailyLife: 4.8, stability: 5.4, authoritarianRisk: 6.8, corruptionRisk: 7.5 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Dhaka", currency: { code: "BDT", name: "Bangladeshi Taka" }
   },
   {
     name: "Barbados", iso2: "BB", iso3: "BRB", region: "Americas", subregion: "Caribbean",
@@ -1491,7 +1491,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 2000, groceriesUsd: 550, transportUsd: 80, utilitiesUsd: 250, diningOutUsd: 450, healthInsuranceUsd: 120, totalEstimateUsd: 3450 },
     cities: ["Bridgetown", "Holetown", "Speightstown"],
     rawIndicators: { summerHighC: 31, winterLowC: 22, humidityAvg: 75, airQualityIndex: 25, seismicZone: 2, internetReliability: 9.1, englishDailyLife: 10.0, stability: 9.2, authoritarianRisk: 1.1, corruptionRisk: 1.8 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Bridgetown", currency: { code: "BBD", name: "Barbadian Dollar" }
   },
   {
     name: "Belarus", iso2: "BY", iso3: "BLR", region: "Europe", subregion: "Eastern Europe",
@@ -1501,7 +1501,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 450, groceriesUsd: 180, transportUsd: 20, utilitiesUsd: 60, diningOutUsd: 120, healthInsuranceUsd: 40, totalEstimateUsd: 870 },
     cities: ["Minsk", "Gomel", "Brest"],
     rawIndicators: { summerHighC: 24, winterLowC: -6, humidityAvg: 80, airQualityIndex: 45, seismicZone: 1, internetReliability: 8.5, englishDailyLife: 2.8, stability: 5.2, authoritarianRisk: 9.5, corruptionRisk: 6.2 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Minsk", currency: { code: "BYN", name: "Belarusian Ruble" }
   },
   {
     name: "Belgium", iso2: "BE", iso3: "BEL", region: "Europe", subregion: "Western Europe",
@@ -1532,7 +1532,7 @@ export const COUNTRIES: Country[] = [
     cities: ["Brussels", "Antwerp", "Ghent", "Bruges"],
 
     rawIndicators: { summerHighC: 23, winterLowC: 1, humidityAvg: 80, airQualityIndex: 35, seismicZone: 2, internetReliability: 9.6, englishDailyLife: 8.5, stability: 9.1, authoritarianRisk: 1.1, corruptionRisk: 1.4 },
-    dataConfidence: "high", lastUpdated: "2026-04-24"
+    dataConfidence: "high", lastUpdated: "2026-04-24", capitalCity: "Brussels", currency: { code: "EUR", name: "Euro" }
   },
   {
     name: "Belize", iso2: "BZ", iso3: "BLZ", region: "Americas", subregion: "Central America",
@@ -1542,7 +1542,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 800, groceriesUsd: 350, transportUsd: 40, utilitiesUsd: 150, diningOutUsd: 250, healthInsuranceUsd: 80, totalEstimateUsd: 1670 },
     cities: ["Belize City", "San Pedro", "Belmopan"],
     rawIndicators: { summerHighC: 31, winterLowC: 21, humidityAvg: 80, airQualityIndex: 25, seismicZone: 2, internetReliability: 7.2, englishDailyLife: 9.5, stability: 7.8, authoritarianRisk: 1.8, corruptionRisk: 5.2 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Belmopan", currency: { code: "BZD", name: "Belize Dollar" }
   },
   {
     name: "Benin", iso2: "BJ", iso3: "BEN", region: "Africa", subregion: "Western Africa",
@@ -1552,7 +1552,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 500, groceriesUsd: 220, transportUsd: 30, utilitiesUsd: 80, diningOutUsd: 150, healthInsuranceUsd: 60, totalEstimateUsd: 1040 },
     cities: ["Cotonou", "Porto-Novo"],
     rawIndicators: { summerHighC: 31, winterLowC: 24, humidityAvg: 80, airQualityIndex: 65, seismicZone: 1, internetReliability: 6.5, englishDailyLife: 1.8, stability: 7.1, authoritarianRisk: 4.5, corruptionRisk: 6.8 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Porto-Novo", currency: { code: "XOF", name: "CFA Franc BCEAO" }
   },
   {
     name: "Bhutan", iso2: "BT", iso3: "BTN", region: "Asia", subregion: "Southern Asia",
@@ -1562,7 +1562,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 600, groceriesUsd: 250, transportUsd: 30, utilitiesUsd: 60, diningOutUsd: 180, healthInsuranceUsd: 50, totalEstimateUsd: 1170 },
     cities: ["Thimphu", "Paro", "Phuntsholing"],
     rawIndicators: { summerHighC: 25, winterLowC: -2, humidityAvg: 70, airQualityIndex: 30, seismicZone: 5, internetReliability: 7.8, englishDailyLife: 6.5, stability: 9.4, authoritarianRisk: 4.2, corruptionRisk: 2.5 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Thimphu", currency: { code: "BTN", name: "Bhutanese Ngultrum" }
   },
   {
     name: "Bolivia", iso2: "BO", iso3: "BOL", region: "Americas", subregion: "South America",
@@ -1572,7 +1572,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 450, groceriesUsd: 180, transportUsd: 20, utilitiesUsd: 60, diningOutUsd: 120, healthInsuranceUsd: 50, totalEstimateUsd: 880 },
     cities: ["La Paz", "Santa Cruz", "Sucre"],
     rawIndicators: { summerHighC: 15, winterLowC: -1, humidityAvg: 55, airQualityIndex: 55, seismicZone: 3, internetReliability: 6.8, englishDailyLife: 2.8, stability: 5.8, authoritarianRisk: 5.2, corruptionRisk: 6.5 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Sucre", currency: { code: "BOB", name: "Bolivian Boliviano" }
   },
   {
     name: "Bosnia and Herzegovina", iso2: "BA", iso3: "BIH", region: "Europe", subregion: "Southern Europe",
@@ -1582,7 +1582,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 400, groceriesUsd: 200, transportUsd: 30, utilitiesUsd: 120, diningOutUsd: 150, healthInsuranceUsd: 50, totalEstimateUsd: 950 },
     cities: ["Sarajevo", "Mostar", "Banja Luka"],
     rawIndicators: { summerHighC: 27, winterLowC: -3, humidityAvg: 70, airQualityIndex: 90, seismicZone: 4, internetReliability: 8.2, englishDailyLife: 5.5, stability: 6.8, authoritarianRisk: 3.8, corruptionRisk: 5.8 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Sarajevo", currency: { code: "BAM", name: "Bosnia and Herzegovina Convertible Mark" }
   },
   {
     name: "Botswana", iso2: "BW", iso3: "BWA", region: "Africa", subregion: "Southern Africa",
@@ -1592,7 +1592,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 800, groceriesUsd: 250, transportUsd: 40, utilitiesUsd: 120, diningOutUsd: 200, healthInsuranceUsd: 80, totalEstimateUsd: 1490 },
     cities: ["Gaborone", "Francistown", "Maun"],
     rawIndicators: { summerHighC: 33, winterLowC: 5, humidityAvg: 40, airQualityIndex: 35, seismicZone: 1, internetReliability: 7.5, englishDailyLife: 8.2, stability: 9.1, authoritarianRisk: 1.8, corruptionRisk: 2.5 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Gaborone", currency: { code: "BWP", name: "Botswana Pula" }
   },
   {
     name: "Brunei", iso2: "BN", iso3: "BRN", region: "Asia", subregion: "Southeast Asia",
@@ -1602,7 +1602,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 900, groceriesUsd: 300, transportUsd: 40, utilitiesUsd: 80, diningOutUsd: 200, healthInsuranceUsd: 60, totalEstimateUsd: 1580 },
     cities: ["Bandar Seri Begawan", "Kuala Belait"],
     rawIndicators: { summerHighC: 32, winterLowC: 24, humidityAvg: 80, airQualityIndex: 30, seismicZone: 1, internetReliability: 8.5, englishDailyLife: 7.8, stability: 9.4, authoritarianRisk: 7.8, corruptionRisk: 2.1 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Bandar Seri Begawan", currency: { code: "BND", name: "Brunei Dollar" }
   },
   {
     name: "Bulgaria", iso2: "BG", iso3: "BGR", region: "Europe", subregion: "Eastern Europe",
@@ -1612,7 +1612,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 500, groceriesUsd: 220, transportUsd: 25, utilitiesUsd: 100, diningOutUsd: 180, healthInsuranceUsd: 50, totalEstimateUsd: 1075 },
     cities: ["Sofia", "Plovdiv", "Varna"],
     rawIndicators: { summerHighC: 30, winterLowC: -2, humidityAvg: 65, airQualityIndex: 65, seismicZone: 4, internetReliability: 9.4, englishDailyLife: 5.8, stability: 7.8, authoritarianRisk: 2.5, corruptionRisk: 5.2 },
-    dataConfidence: "high", lastUpdated: "2026-04-24"
+    dataConfidence: "high", lastUpdated: "2026-04-24", capitalCity: "Sofia", currency: { code: "BGN", name: "Bulgarian Lev" }
   },
   {
     name: "Burkina Faso", iso2: "BF", iso3: "BFA", region: "Africa", subregion: "Western Africa",
@@ -1622,7 +1622,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 400, groceriesUsd: 180, transportUsd: 20, utilitiesUsd: 60, diningOutUsd: 100, healthInsuranceUsd: 40, totalEstimateUsd: 800 },
     cities: ["Ouagadougou", "Bobo-Dioulasso"],
     rawIndicators: { summerHighC: 39, winterLowC: 16, humidityAvg: 45, airQualityIndex: 110, seismicZone: 1, internetReliability: 5.2, englishDailyLife: 1.5, stability: 2.8, authoritarianRisk: 8.5, corruptionRisk: 7.2 },
-    dataConfidence: "low", lastUpdated: "2026-04-24"
+    dataConfidence: "low", lastUpdated: "2026-04-24", capitalCity: "Ouagadougou", currency: { code: "XOF", name: "CFA Franc BCEAO" }
   },
   {
     name: "Burundi", iso2: "BI", iso3: "BDI", region: "Africa", subregion: "Eastern Africa",
@@ -1632,7 +1632,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 300, groceriesUsd: 150, transportUsd: 15, utilitiesUsd: 40, diningOutUsd: 80, healthInsuranceUsd: 30, totalEstimateUsd: 615 },
     cities: ["Bujumbura", "Gitega"],
     rawIndicators: { summerHighC: 28, winterLowC: 17, humidityAvg: 70, airQualityIndex: 85, seismicZone: 4, internetReliability: 4.8, englishDailyLife: 2.4, stability: 4.1, authoritarianRisk: 8.2, corruptionRisk: 7.8 },
-    dataConfidence: "low", lastUpdated: "2026-04-24"
+    dataConfidence: "low", lastUpdated: "2026-04-24", capitalCity: "Gitega", currency: { code: "BIF", name: "Burundian Franc" }
   },
   {
     name: "Cabo Verde", iso2: "CV", iso3: "CPV", region: "Africa", subregion: "Western Africa",
@@ -1642,7 +1642,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 600, groceriesUsd: 250, transportUsd: 30, utilitiesUsd: 80, diningOutUsd: 150, healthInsuranceUsd: 60, totalEstimateUsd: 1170 },
     cities: ["Praia", "Mindelo", "Santa Maria"],
     rawIndicators: { summerHighC: 29, winterLowC: 19, humidityAvg: 70, airQualityIndex: 30, seismicZone: 3, internetReliability: 7.8, englishDailyLife: 4.2, stability: 8.8, authoritarianRisk: 1.5, corruptionRisk: 2.8 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Praia", currency: { code: "CVE", name: "Cabo Verdean Escudo" }
   },
   {
     name: "Cambodia", iso2: "KH", iso3: "KHM", region: "Asia", subregion: "Southeast Asia",
@@ -1652,7 +1652,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 500, groceriesUsd: 180, transportUsd: 20, utilitiesUsd: 60, diningOutUsd: 120, healthInsuranceUsd: 50, totalEstimateUsd: 930 },
     cities: ["Phnom Penh", "Siem Reap", "Kampot"],
     rawIndicators: { summerHighC: 35, winterLowC: 22, humidityAvg: 75, airQualityIndex: 85, seismicZone: 1, internetReliability: 7.4, englishDailyLife: 5.5, stability: 6.5, authoritarianRisk: 6.8, corruptionRisk: 7.2 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Phnom Penh", currency: { code: "KHR", name: "Cambodian Riel" }
   },
   {
     name: "Cameroon", iso2: "CM", iso3: "CMR", region: "Africa", subregion: "Middle Africa",
@@ -1662,7 +1662,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 500, groceriesUsd: 220, transportUsd: 30, utilitiesUsd: 70, diningOutUsd: 150, healthInsuranceUsd: 60, totalEstimateUsd: 1030 },
     cities: ["Yaoundé", "Douala", "Buea"],
     rawIndicators: { summerHighC: 28, winterLowC: 19, humidityAvg: 80, airQualityIndex: 75, seismicZone: 3, internetReliability: 6.2, englishDailyLife: 6.8, stability: 5.4, authoritarianRisk: 7.5, corruptionRisk: 7.8 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Yaoundé", currency: { code: "XAF", name: "CFA Franc BEAC" }
   },
   {
     name: "Central African Republic", iso2: "CF", iso3: "CAF", region: "Africa", subregion: "Middle Africa",
@@ -1672,7 +1672,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 350, groceriesUsd: 150, transportUsd: 15, utilitiesUsd: 50, diningOutUsd: 80, healthInsuranceUsd: 40, totalEstimateUsd: 685 },
     cities: ["Bangui", "Bimbo"],
     rawIndicators: { summerHighC: 32, winterLowC: 20, humidityAvg: 75, airQualityIndex: 95, seismicZone: 1, internetReliability: 3.5, englishDailyLife: 1.8, stability: 1.5, authoritarianRisk: 9.2, corruptionRisk: 8.8 },
-    dataConfidence: "low", lastUpdated: "2026-04-24"
+    dataConfidence: "low", lastUpdated: "2026-04-24", capitalCity: "Bangui", currency: { code: "XAF", name: "CFA Franc BEAC" }
   },
   {
     name: "Chad", iso2: "TD", iso3: "TCD", region: "Africa", subregion: "Middle Africa",
@@ -1682,7 +1682,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 400, groceriesUsd: 180, transportUsd: 20, utilitiesUsd: 60, diningOutUsd: 100, healthInsuranceUsd: 50, totalEstimateUsd: 810 },
     cities: ["N'Djamena", "Moundou"],
     rawIndicators: { summerHighC: 41, winterLowC: 14, humidityAvg: 40, airQualityIndex: 120, seismicZone: 1, internetReliability: 4.1, englishDailyLife: 1.8, stability: 3.2, authoritarianRisk: 8.8, corruptionRisk: 8.2 },
-    dataConfidence: "low", lastUpdated: "2026-04-24"
+    dataConfidence: "low", lastUpdated: "2026-04-24", capitalCity: "N'Djamena", currency: { code: "XAF", name: "CFA Franc BEAC" }
   },
   {
     name: "Comoros", iso2: "KM", iso3: "COM", region: "Africa", subregion: "Eastern Africa",
@@ -1692,7 +1692,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 500, groceriesUsd: 220, transportUsd: 30, utilitiesUsd: 80, diningOutUsd: 120, healthInsuranceUsd: 50, totalEstimateUsd: 1000 },
     cities: ["Moroni", "Mutsamudu"],
     rawIndicators: { summerHighC: 30, winterLowC: 22, humidityAvg: 75, airQualityIndex: 35, seismicZone: 3, internetReliability: 5.8, englishDailyLife: 2.1, stability: 6.2, authoritarianRisk: 6.5, corruptionRisk: 7.1 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Moroni", currency: { code: "KMF", name: "Comorian Franc" }
   },
   {
     name: "Congo (Brazzaville)", iso2: "CG", iso3: "COG", region: "Africa", subregion: "Middle Africa",
@@ -1702,7 +1702,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 600, groceriesUsd: 250, transportUsd: 40, utilitiesUsd: 120, diningOutUsd: 180, healthInsuranceUsd: 80, totalEstimateUsd: 1270 },
     cities: ["Brazzaville", "Pointe-Noire"],
     rawIndicators: { summerHighC: 30, winterLowC: 20, humidityAvg: 80, airQualityIndex: 75, seismicZone: 1, internetReliability: 6.1, englishDailyLife: 1.5, stability: 5.8, authoritarianRisk: 7.2, corruptionRisk: 7.5 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Brazzaville", currency: { code: "XAF", name: "CFA Franc BEAC" }
   },
   {
     name: "Congo (Kinshasa)", iso2: "CD", iso3: "COD", region: "Africa", subregion: "Middle Africa",
@@ -1712,7 +1712,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 800, groceriesUsd: 300, transportUsd: 50, utilitiesUsd: 150, diningOutUsd: 200, healthInsuranceUsd: 100, totalEstimateUsd: 1600 },
     cities: ["Kinshasa", "Lubumbashi", "Goma"],
     rawIndicators: { summerHighC: 31, winterLowC: 18, humidityAvg: 80, airQualityIndex: 110, seismicZone: 4, internetReliability: 5.1, englishDailyLife: 2.1, stability: 2.5, authoritarianRisk: 8.8, corruptionRisk: 8.5 },
-    dataConfidence: "low", lastUpdated: "2026-04-24"
+    dataConfidence: "low", lastUpdated: "2026-04-24", capitalCity: "Kinshasa", currency: { code: "CDF", name: "Congolese Franc" }
   },
   {
     name: "Cuba", iso2: "CU", iso3: "CUB", region: "Americas", subregion: "Caribbean",
@@ -1722,7 +1722,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 600, groceriesUsd: 250, transportUsd: 30, utilitiesUsd: 50, diningOutUsd: 150, healthInsuranceUsd: 50, totalEstimateUsd: 1130 },
     cities: ["Havana", "Santiago de Cuba", "Varadero"],
     rawIndicators: { summerHighC: 32, winterLowC: 18, humidityAvg: 75, airQualityIndex: 30, seismicZone: 2, internetReliability: 4.5, englishDailyLife: 4.1, stability: 7.8, authoritarianRisk: 8.2, corruptionRisk: 5.8 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Havana", currency: { code: "CUP", name: "Cuban Peso" }
   },
   {
     name: "Cyprus", iso2: "CY", iso3: "CYP", region: "Europe", subregion: "Southern Europe",
@@ -1732,7 +1732,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 1200, groceriesUsd: 350, transportUsd: 50, utilitiesUsd: 150, diningOutUsd: 300, healthInsuranceUsd: 100, totalEstimateUsd: 2150 },
     cities: ["Nicosia", "Limassol", "Paphos", "Larnaca"],
     rawIndicators: { summerHighC: 33, winterLowC: 8, humidityAvg: 60, airQualityIndex: 45, seismicZone: 4, internetReliability: 8.8, englishDailyLife: 8.5, stability: 8.4, authoritarianRisk: 1.8, corruptionRisk: 3.2 },
-    dataConfidence: "high", lastUpdated: "2026-04-24"
+    dataConfidence: "high", lastUpdated: "2026-04-24", capitalCity: "Nicosia", currency: { code: "EUR", name: "Euro" }
   },
   {
     name: "Denmark", iso2: "DK", iso3: "DNK", region: "Europe", subregion: "Northern Europe",
@@ -1763,7 +1763,7 @@ export const COUNTRIES: Country[] = [
     cities: ["Copenhagen", "Aarhus", "Odense"],
 
     rawIndicators: { summerHighC: 21, winterLowC: -1, humidityAvg: 80, airQualityIndex: 25, seismicZone: 0, internetReliability: 9.8, englishDailyLife: 9.5, stability: 9.8, authoritarianRisk: 0.5, corruptionRisk: 0.5 },
-    dataConfidence: "high", lastUpdated: "2026-04-24"
+    dataConfidence: "high", lastUpdated: "2026-04-24", capitalCity: "Copenhagen", currency: { code: "DKK", name: "Danish Krone" }
   },
   {
     name: "Djibouti", iso2: "DJ", iso3: "DJI", region: "Africa", subregion: "Eastern Africa",
@@ -1773,7 +1773,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 1200, groceriesUsd: 400, transportUsd: 50, utilitiesUsd: 200, diningOutUsd: 250, healthInsuranceUsd: 100, totalEstimateUsd: 2200 },
     cities: ["Djibouti City", "Ali Sabieh"],
     rawIndicators: { summerHighC: 41, winterLowC: 23, humidityAvg: 60, airQualityIndex: 65, seismicZone: 4, internetReliability: 6.8, englishDailyLife: 2.8, stability: 7.4, authoritarianRisk: 7.8, corruptionRisk: 6.2 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Djibouti", currency: { code: "DJF", name: "Djiboutian Franc" }
   },
   {
     name: "Dominica", iso2: "DM", iso3: "DMA", region: "Americas", subregion: "Caribbean",
@@ -1783,7 +1783,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 900, groceriesUsd: 350, transportUsd: 50, utilitiesUsd: 180, diningOutUsd: 200, healthInsuranceUsd: 80, totalEstimateUsd: 1760 },
     cities: ["Roseau", "Portsmouth"],
     rawIndicators: { summerHighC: 31, winterLowC: 21, humidityAvg: 80, airQualityIndex: 20, seismicZone: 4, internetReliability: 7.8, englishDailyLife: 10.0, stability: 8.8, authoritarianRisk: 1.2, corruptionRisk: 2.5 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Roseau", currency: { code: "XCD", name: "East Caribbean Dollar" }
   },
   {
     name: "Dominican Republic", iso2: "DO", iso3: "DOM", region: "Americas", subregion: "Caribbean",
@@ -1793,7 +1793,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 800, groceriesUsd: 300, transportUsd: 40, utilitiesUsd: 120, diningOutUsd: 200, healthInsuranceUsd: 70, totalEstimateUsd: 1530 },
     cities: ["Santo Domingo", "Punta Cana", "Santiago"],
     rawIndicators: { summerHighC: 32, winterLowC: 19, humidityAvg: 75, airQualityIndex: 45, seismicZone: 4, internetReliability: 7.8, englishDailyLife: 5.1, stability: 7.5, authoritarianRisk: 3.2, corruptionRisk: 5.8 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Santo Domingo", currency: { code: "DOP", name: "Dominican Peso" }
   },
   {
     name: "Egypt", iso2: "EG", iso3: "EGY", region: "Africa", subregion: "Northern Africa",
@@ -1803,7 +1803,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 400, groceriesUsd: 180, transportUsd: 20, utilitiesUsd: 60, diningOutUsd: 120, healthInsuranceUsd: 50, totalEstimateUsd: 830 },
     cities: ["Cairo", "Alexandria", "Hurghada"],
     rawIndicators: { summerHighC: 35, winterLowC: 9, humidityAvg: 55, airQualityIndex: 140, seismicZone: 2, internetReliability: 7.8, englishDailyLife: 4.8, stability: 6.8, authoritarianRisk: 8.5, corruptionRisk: 7.2 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Cairo", currency: { code: "EGP", name: "Egyptian Pound" }
   },
   {
     name: "El Salvador", iso2: "SV", iso3: "SLV", region: "Americas", subregion: "Central America",
@@ -1813,7 +1813,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 700, groceriesUsd: 250, transportUsd: 30, utilitiesUsd: 100, diningOutUsd: 150, healthInsuranceUsd: 60, totalEstimateUsd: 1290 },
     cities: ["San Salvador", "El Tunco", "Santa Ana"],
     rawIndicators: { summerHighC: 31, winterLowC: 18, humidityAvg: 75, airQualityIndex: 55, seismicZone: 5, internetReliability: 7.1, englishDailyLife: 4.2, stability: 7.2, authoritarianRisk: 6.2, corruptionRisk: 5.8 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "San Salvador", currency: { code: "USD", name: "US Dollar" }
   },
   {
     name: "Equatorial Guinea", iso2: "GQ", iso3: "GNQ", region: "Africa", subregion: "Middle Africa",
@@ -1823,7 +1823,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 1200, groceriesUsd: 400, transportUsd: 50, utilitiesUsd: 150, diningOutUsd: 250, healthInsuranceUsd: 100, totalEstimateUsd: 2150 },
     cities: ["Malabo", "Bata"],
     rawIndicators: { summerHighC: 30, winterLowC: 22, humidityAvg: 85, airQualityIndex: 45, seismicZone: 1, internetReliability: 6.5, englishDailyLife: 2.1, stability: 6.5, authoritarianRisk: 9.4, corruptionRisk: 8.8 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Malabo", currency: { code: "XAF", name: "CFA Franc BEAC" }
   },
   {
     name: "Eritrea", iso2: "ER", iso3: "ERI", region: "Africa", subregion: "Eastern Africa",
@@ -1833,7 +1833,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 400, groceriesUsd: 180, transportUsd: 20, utilitiesUsd: 50, diningOutUsd: 100, healthInsuranceUsd: 40, totalEstimateUsd: 790 },
     cities: ["Asmara", "Massawa"],
     rawIndicators: { summerHighC: 25, winterLowC: 6, humidityAvg: 50, airQualityIndex: 35, seismicZone: 3, internetReliability: 2.5, englishDailyLife: 3.8, stability: 7.1, authoritarianRisk: 9.9, corruptionRisk: 8.2 },
-    dataConfidence: "low", lastUpdated: "2026-04-24"
+    dataConfidence: "low", lastUpdated: "2026-04-24", capitalCity: "Asmara", currency: { code: "ERN", name: "Eritrean Nakfa" }
   },
   {
     name: "Eswatini", iso2: "SZ", iso3: "SWZ", region: "Africa", subregion: "Southern Africa",
@@ -1843,7 +1843,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 600, groceriesUsd: 220, transportUsd: 30, utilitiesUsd: 80, diningOutUsd: 150, healthInsuranceUsd: 60, totalEstimateUsd: 1140 },
     cities: ["Mbabane", "Manzini"],
     rawIndicators: { summerHighC: 25, winterLowC: 7, humidityAvg: 65, airQualityIndex: 40, seismicZone: 2, internetReliability: 6.8, englishDailyLife: 8.2, stability: 6.8, authoritarianRisk: 8.2, corruptionRisk: 6.5 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Mbabane", currency: { code: "SZL", name: "Swazi Lilangeni" }
   },
   {
     name: "Ethiopia", iso2: "ET", iso3: "ETH", region: "Africa", subregion: "Eastern Africa",
@@ -1853,7 +1853,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 400, groceriesUsd: 180, transportUsd: 20, utilitiesUsd: 60, diningOutUsd: 120, healthInsuranceUsd: 50, totalEstimateUsd: 830 },
     cities: ["Addis Ababa", "Dire Dawa", "Bahir Dar"],
     rawIndicators: { summerHighC: 24, winterLowC: 10, humidityAvg: 60, airQualityIndex: 90, seismicZone: 4, internetReliability: 6.2, englishDailyLife: 4.5, stability: 5.2, authoritarianRisk: 7.8, corruptionRisk: 7.5 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Addis Ababa", currency: { code: "ETB", name: "Ethiopian Birr" }
   },
   {
     name: "Fiji", iso2: "FJ", iso3: "FJI", region: "Oceania", subregion: "Melanesia",
@@ -1863,7 +1863,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 800, groceriesUsd: 300, transportUsd: 40, utilitiesUsd: 120, diningOutUsd: 180, healthInsuranceUsd: 60, totalEstimateUsd: 1500 },
     cities: ["Suva", "Nadi"],
     rawIndicators: { summerHighC: 31, winterLowC: 19, humidityAvg: 75, airQualityIndex: 20, seismicZone: 4, internetReliability: 7.4, englishDailyLife: 9.8, stability: 7.2, authoritarianRisk: 5.2, corruptionRisk: 5.5 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Suva", currency: { code: "FJD", name: "Fijian Dollar" }
   },
   {
     name: "Gabon", iso2: "GA", iso3: "GAB", region: "Africa", subregion: "Middle Africa",
@@ -1873,7 +1873,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 1200, groceriesUsd: 400, transportUsd: 50, utilitiesUsd: 180, diningOutUsd: 250, healthInsuranceUsd: 100, totalEstimateUsd: 2180 },
     cities: ["Libreville", "Port-Gentil"],
     rawIndicators: { summerHighC: 30, winterLowC: 22, humidityAvg: 85, airQualityIndex: 40, seismicZone: 1, internetReliability: 6.8, englishDailyLife: 1.8, stability: 7.1, authoritarianRisk: 6.8, corruptionRisk: 7.2 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Libreville", currency: { code: "XAF", name: "CFA Franc BEAC" }
   },
   {
     name: "Gambia", iso2: "GM", iso3: "GMB", region: "Africa", subregion: "Western Africa",
@@ -1883,7 +1883,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 450, groceriesUsd: 200, transportUsd: 25, utilitiesUsd: 70, diningOutUsd: 120, healthInsuranceUsd: 50, totalEstimateUsd: 915 },
     cities: ["Banjul", "Serekunda"],
     rawIndicators: { summerHighC: 32, winterLowC: 18, humidityAvg: 65, airQualityIndex: 55, seismicZone: 1, internetReliability: 6.1, englishDailyLife: 9.5, stability: 7.8, authoritarianRisk: 5.8, corruptionRisk: 6.5 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Banjul", currency: { code: "GMD", name: "Gambian Dalasi" }
   },
   {
     name: "Ghana", iso2: "GH", iso3: "GHA", region: "Africa", subregion: "Western Africa",
@@ -1893,7 +1893,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 600, groceriesUsd: 250, transportUsd: 30, utilitiesUsd: 120, diningOutUsd: 180, healthInsuranceUsd: 60, totalEstimateUsd: 1240 },
     cities: ["Accra", "Kumasi", "Takoradi"],
     rawIndicators: { summerHighC: 31, winterLowC: 23, humidityAvg: 80, airQualityIndex: 90, seismicZone: 3, internetReliability: 7.8, englishDailyLife: 9.8, stability: 8.2, authoritarianRisk: 3.5, corruptionRisk: 5.2 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Accra", currency: { code: "GHS", name: "Ghanaian Cedi" }
   },
   {
     name: "Grenada", iso2: "GD", iso3: "GRD", region: "Americas", subregion: "Caribbean",
@@ -1903,7 +1903,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 1200, groceriesUsd: 400, transportUsd: 50, utilitiesUsd: 200, diningOutUsd: 300, healthInsuranceUsd: 100, totalEstimateUsd: 2250 },
     cities: ["St. George's", "Grand Anse"],
     rawIndicators: { summerHighC: 31, winterLowC: 22, humidityAvg: 75, airQualityIndex: 20, seismicZone: 3, internetReliability: 8.4, englishDailyLife: 10.0, stability: 8.8, authoritarianRisk: 1.2, corruptionRisk: 2.1 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Saint George's", currency: { code: "XCD", name: "East Caribbean Dollar" }
   },
   {
     name: "Guatemala", iso2: "GT", iso3: "GTM", region: "Americas", subregion: "Central America",
@@ -1913,7 +1913,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 600, groceriesUsd: 220, transportUsd: 25, utilitiesUsd: 90, diningOutUsd: 140, healthInsuranceUsd: 60, totalEstimateUsd: 1135 },
     cities: ["Guatemala City", "Antigua", "Quetzaltenango"],
     rawIndicators: { summerHighC: 25, winterLowC: 12, humidityAvg: 70, airQualityIndex: 75, seismicZone: 5, internetReliability: 7.5, englishDailyLife: 4.2, stability: 6.5, authoritarianRisk: 5.2, corruptionRisk: 6.8 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Guatemala City", currency: { code: "GTQ", name: "Guatemalan Quetzal" }
   },
   {
     name: "Guinea", iso2: "GN", iso3: "GIN", region: "Africa", subregion: "Western Africa",
@@ -1923,7 +1923,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 500, groceriesUsd: 220, transportUsd: 30, utilitiesUsd: 80, diningOutUsd: 150, healthInsuranceUsd: 60, totalEstimateUsd: 1040 },
     cities: ["Conakry", "Nzérékoré"],
     rawIndicators: { summerHighC: 31, winterLowC: 22, humidityAvg: 80, airQualityIndex: 85, seismicZone: 1, internetReliability: 5.8, englishDailyLife: 1.2, stability: 4.2, authoritarianRisk: 8.8, corruptionRisk: 8.2 },
-    dataConfidence: "low", lastUpdated: "2026-04-24"
+    dataConfidence: "low", lastUpdated: "2026-04-24", capitalCity: "Conakry", currency: { code: "GNF", name: "Guinean Franc" }
   },
   {
     name: "Guinea-Bissau", iso2: "GW", iso3: "GNB", region: "Africa", subregion: "Western Africa",
@@ -1933,7 +1933,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 400, groceriesUsd: 180, transportUsd: 20, utilitiesUsd: 60, diningOutUsd: 100, healthInsuranceUsd: 40, totalEstimateUsd: 800 },
     cities: ["Bissau", "Bafatá"],
     rawIndicators: { summerHighC: 32, winterLowC: 20, humidityAvg: 80, airQualityIndex: 55, seismicZone: 1, internetReliability: 4.8, englishDailyLife: 1.1, stability: 4.8, authoritarianRisk: 7.8, corruptionRisk: 8.5 },
-    dataConfidence: "low", lastUpdated: "2026-04-24"
+    dataConfidence: "low", lastUpdated: "2026-04-24", capitalCity: "Bissau", currency: { code: "XOF", name: "CFA Franc BCEAO" }
   },
   {
     name: "Guyana", iso2: "GY", iso3: "GUY", region: "Americas", subregion: "South America",
@@ -1943,7 +1943,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 800, groceriesUsd: 300, transportUsd: 40, utilitiesUsd: 120, diningOutUsd: 200, healthInsuranceUsd: 70, totalEstimateUsd: 1530 },
     cities: ["Georgetown", "Linden", "New Amsterdam"],
     rawIndicators: { summerHighC: 31, winterLowC: 23, humidityAvg: 80, airQualityIndex: 35, seismicZone: 1, internetReliability: 7.2, englishDailyLife: 10.0, stability: 7.1, authoritarianRisk: 4.5, corruptionRisk: 6.8 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Georgetown", currency: { code: "GYD", name: "Guyanese Dollar" }
   },
   {
     name: "Haiti", iso2: "HT", iso3: "HTI", region: "Americas", subregion: "Caribbean",
@@ -1953,7 +1953,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 400, groceriesUsd: 150, transportUsd: 30, utilitiesUsd: 60, diningOutUsd: 80, healthInsuranceUsd: 50, totalEstimateUsd: 770 },
     cities: ["Port-au-Prince", "Cap-Haitien"],
     rawIndicators: { summerHighC: 32, winterLowC: 20, humidityAvg: 75, airQualityIndex: 45, seismicZone: 4, internetReliability: 3.5, englishDailyLife: 2.0, stability: 1.2, authoritarianRisk: 8.5, corruptionRisk: 9.2 },
-    dataConfidence: "low", lastUpdated: "2026-04-24"
+    dataConfidence: "low", lastUpdated: "2026-04-24", capitalCity: "Port-au-Prince", currency: { code: "HTG", name: "Haitian Gourde" }
   },
   {
     name: "Honduras", iso2: "HN", iso3: "HND", region: "Americas", subregion: "Central America",
@@ -1963,7 +1963,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 550, groceriesUsd: 220, transportUsd: 40, utilitiesUsd: 80, diningOutUsd: 130, healthInsuranceUsd: 70, totalEstimateUsd: 1090 },
     cities: ["Tegucigalpa", "San Pedro Sula", "Roatan"],
     rawIndicators: { summerHighC: 30, winterLowC: 18, humidityAvg: 70, airQualityIndex: 65, seismicZone: 3, internetReliability: 6.2, englishDailyLife: 3.8, stability: 4.5, authoritarianRisk: 6.2, corruptionRisk: 7.5 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Tegucigalpa", currency: { code: "HNL", name: "Honduran Lempira" }
   },
   {
     name: "Iceland", iso2: "IS", iso3: "ISL", region: "Europe", subregion: "Northern Europe",
@@ -1973,7 +1973,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 2300, groceriesUsd: 550, transportUsd: 100, utilitiesUsd: 150, diningOutUsd: 450, healthInsuranceUsd: 120, totalEstimateUsd: 3670 },
     cities: ["Reykjavik", "Akureyri"],
     rawIndicators: { summerHighC: 14, winterLowC: -2, humidityAvg: 78, airQualityIndex: 12, seismicZone: 4, internetReliability: 9.8, englishDailyLife: 9.5, stability: 9.7, authoritarianRisk: 0.5, corruptionRisk: 1.0 },
-    dataConfidence: "high", lastUpdated: "2026-04-24"
+    dataConfidence: "high", lastUpdated: "2026-04-24", capitalCity: "Reykjavík", currency: { code: "ISK", name: "Icelandic Króna" }
   },
   {
     name: "India", iso2: "IN", iso3: "IND", region: "Asia", subregion: "Southern Asia",
@@ -2010,7 +2010,7 @@ export const COUNTRIES: Country[] = [
     cities: ["Bangalore", "Mumbai", "Delhi", "Hyderabad"],
 
     rawIndicators: { summerHighC: 36, winterLowC: 12, humidityAvg: 60, airQualityIndex: 160, seismicZone: 3, internetReliability: 8.5, englishDailyLife: 7.8, stability: 6.2, authoritarianRisk: 5.5, corruptionRisk: 6.8 },
-    dataConfidence: "high", lastUpdated: "2026-04-24"
+    dataConfidence: "high", lastUpdated: "2026-04-24", capitalCity: "New Delhi", currency: { code: "INR", name: "Indian Rupee" }
   },
   {
     name: "Iran", iso2: "IR", iso3: "IRN", region: "Asia", subregion: "Southern Asia",
@@ -2020,7 +2020,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 400, groceriesUsd: 140, transportUsd: 20, utilitiesUsd: 45, diningOutUsd: 110, healthInsuranceUsd: 45, totalEstimateUsd: 760 },
     cities: ["Tehran", "Isfahan", "Shiraz"],
     rawIndicators: { summerHighC: 37, winterLowC: 1, humidityAvg: 40, airQualityIndex: 130, seismicZone: 5, internetReliability: 5.5, englishDailyLife: 3.2, stability: 4.0, authoritarianRisk: 9.2, corruptionRisk: 7.8 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Tehran", currency: { code: "IRR", name: "Iranian Rial" }
   },
   {
     name: "Iraq", iso2: "IQ", iso3: "IRQ", region: "Asia", subregion: "Western Asia",
@@ -2030,7 +2030,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 500, groceriesUsd: 180, transportUsd: 40, utilitiesUsd: 90, diningOutUsd: 130, healthInsuranceUsd: 60, totalEstimateUsd: 1000 },
     cities: ["Baghdad", "Erbil", "Basra"],
     rawIndicators: { summerHighC: 45, winterLowC: 4, humidityAvg: 35, airQualityIndex: 110, seismicZone: 3, internetReliability: 4.8, englishDailyLife: 2.8, stability: 3.2, authoritarianRisk: 8.8, corruptionRisk: 9.0 },
-    dataConfidence: "low", lastUpdated: "2026-04-24"
+    dataConfidence: "low", lastUpdated: "2026-04-24", capitalCity: "Baghdad", currency: { code: "IQD", name: "Iraqi Dinar" }
   },
   {
     name: "Ireland", iso2: "IE", iso3: "IRL", region: "Europe", subregion: "Northern Europe",
@@ -2067,7 +2067,7 @@ export const COUNTRIES: Country[] = [
     cities: ["Dublin", "Cork", "Galway"],
 
     rawIndicators: { summerHighC: 20, winterLowC: 3, humidityAvg: 82, airQualityIndex: 22, seismicZone: 0, internetReliability: 9.5, englishDailyLife: 10, stability: 9.4, authoritarianRisk: 0.8, corruptionRisk: 1.2 },
-    dataConfidence: "high", lastUpdated: "2026-04-24"
+    dataConfidence: "high", lastUpdated: "2026-04-24", capitalCity: "Dublin", currency: { code: "EUR", name: "Euro" }
   },
   {
     name: "Israel", iso2: "IL", iso3: "ISR", region: "Asia", subregion: "Western Asia",
@@ -2098,7 +2098,7 @@ export const COUNTRIES: Country[] = [
     cities: ["Tel Aviv", "Jerusalem", "Haifa"],
 
     rawIndicators: { summerHighC: 31, winterLowC: 9, humidityAvg: 65, airQualityIndex: 55, seismicZone: 3, internetReliability: 9.4, englishDailyLife: 8.5, stability: 5.5, authoritarianRisk: 3.5, corruptionRisk: 3.2 },
-    dataConfidence: "high", lastUpdated: "2026-04-24"
+    dataConfidence: "high", lastUpdated: "2026-04-24", capitalCity: "Jerusalem", currency: { code: "ILS", name: "Israeli New Shekel" }
   },
   {
     name: "Ivory Coast", iso2: "CI", iso3: "CIV", region: "Africa", subregion: "Western Africa",
@@ -2108,7 +2108,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 650, groceriesUsd: 220, transportUsd: 40, utilitiesUsd: 100, diningOutUsd: 150, healthInsuranceUsd: 80, totalEstimateUsd: 1240 },
     cities: ["Abidjan", "Yamoussoukro"],
     rawIndicators: { summerHighC: 32, winterLowC: 22, humidityAvg: 80, airQualityIndex: 85, seismicZone: 1, internetReliability: 6.8, englishDailyLife: 1.5, stability: 5.8, authoritarianRisk: 6.5, corruptionRisk: 7.2 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Yamoussoukro", currency: { code: "XOF", name: "CFA Franc BCEAO" }
   },
   {
     name: "Jamaica", iso2: "JM", iso3: "JAM", region: "Americas", subregion: "Caribbean",
@@ -2118,7 +2118,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 800, groceriesUsd: 300, transportUsd: 50, utilitiesUsd: 150, diningOutUsd: 200, healthInsuranceUsd: 100, totalEstimateUsd: 1600 },
     cities: ["Kingston", "Montego Bay"],
     rawIndicators: { summerHighC: 33, winterLowC: 22, humidityAvg: 75, airQualityIndex: 35, seismicZone: 3, internetReliability: 7.5, englishDailyLife: 9.8, stability: 7.2, authoritarianRisk: 2.5, corruptionRisk: 6.5 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Kingston", currency: { code: "JMD", name: "Jamaican Dollar" }
   },
   {
     name: "Jordan", iso2: "JO", iso3: "JOR", region: "Asia", subregion: "Western Asia",
@@ -2128,7 +2128,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 700, groceriesUsd: 280, transportUsd: 60, utilitiesUsd: 100, diningOutUsd: 180, healthInsuranceUsd: 90, totalEstimateUsd: 1410 },
     cities: ["Amman", "Aqaba", "Irbid"],
     rawIndicators: { summerHighC: 33, winterLowC: 4, humidityAvg: 50, airQualityIndex: 65, seismicZone: 3, internetReliability: 8.2, englishDailyLife: 6.5, stability: 7.8, authoritarianRisk: 6.8, corruptionRisk: 5.2 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Amman", currency: { code: "JOD", name: "Jordanian Dinar" }
   },
   {
     name: "Kazakhstan", iso2: "KZ", iso3: "KAZ", region: "Asia", subregion: "Central Asia",
@@ -2138,7 +2138,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 600, groceriesUsd: 200, transportUsd: 30, utilitiesUsd: 70, diningOutUsd: 140, healthInsuranceUsd: 50, totalEstimateUsd: 1090 },
     cities: ["Almaty", "Astana", "Shymkent"],
     rawIndicators: { summerHighC: 30, winterLowC: -15, humidityAvg: 55, airQualityIndex: 120, seismicZone: 4, internetReliability: 8.8, englishDailyLife: 2.8, stability: 7.2, authoritarianRisk: 7.5, corruptionRisk: 6.5 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Astana", currency: { code: "KZT", name: "Kazakhstani Tenge" }
   },
   {
     name: "Kenya", iso2: "KE", iso3: "KEN", region: "Africa", subregion: "Eastern Africa",
@@ -2148,7 +2148,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 600, groceriesUsd: 220, transportUsd: 40, utilitiesUsd: 70, diningOutUsd: 150, healthInsuranceUsd: 80, totalEstimateUsd: 1160 },
     cities: ["Nairobi", "Mombasa", "Kisumu"],
     rawIndicators: { summerHighC: 26, winterLowC: 12, humidityAvg: 65, airQualityIndex: 75, seismicZone: 2, internetReliability: 8.1, englishDailyLife: 8.8, stability: 6.5, authoritarianRisk: 5.2, corruptionRisk: 7.8 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Nairobi", currency: { code: "KES", name: "Kenyan Shilling" }
   },
   {
     name: "Kiribati", iso2: "KI", iso3: "KIR", region: "Oceania", subregion: "Micronesia",
@@ -2158,7 +2158,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 600, groceriesUsd: 350, transportUsd: 30, utilitiesUsd: 100, diningOutUsd: 120, healthInsuranceUsd: 50, totalEstimateUsd: 1250 },
     cities: ["Tarawa", "Kiritimati"],
     rawIndicators: { summerHighC: 31, winterLowC: 25, humidityAvg: 80, airQualityIndex: 15, seismicZone: 0, internetReliability: 4.2, englishDailyLife: 6.5, stability: 8.5, authoritarianRisk: 1.5, corruptionRisk: 4.2 },
-    dataConfidence: "low", lastUpdated: "2026-04-24"
+    dataConfidence: "low", lastUpdated: "2026-04-24", capitalCity: "Tarawa", currency: { code: "AUD", name: "Australian Dollar" }
   },
   {
     name: "Kuwait", iso2: "KW", iso3: "KWT", region: "Asia", subregion: "Western Asia",
@@ -2168,7 +2168,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 1500, groceriesUsd: 400, transportUsd: 50, utilitiesUsd: 80, diningOutUsd: 300, healthInsuranceUsd: 100, totalEstimateUsd: 2430 },
     cities: ["Kuwait City", "Salmiya"],
     rawIndicators: { summerHighC: 46, winterLowC: 8, humidityAvg: 40, airQualityIndex: 140, seismicZone: 1, internetReliability: 9.2, englishDailyLife: 8.2, stability: 8.8, authoritarianRisk: 7.2, corruptionRisk: 4.8 },
-    dataConfidence: "high", lastUpdated: "2026-04-24"
+    dataConfidence: "high", lastUpdated: "2026-04-24", capitalCity: "Kuwait City", currency: { code: "KWD", name: "Kuwaiti Dinar" }
   },
   {
     name: "Kyrgyzstan", iso2: "KG", iso3: "KGZ", region: "Asia", subregion: "Central Asia",
@@ -2178,7 +2178,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 450, groceriesUsd: 160, transportUsd: 20, utilitiesUsd: 50, diningOutUsd: 100, healthInsuranceUsd: 40, totalEstimateUsd: 820 },
     cities: ["Bishkek", "Osh"],
     rawIndicators: { summerHighC: 32, winterLowC: -8, humidityAvg: 50, airQualityIndex: 150, seismicZone: 4, internetReliability: 7.2, englishDailyLife: 2.2, stability: 5.5, authoritarianRisk: 6.8, corruptionRisk: 7.5 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Bishkek", currency: { code: "KGS", name: "Kyrgyzstani Som" }
   },
   {
     name: "Laos", iso2: "LA", iso3: "LAO", region: "Asia", subregion: "Southeast Asia",
@@ -2188,7 +2188,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 450, groceriesUsd: 180, transportUsd: 30, utilitiesUsd: 60, diningOutUsd: 120, healthInsuranceUsd: 40, totalEstimateUsd: 880 },
     cities: ["Vientiane", "Luang Prabang"],
     rawIndicators: { summerHighC: 33, winterLowC: 17, humidityAvg: 75, airQualityIndex: 85, seismicZone: 2, internetReliability: 6.5, englishDailyLife: 3.2, stability: 7.5, authoritarianRisk: 8.2, corruptionRisk: 7.8 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Vientiane", currency: { code: "LAK", name: "Lao Kip" }
   },
   {
     name: "Latvia", iso2: "LV", iso3: "LVA", region: "Europe", subregion: "Northern Europe",
@@ -2198,7 +2198,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 750, groceriesUsd: 280, transportUsd: 40, utilitiesUsd: 180, diningOutUsd: 220, healthInsuranceUsd: 60, totalEstimateUsd: 1530 },
     cities: ["Riga", "Jurmala", "Liepaja"],
     rawIndicators: { summerHighC: 22, winterLowC: -5, humidityAvg: 78, airQualityIndex: 25, seismicZone: 1, internetReliability: 9.6, englishDailyLife: 8.2, stability: 9.0, authoritarianRisk: 1.5, corruptionRisk: 2.5 },
-    dataConfidence: "high", lastUpdated: "2026-04-24"
+    dataConfidence: "high", lastUpdated: "2026-04-24", capitalCity: "Riga", currency: { code: "EUR", name: "Euro" }
   },
   {
     name: "Lebanon", iso2: "LB", iso3: "LBN", region: "Asia", subregion: "Western Asia",
@@ -2208,7 +2208,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 600, groceriesUsd: 250, transportUsd: 40, utilitiesUsd: 120, diningOutUsd: 180, healthInsuranceUsd: 70, totalEstimateUsd: 1260 },
     cities: ["Beirut", "Byblos", "Tripoli"],
     rawIndicators: { summerHighC: 30, winterLowC: 11, humidityAvg: 65, airQualityIndex: 95, seismicZone: 4, internetReliability: 4.5, englishDailyLife: 7.8, stability: 2.5, authoritarianRisk: 6.5, corruptionRisk: 9.0 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Beirut", currency: { code: "LBP", name: "Lebanese Pound" }
   },
   {
     name: "Lesotho", iso2: "LS", iso3: "LSO", region: "Africa", subregion: "Southern Africa",
@@ -2218,7 +2218,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 400, groceriesUsd: 180, transportUsd: 30, utilitiesUsd: 60, diningOutUsd: 100, healthInsuranceUsd: 40, totalEstimateUsd: 810 },
     cities: ["Maseru", "Teyateyaneng"],
     rawIndicators: { summerHighC: 25, winterLowC: -1, humidityAvg: 50, airQualityIndex: 35, seismicZone: 1, internetReliability: 6.2, englishDailyLife: 7.2, stability: 6.5, authoritarianRisk: 5.5, corruptionRisk: 6.8 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Maseru", currency: { code: "LSL", name: "Lesotho Loti" }
   },
   {
     name: "Liberia", iso2: "LR", iso3: "LBR", region: "Africa", subregion: "Western Africa",
@@ -2228,7 +2228,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 700, groceriesUsd: 250, transportUsd: 40, utilitiesUsd: 100, diningOutUsd: 120, healthInsuranceUsd: 60, totalEstimateUsd: 1270 },
     cities: ["Monrovia", "Gbarnga"],
     rawIndicators: { summerHighC: 31, winterLowC: 23, humidityAvg: 82, airQualityIndex: 55, seismicZone: 1, internetReliability: 4.8, englishDailyLife: 8.5, stability: 5.5, authoritarianRisk: 6.2, corruptionRisk: 8.5 },
-    dataConfidence: "low", lastUpdated: "2026-04-24"
+    dataConfidence: "low", lastUpdated: "2026-04-24", capitalCity: "Monrovia", currency: { code: "LRD", name: "Liberian Dollar" }
   },
   {
     name: "Libya", iso2: "LY", iso3: "LBY", region: "Africa", subregion: "Northern Africa",
@@ -2238,7 +2238,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 400, groceriesUsd: 150, transportUsd: 30, utilitiesUsd: 60, diningOutUsd: 100, healthInsuranceUsd: 50, totalEstimateUsd: 790 },
     cities: ["Tripoli", "Benghazi"],
     rawIndicators: { summerHighC: 36, winterLowC: 8, humidityAvg: 55, airQualityIndex: 85, seismicZone: 2, internetReliability: 4.2, englishDailyLife: 2.2, stability: 1.5, authoritarianRisk: 9.5, corruptionRisk: 9.8 },
-    dataConfidence: "low", lastUpdated: "2026-04-24"
+    dataConfidence: "low", lastUpdated: "2026-04-24", capitalCity: "Tripoli", currency: { code: "LYD", name: "Libyan Dinar" }
   },
   {
     name: "Liechtenstein", iso2: "LI", iso3: "LIE", region: "Europe", subregion: "Western Europe",
@@ -2248,7 +2248,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 2800, groceriesUsd: 650, transportUsd: 80, utilitiesUsd: 250, diningOutUsd: 600, healthInsuranceUsd: 350, totalEstimateUsd: 4730 },
     cities: ["Vaduz", "Schaan"],
     rawIndicators: { summerHighC: 24, winterLowC: -2, humidityAvg: 72, airQualityIndex: 20, seismicZone: 2, internetReliability: 9.8, englishDailyLife: 7.8, stability: 9.9, authoritarianRisk: 0.5, corruptionRisk: 0.8 },
-    dataConfidence: "high", lastUpdated: "2026-04-24"
+    dataConfidence: "high", lastUpdated: "2026-04-24", capitalCity: "Vaduz", currency: { code: "CHF", name: "Swiss Franc" }
   },
   {
     name: "Lithuania", iso2: "LT", iso3: "LTU", region: "Europe", subregion: "Northern Europe",
@@ -2258,7 +2258,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 850, groceriesUsd: 300, transportUsd: 40, utilitiesUsd: 160, diningOutUsd: 250, healthInsuranceUsd: 60, totalEstimateUsd: 1660 },
     cities: ["Vilnius", "Kaunas", "Klaipeda"],
     rawIndicators: { summerHighC: 22, winterLowC: -5, humidityAvg: 78, airQualityIndex: 22, seismicZone: 1, internetReliability: 9.9, englishDailyLife: 8.5, stability: 9.2, authoritarianRisk: 1.2, corruptionRisk: 2.2 },
-    dataConfidence: "high", lastUpdated: "2026-04-24"
+    dataConfidence: "high", lastUpdated: "2026-04-24", capitalCity: "Vilnius", currency: { code: "EUR", name: "Euro" }
   },
   {
     name: "Luxembourg", iso2: "LU", iso3: "LUX", region: "Europe", subregion: "Western Europe",
@@ -2268,7 +2268,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 2500, groceriesUsd: 550, transportUsd: 0 /* free public transit since March 2020 */, utilitiesUsd: 220, diningOutUsd: 500, healthInsuranceUsd: 150, totalEstimateUsd: 3920 },
     cities: ["Luxembourg City", "Esch-sur-Alzette"],
     rawIndicators: { summerHighC: 23, winterLowC: 0, humidityAvg: 75, airQualityIndex: 25, seismicZone: 1, internetReliability: 9.8, englishDailyLife: 9.2, stability: 9.8, authoritarianRisk: 0.5, corruptionRisk: 0.8 },
-    dataConfidence: "high", lastUpdated: "2026-04-24"
+    dataConfidence: "high", lastUpdated: "2026-04-24", capitalCity: "Luxembourg City", currency: { code: "EUR", name: "Euro" }
   },
   {
     name: "Madagascar", iso2: "MG", iso3: "MDG", region: "Africa", subregion: "Eastern Africa",
@@ -2278,7 +2278,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 250, groceriesUsd: 150, transportUsd: 20, utilitiesUsd: 50, diningOutUsd: 80, healthInsuranceUsd: 40, totalEstimateUsd: 590 },
     cities: ["Antananarivo", "Nosy Be", "Toamasina"],
     rawIndicators: { summerHighC: 28, winterLowC: 10, humidityAvg: 75, airQualityIndex: 45, seismicZone: 2, internetReliability: 4.5, englishDailyLife: 3.0, stability: 5.2, authoritarianRisk: 4.5, corruptionRisk: 7.2 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Antananarivo", currency: { code: "MGA", name: "Malagasy Ariary" }
   },
   {
     name: "Malawi", iso2: "MW", iso3: "MWI", region: "Africa", subregion: "Eastern Africa",
@@ -2288,7 +2288,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 200, groceriesUsd: 140, transportUsd: 15, utilitiesUsd: 40, diningOutUsd: 70, healthInsuranceUsd: 35, totalEstimateUsd: 500 },
     cities: ["Lilongwe", "Blantyre", "Mzuzu"],
     rawIndicators: { summerHighC: 29, winterLowC: 12, humidityAvg: 65, airQualityIndex: 40, seismicZone: 3, internetReliability: 4.2, englishDailyLife: 7.5, stability: 6.5, authoritarianRisk: 3.8, corruptionRisk: 6.5 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Lilongwe", currency: { code: "MWK", name: "Malawian Kwacha" }
   },
   {
     name: "Maldives", iso2: "MV", iso3: "MDV", region: "Asia", subregion: "Southern Asia",
@@ -2298,7 +2298,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 1200, groceriesUsd: 400, transportUsd: 50, utilitiesUsd: 150, diningOutUsd: 400, healthInsuranceUsd: 100, totalEstimateUsd: 2300 },
     cities: ["Malé", "Hulhumalé", "Maafushi"],
     rawIndicators: { summerHighC: 31, winterLowC: 25, humidityAvg: 80, airQualityIndex: 25, seismicZone: 1, internetReliability: 7.0, englishDailyLife: 6.5, stability: 7.2, authoritarianRisk: 5.5, corruptionRisk: 5.8 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Malé", currency: { code: "MVR", name: "Maldivian Rufiyaa" }
   },
   {
     name: "Mali", iso2: "ML", iso3: "MLI", region: "Africa", subregion: "Western Africa",
@@ -2308,7 +2308,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 400, groceriesUsd: 200, transportUsd: 30, utilitiesUsd: 80, diningOutUsd: 100, healthInsuranceUsd: 50, totalEstimateUsd: 860 },
     cities: ["Bamako", "Sikasso", "Mopti"],
     rawIndicators: { summerHighC: 39, winterLowC: 16, humidityAvg: 40, airQualityIndex: 85, seismicZone: 1, internetReliability: 4.0, englishDailyLife: 2.5, stability: 2.1, authoritarianRisk: 8.5, corruptionRisk: 8.2 },
-    dataConfidence: "low", lastUpdated: "2026-04-24"
+    dataConfidence: "low", lastUpdated: "2026-04-24", capitalCity: "Bamako", currency: { code: "XOF", name: "CFA Franc BCEAO" }
   },
   {
     name: "Marshall Islands", iso2: "MH", iso3: "MHL", region: "Oceania", subregion: "Micronesia",
@@ -2318,7 +2318,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 1000, groceriesUsd: 500, transportUsd: 60, utilitiesUsd: 200, diningOutUsd: 300, healthInsuranceUsd: 120, totalEstimateUsd: 2180 },
     cities: ["Majuro", "Ebeye"],
     rawIndicators: { summerHighC: 30, winterLowC: 25, humidityAvg: 80, airQualityIndex: 20, seismicZone: 1, internetReliability: 5.5, englishDailyLife: 8.2, stability: 8.5, authoritarianRisk: 2.5, corruptionRisk: 4.2 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Majuro", currency: { code: "USD", name: "US Dollar" }
   },
   {
     name: "Mauritania", iso2: "MR", iso3: "MRT", region: "Africa", subregion: "Western Africa",
@@ -2328,7 +2328,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 450, groceriesUsd: 220, transportUsd: 40, utilitiesUsd: 90, diningOutUsd: 120, healthInsuranceUsd: 60, totalEstimateUsd: 980 },
     cities: ["Nouakchott", "Nouadhibou"],
     rawIndicators: { summerHighC: 38, winterLowC: 14, humidityAvg: 30, airQualityIndex: 90, seismicZone: 1, internetReliability: 4.2, englishDailyLife: 2.8, stability: 5.5, authoritarianRisk: 7.8, corruptionRisk: 7.5 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Nouakchott", currency: { code: "MRU", name: "Mauritanian Ouguiya" }
   },
   {
     name: "Mauritius", iso2: "MU", iso3: "MUS", region: "Africa", subregion: "Eastern Africa",
@@ -2338,7 +2338,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 900, groceriesUsd: 300, transportUsd: 60, utilitiesUsd: 120, diningOutUsd: 250, healthInsuranceUsd: 80, totalEstimateUsd: 1710 },
     cities: ["Port Louis", "Grand Baie", "Flic en Flac"],
     rawIndicators: { summerHighC: 30, winterLowC: 17, humidityAvg: 75, airQualityIndex: 25, seismicZone: 1, internetReliability: 8.5, englishDailyLife: 8.8, stability: 8.8, authoritarianRisk: 2.2, corruptionRisk: 3.1 },
-    dataConfidence: "high", lastUpdated: "2026-04-24"
+    dataConfidence: "high", lastUpdated: "2026-04-24", capitalCity: "Port Louis", currency: { code: "MUR", name: "Mauritian Rupee" }
   },
   {
     name: "Micronesia", iso2: "FM", iso3: "FSM", region: "Oceania", subregion: "Micronesia",
@@ -2348,7 +2348,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 800, groceriesUsd: 450, transportUsd: 50, utilitiesUsd: 180, diningOutUsd: 200, healthInsuranceUsd: 100, totalEstimateUsd: 1780 },
     cities: ["Palikir", "Weno", "Colonia"],
     rawIndicators: { summerHighC: 30, winterLowC: 24, humidityAvg: 80, airQualityIndex: 15, seismicZone: 2, internetReliability: 5.0, englishDailyLife: 8.5, stability: 8.2, authoritarianRisk: 2.8, corruptionRisk: 4.8 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Palikir", currency: { code: "USD", name: "US Dollar" }
   },
   {
     name: "Moldova", iso2: "MD", iso3: "MDA", region: "Europe", subregion: "Eastern Europe",
@@ -2358,7 +2358,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 600, groceriesUsd: 250, transportUsd: 30, utilitiesUsd: 180, diningOutUsd: 200, healthInsuranceUsd: 60, totalEstimateUsd: 1320 },
     cities: ["Chișinău", "Tiraspol", "Bălți"],
     rawIndicators: { summerHighC: 28, winterLowC: -4, humidityAvg: 65, airQualityIndex: 45, seismicZone: 4, internetReliability: 9.2, englishDailyLife: 4.2, stability: 6.8, authoritarianRisk: 3.5, corruptionRisk: 6.5 },
-    dataConfidence: "high", lastUpdated: "2026-04-24"
+    dataConfidence: "high", lastUpdated: "2026-04-24", capitalCity: "Chișinău", currency: { code: "MDL", name: "Moldovan Leu" }
   },
   {
     name: "Monaco", iso2: "MC", iso3: "MCO", region: "Europe", subregion: "Southern Europe",
@@ -2368,7 +2368,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 7000, groceriesUsd: 1200, transportUsd: 150, utilitiesUsd: 400, diningOutUsd: 1500, healthInsuranceUsd: 500, totalEstimateUsd: 10750 },
     cities: ["Monaco City", "Monte Carlo"],
     rawIndicators: { summerHighC: 26, winterLowC: 8, humidityAvg: 65, airQualityIndex: 30, seismicZone: 2, internetReliability: 9.8, englishDailyLife: 8.2, stability: 9.8, authoritarianRisk: 0.8, corruptionRisk: 1.2 },
-    dataConfidence: "high", lastUpdated: "2026-04-24"
+    dataConfidence: "high", lastUpdated: "2026-04-24", capitalCity: "Monaco", currency: { code: "EUR", name: "Euro" }
   },
   {
     name: "Mongolia", iso2: "MN", iso3: "MNG", region: "Asia", subregion: "Eastern Asia",
@@ -2378,7 +2378,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 500, groceriesUsd: 220, transportUsd: 30, utilitiesUsd: 100, diningOutUsd: 180, healthInsuranceUsd: 50, totalEstimateUsd: 1080 },
     cities: ["Ulaanbaatar", "Erdenet", "Darkhan"],
     rawIndicators: { summerHighC: 22, winterLowC: -25, humidityAvg: 45, airQualityIndex: 110, seismicZone: 3, internetReliability: 7.5, englishDailyLife: 4.5, stability: 7.8, authoritarianRisk: 3.2, corruptionRisk: 5.5 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Ulaanbaatar", currency: { code: "MNT", name: "Mongolian Tögrög" }
   },
   {
     name: "Mozambique", iso2: "MZ", iso3: "MOZ", region: "Africa", subregion: "Eastern Africa",
@@ -2388,7 +2388,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 700, groceriesUsd: 280, transportUsd: 40, utilitiesUsd: 110, diningOutUsd: 200, healthInsuranceUsd: 70, totalEstimateUsd: 1400 },
     cities: ["Maputo", "Beira", "Pemba"],
     rawIndicators: { summerHighC: 31, winterLowC: 14, humidityAvg: 70, airQualityIndex: 40, seismicZone: 2, internetReliability: 6.2, englishDailyLife: 3.5, stability: 5.8, authoritarianRisk: 5.2, corruptionRisk: 7.8 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Maputo", currency: { code: "MZN", name: "Mozambican Metical" }
   },
   {
     name: "Myanmar", iso2: "MM", iso3: "MMR", region: "Asia", subregion: "Southeast Asia",
@@ -2398,7 +2398,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 500, groceriesUsd: 200, transportUsd: 30, utilitiesUsd: 70, diningOutUsd: 150, healthInsuranceUsd: 50, totalEstimateUsd: 1000 },
     cities: ["Yangon", "Mandalay", "Naypyidaw"],
     rawIndicators: { summerHighC: 36, winterLowC: 18, humidityAvg: 70, airQualityIndex: 95, seismicZone: 4, internetReliability: 5.8, englishDailyLife: 4.2, stability: 2.5, authoritarianRisk: 9.5, corruptionRisk: 8.8 },
-    dataConfidence: "low", lastUpdated: "2026-04-24"
+    dataConfidence: "low", lastUpdated: "2026-04-24", capitalCity: "Naypyidaw", currency: { code: "MMK", name: "Myanmar Kyat" }
   },
   {
     name: "Namibia", iso2: "NA", iso3: "NAM", region: "Africa", subregion: "Southern Africa",
@@ -2408,7 +2408,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 850, groceriesUsd: 320, transportUsd: 50, utilitiesUsd: 130, diningOutUsd: 220, healthInsuranceUsd: 80, totalEstimateUsd: 1650 },
     cities: ["Windhoek", "Swakopmund", "Walvis Bay"],
     rawIndicators: { summerHighC: 30, winterLowC: 7, humidityAvg: 30, airQualityIndex: 25, seismicZone: 1, internetReliability: 7.2, englishDailyLife: 8.5, stability: 8.5, authoritarianRisk: 2.8, corruptionRisk: 4.1 },
-    dataConfidence: "high", lastUpdated: "2026-04-24"
+    dataConfidence: "high", lastUpdated: "2026-04-24", capitalCity: "Windhoek", currency: { code: "NAD", name: "Namibian Dollar" }
   },
   {
     name: "Nauru", iso2: "NR", iso3: "NRU", region: "Oceania", subregion: "Micronesia",
@@ -2418,7 +2418,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 900, groceriesUsd: 600, transportUsd: 40, utilitiesUsd: 250, diningOutUsd: 250, healthInsuranceUsd: 150, totalEstimateUsd: 2190 },
     cities: ["Yaren", "Denigomodu"],
     rawIndicators: { summerHighC: 30, winterLowC: 24, humidityAvg: 75, airQualityIndex: 20, seismicZone: 1, internetReliability: 4.5, englishDailyLife: 8.2, stability: 7.2, authoritarianRisk: 4.5, corruptionRisk: 5.2 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Yaren", currency: { code: "AUD", name: "Australian Dollar" }
   },
   {
     name: "Nepal", iso2: "NP", iso3: "NPL", region: "Asia", subregion: "Southern Asia",
@@ -2428,7 +2428,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 350, groceriesUsd: 180, transportUsd: 20, utilitiesUsd: 50, diningOutUsd: 120, healthInsuranceUsd: 40, totalEstimateUsd: 760 },
     cities: ["Kathmandu", "Pokhara", "Lalitpur"],
     rawIndicators: { summerHighC: 29, winterLowC: 2, humidityAvg: 60, airQualityIndex: 140, seismicZone: 5, internetReliability: 6.5, englishDailyLife: 6.2, stability: 6.2, authoritarianRisk: 4.8, corruptionRisk: 6.8 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Kathmandu", currency: { code: "NPR", name: "Nepalese Rupee" }
   },
   {
     name: "Nicaragua", iso2: "NI", iso3: "NIC", region: "Americas", subregion: "Central America",
@@ -2438,7 +2438,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 450, groceriesUsd: 220, transportUsd: 30, utilitiesUsd: 90, diningOutUsd: 150, healthInsuranceUsd: 50, totalEstimateUsd: 990 },
     cities: ["Managua", "Granada", "San Juan del Sur"],
     rawIndicators: { summerHighC: 33, winterLowC: 21, humidityAvg: 70, airQualityIndex: 45, seismicZone: 4, internetReliability: 6.8, englishDailyLife: 4.5, stability: 4.5, authoritarianRisk: 8.5, corruptionRisk: 7.5 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Managua", currency: { code: "NIO", name: "Nicaraguan Córdoba" }
   },
   {
     name: "Niger", iso2: "NE", iso3: "NER", region: "Africa", subregion: "Western Africa",
@@ -2448,7 +2448,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 400, groceriesUsd: 200, transportUsd: 30, utilitiesUsd: 80, diningOutUsd: 100, healthInsuranceUsd: 50, totalEstimateUsd: 860 },
     cities: ["Niamey", "Zinder", "Maradi"],
     rawIndicators: { summerHighC: 41, winterLowC: 15, humidityAvg: 30, airQualityIndex: 85, seismicZone: 1, internetReliability: 3.8, englishDailyLife: 2.2, stability: 3.1, authoritarianRisk: 8.8, corruptionRisk: 8.5 },
-    dataConfidence: "low", lastUpdated: "2026-04-24"
+    dataConfidence: "low", lastUpdated: "2026-04-24", capitalCity: "Niamey", currency: { code: "XOF", name: "CFA Franc BCEAO" }
   },
   {
     name: "Nigeria", iso2: "NG", iso3: "NGA", region: "Africa", subregion: "Western Africa",
@@ -2458,7 +2458,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 1200, groceriesUsd: 350, transportUsd: 80, utilitiesUsd: 150, diningOutUsd: 300, healthInsuranceUsd: 120, totalEstimateUsd: 2200 },
     cities: ["Lagos", "Abuja", "Ibadan"],
     rawIndicators: { summerHighC: 32, winterLowC: 18, humidityAvg: 75, airQualityIndex: 120, seismicZone: 1, internetReliability: 7.2, englishDailyLife: 8.8, stability: 5.2, authoritarianRisk: 5.5, corruptionRisk: 8.2 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Abuja", currency: { code: "NGN", name: "Nigerian Naira" }
   },
   {
     name: "North Korea", iso2: "KP", iso3: "PRK", region: "Asia", subregion: "Eastern Asia",
@@ -2468,7 +2468,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 300, groceriesUsd: 150, transportUsd: 10, utilitiesUsd: 30, diningOutUsd: 50, healthInsuranceUsd: 20, totalEstimateUsd: 560 },
     cities: ["Pyongyang", "Kaesong"],
     rawIndicators: { summerHighC: 28, winterLowC: -10, humidityAvg: 65, airQualityIndex: 55, seismicZone: 2, internetReliability: 1.0, englishDailyLife: 1.5, stability: 3.5, authoritarianRisk: 10.0, corruptionRisk: 8.5 },
-    dataConfidence: "low", lastUpdated: "2026-04-24"
+    dataConfidence: "low", lastUpdated: "2026-04-24", capitalCity: "Pyongyang", currency: { code: "KPW", name: "North Korean Won" }
   },
   {
     name: "Norway", iso2: "NO", iso3: "NOR", region: "Europe", subregion: "Northern Europe",
@@ -2499,7 +2499,7 @@ export const COUNTRIES: Country[] = [
     cities: ["Oslo", "Bergen", "Stavanger", "Trondheim"],
 
     rawIndicators: { summerHighC: 21, winterLowC: -5, humidityAvg: 70, airQualityIndex: 15, seismicZone: 1, internetReliability: 9.9, englishDailyLife: 9.5, stability: 9.8, authoritarianRisk: 0.5, corruptionRisk: 0.8 },
-    dataConfidence: "high", lastUpdated: "2026-04-24"
+    dataConfidence: "high", lastUpdated: "2026-04-24", capitalCity: "Oslo", currency: { code: "NOK", name: "Norwegian Krone" }
   },
   {
     name: "Oman", iso2: "OM", iso3: "OMN", region: "Asia", subregion: "Western Asia",
@@ -2509,7 +2509,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 1100, groceriesUsd: 350, transportUsd: 70, utilitiesUsd: 130, diningOutUsd: 300, healthInsuranceUsd: 100, totalEstimateUsd: 2050 },
     cities: ["Muscat", "Salalah", "Sohar"],
     rawIndicators: { summerHighC: 38, winterLowC: 17, humidityAvg: 50, airQualityIndex: 45, seismicZone: 2, internetReliability: 8.8, englishDailyLife: 7.2, stability: 9.2, authoritarianRisk: 6.8, corruptionRisk: 3.5 },
-    dataConfidence: "high", lastUpdated: "2026-04-24"
+    dataConfidence: "high", lastUpdated: "2026-04-24", capitalCity: "Muscat", currency: { code: "OMR", name: "Omani Rial" }
   },
   {
     name: "Pakistan", iso2: "PK", iso3: "PAK", region: "Asia", subregion: "Southern Asia",
@@ -2519,7 +2519,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 400, groceriesUsd: 220, transportUsd: 40, utilitiesUsd: 100, diningOutUsd: 150, healthInsuranceUsd: 60, totalEstimateUsd: 970 },
     cities: ["Karachi", "Lahore", "Islamabad"],
     rawIndicators: { summerHighC: 38, winterLowC: 8, humidityAvg: 55, airQualityIndex: 160, seismicZone: 4, internetReliability: 6.5, englishDailyLife: 8.2, stability: 4.8, authoritarianRisk: 6.5, corruptionRisk: 8.1 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Islamabad", currency: { code: "PKR", name: "Pakistani Rupee" }
   },
   {
     name: "Palau", iso2: "PW", iso3: "PLW", region: "Oceania", subregion: "Micronesia",
@@ -2529,7 +2529,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 1000, groceriesUsd: 550, transportUsd: 60, utilitiesUsd: 220, diningOutUsd: 350, healthInsuranceUsd: 150, totalEstimateUsd: 2330 },
     cities: ["Ngerulmud", "Koror"],
     rawIndicators: { summerHighC: 31, winterLowC: 24, humidityAvg: 80, airQualityIndex: 15, seismicZone: 1, internetReliability: 6.0, englishDailyLife: 8.5, stability: 9.0, authoritarianRisk: 2.2, corruptionRisk: 4.5 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Ngerulmud", currency: { code: "USD", name: "US Dollar" }
   },
   {
     name: "Palestine", iso2: "PS", iso3: "PSE", region: "Asia", subregion: "Western Asia",
@@ -2539,7 +2539,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 550, groceriesUsd: 280, transportUsd: 40, utilitiesUsd: 110, diningOutUsd: 180, healthInsuranceUsd: 60, totalEstimateUsd: 1220 },
     cities: ["Ramallah", "Gaza City", "Bethlehem"],
     rawIndicators: { summerHighC: 30, winterLowC: 8, humidityAvg: 60, airQualityIndex: 55, seismicZone: 3, internetReliability: 6.2, englishDailyLife: 4.5, stability: 2.2, authoritarianRisk: 8.5, corruptionRisk: 7.8 },
-    dataConfidence: "low", lastUpdated: "2026-04-24"
+    dataConfidence: "low", lastUpdated: "2026-04-24", capitalCity: "East Jerusalem", currency: { code: "ILS", name: "Israeli New Shekel" }
   },
   {
     name: "Papua New Guinea", iso2: "PG", iso3: "PNG", region: "Oceania", subregion: "Melanesia",
@@ -2549,7 +2549,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 1600, groceriesUsd: 450, transportUsd: 80, utilitiesUsd: 180, diningOutUsd: 320, healthInsuranceUsd: 150, totalEstimateUsd: 2780 },
     cities: ["Port Moresby", "Lae", "Mount Hagen"],
     rawIndicators: { summerHighC: 31, winterLowC: 23, humidityAvg: 80, airQualityIndex: 45, seismicZone: 5, internetReliability: 4.2, englishDailyLife: 7.8, stability: 3.5, authoritarianRisk: 4.8, corruptionRisk: 7.2 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Port Moresby", currency: { code: "PGK", name: "Papua New Guinean Kina" }
   },
   {
     name: "Paraguay", iso2: "PY", iso3: "PRY", region: "Americas", subregion: "South America",
@@ -2559,7 +2559,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 650, groceriesUsd: 220, transportUsd: 35, utilitiesUsd: 70, diningOutUsd: 180, healthInsuranceUsd: 80, totalEstimateUsd: 1235 },
     cities: ["Asunción", "Ciudad del Este", "Encarnación"],
     rawIndicators: { summerHighC: 33, winterLowC: 13, humidityAvg: 65, airQualityIndex: 55, seismicZone: 1, internetReliability: 6.8, englishDailyLife: 3.2, stability: 7.2, authoritarianRisk: 3.5, corruptionRisk: 5.8 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Asunción", currency: { code: "PYG", name: "Paraguayan Guaraní" }
   },
   {
     name: "Qatar", iso2: "QA", iso3: "QAT", region: "Asia", subregion: "Western Asia",
@@ -2569,7 +2569,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 2400, groceriesUsd: 500, transportUsd: 60, utilitiesUsd: 280, diningOutUsd: 550, healthInsuranceUsd: 130, totalEstimateUsd: 3920 },
     cities: ["Doha", "Al Wakrah", "Lusail"],
     rawIndicators: { summerHighC: 42, winterLowC: 14, humidityAvg: 50, airQualityIndex: 135, seismicZone: 1, internetReliability: 9.8, englishDailyLife: 8.5, stability: 9.2, authoritarianRisk: 7.8, corruptionRisk: 2.5 },
-    dataConfidence: "high", lastUpdated: "2026-04-24"
+    dataConfidence: "high", lastUpdated: "2026-04-24", capitalCity: "Doha", currency: { code: "QAR", name: "Qatari Riyal" }
   },
   {
     name: "Russia", iso2: "RU", iso3: "RUS", region: "Europe", subregion: "Eastern Europe",
@@ -2579,7 +2579,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 950, groceriesUsd: 320, transportUsd: 40, utilitiesUsd: 110, diningOutUsd: 280, healthInsuranceUsd: 70, totalEstimateUsd: 1770 },
     cities: ["Moscow", "Saint Petersburg", "Kazan", "Yekaterinburg"],
     rawIndicators: { summerHighC: 24, winterLowC: -10, humidityAvg: 70, airQualityIndex: 65, seismicZone: 2, internetReliability: 9.1, englishDailyLife: 4.5, stability: 4.2, authoritarianRisk: 9.5, corruptionRisk: 8.2 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Moscow", currency: { code: "RUB", name: "Russian Ruble" }
   },
   {
     name: "Rwanda", iso2: "RW", iso3: "RWA", region: "Africa", subregion: "Eastern Africa",
@@ -2589,7 +2589,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 850, groceriesUsd: 280, transportUsd: 30, utilitiesUsd: 90, diningOutUsd: 200, healthInsuranceUsd: 60, totalEstimateUsd: 1510 },
     cities: ["Kigali", "Gisenyi", "Butare"],
     rawIndicators: { summerHighC: 27, winterLowC: 15, humidityAvg: 60, airQualityIndex: 50, seismicZone: 3, internetReliability: 7.8, englishDailyLife: 6.2, stability: 8.5, authoritarianRisk: 6.5, corruptionRisk: 3.8 },
-    dataConfidence: "high", lastUpdated: "2026-04-24"
+    dataConfidence: "high", lastUpdated: "2026-04-24", capitalCity: "Kigali", currency: { code: "RWF", name: "Rwandan Franc" }
   },
   {
     name: "Saint Kitts and Nevis", iso2: "KN", iso3: "KNA", region: "Americas", subregion: "Caribbean",
@@ -2599,7 +2599,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 1800, groceriesUsd: 550, transportUsd: 70, utilitiesUsd: 220, diningOutUsd: 450, healthInsuranceUsd: 110, totalEstimateUsd: 3200 },
     cities: ["Basseterre", "Charlestown"],
     rawIndicators: { summerHighC: 31, winterLowC: 23, humidityAvg: 75, airQualityIndex: 25, seismicZone: 4, internetReliability: 7.5, englishDailyLife: 10.0, stability: 8.2, authoritarianRisk: 2.1, corruptionRisk: 3.5 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Basseterre", currency: { code: "XCD", name: "East Caribbean Dollar" }
   },
   {
     name: "Saint Lucia", iso2: "LC", iso3: "LCA", region: "Americas", subregion: "Caribbean",
@@ -2609,7 +2609,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 1600, groceriesUsd: 500, transportUsd: 60, utilitiesUsd: 190, diningOutUsd: 420, healthInsuranceUsd: 100, totalEstimateUsd: 2870 },
     cities: ["Castries", "Soufrière", "Rodney Bay"],
     rawIndicators: { summerHighC: 31, winterLowC: 23, humidityAvg: 75, airQualityIndex: 22, seismicZone: 4, internetReliability: 7.2, englishDailyLife: 9.5, stability: 8.0, authoritarianRisk: 2.2, corruptionRisk: 3.8 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Castries", currency: { code: "XCD", name: "East Caribbean Dollar" }
   },
   {
     name: "Saint Vincent and the Grenadines", iso2: "VC", iso3: "VCT", region: "Americas", subregion: "Caribbean",
@@ -2619,7 +2619,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 1300, groceriesUsd: 480, transportUsd: 50, utilitiesUsd: 170, diningOutUsd: 380, healthInsuranceUsd: 90, totalEstimateUsd: 2470 },
     cities: ["Kingstown", "Bequia"],
     rawIndicators: { summerHighC: 31, winterLowC: 24, humidityAvg: 78, airQualityIndex: 20, seismicZone: 4, internetReliability: 6.8, englishDailyLife: 10.0, stability: 7.8, authoritarianRisk: 2.5, corruptionRisk: 4.2 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Kingstown", currency: { code: "XCD", name: "East Caribbean Dollar" }
   },
   {
     name: "Samoa", iso2: "WS", iso3: "WSM", region: "Oceania", subregion: "Polynesia",
@@ -2629,7 +2629,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 900, groceriesUsd: 350, transportUsd: 40, utilitiesUsd: 120, diningOutUsd: 220, healthInsuranceUsd: 70, totalEstimateUsd: 1700 },
     cities: ["Apia", "Salelologa"],
     rawIndicators: { summerHighC: 30, winterLowC: 23, humidityAvg: 80, airQualityIndex: 15, seismicZone: 3, internetReliability: 6.2, englishDailyLife: 7.5, stability: 8.8, authoritarianRisk: 2.8, corruptionRisk: 3.8 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Apia", currency: { code: "WST", name: "Samoan Tala" }
   },
   {
     name: "San Marino", iso2: "SM", iso3: "SMR", region: "Europe", subregion: "Southern Europe",
@@ -2639,7 +2639,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 1100, groceriesUsd: 380, transportUsd: 50, utilitiesUsd: 160, diningOutUsd: 350, healthInsuranceUsd: 120, totalEstimateUsd: 2160 },
     cities: ["San Marino City", "Dogana", "Borgo Maggiore"],
     rawIndicators: { summerHighC: 28, winterLowC: 2, humidityAvg: 65, airQualityIndex: 30, seismicZone: 2, internetReliability: 9.2, englishDailyLife: 5.5, stability: 9.9, authoritarianRisk: 0.8, corruptionRisk: 1.2 },
-    dataConfidence: "high", lastUpdated: "2026-04-24"
+    dataConfidence: "high", lastUpdated: "2026-04-24", capitalCity: "San Marino", currency: { code: "EUR", name: "Euro" }
   },
   {
     name: "Sao Tome and Principe", iso2: "ST", iso3: "STP", region: "Africa", subregion: "Middle Africa",
@@ -2649,7 +2649,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 700, groceriesUsd: 320, transportUsd: 30, utilitiesUsd: 90, diningOutUsd: 180, healthInsuranceUsd: 60, totalEstimateUsd: 1380 },
     cities: ["São Tomé", "Santo António"],
     rawIndicators: { summerHighC: 30, winterLowC: 21, humidityAvg: 80, airQualityIndex: 20, seismicZone: 1, internetReliability: 4.8, englishDailyLife: 2.8, stability: 8.2, authoritarianRisk: 3.5, corruptionRisk: 5.2 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "São Tomé", currency: { code: "STN", name: "São Tomé and Príncipe Dobra" }
   },
   {
     name: "Saudi Arabia", iso2: "SA", iso3: "SAU", region: "Asia", subregion: "Western Asia",
@@ -2686,7 +2686,7 @@ export const COUNTRIES: Country[] = [
     cities: ["Riyadh", "Jeddah", "Dammam", "NEOM"],
 
     rawIndicators: { summerHighC: 43, winterLowC: 9, humidityAvg: 30, airQualityIndex: 125, seismicZone: 2, internetReliability: 9.7, englishDailyLife: 6.8, stability: 9.0, authoritarianRisk: 8.8, corruptionRisk: 3.8 },
-    dataConfidence: "high", lastUpdated: "2026-04-24"
+    dataConfidence: "high", lastUpdated: "2026-04-24", capitalCity: "Riyadh", currency: { code: "SAR", name: "Saudi Riyal" }
   },
   {
     name: "Senegal", iso2: "SN", iso3: "SEN", region: "Africa", subregion: "Western Africa",
@@ -2696,7 +2696,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 900, groceriesUsd: 320, transportUsd: 40, utilitiesUsd: 110, diningOutUsd: 220, healthInsuranceUsd: 70, totalEstimateUsd: 1660 },
     cities: ["Dakar", "Saint-Louis", "Thiès"],
     rawIndicators: { summerHighC: 31, winterLowC: 18, humidityAvg: 70, airQualityIndex: 75, seismicZone: 1, internetReliability: 7.8, englishDailyLife: 4.0, stability: 7.2, authoritarianRisk: 5.5, corruptionRisk: 5.8 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Dakar", currency: { code: "XOF", name: "CFA Franc BCEAO" }
   },
   {
     name: "Seychelles", iso2: "SC", iso3: "SYC", region: "Africa", subregion: "Eastern Africa",
@@ -2706,7 +2706,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 2100, groceriesUsd: 550, transportUsd: 60, utilitiesUsd: 220, diningOutUsd: 480, healthInsuranceUsd: 120, totalEstimateUsd: 3530 },
     cities: ["Victoria", "Beau Vallon"],
     rawIndicators: { summerHighC: 30, winterLowC: 24, humidityAvg: 80, airQualityIndex: 20, seismicZone: 1, internetReliability: 8.5, englishDailyLife: 9.0, stability: 9.1, authoritarianRisk: 2.8, corruptionRisk: 3.2 },
-    dataConfidence: "high", lastUpdated: "2026-04-24"
+    dataConfidence: "high", lastUpdated: "2026-04-24", capitalCity: "Victoria", currency: { code: "SCR", name: "Seychellois Rupee" }
   },
   {
     name: "Sierra Leone", iso2: "SL", iso3: "SLE", region: "Africa", subregion: "Western Africa",
@@ -2716,7 +2716,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 600, groceriesUsd: 280, transportUsd: 30, utilitiesUsd: 80, diningOutUsd: 150, healthInsuranceUsd: 50, totalEstimateUsd: 1190 },
     cities: ["Freetown", "Bo", "Kenema"],
     rawIndicators: { summerHighC: 31, winterLowC: 23, humidityAvg: 82, airQualityIndex: 60, seismicZone: 1, internetReliability: 5.2, englishDailyLife: 8.2, stability: 6.5, authoritarianRisk: 5.2, corruptionRisk: 7.5 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Freetown", currency: { code: "SLE", name: "Sierra Leonean Leone" }
   },
   {
     name: "Slovakia", iso2: "SK", iso3: "SVK", region: "Europe", subregion: "Central Europe",
@@ -2726,7 +2726,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 950, groceriesUsd: 320, transportUsd: 40, utilitiesUsd: 180, diningOutUsd: 280, healthInsuranceUsd: 80, totalEstimateUsd: 1850 },
     cities: ["Bratislava", "Košice", "Žilina"],
     rawIndicators: { summerHighC: 26, winterLowC: -3, humidityAvg: 70, airQualityIndex: 40, seismicZone: 2, internetReliability: 9.1, englishDailyLife: 6.8, stability: 7.8, authoritarianRisk: 3.8, corruptionRisk: 4.5 },
-    dataConfidence: "high", lastUpdated: "2026-04-24"
+    dataConfidence: "high", lastUpdated: "2026-04-24", capitalCity: "Bratislava", currency: { code: "EUR", name: "Euro" }
   },
   {
     name: "Slovenia", iso2: "SI", iso3: "SVN", region: "Europe", subregion: "Southern Europe",
@@ -2736,7 +2736,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 1100, groceriesUsd: 350, transportUsd: 50, utilitiesUsd: 170, diningOutUsd: 320, healthInsuranceUsd: 100, totalEstimateUsd: 2090 },
     cities: ["Ljubljana", "Maribor", "Koper"],
     rawIndicators: { summerHighC: 27, winterLowC: -2, humidityAvg: 70, airQualityIndex: 30, seismicZone: 3, internetReliability: 9.4, englishDailyLife: 8.2, stability: 9.5, authoritarianRisk: 1.5, corruptionRisk: 2.5 },
-    dataConfidence: "high", lastUpdated: "2026-04-24"
+    dataConfidence: "high", lastUpdated: "2026-04-24", capitalCity: "Ljubljana", currency: { code: "EUR", name: "Euro" }
   },
   {
     name: "Solomon Islands", iso2: "SB", iso3: "SLB", region: "Oceania", subregion: "Melanesia",
@@ -2746,7 +2746,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 1100, groceriesUsd: 420, transportUsd: 40, utilitiesUsd: 150, diningOutUsd: 250, healthInsuranceUsd: 90, totalEstimateUsd: 2050 },
     cities: ["Honiara", "Gizo"],
     rawIndicators: { summerHighC: 31, winterLowC: 23, humidityAvg: 80, airQualityIndex: 20, seismicZone: 5, internetReliability: 4.5, englishDailyLife: 8.0, stability: 6.8, authoritarianRisk: 4.5, corruptionRisk: 6.8 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Honiara", currency: { code: "SBD", name: "Solomon Islands Dollar" }
   },
   {
     name: "Somalia", iso2: "SO", iso3: "SOM", region: "Africa", subregion: "Eastern Africa",
@@ -2756,7 +2756,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 800, groceriesUsd: 380, transportUsd: 40, utilitiesUsd: 130, diningOutUsd: 200, healthInsuranceUsd: 150, totalEstimateUsd: 1700 },
     cities: ["Mogadishu", "Hargeisa", "Garowe"],
     rawIndicators: { summerHighC: 32, winterLowC: 23, humidityAvg: 70, airQualityIndex: 85, seismicZone: 1, internetReliability: 4.2, englishDailyLife: 3.5, stability: 2.5, authoritarianRisk: 8.5, corruptionRisk: 9.5 },
-    dataConfidence: "low", lastUpdated: "2026-04-24"
+    dataConfidence: "low", lastUpdated: "2026-04-24", capitalCity: "Mogadishu", currency: { code: "SOS", name: "Somali Shilling" }
   },
   {
     name: "South Sudan", iso2: "SS", iso3: "SSD", region: "Africa", subregion: "Eastern Africa",
@@ -2766,7 +2766,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 700, groceriesUsd: 350, transportUsd: 40, utilitiesUsd: 110, diningOutUsd: 180, healthInsuranceUsd: 150, totalEstimateUsd: 1530 },
     cities: ["Juba", "Wau", "Malakal"],
     rawIndicators: { summerHighC: 35, winterLowC: 20, humidityAvg: 65, airQualityIndex: 95, seismicZone: 2, internetReliability: 2.8, englishDailyLife: 7.8, stability: 2.0, authoritarianRisk: 9.2, corruptionRisk: 9.8 },
-    dataConfidence: "low", lastUpdated: "2026-04-24"
+    dataConfidence: "low", lastUpdated: "2026-04-24", capitalCity: "Juba", currency: { code: "SSP", name: "South Sudanese Pound" }
   },
   {
     name: "Sri Lanka", iso2: "LK", iso3: "LKA", region: "Asia", subregion: "Southern Asia",
@@ -2776,7 +2776,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 650, groceriesUsd: 220, transportUsd: 30, utilitiesUsd: 80, diningOutUsd: 180, healthInsuranceUsd: 70, totalEstimateUsd: 1230 },
     cities: ["Colombo", "Kandy", "Galle", "Jaffna"],
     rawIndicators: { summerHighC: 31, winterLowC: 22, humidityAvg: 75, airQualityIndex: 65, seismicZone: 1, internetReliability: 8.2, englishDailyLife: 7.2, stability: 6.8, authoritarianRisk: 5.2, corruptionRisk: 6.5 },
-    dataConfidence: "high", lastUpdated: "2026-04-24"
+    dataConfidence: "high", lastUpdated: "2026-04-24", capitalCity: "Sri Jayawardenepura Kotte", currency: { code: "LKR", name: "Sri Lankan Rupee" }
   },
   {
     name: "Sudan", iso2: "SD", iso3: "SDN", region: "Africa", subregion: "Northern Africa",
@@ -2786,7 +2786,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 600, groceriesUsd: 320, transportUsd: 35, utilitiesUsd: 90, diningOutUsd: 160, healthInsuranceUsd: 150, totalEstimateUsd: 1355 },
     cities: ["Khartoum", "Omdurman", "Port Sudan"],
     rawIndicators: { summerHighC: 41, winterLowC: 15, humidityAvg: 35, airQualityIndex: 110, seismicZone: 2, internetReliability: 3.5, englishDailyLife: 4.2, stability: 1.5, authoritarianRisk: 9.8, corruptionRisk: 9.8 },
-    dataConfidence: "low", lastUpdated: "2026-04-24"
+    dataConfidence: "low", lastUpdated: "2026-04-24", capitalCity: "Khartoum", currency: { code: "SDG", name: "Sudanese Pound" }
   },
   {
     name: "Suriname", iso2: "SR", iso3: "SUR", region: "Americas", subregion: "South America",
@@ -2796,7 +2796,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 800, groceriesUsd: 300, transportUsd: 35, utilitiesUsd: 100, diningOutUsd: 200, healthInsuranceUsd: 80, totalEstimateUsd: 1515 },
     cities: ["Paramaribo", "Nieuw Nickerie"],
     rawIndicators: { summerHighC: 32, winterLowC: 23, humidityAvg: 80, airQualityIndex: 35, seismicZone: 1, internetReliability: 6.5, englishDailyLife: 7.0, stability: 7.4, authoritarianRisk: 3.2, corruptionRisk: 6.2 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Paramaribo", currency: { code: "SRD", name: "Surinamese Dollar" }
   },
   {
     name: "Sweden", iso2: "SE", iso3: "SWE", region: "Europe", subregion: "Northern Europe",
@@ -2832,7 +2832,7 @@ export const COUNTRIES: Country[] = [
     ],
     cities: ["Stockholm", "Gothenburg", "Malmö", "Uppsala"],
     rawIndicators: { summerHighC: 22, winterLowC: -5, humidityAvg: 70, airQualityIndex: 25, seismicZone: 1, internetReliability: 9.8, englishDailyLife: 9.5, stability: 9.2, authoritarianRisk: 0.8, corruptionRisk: 1.0 },
-    dataConfidence: "high", lastUpdated: "2026-04-24"
+    dataConfidence: "high", lastUpdated: "2026-04-24", capitalCity: "Stockholm", currency: { code: "SEK", name: "Swedish Krona" }
   },
   {
     name: "China", iso2: "CN", iso3: "CHN", region: "Asia", subregion: "Eastern Asia",
@@ -2863,7 +2863,7 @@ export const COUNTRIES: Country[] = [
     cities: ["Shanghai", "Beijing", "Shenzhen", "Chengdu"],
 
     rawIndicators: { summerHighC: 32, winterLowC: -4, humidityAvg: 70, airQualityIndex: 85, seismicZone: 3, internetReliability: 9.2, englishDailyLife: 3.2, stability: 8.5, authoritarianRisk: 8.8, corruptionRisk: 4.1 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Beijing", currency: { code: "CNY", name: "Chinese Yuan" }
   },
   {
     name: "Finland", iso2: "FI", iso3: "FIN", region: "Europe", subregion: "Northern Europe",
@@ -2873,7 +2873,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 1200, groceriesUsd: 350, transportUsd: 65, utilitiesUsd: 180, diningOutUsd: 350, healthInsuranceUsd: 80, totalEstimateUsd: 2225 },
     cities: ["Helsinki", "Tampere", "Oulu"],
     rawIndicators: { summerHighC: 21, winterLowC: -10, humidityAvg: 75, airQualityIndex: 12, seismicZone: 0, internetReliability: 9.8, englishDailyLife: 9.1, stability: 9.8, authoritarianRisk: 0.5, corruptionRisk: 0.6 },
-    dataConfidence: "high", lastUpdated: "2026-04-24"
+    dataConfidence: "high", lastUpdated: "2026-04-24", capitalCity: "Helsinki", currency: { code: "EUR", name: "Euro" }
   },
   {
     name: "United Kingdom", iso2: "GB", iso3: "GBR", region: "Europe", subregion: "Northern Europe",
@@ -2927,7 +2927,7 @@ export const COUNTRIES: Country[] = [
     ],
     cities: ["London", "Manchester", "Edinburgh", "Bristol"],
     rawIndicators: { summerHighC: 22, winterLowC: 2, humidityAvg: 80, airQualityIndex: 35, seismicZone: 1, internetReliability: 9.4, englishDailyLife: 10.0, stability: 8.2, authoritarianRisk: 1.2, corruptionRisk: 1.8 },
-    dataConfidence: "high", lastUpdated: "2026-04-24"
+    dataConfidence: "high", lastUpdated: "2026-04-24", capitalCity: "London", currency: { code: "GBP", name: "British Pound" }
   },
   {
     name: "Hungary", iso2: "HU", iso3: "HUN", region: "Europe", subregion: "Eastern Europe",
@@ -2937,7 +2937,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 850, groceriesUsd: 280, transportUsd: 35, utilitiesUsd: 140, diningOutUsd: 250, healthInsuranceUsd: 60, totalEstimateUsd: 1615 },
     cities: ["Budapest", "Debrecen", "Szeged"],
     rawIndicators: { summerHighC: 27, winterLowC: -2, humidityAvg: 65, airQualityIndex: 45, seismicZone: 1, internetReliability: 9.1, englishDailyLife: 6.2, stability: 7.8, authoritarianRisk: 4.5, corruptionRisk: 5.2 },
-    dataConfidence: "high", lastUpdated: "2026-04-24"
+    dataConfidence: "high", lastUpdated: "2026-04-24", capitalCity: "Budapest", currency: { code: "HUF", name: "Hungarian Forint" }
   },
   {
     name: "North Macedonia", iso2: "MK", iso3: "MKD", region: "Europe", subregion: "Southern Europe",
@@ -2947,7 +2947,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 450, groceriesUsd: 200, transportUsd: 25, utilitiesUsd: 110, diningOutUsd: 180, healthInsuranceUsd: 50, totalEstimateUsd: 1015 },
     cities: ["Skopje", "Ohrid"],
     rawIndicators: { summerHighC: 31, winterLowC: -3, humidityAvg: 60, airQualityIndex: 65, seismicZone: 4, internetReliability: 7.8, englishDailyLife: 5.8, stability: 6.8, authoritarianRisk: 3.5, corruptionRisk: 5.8 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Skopje", currency: { code: "MKD", name: "Macedonian Denar" }
   },
   {
     name: "Syria", iso2: "SY", iso3: "SYR", region: "Asia", subregion: "Western Asia",
@@ -2957,7 +2957,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 300, groceriesUsd: 150, transportUsd: 15, utilitiesUsd: 40, diningOutUsd: 80, healthInsuranceUsd: 30, totalEstimateUsd: 615 },
     cities: ["Damascus", "Aleppo"],
     rawIndicators: { summerHighC: 36, winterLowC: 2, humidityAvg: 45, airQualityIndex: 80, seismicZone: 3, internetReliability: 3.2, englishDailyLife: 2.8, stability: 1.2, authoritarianRisk: 9.8, corruptionRisk: 9.5 },
-    dataConfidence: "low", lastUpdated: "2026-04-24"
+    dataConfidence: "low", lastUpdated: "2026-04-24", capitalCity: "Damascus", currency: { code: "SYP", name: "Syrian Pound" }
   },
   {
     name: "Togo", iso2: "TG", iso3: "TGO", region: "Africa", subregion: "Western Africa",
@@ -2967,7 +2967,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 550, groceriesUsd: 220, transportUsd: 30, utilitiesUsd: 70, diningOutUsd: 140, healthInsuranceUsd: 50, totalEstimateUsd: 1060 },
     cities: ["Lomé", "Kpalimé"],
     rawIndicators: { summerHighC: 31, winterLowC: 23, humidityAvg: 80, airQualityIndex: 55, seismicZone: 1, internetReliability: 4.5, englishDailyLife: 2.1, stability: 5.4, authoritarianRisk: 7.2, corruptionRisk: 6.8 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Lomé", currency: { code: "XOF", name: "CFA Franc BCEAO" }
   },
   {
     name: "Tajikistan", iso2: "TJ", iso3: "TJK", region: "Asia", subregion: "Central Asia",
@@ -2977,7 +2977,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 400, groceriesUsd: 180, transportUsd: 20, utilitiesUsd: 50, diningOutUsd: 100, healthInsuranceUsd: 40, totalEstimateUsd: 790 },
     cities: ["Dushanbe", "Khujand"],
     rawIndicators: { summerHighC: 35, winterLowC: -2, humidityAvg: 40, airQualityIndex: 75, seismicZone: 4, internetReliability: 3.8, englishDailyLife: 1.8, stability: 6.2, authoritarianRisk: 8.5, corruptionRisk: 7.8 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Dushanbe", currency: { code: "TJS", name: "Tajikistani Somoni" }
   },
   {
     name: "Timor-Leste", iso2: "TL", iso3: "TLS", region: "Asia", subregion: "South-Eastern Asia",
@@ -2987,7 +2987,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 750, groceriesUsd: 250, transportUsd: 40, utilitiesUsd: 90, diningOutUsd: 180, healthInsuranceUsd: 60, totalEstimateUsd: 1370 },
     cities: ["Dili", "Baucau"],
     rawIndicators: { summerHighC: 31, winterLowC: 22, humidityAvg: 75, airQualityIndex: 25, seismicZone: 3, internetReliability: 3.1, englishDailyLife: 3.2, stability: 6.1, authoritarianRisk: 4.2, corruptionRisk: 7.2 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Dili", currency: { code: "USD", name: "US Dollar" }
   },
   {
     name: "Turkmenistan", iso2: "TM", iso3: "TKM", region: "Asia", subregion: "Central Asia",
@@ -2997,7 +2997,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 1200, groceriesUsd: 300, transportUsd: 20, utilitiesUsd: 30, diningOutUsd: 250, healthInsuranceUsd: 70, totalEstimateUsd: 1870 },
     cities: ["Ashgabat", "Turkmenbashi"],
     rawIndicators: { summerHighC: 38, winterLowC: -1, humidityAvg: 35, airQualityIndex: 60, seismicZone: 4, internetReliability: 2.8, englishDailyLife: 1.5, stability: 8.5, authoritarianRisk: 9.9, corruptionRisk: 8.8 },
-    dataConfidence: "low", lastUpdated: "2026-04-24"
+    dataConfidence: "low", lastUpdated: "2026-04-24", capitalCity: "Ashgabat", currency: { code: "TMT", name: "Turkmenistani Manat" }
   },
   {
     name: "Tunisia", iso2: "TN", iso3: "TUN", region: "Africa", subregion: "Northern Africa",
@@ -3007,7 +3007,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 450, groceriesUsd: 180, transportUsd: 25, utilitiesUsd: 60, diningOutUsd: 140, healthInsuranceUsd: 60, totalEstimateUsd: 915 },
     cities: ["Tunis", "Sousse", "Sfax"],
     rawIndicators: { summerHighC: 33, winterLowC: 8, humidityAvg: 60, airQualityIndex: 50, seismicZone: 2, internetReliability: 7.1, englishDailyLife: 3.8, stability: 5.8, authoritarianRisk: 6.5, corruptionRisk: 6.2 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Tunis", currency: { code: "TND", name: "Tunisian Dinar" }
   },
   {
     name: "Tonga", iso2: "TO", iso3: "TON", region: "Oceania", subregion: "Polynesia",
@@ -3017,7 +3017,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 900, groceriesUsd: 350, transportUsd: 40, utilitiesUsd: 150, diningOutUsd: 200, healthInsuranceUsd: 80, totalEstimateUsd: 1720 },
     cities: ["Nuku'alofa", "Neiafu"],
     rawIndicators: { summerHighC: 28, winterLowC: 18, humidityAvg: 75, airQualityIndex: 15, seismicZone: 4, internetReliability: 6.2, englishDailyLife: 8.5, stability: 8.1, authoritarianRisk: 2.5, corruptionRisk: 4.8 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Nuku'alofa", currency: { code: "TOP", name: "Tongan Pa'anga" }
   },
   {
     name: "Trinidad and Tobago", iso2: "TT", iso3: "TTO", region: "Americas", subregion: "Caribbean",
@@ -3027,7 +3027,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 950, groceriesUsd: 320, transportUsd: 60, utilitiesUsd: 80, diningOutUsd: 250, healthInsuranceUsd: 90, totalEstimateUsd: 1750 },
     cities: ["Port of Spain", "San Fernando", "Scarborough"],
     rawIndicators: { summerHighC: 31, winterLowC: 22, humidityAvg: 75, airQualityIndex: 40, seismicZone: 3, internetReliability: 8.1, englishDailyLife: 10.0, stability: 6.8, authoritarianRisk: 2.2, corruptionRisk: 5.5 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Port of Spain", currency: { code: "TTD", name: "Trinidad and Tobago Dollar" }
   },
   {
     name: "Tuvalu", iso2: "TV", iso3: "TUV", region: "Oceania", subregion: "Polynesia",
@@ -3037,7 +3037,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 800, groceriesUsd: 400, transportUsd: 30, utilitiesUsd: 120, diningOutUsd: 150, healthInsuranceUsd: 70, totalEstimateUsd: 1570 },
     cities: ["Funafuti", "Vaitupu"],
     rawIndicators: { summerHighC: 31, winterLowC: 25, humidityAvg: 80, airQualityIndex: 10, seismicZone: 1, internetReliability: 3.5, englishDailyLife: 8.2, stability: 9.2, authoritarianRisk: 1.5, corruptionRisk: 3.5 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Funafuti", currency: { code: "AUD", name: "Australian Dollar" }
   },
   {
     name: "Tanzania", iso2: "TZ", iso3: "TZA", region: "Africa", subregion: "Eastern Africa",
@@ -3047,7 +3047,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 600, groceriesUsd: 220, transportUsd: 35, utilitiesUsd: 70, diningOutUsd: 150, healthInsuranceUsd: 60, totalEstimateUsd: 1135 },
     cities: ["Dar es Salaam", "Zanzibar City", "Arusha"],
     rawIndicators: { summerHighC: 30, winterLowC: 18, humidityAvg: 70, airQualityIndex: 45, seismicZone: 2, internetReliability: 6.4, englishDailyLife: 6.5, stability: 7.2, authoritarianRisk: 6.5, corruptionRisk: 6.8 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Dodoma", currency: { code: "TZS", name: "Tanzanian Shilling" }
   },
   {
     name: "Ukraine", iso2: "UA", iso3: "UKR", region: "Europe", subregion: "Eastern Europe",
@@ -3057,7 +3057,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 450, groceriesUsd: 180, transportUsd: 20, utilitiesUsd: 100, diningOutUsd: 150, healthInsuranceUsd: 40, totalEstimateUsd: 940 },
     cities: ["Kyiv", "Lviv", "Odesa"],
     rawIndicators: { summerHighC: 25, winterLowC: -5, humidityAvg: 70, airQualityIndex: 55, seismicZone: 2, internetReliability: 8.8, englishDailyLife: 6.2, stability: 2.2, authoritarianRisk: 3.5, corruptionRisk: 6.5 },
-    dataConfidence: "low", lastUpdated: "2026-04-24"
+    dataConfidence: "low", lastUpdated: "2026-04-24", capitalCity: "Kyiv", currency: { code: "UAH", name: "Ukrainian Hryvnia" }
   },
   {
     name: "Uganda", iso2: "UG", iso3: "UGA", region: "Africa", subregion: "Eastern Africa",
@@ -3067,7 +3067,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 400, groceriesUsd: 180, transportUsd: 30, utilitiesUsd: 60, diningOutUsd: 120, healthInsuranceUsd: 50, totalEstimateUsd: 840 },
     cities: ["Kampala", "Entebbe", "Jinja"],
     rawIndicators: { summerHighC: 27, winterLowC: 16, humidityAvg: 70, airQualityIndex: 65, seismicZone: 3, internetReliability: 5.8, englishDailyLife: 9.1, stability: 6.2, authoritarianRisk: 8.2, corruptionRisk: 7.5 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Kampala", currency: { code: "UGX", name: "Ugandan Shilling" }
   },
   {
     name: "United States", iso2: "US", iso3: "USA", region: "Americas", subregion: "North America",
@@ -3139,7 +3139,7 @@ export const COUNTRIES: Country[] = [
     ],
     cities: ["New York City", "San Francisco", "Austin", "Miami"],
     rawIndicators: { summerHighC: 28, winterLowC: 0, humidityAvg: 55, airQualityIndex: 35, seismicZone: 3, internetReliability: 9.6, englishDailyLife: 10.0, stability: 7.8, authoritarianRisk: 3.2, corruptionRisk: 1.5 },
-    dataConfidence: "high", lastUpdated: "2026-04-24"
+    dataConfidence: "high", lastUpdated: "2026-04-24", capitalCity: "Washington, D.C.", currency: { code: "USD", name: "US Dollar" }
   },
   {
     name: "Uzbekistan", iso2: "UZ", iso3: "UZB", region: "Asia", subregion: "Central Asia",
@@ -3149,7 +3149,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 450, groceriesUsd: 180, transportUsd: 20, utilitiesUsd: 50, diningOutUsd: 120, healthInsuranceUsd: 50, totalEstimateUsd: 870 },
     cities: ["Tashkent", "Samarkand", "Bukhara"],
     rawIndicators: { summerHighC: 36, winterLowC: -2, humidityAvg: 35, airQualityIndex: 65, seismicZone: 4, internetReliability: 6.8, englishDailyLife: 2.5, stability: 8.8, authoritarianRisk: 7.8, corruptionRisk: 7.2 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Tashkent", currency: { code: "UZS", name: "Uzbekistani Som" }
   },
   {
     name: "Vatican City", iso2: "VA", iso3: "VAT", region: "Europe", subregion: "Southern Europe",
@@ -3159,7 +3159,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 3500, groceriesUsd: 600, transportUsd: 50, utilitiesUsd: 200, diningOutUsd: 800, healthInsuranceUsd: 200, totalEstimateUsd: 5350 },
     cities: ["Vatican City", "St. Peter Square"],
     rawIndicators: { summerHighC: 30, winterLowC: 4, humidityAvg: 65, airQualityIndex: 35, seismicZone: 2, internetReliability: 9.2, englishDailyLife: 8.1, stability: 9.9, authoritarianRisk: 5.2, corruptionRisk: 1.2 },
-    dataConfidence: "high", lastUpdated: "2026-04-24"
+    dataConfidence: "high", lastUpdated: "2026-04-24", capitalCity: "Vatican City", currency: { code: "EUR", name: "Euro" }
   },
   {
     name: "Venezuela", iso2: "VE", iso3: "VEN", region: "Americas", subregion: "South America",
@@ -3169,7 +3169,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 450, groceriesUsd: 280, transportUsd: 25, utilitiesUsd: 40, diningOutUsd: 120, healthInsuranceUsd: 60, totalEstimateUsd: 975 },
     cities: ["Caracas", "Maracaibo", "Valencia"],
     rawIndicators: { summerHighC: 30, winterLowC: 18, humidityAvg: 75, airQualityIndex: 45, seismicZone: 3, internetReliability: 3.5, englishDailyLife: 2.8, stability: 2.5, authoritarianRisk: 9.2, corruptionRisk: 9.8 },
-    dataConfidence: "low", lastUpdated: "2026-04-24"
+    dataConfidence: "low", lastUpdated: "2026-04-24", capitalCity: "Caracas", currency: { code: "VES", name: "Venezuelan Bolívar Soberano" }
   },
   {
     name: "Vanuatu", iso2: "VU", iso3: "VUT", region: "Oceania", subregion: "Melanesia",
@@ -3179,7 +3179,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 1100, groceriesUsd: 400, transportUsd: 50, utilitiesUsd: 180, diningOutUsd: 250, healthInsuranceUsd: 90, totalEstimateUsd: 2070 },
     cities: ["Port Vila", "Luganville"],
     rawIndicators: { summerHighC: 29, winterLowC: 20, humidityAvg: 80, airQualityIndex: 12, seismicZone: 5, internetReliability: 5.5, englishDailyLife: 8.8, stability: 8.5, authoritarianRisk: 1.8, corruptionRisk: 4.2 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Port Vila", currency: { code: "VUV", name: "Vanuatu Vatu" }
   },
   {
     name: "Yemen", iso2: "YE", iso3: "YEM", region: "Asia", subregion: "Western Asia",
@@ -3189,7 +3189,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 400, groceriesUsd: 250, transportUsd: 30, utilitiesUsd: 50, diningOutUsd: 100, healthInsuranceUsd: 40, totalEstimateUsd: 870 },
     cities: ["Sana'a", "Aden"],
     rawIndicators: { summerHighC: 32, winterLowC: 4, humidityAvg: 45, airQualityIndex: 75, seismicZone: 3, internetReliability: 1.5, englishDailyLife: 1.2, stability: 0.8, authoritarianRisk: 9.8, corruptionRisk: 9.9 },
-    dataConfidence: "low", lastUpdated: "2026-04-24"
+    dataConfidence: "low", lastUpdated: "2026-04-24", capitalCity: "Sana'a", currency: { code: "YER", name: "Yemeni Rial" }
   },
   {
     name: "Zambia", iso2: "ZM", iso3: "ZMB", region: "Africa", subregion: "Eastern Africa",
@@ -3199,7 +3199,7 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 500, groceriesUsd: 200, transportUsd: 35, utilitiesUsd: 70, diningOutUsd: 140, healthInsuranceUsd: 60, totalEstimateUsd: 1005 },
     cities: ["Lusaka", "Livingstone", "Ndola"],
     rawIndicators: { summerHighC: 30, winterLowC: 10, humidityAvg: 60, airQualityIndex: 45, seismicZone: 2, internetReliability: 6.2, englishDailyLife: 9.2, stability: 7.8, authoritarianRisk: 4.2, corruptionRisk: 6.2 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Lusaka", currency: { code: "ZMW", name: "Zambian Kwacha" }
   },
   {
     name: "Zimbabwe", iso2: "ZW", iso3: "ZWE", region: "Africa", subregion: "Eastern Africa",
@@ -3209,6 +3209,6 @@ export const COUNTRIES: Country[] = [
     costBreakdown: { rentUsd: 750, groceriesUsd: 320, transportUsd: 45, utilitiesUsd: 120, diningOutUsd: 200, healthInsuranceUsd: 80, totalEstimateUsd: 1515 },
     cities: ["Harare", "Bulawayo", "Victoria Falls"],
     rawIndicators: { summerHighC: 28, winterLowC: 7, humidityAvg: 55, airQualityIndex: 40, seismicZone: 2, internetReliability: 6.8, englishDailyLife: 9.4, stability: 5.8, authoritarianRisk: 7.8, corruptionRisk: 8.2 },
-    dataConfidence: "medium", lastUpdated: "2026-04-24"
+    dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Harare", currency: { code: "USD", name: "US Dollar" }
   },
 ];

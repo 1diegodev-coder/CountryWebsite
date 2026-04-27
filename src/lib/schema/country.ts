@@ -96,6 +96,11 @@ export const CountrySchema = z.object({
   rawIndicators: RawIndicatorsSchema,
   dataConfidence: DataConfidenceSchema,
   lastUpdated: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+  capitalCity: z.string().min(1),
+  currency: z.object({
+    code: z.string().length(3),
+    name: z.string().min(1),
+  }),
 });
 
 export type Country = z.infer<typeof CountrySchema>;

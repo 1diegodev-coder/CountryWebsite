@@ -591,6 +591,18 @@ function DeepDive({
                 <span className="text-4xl">🌍</span>
                 <h2 className="text-3xl font-bold font-display">{data?.name || code}</h2>
               </div>
+              {data && (
+                <div className="flex flex-wrap gap-x-4 gap-y-1 mb-4 text-[10px] font-mono text-text-muted uppercase tracking-wider">
+                  <div className="flex items-center gap-1.5">
+                    <MapPin size={10} className="text-accent-green" />
+                    <span>{data.capitalCity}</span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <Globe size={10} className="text-accent-green" />
+                    <span>{data.currency.code} ({data.currency.name})</span>
+                  </div>
+                </div>
+              )}
               <p className="text-text-secondary">{data?.descriptor}</p>
               {hasConfidenceCaveat && (
                 <div className="inline-flex items-center gap-1 mt-3 text-[10px] font-mono text-accent-warning bg-accent-warning/10 border border-accent-warning/20 px-2 py-1 rounded uppercase">

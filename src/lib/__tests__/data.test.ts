@@ -42,6 +42,21 @@ describe('Country Data Validation', () => {
     });
   });
 
+  it('every country has non-empty capitalCity', () => {
+    COUNTRIES.forEach(country => {
+      expect(country.capitalCity).toBeDefined();
+      expect(country.capitalCity.length).toBeGreaterThan(0);
+    });
+  });
+
+  it('every country has valid currency metadata', () => {
+    COUNTRIES.forEach(country => {
+      expect(country.currency).toBeDefined();
+      expect(country.currency.code).toMatch(/^[A-Z]{3}$/);
+      expect(country.currency.name.length).toBeGreaterThan(0);
+    });
+  });
+
   it('does not award high safety to highly authoritarian countries', () => {
     COUNTRIES
       .filter(country => country.rawIndicators.authoritarianRisk > 9)

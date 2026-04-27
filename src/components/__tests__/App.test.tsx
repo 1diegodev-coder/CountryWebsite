@@ -148,6 +148,8 @@ describe('ResultsView', () => {
           name: 'Portugal',
           iso2: 'PT',
           descriptor: 'A sun-drenched Atlantic nation where old-world charm meets modern digital infrastructure.',
+          capitalCity: 'Lisbon',
+          currency: { code: 'EUR', name: 'Euro' },
           dataConfidence: 'medium',
           costBreakdown: {
             rentUsd: 1350,
