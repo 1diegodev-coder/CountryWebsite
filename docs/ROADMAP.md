@@ -7,7 +7,7 @@
 | 2 | Server-only data boundary | gemini | codex | #4 | [x] |
 | 3 | SSR /r/[token] + OG tags | gemini | claude | #6 | [x] |
 | 4 | Deploy + Sentry + ratelimit | gemini | claude | #8 | [x] |
-| 5 | Observability + data parity | gemini | claude | — | [ ] |
+| 5 | Observability + data parity | gemini | claude | #10 | [x] |
 
 ## Phase notes
 
@@ -32,9 +32,9 @@ Merged in PR #6. Verified: `npm test` (33/33), `npm run build` (`/r/[token]` dyn
 Branch: `phase/4-deploy` off `main`.
 Merged in PR #8. Verified: `npm test` (33/33), `npm run build` (clean, `/api/healthz` edge), `npm run lint` (exit 0).
 
-### Phase 5 — independent, trailing
+### Phase 5 — complete
 New worktree off `main` at any point after Phase 0.
-Output: `docs/data-parity-YYYY-MM.md` before any YAML is touched.
+Merged in PR #10. Output: `docs/data-parity-2026-04.md` before any YAML is touched.
 
 ## Orchestration rules
 
