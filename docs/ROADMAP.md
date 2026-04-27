@@ -11,7 +11,7 @@
 | 6 | Visa Pathways v1 | gemini | codex/claude | phase/6-visa-pathways | [x] |
 | 7 | Country metadata expansion | gemini | codex/claude | direct-to-main | [x] |
 | 8 | Descriptor quality pass | gemini | codex/claude | phase/8-descriptor-quality | [x] |
-| 9 | Deep Dive confidence caveats | gemini | codex/claude | TBD | [ ] |
+| 9 | Deep Dive confidence caveats | gemini | codex/claude | phase/9-confidence-caveats | [x] |
 
 ## Phase notes
 
@@ -58,9 +58,11 @@ Merged at 29581c3. Verified: `npm test` (45/45), `npm run build` (clean), `npm r
 131 descriptors rewritten to 15-42 words. Word-count/sentence-count gate added to data.test.ts.
 Codex review fixed trailing whitespace, 3 lowercase sentence starts, and American spellings before merge.
 
-### Phase 9 — planned
-Prompt: `docs/phase9-gemini-prompt.md`.
-Gemini-owned UI caveat phase for medium/low confidence Deep Dive messaging.
+### Phase 9 — complete
+Branch: `phase/9-confidence-caveats` off `main`.
+Merged at f3cfe8d. Verified: `npm test` (46/46), `npm run build` (clean), `npm run lint` (exit 0).
+Adds explanatory caveats for medium/low confidence in DeepDive; high confidence unchanged.
+Tests assert badge visibility and caveat copy for all three confidence levels.
 
 ## Orchestration rules
 
