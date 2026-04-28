@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { RefreshCcw, Share2, MapPin, Check, AlertTriangle, TrendingUp, Globe, Info, Sliders, X } from "lucide-react";
+import { RefreshCcw, Share2, MapPin, Check, AlertTriangle, TrendingUp, Globe, Info, Sliders, X, ChevronDown } from "lucide-react";
 import GlobeViewer from "./GlobeViewer";
 import { MatchPayload, EliminatedCountry } from "../lib/schema/match";
 import { UserProfile } from "../lib/schema/profile";
@@ -29,11 +29,21 @@ export default function ResultsView({
   const [activeTab, setActiveTab] = React.useState("insights");
   const [isSharing, setIsSharing] = useState(false);
   const [shareUrl, setShareUrl] = useState<string | null>(null);
+  const [pngExportNotice, setPngExportNotice] = useState(false);
   const [isWhatIfLoading, setIsWhatIfLoading] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState<{
     code: string;
     initialSection?: "overview" | "visa";
   } | null>(null);
+
+  // Render Pressure: Batching
+  const [visibleCount, setVisibleCount] = useState(10);
+  const visibleMatches = result.matches.slice(0, visibleCount);
+  const hasMoreMatches = visibleCount < result.matches.length;
+
+  const showMore = () => {
+    setVisibleCount(prev => Math.min(prev + 10, result.matches.length));
+  };
 
   const groupedEliminated = React.useMemo(() => {
     return result.eliminated.reduce((acc, curr) => {
@@ -49,8 +59,75 @@ export default function ResultsView({
 
   const [showShareModal, setShowShareModal] = useState(false);
 
+  // What-If Request Pressure: Debounce & Cancellation
+  const abortControllerRef = useRef<AbortController | null>(null);
+  const debounceTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const latestRequestIdRef = useRef(0);
+
+  const performWhatIf = useCallback(async (updatedProfile: UserProfile) => {
+    const requestId = ++latestRequestIdRef.current;
+
+    // Cancel any in-flight request
+    if (abortControllerRef.current) {
+      abortControllerRef.current.abort();
+    }
+    const controller = new AbortController();
+    abortControllerRef.current = controller;
+
+    setIsWhatIfLoading(true);
+    try {
+      const response = await fetch("/api/whatif", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ profile: updatedProfile }),
+        signal: controller.signal,
+      });
+      
+      if (response.ok) {
+        const newResult = await response.json();
+        
+        // Ensure we only update if this is still the latest request
+        if (requestId === latestRequestIdRef.current && !controller.signal.aborted) {
+          onUpdateResult({ ...newResult, sessionToken: result.sessionToken });
+          onUpdateProfile?.(updatedProfile);
+        }
+      }
+    } catch (e: any) {
+      if (e.name === 'AbortError' || e.message === 'AbortError') {
+        // Ignored
+      } else {
+        console.error("What-if error", e);
+      }
+    } finally {
+      // Only set loading to false if this was the latest request
+      if (requestId === latestRequestIdRef.current) {
+        setIsWhatIfLoading(false);
+      }
+    }
+  }, [onUpdateResult, onUpdateProfile, result.sessionToken]);
+
+  const handleWhatIf = (key: string, value: any) => {
+    const updatedProfile = { ...profile, [key]: value };
+    
+    // Clear existing timer
+    if (debounceTimerRef.current) {
+      clearTimeout(debounceTimerRef.current);
+    }
+
+    // Set new timer
+    debounceTimerRef.current = setTimeout(() => {
+      performWhatIf(updatedProfile);
+    }, 350);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (debounceTimerRef.current) clearTimeout(debounceTimerRef.current);
+      if (abortControllerRef.current) abortControllerRef.current.abort();
+    };
+  }, []);
+
   const handleShare = async () => {
-    // In a real app, the token is already in result.sessionToken from the initial match
     const url = `${window.location.origin}/r/${result.sessionToken}`;
     setShareUrl(url);
     setShowShareModal(true);
@@ -68,25 +145,9 @@ export default function ResultsView({
     }
   };
 
-  const handleWhatIf = async (key: string, value: any) => {
-    setIsWhatIfLoading(true);
-    try {
-      const updatedProfile = { ...profile, [key]: value };
-      const response = await fetch("/api/whatif", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ profile: updatedProfile }),
-      });
-      if (response.ok) {
-        const newResult = await response.json();
-        onUpdateResult({ ...newResult, sessionToken: result.sessionToken });
-        onUpdateProfile?.(updatedProfile);
-      }
-    } catch (e) {
-      console.error("What-if error", e);
-    } finally {
-      setIsWhatIfLoading(false);
-    }
+  const handlePngExport = () => {
+    setPngExportNotice(true);
+    setTimeout(() => setPngExportNotice(false), 3000);
   };
 
   const handleOverride = async (code: string) => {
@@ -165,14 +226,14 @@ export default function ResultsView({
         {/* Center: Match Cards */}
         <div className="match-cards-panel">
           <div className="match-cards-grid">
-            {result.matches.map((match, i) => {
+            {visibleMatches.map((match, i) => {
               return (
                 <motion.div
                   key={match.countryCode}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.1 }}
-                  className={`match-card ${i === 0 ? "top-match" : ""}`}
+                  transition={{ delay: i * 0.05 }}
+                  className={`match-card ${match.rank === 1 ? "top-match" : ""}`}
                 >
                   <div className="card-header">
                     <div>
@@ -209,11 +270,11 @@ export default function ResultsView({
                       className="match-bar-inner bg-accent-green" 
                       initial={{ width: 0 }}
                       animate={{ width: `${match.score}%` }}
-                      transition={{ duration: 1, delay: 0.5 + i * 0.1 }}
+                      transition={{ duration: 1, delay: 0.5 + i * 0.05 }}
                     />
                   </div>
 
-                  <div className="grid grid-cols-2 gap-6 mt-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
                     <div className="card-section">
                       <h4 className="card-section-title green">WHY IT FITS</h4>
                       <ul className="space-y-2">
@@ -258,6 +319,16 @@ export default function ResultsView({
                 </motion.div>
               );
             })}
+
+            {hasMoreMatches && (
+              <button 
+                onClick={showMore}
+                className="w-full py-4 mt-4 border border-dashed border-bg-elevated rounded-xl text-text-muted hover:text-text-primary hover:border-text-muted transition-all flex items-center justify-center gap-2 group"
+              >
+                <span>Show more matches</span>
+                <ChevronDown size={16} className="group-hover:translate-y-0.5 transition-transform" />
+              </button>
+            )}
           </div>
         </div>
 
@@ -336,7 +407,7 @@ export default function ResultsView({
                         onClick={() => handleWhatIf("languageFlexibility", profile.languageFlexibility === "englishOnly" ? "openToLearning" : "englishOnly")}
                         className={`w-8 h-4 rounded-full transition-colors relative ${profile.languageFlexibility === "englishOnly" ? "bg-accent-green" : "bg-bg-elevated"}`}
                       >
-                        <div className={`absolute top-0.5 w-3 h-3 bg-white rounded-full transition-all ${profile.languageFlexibility === "englishOnly" ? "left-4.5" : "left-0.5"}`} />
+                        <div className={`absolute top-0.5 w-3 h-3 bg-white rounded-full transition-all ${profile.languageFlexibility === "englishOnly" ? "left-[18px]" : "left-0.5"}`} />
                       </button>
                     </div>
                     <div className="flex items-center justify-between">
@@ -345,7 +416,7 @@ export default function ResultsView({
                         onClick={() => handleWhatIf("healthcareNeed", profile.healthcareNeed === "chronic" ? "general" : "chronic")}
                         className={`w-8 h-4 rounded-full transition-colors relative ${profile.healthcareNeed === "chronic" ? "bg-accent-green" : "bg-bg-elevated"}`}
                       >
-                        <div className={`absolute top-0.5 w-3 h-3 bg-white rounded-full transition-all ${profile.healthcareNeed === "chronic" ? "left-4.5" : "left-0.5"}`} />
+                        <div className={`absolute top-0.5 w-3 h-3 bg-white rounded-full transition-all ${profile.healthcareNeed === "chronic" ? "left-[18px]" : "left-0.5"}`} />
                       </button>
                     </div>
                   </div>
@@ -500,10 +571,18 @@ export default function ResultsView({
 
                 <button 
                   className="w-full btn-ghost border-bg-elevated"
-                  onClick={() => alert("PNG Card Export is currently in development for V1.1. Please use the 'Share Results' link for now.")}
+                  onClick={handlePngExport}
                 >
                   Download Shareable Card (PNG)
                 </button>
+                {pngExportNotice && (
+                  <div className="bg-accent-warning/10 border border-accent-warning/20 rounded-lg px-4 py-3 flex items-start gap-2">
+                    <AlertTriangle size={14} className="text-accent-warning mt-0.5" />
+                    <span className="text-[10px] text-accent-warning uppercase tracking-wider font-semibold leading-relaxed">
+                      PNG export is coming soon. Use the results link for now.
+                    </span>
+                  </div>
+                )}
               </div>
             </motion.div>
           </motion.div>
@@ -727,8 +806,14 @@ function DeepDive({
                     </div>
                   </div>
                 ) : (
-                  <div className="p-5 bg-bg-elevated/20 rounded-xl border border-bg-elevated text-[11px] text-text-muted leading-relaxed">
-                    Visa pathway data is not available for this country yet.
+                  <div className="p-5 bg-bg-elevated/20 rounded-xl border border-bg-elevated space-y-3">
+                    <div className="inline-flex items-center gap-2 text-[10px] font-mono text-accent-warning bg-accent-warning/10 border border-accent-warning/20 px-2 py-1 rounded uppercase">
+                      <AlertTriangle size={10} />
+                      Coming soon
+                    </div>
+                    <p className="text-[11px] text-text-muted leading-relaxed">
+                      Visa pathway data is still being verified for this country. Check official government sources before making relocation decisions.
+                    </p>
                   </div>
                 )}
               </section>

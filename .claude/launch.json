@@ -3,10 +3,9 @@
   "configurations": [
     {
       "name": "CountryDNA",
-      "runtimeExecutable": "npx",
-      "runtimeArgs": ["serve", "."],
-      "port": 3000,
-      "autoPort": true
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "port": 3001
     }
   ]
 }

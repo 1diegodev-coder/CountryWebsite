@@ -8,7 +8,7 @@ CountryDNA is a modern web application for country relocation matching.
 - **Authoritative Source:** The Next.js 15 app in `src/` is the only source of truth for active development.
 - **Frontend:** Next.js 15 (App Router), React 19, Tailwind CSS 4, Framer Motion.
 - **State Management:** Local React state with `localStorage` persistence (keys: `cdna_screen`, `cdna_answers`, `cdna_result`, `cdna_resume_step`).
-- **Globe:** `react-globe.gl` (Three.js/WebGL).
+- **Globe:** `react-globe.gl` (Three.js/WebGL) with local GeoJSON from `public/data/countries.geojson`.
 - **Backend:** Next.js Route Handlers (API Routes) in `src/app/api`.
 - **Database/Persistence:** Upstash Redis (for sharing/token persistence).
 - **Matching Engine:** TypeScript-based multi-phase engine in `src/lib/engine.ts`.

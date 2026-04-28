@@ -252,7 +252,7 @@ export default function QuizView({ answers, onAnswer, onComplete, initialStep }:
           <Globe size={24} className="text-accent-green" />
           <div>
             <div className="counter-number">195</div>
-            <div className="text-[11px] text-text-secondary uppercase tracking-wider">countries match</div>
+            <div className="text-[11px] text-text-secondary uppercase tracking-wider">countries in our database</div>
           </div>
         </div>
         <div className="globe-container">
