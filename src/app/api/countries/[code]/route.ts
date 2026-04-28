@@ -19,10 +19,7 @@ export async function GET(
     }
 
     // Strip internal fields
-    const publicData = PublicCountrySchema.parse({
-      ...country,
-      visaPathways: country.visaPathways ?? [],
-    });
+    const publicData = PublicCountrySchema.parse(country);
     return NextResponse.json(publicData);
   } catch (error) {
     console.error('Country API error:', error);
