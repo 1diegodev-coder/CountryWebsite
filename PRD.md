@@ -1435,19 +1435,19 @@ question_answered	question_id, answer_value (anonymised buckets, not raw), time_
 question_skipped	question_id
 quiz_abandoned	last_question_id, time_in_quiz
 interim_results_shown	candidate_count_at_interim
-interim_continue_clicked	
-interim_see_full_list_clicked	
+interim_continue_clicked
+interim_see_full_list_clicked
 quiz_completed	total_time_seconds, question_count
 results_viewed	candidate_count, top_match_country
 match_card_clicked	country_code, rank, action (explore/compare)
 deep_dive_viewed	country_code, source (card/globe/elimination_log)
-elimination_log_opened	
+elimination_log_opened
 eliminated_country_viewed	country_code
 override_added	country_code, elimination_reason
 whatif_slider_adjusted	dimension, direction (relaxed/tightened), countries_added, countries_removed
-share_modal_opened	
-share_link_copied	
-share_image_downloaded	
+share_modal_opened
+share_link_copied
+share_image_downloaded
 shared_result_viewed	token (anonymised), source_platform
 globe_interacted	interaction_type (rotate/zoom/click/hover)
 Quality Events

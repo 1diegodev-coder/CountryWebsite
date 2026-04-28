@@ -17,14 +17,14 @@ interface ResultsViewProps {
   isReadOnly?: boolean;
 }
 
-export default function ResultsView({ 
-  result, 
-  onRetake, 
-  tweaks, 
-  profile, 
-  onUpdateResult, 
+export default function ResultsView({
+  result,
+  onRetake,
+  tweaks,
+  profile,
+  onUpdateResult,
   onUpdateProfile,
-  isReadOnly = false 
+  isReadOnly = false
 }: ResultsViewProps) {
   const [activeTab, setActiveTab] = React.useState("insights");
   const [isSharing, setIsSharing] = useState(false);
@@ -53,8 +53,8 @@ export default function ResultsView({
     }, {} as Record<string, EliminatedCountry[]>);
   }, [result.eliminated]);
 
-  const eliminatedCodes = React.useMemo(() => 
-    result.eliminated.map(e => e.countryCode), 
+  const eliminatedCodes = React.useMemo(() =>
+    result.eliminated.map(e => e.countryCode),
   [result.eliminated]);
 
   const [showShareModal, setShowShareModal] = useState(false);
@@ -82,10 +82,10 @@ export default function ResultsView({
         body: JSON.stringify({ profile: updatedProfile }),
         signal: controller.signal,
       });
-      
+
       if (response.ok) {
         const newResult = await response.json();
-        
+
         // Ensure we only update if this is still the latest request
         if (requestId === latestRequestIdRef.current && !controller.signal.aborted) {
           onUpdateResult({ ...newResult, sessionToken: result.sessionToken });
@@ -108,7 +108,7 @@ export default function ResultsView({
 
   const handleWhatIf = (key: string, value: any) => {
     const updatedProfile = { ...profile, [key]: value };
-    
+
     // Clear existing timer
     if (debounceTimerRef.current) {
       clearTimeout(debounceTimerRef.current);
@@ -153,10 +153,10 @@ export default function ResultsView({
   const handleOverride = async (code: string) => {
     const currentOverrides = (profile as any).overrides || [];
     const isAlreadyOverridden = currentOverrides.includes(code);
-    const newOverrides = isAlreadyOverridden 
+    const newOverrides = isAlreadyOverridden
       ? currentOverrides.filter((c: string) => c !== code)
       : [...currentOverrides, code];
-    
+
     handleWhatIf("overrides", newOverrides);
   };
 
@@ -167,19 +167,19 @@ export default function ResultsView({
           <Globe size={20} className="text-accent-green" />
           <span className="font-display text-lg tracking-tight">CountryDNA</span>
         </div>
-        
+
         <div className="flex items-center gap-4">
           <button onClick={onRetake} className="btn-ghost btn-sm">
             <RefreshCcw size={14} className="mr-2" /> {isReadOnly ? "Take Your Own Quiz" : "Retake Quiz"}
           </button>
           {!isReadOnly && (
-            <button 
-              onClick={handleShare} 
+            <button
+              onClick={handleShare}
               disabled={isSharing || !result.shareReady}
               className={`btn-primary btn-sm ${isSharing || !result.shareReady ? "opacity-50 cursor-not-allowed" : ""}`}
               title={!result.shareReady ? "Sharing is temporarily unavailable" : ""}
             >
-              <Share2 size={14} className="mr-2" /> 
+              <Share2 size={14} className="mr-2" />
               {isSharing ? "Copied!" : "Share Results"}
             </button>
           )}
@@ -205,9 +205,9 @@ export default function ResultsView({
         {/* Left: Globe & Stats */}
         <div className="results-globe-panel">
           <div className="globe-wrap">
-            <GlobeViewer 
-              isResults={true} 
-              matchResults={result.matches} 
+            <GlobeViewer
+              isResults={true}
+              matchResults={result.matches}
               eliminatedCodes={eliminatedCodes}
             />
           </div>
@@ -266,8 +266,8 @@ export default function ResultsView({
                   </div>
 
                   <div className="match-bar-outer my-4">
-                    <motion.div 
-                      className="match-bar-inner bg-accent-green" 
+                    <motion.div
+                      className="match-bar-inner bg-accent-green"
                       initial={{ width: 0 }}
                       animate={{ width: `${match.score}%` }}
                       transition={{ duration: 1, delay: 0.5 + i * 0.05 }}
@@ -303,7 +303,7 @@ export default function ResultsView({
                   </div>
 
                   <div className="card-actions mt-4 pt-4 border-t border-bg-elevated flex gap-3">
-                    <button 
+                    <button
                       className="btn-card-primary"
                       onClick={() => setSelectedCountry({ code: match.countryCode, initialSection: "overview" })}
                     >
@@ -321,7 +321,7 @@ export default function ResultsView({
             })}
 
             {hasMoreMatches && (
-              <button 
+              <button
                 onClick={showMore}
                 className="w-full py-4 mt-4 border border-dashed border-bg-elevated rounded-xl text-text-muted hover:text-text-primary hover:border-text-muted transition-all flex items-center justify-center gap-2 group"
               >
@@ -335,28 +335,28 @@ export default function ResultsView({
         {/* Right: Insights & Filters */}
         <div className="side-panel bg-bg-surface/30">
           <div className="side-tabs">
-            <button 
+            <button
               className={`side-tab ${activeTab === "insights" ? "active" : ""}`}
               onClick={() => setActiveTab("insights")}
             >
               INSIGHTS
             </button>
             {!isReadOnly && (
-              <button 
+              <button
                 className={`side-tab ${activeTab === "whatif" ? "active" : ""}`}
                 onClick={() => setActiveTab("whatif")}
               >
                 WHAT-IF
               </button>
             )}
-            <button 
+            <button
               className={`side-tab ${activeTab === "eliminated" ? "active" : ""}`}
               onClick={() => setActiveTab("eliminated")}
             >
               ELIM ({result.eliminated.length})
             </button>
           </div>
-          
+
           <div className="flex-1 overflow-y-auto">
             {activeTab === "insights" && (
               <div className="p-6">
@@ -403,7 +403,7 @@ export default function ResultsView({
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
                       <span className="text-[10px] text-text-secondary uppercase">English Only</span>
-                      <button 
+                      <button
                         onClick={() => handleWhatIf("languageFlexibility", profile.languageFlexibility === "englishOnly" ? "openToLearning" : "englishOnly")}
                         className={`w-8 h-4 rounded-full transition-colors relative ${profile.languageFlexibility === "englishOnly" ? "bg-accent-green" : "bg-bg-elevated"}`}
                       >
@@ -412,7 +412,7 @@ export default function ResultsView({
                     </div>
                     <div className="flex items-center justify-between">
                       <span className="text-[10px] text-text-secondary uppercase">Chronic Care</span>
-                      <button 
+                      <button
                         onClick={() => handleWhatIf("healthcareNeed", profile.healthcareNeed === "chronic" ? "general" : "chronic")}
                         className={`w-8 h-4 rounded-full transition-colors relative ${profile.healthcareNeed === "chronic" ? "bg-accent-green" : "bg-bg-elevated"}`}
                       >
@@ -434,8 +434,8 @@ export default function ResultsView({
                           handleWhatIf("nonNegotiables", next);
                         }}
                         className={`text-[10px] px-2 py-1 rounded border transition-colors ${
-                          profile.nonNegotiables?.includes(nn) 
-                            ? "bg-accent-green/10 border-accent-green text-accent-green" 
+                          profile.nonNegotiables?.includes(nn)
+                            ? "bg-accent-green/10 border-accent-green text-accent-green"
                             : "border-bg-elevated text-text-muted hover:border-text-muted"
                         }`}
                       >
@@ -463,7 +463,7 @@ export default function ResultsView({
                     </div>
                     {items.map((elim, idx) => {
                       const isOverridden = ((profile as any).overrides || []).includes(elim.countryCode);
-                      
+
                       return (
                         <div key={idx} className="elim-country border-b border-bg-elevated hover:bg-bg-elevated/30 p-4">
                           <div className="flex items-start justify-between gap-3 w-full">
@@ -475,11 +475,11 @@ export default function ResultsView({
                               </div>
                             </div>
                             {!isReadOnly && (
-                              <button 
+                              <button
                                 onClick={() => handleOverride(elim.countryCode)}
                                 className={`text-[10px] font-mono uppercase px-2 py-1 rounded border transition-all ${
-                                  isOverridden 
-                                    ? "bg-accent-green text-bg-primary border-accent-green" 
+                                  isOverridden
+                                    ? "bg-accent-green text-bg-primary border-accent-green"
                                     : "text-text-muted border-bg-elevated hover:border-text-muted"
                                 }`}
                               >
@@ -500,24 +500,24 @@ export default function ResultsView({
 
       <AnimatePresence>
         {selectedCountry && (
-          <DeepDive 
+          <DeepDive
             code={selectedCountry.code}
             initialSection={selectedCountry.initialSection}
-            onClose={() => setSelectedCountry(null)} 
+            onClose={() => setSelectedCountry(null)}
           />
         )}
       </AnimatePresence>
 
       <AnimatePresence>
         {showShareModal && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-[500] bg-black/60 backdrop-blur-md flex items-center justify-center p-6"
             onClick={() => setShowShareModal(false)}
           >
-            <motion.div 
+            <motion.div
               initial={{ scale: 0.9, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 20 }}
@@ -540,7 +540,7 @@ export default function ResultsView({
                       <div className="text-lg font-bold">{result.matches[0].countryName}</div>
                     </div>
                   </div>
-                  
+
                   <div className="space-y-2">
                     {result.matches.slice(0, 3).map((m, i) => (
                       <div key={m.countryCode} className="flex justify-between items-center text-xs">
@@ -554,9 +554,9 @@ export default function ResultsView({
                 <div className="space-y-3">
                   <div className="text-[10px] font-mono text-text-muted uppercase tracking-widest">Results Link</div>
                   <div className="flex gap-2">
-                    <input 
-                      type="text" 
-                      readOnly 
+                    <input
+                      type="text"
+                      readOnly
                       value={shareUrl || ""}
                       className="flex-1 bg-bg-primary border border-bg-elevated rounded-lg px-3 py-2 text-xs font-mono"
                     />
@@ -569,7 +569,7 @@ export default function ResultsView({
                   </p>
                 </div>
 
-                <button 
+                <button
                   className="w-full btn-ghost border-bg-elevated"
                   onClick={handlePngExport}
                 >
@@ -828,8 +828,8 @@ function DeepDive({
                         <span className="font-mono font-bold">{val}/10</span>
                       </div>
                       <div className="h-1.5 bg-bg-elevated rounded-full overflow-hidden">
-                        <motion.div 
-                          className="h-full bg-accent-green" 
+                        <motion.div
+                          className="h-full bg-accent-green"
                           initial={{ width: 0 }}
                           animate={{ width: `${val * 10}%` }}
                         />

@@ -49,8 +49,8 @@ describe("GlobeViewer Progressive Enhancement", () => {
 
   it("includes candidate/eliminated counts in fallback when isResults is true", () => {
     render(
-      <GlobeViewer 
-        isResults={true} 
+      <GlobeViewer
+        isResults={true}
         matchResults={[{ countryCode: "US", rank: 1, score: 95 }]}
         eliminatedCodes={["CA", "MX"]}
       />
@@ -64,16 +64,16 @@ describe("GlobeViewer Progressive Enhancement", () => {
     const originalWebGL = window.WebGLRenderingContext;
     // @ts-expect-error: Mocking WebGL unavailability by deleting the global
     delete window.WebGLRenderingContext;
-    
+
     const fetchSpy = vi.spyOn(global, "fetch");
-    
+
     render(<GlobeViewer isResults={false} />);
-    
+
     // We need to wait a bit for the idle callback/timeout
     await new Promise(resolve => setTimeout(resolve, 1100));
-    
+
     expect(fetchSpy).not.toHaveBeenCalledWith("/data/countries.geojson");
-    
+
     // Restore
     window.WebGLRenderingContext = originalWebGL;
     fetchSpy.mockRestore();
@@ -81,16 +81,16 @@ describe("GlobeViewer Progressive Enhancement", () => {
 
   it("keeps fallback content visible when the GeoJSON fetch rejects", async () => {
     vi.stubGlobal("fetch", vi.fn().mockRejectedValue(new Error("Fetch failed")));
-    
+
     render(<GlobeViewer isResults={false} />);
-    
+
     await new Promise(resolve => setTimeout(resolve, 1100));
-    
+
     expect(screen.getByTestId("globe-fallback")).toBeDefined();
     // It should have opacity-100 (not hidden)
     const fallback = screen.getByTestId("globe-fallback");
     expect(fallback.className).toContain("opacity-100");
-    
+
     vi.unstubAllGlobals();
   });
 });

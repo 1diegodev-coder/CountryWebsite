@@ -70,7 +70,7 @@ describe("ResultsView Performance and Debounce", () => {
     );
 
     fireEvent.click(screen.getByText(/Show more matches/i));
-    
+
     const cards = screen.getAllByRole("heading", { level: 3 });
     expect(cards.length).toBe(20);
     expect(cards[0].textContent).toBe("Country 0");
@@ -97,7 +97,7 @@ describe("ResultsView Performance and Debounce", () => {
     fireEvent.click(screen.getByText(/WHAT-IF/i));
 
     const slider = screen.getByRole("slider");
-    
+
     // Simulate rapid changes
     fireEvent.change(slider, { target: { value: "6000" } });
     fireEvent.change(slider, { target: { value: "7000" } });
@@ -125,10 +125,10 @@ describe("ResultsView Performance and Debounce", () => {
         setTimeout(() => {
           resolve({
             ok: true,
-            json: async () => ({ 
-              ...mockResult, 
+            json: async () => ({
+              ...mockResult,
               sessionToken: `token-${currentCall}`,
-              matches: mockMatches.slice(0, currentCall) 
+              matches: mockMatches.slice(0, currentCall)
             }),
           });
         }, timeout);
@@ -153,15 +153,15 @@ describe("ResultsView Performance and Debounce", () => {
     // First change
     fireEvent.change(slider, { target: { value: "6000" } });
     // Second change (after a bit but before first one finishes)
-    await new Promise(resolve => setTimeout(resolve, 400)); 
+    await new Promise(resolve => setTimeout(resolve, 400));
     fireEvent.change(slider, { target: { value: "7000" } });
 
     // Wait for everything to finish
     await new Promise(resolve => setTimeout(resolve, 1000));
 
     // onUpdateResult should have been called, but the final state should be from call 2
-    expect(onUpdateResult).toHaveBeenCalledTimes(1); 
-    expect(onUpdateResult).toHaveBeenLastCalledWith(expect.objectContaining({ 
+    expect(onUpdateResult).toHaveBeenCalledTimes(1);
+    expect(onUpdateResult).toHaveBeenLastCalledWith(expect.objectContaining({
       matches: expect.arrayContaining([
         expect.objectContaining({ countryCode: "C0" }),
         expect.objectContaining({ countryCode: "C1" }),

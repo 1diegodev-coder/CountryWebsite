@@ -77,7 +77,7 @@ export default function App() {
       // Derive locale and languages from browser/input
       const locale = navigator.language || "en-US";
       const browserLanguages = navigator.languages ? [...navigator.languages] : [locale.split("-")[0]];
-      
+
       const response = await fetch("/api/match", {
         method: "POST",
         headers: { "Content-Type": "application/json" },

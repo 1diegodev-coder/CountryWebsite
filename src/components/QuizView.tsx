@@ -92,7 +92,7 @@ export default function QuizView({ answers, onAnswer, onComplete, initialStep }:
       // In a real app, we'd use the value directly or a callback
       setTimeout(() => {
         // We need to pass the updated answers if we want to call handleNext immediately
-        // but handleNext uses the `answers` state. 
+        // but handleNext uses the `answers` state.
         // For simplicity in this mock, we'll just delay a bit more.
         handleNext();
       }, 500);
@@ -101,7 +101,7 @@ export default function QuizView({ answers, onAnswer, onComplete, initialStep }:
       const newAnswers = currentAnswers.includes(value)
         ? currentAnswers.filter((v: any) => v !== value)
         : [...currentAnswers, value];
-      
+
       if (question?.maxSelect && newAnswers.length > question.maxSelect) return;
       onAnswer(question!.id, newAnswers);
     }
@@ -112,7 +112,7 @@ export default function QuizView({ answers, onAnswer, onComplete, initialStep }:
   const progress = (currentStep / totalSteps) * 100;
   const isMulti = question.type === "multi";
   const currentSelection = answers[question.id];
-  const canContinue = isMulti 
+  const canContinue = isMulti
     ? (Array.isArray(currentSelection) && currentSelection.length > 0)
     : currentSelection !== undefined;
 
@@ -120,13 +120,13 @@ export default function QuizView({ answers, onAnswer, onComplete, initialStep }:
     <div className="quiz-layout">
       <AnimatePresence>
         {showInterim && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-[500] bg-bg-primary/95 backdrop-blur-md flex items-center justify-center p-6"
           >
-            <motion.div 
+            <motion.div
               initial={{ scale: 0.9, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               className="max-w-md w-full bg-bg-surface border border-bg-elevated rounded-2xl p-8 shadow-2xl text-center"
@@ -136,11 +136,11 @@ export default function QuizView({ answers, onAnswer, onComplete, initialStep }:
               </div>
               <h3 className="text-2xl font-bold mb-2">You're halfway there!</h3>
               <p className="text-text-secondary mb-8">
-                Based on what you've told us so far, we've narrowed it down to 
-                <span className="text-accent-green font-bold px-1">{interimData?.candidateCount}</span> 
+                Based on what you've told us so far, we've narrowed it down to
+                <span className="text-accent-green font-bold px-1">{interimData?.candidateCount}</span>
                 countries.
               </p>
-              
+
               <div className="space-y-4 mb-8">
                 <div className="text-[10px] font-mono text-text-muted uppercase tracking-widest">Your top 3 contenders so far:</div>
                 <div className="flex justify-center gap-3">
@@ -176,8 +176,8 @@ export default function QuizView({ answers, onAnswer, onComplete, initialStep }:
             </span>
           </div>
           <div className="progress-bar-outer mt-2">
-            <motion.div 
-              className="progress-bar-inner" 
+            <motion.div
+              className="progress-bar-inner"
               initial={{ width: 0 }}
               animate={{ width: `${progress}%` }}
               transition={{ duration: 0.5 }}
@@ -200,7 +200,7 @@ export default function QuizView({ answers, onAnswer, onComplete, initialStep }:
               className="space-y-2"
             >
               {question.options.map((opt) => {
-                const isSelected = isMulti 
+                const isSelected = isMulti
                   ? (Array.isArray(currentSelection) && currentSelection.includes(opt.value))
                   : currentSelection === opt.value;
 
@@ -234,7 +234,7 @@ export default function QuizView({ answers, onAnswer, onComplete, initialStep }:
           >
             <ArrowLeft size={16} className="mr-2" /> Back
           </button>
-          
+
           {isMulti && (
             <button
               onClick={handleNext}

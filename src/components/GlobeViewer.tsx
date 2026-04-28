@@ -58,7 +58,7 @@ export default function GlobeViewer({ matchResults, eliminatedCodes, isResults }
 
   useEffect(() => {
     setIsMounted(true);
-    
+
     // Check for reduced motion
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
     setPrefersReducedMotion(mediaQuery.matches);
@@ -129,7 +129,7 @@ export default function GlobeViewer({ matchResults, eliminatedCodes, isResults }
       }
       if (eliminatedCodes?.includes(code)) return "#1A2030";
     }
-    
+
     // Neutral state
     return "rgba(45,55,72,0.75)";
   }, [matchResults, eliminatedCodes, isResults]);
@@ -155,7 +155,7 @@ export default function GlobeViewer({ matchResults, eliminatedCodes, isResults }
       style={{ width: "100%", height: "100%" }}
     >
       {/* Fallback Shell */}
-      <div 
+      <div
         data-testid="globe-fallback"
         className={`absolute inset-0 flex flex-col items-center justify-center transition-opacity duration-700 ${webGlActive && countries.features.length > 0 ? "opacity-0 pointer-events-none" : "opacity-100"}`}
         style={{ zIndex: 10 }}

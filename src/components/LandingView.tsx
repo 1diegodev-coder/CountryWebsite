@@ -21,16 +21,16 @@ export default function LandingView({ onStart }: LandingViewProps) {
         >
           CountryDNA
         </motion.div>
-        
+
         <h1 className="landing-headline">
           Find the country<br />
           <span className="text-accent-green italic">built for your life</span>
         </h1>
-        
+
         <p className="landing-sub">
           A 13-question profiling quiz that matches you to your ideal country for relocation — based on real data, not guesswork.
         </p>
-        
+
         <div className="flex flex-wrap gap-6 mb-10 text-text-secondary text-[13px]">
           <div className="flex items-center gap-2">
             <Clock size={16} className="text-accent-green" />
@@ -45,7 +45,7 @@ export default function LandingView({ onStart }: LandingViewProps) {
             <span>10 data dimensions</span>
           </div>
         </div>
-        
+
         <motion.button
           whileHover={{ y: -2 }}
           whileTap={{ scale: 0.98 }}
@@ -54,14 +54,14 @@ export default function LandingView({ onStart }: LandingViewProps) {
         >
           Begin your match <ArrowRight size={18} className="ml-2" />
         </motion.button>
-        
+
         <p className="mt-4 text-[12px] text-text-muted">
           No account required. Results are yours to keep.
         </p>
       </div>
-      
+
       <div className="landing-globe">
-        <GlobeViewer 
+        <GlobeViewer
           isResults={false}
           activeStep={0}
         />
