@@ -248,4 +248,3 @@ Reject the handoff if:
 - What-If requests can overwrite newer state with stale responses.
 - Tests rely on real WebGL.
 - The branch reports “all tests pass” without pasted command output.
-
