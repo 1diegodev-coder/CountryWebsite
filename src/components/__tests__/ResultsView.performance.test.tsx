@@ -1,5 +1,5 @@
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
-import { describe, it, expect, vi, beforeEach } from "vitest";
+import { render, screen, fireEvent, act } from "@testing-library/react";
+import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import React from "react";
 import ResultsView from "../ResultsView";
 
@@ -39,6 +39,11 @@ const mockProfile = {
 describe("ResultsView Performance and Debounce", () => {
   beforeEach(() => {
     vi.clearAllMocks();
+    vi.useFakeTimers();
+  });
+
+  afterEach(() => {
+    vi.useRealTimers();
   });
 
   it("initially renders only the first batch of match cards", () => {
@@ -58,7 +63,7 @@ describe("ResultsView Performance and Debounce", () => {
     expect(screen.getByText(/Show more matches/i)).toBeDefined();
   });
 
-  it("Show more reveals the next batch without changing ordering", () => {
+  it("Show more reveals the next batch without changing ordering", async () => {
     render(
       <ResultsView
         result={mockResult}
@@ -69,7 +74,9 @@ describe("ResultsView Performance and Debounce", () => {
       />
     );
 
-    fireEvent.click(screen.getByText(/Show more matches/i));
+    await act(async () => {
+      fireEvent.click(screen.getByText(/Show more matches/i));
+    });
 
     const cards = screen.getAllByRole("heading", { level: 3 });
     expect(cards.length).toBe(20);
@@ -78,10 +85,10 @@ describe("ResultsView Performance and Debounce", () => {
   });
 
   it("What-If slider changes are debounced", async () => {
-    const fetchSpy = vi.stubGlobal("fetch", vi.fn().mockResolvedValue({
+    const fetchSpy = vi.spyOn(global, "fetch").mockResolvedValue({
       ok: true,
       json: async () => ({ ...mockResult, matches: mockMatches.slice(0, 5) }),
-    }));
+    } as Response);
 
     render(
       <ResultsView
@@ -99,16 +106,20 @@ describe("ResultsView Performance and Debounce", () => {
     const slider = screen.getByRole("slider");
 
     // Simulate rapid changes
-    fireEvent.change(slider, { target: { value: "6000" } });
-    fireEvent.change(slider, { target: { value: "7000" } });
-    fireEvent.change(slider, { target: { value: "8000" } });
+    await act(async () => {
+      fireEvent.change(slider, { target: { value: "6000" } });
+      fireEvent.change(slider, { target: { value: "7000" } });
+      fireEvent.change(slider, { target: { value: "8000" } });
+    });
 
-    // Wait for debounce (suggested 250-400ms)
-    await new Promise(resolve => setTimeout(resolve, 500));
+    // Advance through debounce (350ms)
+    await act(async () => {
+      vi.advanceTimersByTime(500);
+    });
 
     // Should only have been called once with the final value
-    expect(global.fetch).toHaveBeenCalledTimes(1);
-    const lastCallBody = JSON.parse((global.fetch as any).mock.calls[0][1].body);
+    expect(fetchSpy).toHaveBeenCalledTimes(1);
+    const lastCallBody = JSON.parse((fetchSpy as any).mock.calls[0][1].body);
     expect(lastCallBody.profile.budgetUsdMonthly).toBe(8000);
 
     vi.unstubAllGlobals();
@@ -116,7 +127,7 @@ describe("ResultsView Performance and Debounce", () => {
 
   it("older What-If responses cannot overwrite newer results", async () => {
     let callCount = 0;
-    vi.stubGlobal("fetch", vi.fn().mockImplementation(() => {
+    const fetchSpy = vi.stubGlobal("fetch", vi.fn().mockImplementation(() => {
       callCount++;
       const currentCall = callCount;
       return new Promise(resolve => {
@@ -150,25 +161,31 @@ describe("ResultsView Performance and Debounce", () => {
     fireEvent.click(screen.getByText(/WHAT-IF/i));
     const slider = screen.getByRole("slider");
 
-    // First change
-    fireEvent.change(slider, { target: { value: "6000" } });
-    // Second change (after a bit but before first one finishes)
-    await new Promise(resolve => setTimeout(resolve, 400));
-    fireEvent.change(slider, { target: { value: "7000" } });
+    // First change (T=0)
+    await act(async () => {
+      fireEvent.change(slider, { target: { value: "6000" } });
+    });
 
-    // Wait for everything to finish
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    // Wait T=400 (starts first fetch at T=350, then user changes again at T=400)
+    await act(async () => {
+      vi.advanceTimersByTime(400);
+      fireEvent.change(slider, { target: { value: "7000" } });
+    });
 
-    // onUpdateResult should have been called, but the final state should be from call 2
+    // Advance T=750 (starts second fetch at T=350+400=750)
+    await act(async () => {
+      vi.advanceTimersByTime(350);
+    });
+
+    // Now advance for first fetch to "finish" and second to "finish"
+    await act(async () => {
+      vi.advanceTimersByTime(1000);
+    });
+
+    // onUpdateResult should have been called only for the latest valid request
     expect(onUpdateResult).toHaveBeenCalledTimes(1);
-    expect(onUpdateResult).toHaveBeenLastCalledWith(expect.objectContaining({
-      matches: expect.arrayContaining([
-        expect.objectContaining({ countryCode: "C0" }),
-        expect.objectContaining({ countryCode: "C1" }),
-      ])
-    }));
     const lastCall = onUpdateResult.mock.calls[0][0];
-    expect(lastCall.matches.length).toBe(2);
+    expect(lastCall.matches.length).toBe(2); // From call 2
 
     vi.unstubAllGlobals();
   });

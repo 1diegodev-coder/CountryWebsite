@@ -1,11 +1,8 @@
 "use client";
 
-import { useRef, useEffect, useState, useCallback, useMemo } from "react";
-import dynamic from "next/dynamic";
+import { useRef, useEffect, useState, useCallback } from "react";
 import React from "react";
-
-// Dynamic import to avoid SSR issues with WebGL
-const Globe = dynamic(() => import("react-globe.gl"), { ssr: false });
+import Globe from "./GlobeWrapper";
 
 let countriesGeoJsonCache: any | null = null;
 let countriesGeoJsonPromise: Promise<any> | null = null;
@@ -31,6 +28,7 @@ function loadCountriesGeoJson() {
 }
 
 function hasWebGLSupport() {
+  if (typeof window === "undefined") return false;
   try {
     const canvas = document.createElement("canvas");
     return !!(window.WebGLRenderingContext && (canvas.getContext("webgl") || canvas.getContext("experimental-webgl")));
@@ -105,7 +103,7 @@ export default function GlobeViewer({ matchResults, eliminatedCodes, isResults }
     const resizeObserver = new ResizeObserver(updateDimensions);
     resizeObserver.observe(container);
     return () => resizeObserver.disconnect();
-  }, [isMounted]);
+  }, []); // Only run once on mount
 
   useEffect(() => {
     const controls = globeRef.current?.controls?.();
@@ -113,7 +111,7 @@ export default function GlobeViewer({ matchResults, eliminatedCodes, isResults }
 
     controls.autoRotate = !prefersReducedMotion;
     controls.autoRotateSpeed = 0.35;
-  }, [prefersReducedMotion, dimensions.width, dimensions.height, webGlActive]);
+  }, [prefersReducedMotion, dimensions.width, dimensions.height, webGlActive, countries.features.length]);
 
   const getCountryColor = useCallback((d: any) => {
     const code = d.properties.ISO_A2;
@@ -146,7 +144,9 @@ export default function GlobeViewer({ matchResults, eliminatedCodes, isResults }
   const candidateCount = matchResults?.length || 0;
   const eliminatedCount = eliminatedCodes?.length || 0;
 
-  if (!isMounted) return null;
+  // Fallback shell is rendered unconditionally for immediate first-paint.
+  // We use inline styles for motion gating to ensure immediate reliability.
+  const showWebGl = isMounted && webGlActive && !webGlError && countries.features.length > 0 && dimensions.width > 0;
 
   return (
     <div
@@ -154,14 +154,24 @@ export default function GlobeViewer({ matchResults, eliminatedCodes, isResults }
       className="relative overflow-hidden w-full h-full"
       style={{ width: "100%", height: "100%" }}
     >
-      {/* Fallback Shell */}
+      {/* Fallback Shell: lightweight and renders immediately */}
       <div
         data-testid="globe-fallback"
-        className={`absolute inset-0 flex flex-col items-center justify-center transition-opacity duration-700 ${webGlActive && countries.features.length > 0 ? "opacity-0 pointer-events-none" : "opacity-100"}`}
-        style={{ zIndex: 10 }}
+        className="absolute inset-0 flex flex-col items-center justify-center"
+        style={{
+          zIndex: 10,
+          opacity: showWebGl ? 0 : 1,
+          transition: prefersReducedMotion ? "none" : "opacity 700ms ease-in-out",
+          pointerEvents: showWebGl ? "none" : "auto"
+        }}
       >
         <div className="relative w-48 h-48 rounded-full border border-bg-elevated bg-bg-surface/30 flex items-center justify-center overflow-hidden">
-          <div className="absolute inset-0 bg-radial-gradient from-accent-blue/10 to-transparent animate-pulse" />
+          <div
+            className="absolute inset-0 bg-radial-gradient from-accent-blue/10 to-transparent"
+            style={{
+              animation: prefersReducedMotion ? "none" : "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite"
+            }}
+          />
           <div className="text-text-muted opacity-20">
             <svg viewBox="0 0 100 100" className="w-32 h-32 fill-current">
               <circle cx="50" cy="50" r="45" stroke="currentColor" strokeWidth="0.5" fill="none" />
@@ -182,8 +192,8 @@ export default function GlobeViewer({ matchResults, eliminatedCodes, isResults }
         </div>
       </div>
 
-      {/* WebGL Globe */}
-      {webGlActive && !webGlError && dimensions.width > 0 && dimensions.height > 0 && (
+      {/* WebGL Globe: dynamic client-only component */}
+      {showWebGl && (
         <Globe
           ref={globeRef}
           width={dimensions.width}
@@ -192,7 +202,6 @@ export default function GlobeViewer({ matchResults, eliminatedCodes, isResults }
           showAtmosphere={true}
           atmosphereColor="#60A5FA"
           atmosphereAltitude={0.15}
-          // Removed external texture dependency
           polygonsData={countries.features}
           polygonCapColor={getCountryColor}
           polygonSideColor={() => "rgba(0, 0, 0, 0.1)"}

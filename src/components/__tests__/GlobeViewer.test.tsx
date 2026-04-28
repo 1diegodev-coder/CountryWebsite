@@ -1,34 +1,58 @@
-import { render, screen } from "@testing-library/react";
-import { describe, it, expect, vi, beforeEach } from "vitest";
+import { render, screen, act, waitFor } from "@testing-library/react";
+import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import React from "react";
+
+// Use a shared object to track property sets in the mock
+const sharedState = {
+  autoRotate: true,
+};
+
+// Mock GlobeWrapper directly
+vi.mock("../GlobeWrapper", () => {
+  const GlobeWrapperMock = React.forwardRef((props: any, ref: any) => {
+    const controlsObj = {
+      get autoRotate() { return sharedState.autoRotate; },
+      set autoRotate(val) { sharedState.autoRotate = val; },
+      autoRotateSpeed: 0.35,
+    };
+
+    React.useImperativeHandle(ref, () => ({
+      controls: () => controlsObj,
+    }));
+
+    return <div data-testid="mock-globe" />;
+  });
+  GlobeWrapperMock.displayName = "GlobeWrapperMock";
+  return { default: GlobeWrapperMock };
+});
 import GlobeViewer from "../GlobeViewer";
 
-// Mock react-globe.gl to avoid WebGL issues in tests
-vi.mock("react-globe.gl", () => ({
-  default: vi.fn(() => <div data-testid="mock-globe" />),
-}));
-
-// Mock next/dynamic
-vi.mock("next/dynamic", () => ({
-  default: vi.fn((loader) => {
-    const Component = (props: any) => {
-      // In tests, we can simulate different states
-      return <div data-testid="dynamic-globe" {...props} />;
-    };
-    return Component;
-  }),
-}));
-
-// Mock ResizeObserver
-global.ResizeObserver = vi.fn().mockImplementation(() => ({
-  observe: vi.fn(),
-  unobserve: vi.fn(),
-  disconnect: vi.fn(),
-}));
-
 describe("GlobeViewer Progressive Enhancement", () => {
+  const originalCreateElement = document.createElement;
+
   beforeEach(() => {
     vi.clearAllMocks();
+    vi.useFakeTimers();
+    sharedState.autoRotate = true;
+
+    // Mock requestIdleCallback to execute immediately
+    vi.stubGlobal("requestIdleCallback", vi.fn().mockImplementation((cb) => {
+      const handle = setTimeout(cb, 0);
+      return handle;
+    }));
+
+    // Mock ResizeObserver
+    const ResizeObserverMock = vi.fn().mockImplementation((callback) => ({
+      observe: vi.fn((element) => {
+        // Immediate callback
+        callback([{ contentRect: { width: 1000, height: 1000 } }]);
+      }),
+      unobserve: vi.fn(),
+      disconnect: vi.fn(),
+    }));
+
+    vi.stubGlobal("ResizeObserver", ResizeObserverMock);
+
     // Default to no reduced motion
     window.matchMedia = vi.fn().mockImplementation(query => ({
       matches: false,
@@ -40,11 +64,46 @@ describe("GlobeViewer Progressive Enhancement", () => {
       removeEventListener: vi.fn(),
       dispatchEvent: vi.fn(),
     }));
+
+    // Robust WebGL support mock
+    if (!window.WebGLRenderingContext) {
+      (window as any).WebGLRenderingContext = vi.fn();
+    }
+
+    const mockCanvas = {
+      getContext: vi.fn().mockImplementation((type) => {
+        if (type === "webgl" || type === "experimental-webgl") return {};
+        return null;
+      }),
+    };
+
+    vi.spyOn(document, "createElement").mockImplementation((tagName: string) => {
+      const el = originalCreateElement.call(document, tagName);
+      if (tagName === "canvas") return mockCanvas as any;
+
+      el.getBoundingClientRect = vi.fn().mockReturnValue({
+        width: 1000,
+        height: 1000,
+        top: 0,
+        left: 0,
+        bottom: 1000,
+        right: 1000,
+      });
+      return el;
+    });
   });
 
-  it("renders a fallback immediately before WebGL data is available", () => {
+  afterEach(() => {
+    vi.useRealTimers();
+    vi.restoreAllMocks();
+    vi.unstubAllGlobals();
+  });
+
+  it("renders a fallback immediately (sync) before any effects", () => {
     render(<GlobeViewer isResults={false} />);
-    expect(screen.getByTestId("globe-fallback")).toBeDefined();
+    const fallback = screen.getByTestId("globe-fallback");
+    expect(fallback).toBeDefined();
+    expect(fallback.style.opacity).toBe("1");
   });
 
   it("includes candidate/eliminated counts in fallback when isResults is true", () => {
@@ -55,42 +114,74 @@ describe("GlobeViewer Progressive Enhancement", () => {
         eliminatedCodes={["CA", "MX"]}
       />
     );
+    expect(screen.getByText(/1/)).toBeDefined();
+    expect(screen.getByText(/2/)).toBeDefined();
     expect(screen.getByText(/Candidates/)).toBeDefined();
     expect(screen.getByText(/Eliminated/)).toBeDefined();
   });
 
   it("does not attempt heavy GeoJSON fetch when WebGL is unavailable", async () => {
-    // Simulate no WebGL support
     const originalWebGL = window.WebGLRenderingContext;
-    // @ts-expect-error: Mocking WebGL unavailability by deleting the global
+    // @ts-expect-error: Mocking WebGL unavailability
     delete window.WebGLRenderingContext;
 
     const fetchSpy = vi.spyOn(global, "fetch");
 
     render(<GlobeViewer isResults={false} />);
 
-    // We need to wait a bit for the idle callback/timeout
-    await new Promise(resolve => setTimeout(resolve, 1100));
+    await act(async () => {
+      vi.runAllTimers();
+    });
 
     expect(fetchSpy).not.toHaveBeenCalledWith("/data/countries.geojson");
 
-    // Restore
     window.WebGLRenderingContext = originalWebGL;
-    fetchSpy.mockRestore();
   });
 
   it("keeps fallback content visible when the GeoJSON fetch rejects", async () => {
-    vi.stubGlobal("fetch", vi.fn().mockRejectedValue(new Error("Fetch failed")));
+    vi.spyOn(global, "fetch").mockRejectedValue(new Error("Fetch failed"));
 
     render(<GlobeViewer isResults={false} />);
 
-    await new Promise(resolve => setTimeout(resolve, 1100));
+    // Fast-forward through activation and fetch
+    await act(async () => {
+      vi.runAllTimers();
+    });
 
-    expect(screen.getByTestId("globe-fallback")).toBeDefined();
-    // It should have opacity-100 (not hidden)
     const fallback = screen.getByTestId("globe-fallback");
-    expect(fallback.className).toContain("opacity-100");
+    expect(fallback.style.opacity).toBe("1");
+  });
 
-    vi.unstubAllGlobals();
+  it("respects prefers-reduced-motion for auto-rotation", async () => {
+    // Mock reduced motion = true
+    window.matchMedia = vi.fn().mockImplementation(query => ({
+      matches: query === "(prefers-reduced-motion: reduce)",
+      media: query,
+      onchange: null,
+      addListener: vi.fn(),
+      removeListener: vi.fn(),
+      addEventListener: vi.fn(),
+      removeEventListener: vi.fn(),
+      dispatchEvent: vi.fn(),
+    }));
+
+    // Mock successful fetch
+    vi.spyOn(global, "fetch").mockResolvedValue({
+      ok: true,
+      json: async () => ({ features: [{ properties: { ISO_A2: "US" } }] }),
+    } as Response);
+
+    render(<GlobeViewer isResults={false} />);
+
+    // Advance timers in act to trigger activation
+    await act(async () => {
+      vi.runAllTimers();
+    });
+
+    // Check mock globe is present
+    expect(screen.getByTestId("mock-globe")).toBeDefined();
+
+    // Check sharedState.autoRotate
+    expect(sharedState.autoRotate).toBe(false);
   });
 });

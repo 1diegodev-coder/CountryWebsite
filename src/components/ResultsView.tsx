@@ -36,6 +36,17 @@ export default function ResultsView({
     initialSection?: "overview" | "visa";
   } | null>(null);
 
+  // Source of truth for rapid-fire multi-control edits
+  const localProfileRef = useRef<UserProfile>(profile);
+  // Mirror to state for rendering
+  const [localProfile, setLocalProfile] = useState<UserProfile>(profile);
+
+  // Sync local profile when parent profile changes (e.g. from quiz or reset)
+  useEffect(() => {
+    localProfileRef.current = profile;
+    setLocalProfile(profile);
+  }, [profile]);
+
   // Render Pressure: Batching
   const [visibleCount, setVisibleCount] = useState(10);
   const visibleMatches = result.matches.slice(0, visibleCount);
@@ -64,13 +75,7 @@ export default function ResultsView({
   const debounceTimerRef = useRef<NodeJS.Timeout | null>(null);
   const latestRequestIdRef = useRef(0);
 
-  const performWhatIf = useCallback(async (updatedProfile: UserProfile) => {
-    const requestId = ++latestRequestIdRef.current;
-
-    // Cancel any in-flight request
-    if (abortControllerRef.current) {
-      abortControllerRef.current.abort();
-    }
+  const performWhatIf = useCallback(async (updatedProfile: UserProfile, requestId: number) => {
     const controller = new AbortController();
     abortControllerRef.current = controller;
 
@@ -86,7 +91,7 @@ export default function ResultsView({
       if (response.ok) {
         const newResult = await response.json();
 
-        // Ensure we only update if this is still the latest request
+        // Strict stale check: Only update if this is still the latest ID AND not aborted
         if (requestId === latestRequestIdRef.current && !controller.signal.aborted) {
           onUpdateResult({ ...newResult, sessionToken: result.sessionToken });
           onUpdateProfile?.(updatedProfile);
@@ -107,16 +112,29 @@ export default function ResultsView({
   }, [onUpdateResult, onUpdateProfile, result.sessionToken]);
 
   const handleWhatIf = (key: string, value: any) => {
-    const updatedProfile = { ...profile, [key]: value };
+    // 1. Invalidate stale work immediately on intent
+    const requestId = ++latestRequestIdRef.current;
 
-    // Clear existing timer
+    // 2. Abort in-flight immediately to free up connection/processing
+    if (abortControllerRef.current) {
+      abortControllerRef.current.abort();
+    }
+
+    // 3. Update the source of truth ref synchronously to merge rapid edits correctly
+    const updatedProfile = { ...localProfileRef.current, [key]: value };
+    localProfileRef.current = updatedProfile;
+
+    // 4. Mirror to state for rendering
+    setLocalProfile(updatedProfile);
+
+    // 5. Clear existing timer
     if (debounceTimerRef.current) {
       clearTimeout(debounceTimerRef.current);
     }
 
-    // Set new timer
+    // 6. Set new timer
     debounceTimerRef.current = setTimeout(() => {
-      performWhatIf(updatedProfile);
+      performWhatIf(updatedProfile, requestId);
     }, 350);
   };
 
@@ -151,7 +169,7 @@ export default function ResultsView({
   };
 
   const handleOverride = async (code: string) => {
-    const currentOverrides = (profile as any).overrides || [];
+    const currentOverrides = (localProfileRef.current as any).overrides || [];
     const isAlreadyOverridden = currentOverrides.includes(code);
     const newOverrides = isAlreadyOverridden
       ? currentOverrides.filter((c: string) => c !== code)
@@ -382,14 +400,14 @@ export default function ResultsView({
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
                     <h4 className="text-[11px] font-mono text-text-muted uppercase tracking-widest">Adjust Budget</h4>
-                    <span className="text-[11px] font-mono text-accent-green">${profile.budgetUsdMonthly}</span>
+                    <span className="text-[11px] font-mono text-accent-green">${localProfile.budgetUsdMonthly}</span>
                   </div>
                   <input
                     type="range"
                     min="1000"
                     max="15000"
                     step="500"
-                    value={profile.budgetUsdMonthly}
+                    value={localProfile.budgetUsdMonthly}
                     onChange={(e) => handleWhatIf("budgetUsdMonthly", parseInt(e.target.value))}
                     className="w-full h-1 bg-bg-elevated rounded-lg appearance-none cursor-pointer accent-accent-green"
                   />
@@ -404,19 +422,19 @@ export default function ResultsView({
                     <div className="flex items-center justify-between">
                       <span className="text-[10px] text-text-secondary uppercase">English Only</span>
                       <button
-                        onClick={() => handleWhatIf("languageFlexibility", profile.languageFlexibility === "englishOnly" ? "openToLearning" : "englishOnly")}
-                        className={`w-8 h-4 rounded-full transition-colors relative ${profile.languageFlexibility === "englishOnly" ? "bg-accent-green" : "bg-bg-elevated"}`}
+                        onClick={() => handleWhatIf("languageFlexibility", localProfile.languageFlexibility === "englishOnly" ? "openToLearning" : "englishOnly")}
+                        className={`w-8 h-4 rounded-full transition-colors relative ${localProfile.languageFlexibility === "englishOnly" ? "bg-accent-green" : "bg-bg-elevated"}`}
                       >
-                        <div className={`absolute top-0.5 w-3 h-3 bg-white rounded-full transition-all ${profile.languageFlexibility === "englishOnly" ? "left-[18px]" : "left-0.5"}`} />
+                        <div className={`absolute top-0.5 w-3 h-3 bg-white rounded-full transition-all ${localProfile.languageFlexibility === "englishOnly" ? "left-[18px]" : "left-0.5"}`} />
                       </button>
                     </div>
                     <div className="flex items-center justify-between">
                       <span className="text-[10px] text-text-secondary uppercase">Chronic Care</span>
                       <button
-                        onClick={() => handleWhatIf("healthcareNeed", profile.healthcareNeed === "chronic" ? "general" : "chronic")}
-                        className={`w-8 h-4 rounded-full transition-colors relative ${profile.healthcareNeed === "chronic" ? "bg-accent-green" : "bg-bg-elevated"}`}
+                        onClick={() => handleWhatIf("healthcareNeed", localProfile.healthcareNeed === "chronic" ? "general" : "chronic")}
+                        className={`w-8 h-4 rounded-full transition-colors relative ${localProfile.healthcareNeed === "chronic" ? "bg-accent-green" : "bg-bg-elevated"}`}
                       >
-                        <div className={`absolute top-0.5 w-3 h-3 bg-white rounded-full transition-all ${profile.healthcareNeed === "chronic" ? "left-[18px]" : "left-0.5"}`} />
+                        <div className={`absolute top-0.5 w-3 h-3 bg-white rounded-full transition-all ${localProfile.healthcareNeed === "chronic" ? "left-[18px]" : "left-0.5"}`} />
                       </button>
                     </div>
                   </div>
@@ -429,12 +447,12 @@ export default function ResultsView({
                       <button
                         key={nn}
                         onClick={() => {
-                          const current = profile.nonNegotiables || [];
+                          const current = localProfile.nonNegotiables || [];
                           const next = current.includes(nn as any) ? current.filter(x => x !== nn) : [...current, nn];
                           handleWhatIf("nonNegotiables", next);
                         }}
                         className={`text-[10px] px-2 py-1 rounded border transition-colors ${
-                          profile.nonNegotiables?.includes(nn)
+                          localProfile.nonNegotiables?.includes(nn)
                             ? "bg-accent-green/10 border-accent-green text-accent-green"
                             : "border-bg-elevated text-text-muted hover:border-text-muted"
                         }`}
@@ -462,7 +480,7 @@ export default function ResultsView({
                       {reason} ({items.length})
                     </div>
                     {items.map((elim, idx) => {
-                      const isOverridden = ((profile as any).overrides || []).includes(elim.countryCode);
+                      const isOverridden = ((localProfileRef.current as any).overrides || []).includes(elim.countryCode);
 
                       return (
                         <div key={idx} className="elim-country border-b border-bg-elevated hover:bg-bg-elevated/30 p-4">
