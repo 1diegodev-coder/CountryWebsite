@@ -29,7 +29,7 @@ The following table audits the "Top 40" countries and those frequently appearing
 ## 2. Critical Findings
 
 ### A. Data Regression from Legacy
-A comparison between `src/lib/data/countries.ts` and `archive/legacy-static-v1/js/countries2.js` reveals that several high-quality visa pathways were lost during the migration. 
+A comparison between `src/lib/data/countries.ts` and `archive/legacy-static-v1/js/countries2.js` reveals that several high-quality visa pathways were lost during the migration.
 *   **Colombia (CO):** Legacy had Digital Nomad and Pensionado visas. Current is empty.
 *   **Argentina (AR):** Legacy had Rentista and Digital Nomad visas. Current is empty.
 *   **Estonia (EE):** Legacy had Digital Nomad and Startup visas. Current is empty.
