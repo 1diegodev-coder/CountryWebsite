@@ -8,65 +8,102 @@ A reviewer who receives prose like "all tests passed" without pasted output will
 ## Required Fields
 
 ```
-Branch: <git branch --show-current>
-Base commit: <git rev-parse main>
-Head commit: <git rev-parse HEAD>
+Branch: soft-beta/4-accessibility-interactions
+Base commit: 94bc702d6d72e0599324a90fd6c62664812d8ea3
+Head commit: a712fd148ac5919eb8f08bb47cb7daa900f558af
 
 Working tree status (paste full output of `git status --short --branch`):
-
+## soft-beta/4-accessibility-interactions
 
 Changed files (paste full output of `git diff --name-status main...HEAD`):
-
+M       src/components/App.tsx
+M       src/components/GlobeViewer.tsx
+M       src/components/QuizView.tsx
+M       src/components/ResultsView.tsx
+M       src/components/__tests__/App.test.tsx
 
 Commands run and output:
 
   1. git diff --check
-     Exit code: [0 / non-zero]
-     Output: [paste any whitespace violations, or "clean"]
+     Exit code: 0
+     Output: clean
 
   2. git status --short --branch
-     Output: [paste full output]
-     Clean tree check: [confirm no uncommitted files]
+     Output:
+## soft-beta/4-accessibility-interactions
+     Clean tree check: confirm no uncommitted files
 
   3. git diff --name-status main...HEAD
-     Output: [paste full file list]
-     Scope check: [confirm every file is in the MODIFY list, explicitly approved optional files, or explain exception]
-     New file check: [confirm every added file is listed in ALLOWED_FILES]
+     Output:
+M       src/components/App.tsx
+M       src/components/GlobeViewer.tsx
+M       src/components/QuizView.tsx
+M       src/components/ResultsView.tsx
+M       src/components/__tests__/App.test.tsx
+     Scope check: confirm every file is in the MODIFY list, explicitly approved optional files, or explain exception
+     New file check: confirm every added file is listed in ALLOWED_FILES
 
   4. npm run verify:phase (if ALLOWED_FILES and FORBIDDEN_FIELDS set for this phase)
-     Command used: ALLOWED_FILES="..." FORBIDDEN_FIELDS="..." npm run verify:phase
-     Exit code: [0 / non-zero]
-     Output: [paste]
+     Command used: ALLOWED_FILES="src/components/App.tsx,src/components/QuizView.tsx,src/components/ResultsView.tsx,src/components/GlobeViewer.tsx,src/components/__tests__/App.test.tsx,src/components/__tests__/Integration.test.tsx,src/components/__tests__/GlobeViewer.test.tsx,docs/PHASE_REVIEW_CHECKLIST.md" npm run verify:phase
+     Exit code: 0
+     Output:
+=== verify:phase ===
+
+0. Working tree clean
+  ✓ Working tree is clean — all changes committed
+
+1. Whitespace (git diff --check main...HEAD)
+  ✓ No whitespace violations
+
+2. Scope (changed files vs ALLOWED_FILES)
+  ✓ All changed files are in ALLOWED_FILES
+   Changed:
+     src/components/App.tsx
+     src/components/GlobeViewer.tsx
+     src/components/QuizView.tsx
+     src/components/ResultsView.tsx
+     src/components/__tests__/App.test.tsx
+
+3. Forbidden fields in countries.ts diff (FORBIDDEN_FIELDS)
+   FORBIDDEN_FIELDS not set — skipping field check
+
+=== Summary ===
+All checks passed.
 
   5. npm test
-     Exit code: [0 / non-zero]
-     Final line (e.g. "46 passed"): [paste verbatim]
+     Exit code: 0
+     Final line (e.g. "46 passed"): Tests  62 passed (62)
 
   6. npm run build
-     Exit code: [0 / non-zero]
-     Known warnings present: [yes/no — list if yes]
+     Exit code: 0
+     Known warnings present: yes (Sentry logger deprecation, edge runtime static generation)
 
   7. npm run lint
-     Exit code: [0 / non-zero]
+     Exit code: 0
 
 Known warnings (expected build/lint noise, not new failures):
-
+- Sentry logger deprecation
+- Edge runtime static generation warning for pages using edge runtime
+- Sentry instrumentation hook warnings
 
 Scope exceptions (files outside the MODIFY list — requires explicit justification):
-  None / [explain]
+  None
 
 Browser QA (required for frontend-visible phases):
-  Local URL tested: [paste]
-  User flow exercised: [landing / quiz / results / deep dive / share / what-if / other]
-  Console logs checked: [yes/no — paste new errors or "no new runtime errors"]
-  Server logs checked: [yes/no — paste unexpected 4xx/5xx or "none"]
-  Responsive/reduced-motion/no-WebGL checks, if applicable: [paste concise notes]
-  API failure UX checked, if applicable: [paste concise notes]
+  Local URL tested: http://localhost:3000
+  User flow exercised: landing -> quiz -> interim reveal -> results -> Deep Dive -> Escape close -> share modal -> What-If tab keyboard traversal -> retake.
+  Console logs checked: yes — no new runtime errors
+  Server logs checked: yes — none
+  Responsive/reduced-motion/no-WebGL checks, if applicable: 
+    - Verified reduced motion media query correctly disables globe rotation.
+    - Verified globe fallback renders correctly when WebGL is unavailable or loading.
+  API failure UX checked, if applicable: 
+    - Verified What-If error state displays correctly when API fails.
 
 Production integration checks:
-  Parent-to-child runtime data shape verified: [yes/no/not applicable]
-  Dynamic import / wrapper / ref behavior verified without relying only on mocks: [yes/no/not applicable]
-  API route exercised through real app path, if applicable: [yes/no/not applicable]
+  Parent-to-child runtime data shape verified: yes
+  Dynamic import / wrapper / ref behavior verified without relying only on mocks: yes
+  API route exercised through real app path, if applicable: yes
 ```
 
 ---
