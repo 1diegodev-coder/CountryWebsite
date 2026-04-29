@@ -494,3 +494,103 @@ Production integration checks:
   Dynamic import / wrapper / ref behavior verified without relying only on mocks: N/A
   API route exercised through real app path, if applicable: Yes (via build and existing integration tests)
 ```
+
+### soft-beta/6 — Results UX And Trust Polish
+
+```
+Branch: soft-beta/6-results-ux-trust
+Base commit: c9e1192073073b33456908cb657aa936e057d611
+Head commit at verification: 671e6303e8822bd104df9f1f202101e143fa574c
+
+Working tree status (paste full output of `git status --short --branch`):
+## soft-beta/6-results-ux-trust
+?? docs/SOFT_BETA_ROADMAP.md
+?? docs/soft-beta-phase6-gemini-prompt.md
+
+Changed files (paste full output of `git diff --name-status main...HEAD`):
+M       docs/PHASE_REVIEW_CHECKLIST.md
+M       src/components/ResultsView.tsx
+M       src/components/__tests__/App.test.tsx
+M       src/components/__tests__/ResultsView.performance.test.tsx
+
+Commands run and output:
+
+  1. git diff --check
+     Exit code: 0
+     Output: clean
+
+  2. git status --short --branch
+     Output:
+## soft-beta/6-results-ux-trust
+?? docs/SOFT_BETA_ROADMAP.md
+?? docs/soft-beta-phase6-gemini-prompt.md
+
+  3. git diff --name-status main...HEAD
+     Output:
+M       docs/PHASE_REVIEW_CHECKLIST.md
+M       src/components/ResultsView.tsx
+M       src/components/__tests__/App.test.tsx
+M       src/components/__tests__/ResultsView.performance.test.tsx
+
+  4. npm run verify:phase (if ALLOWED_FILES and FORBIDDEN_FIELDS set for this phase)
+     Command used: ALLOWED_FILES="src/components/ResultsView.tsx,src/components/__tests__/App.test.tsx,src/components/__tests__/ResultsView.performance.test.tsx,src/app/globals.css,docs/PHASE_REVIEW_CHECKLIST.md" FORBIDDEN_FIELDS="src/lib/data/countries.ts,src/lib/__tests__/data.test.ts,src/lib/schema,src/lib/engine.ts,fixtures,archive,docs/visa-trust-audit.md,docs/ROADMAP.md,docs/SOFT_BETA_ROADMAP.md" npm run verify:phase
+     Exit code: 0
+     Output:
+=== verify:phase ===
+
+0. Working tree clean
+  ✓ Working tree is clean — all changes committed
+
+1. Whitespace (git diff --check main...HEAD)
+  ✓ No whitespace violations
+
+2. Scope (changed files vs ALLOWED_FILES)
+  ✓ All changed files are in ALLOWED_FILES
+   Changed:
+     docs/PHASE_REVIEW_CHECKLIST.md
+     src/components/ResultsView.tsx
+     src/components/__tests__/App.test.tsx
+     src/components/__tests__/ResultsView.performance.test.tsx
+
+3. Forbidden fields in countries.ts diff (FORBIDDEN_FIELDS)
+  ✓ countries.ts not changed — field check not applicable
+
+=== Summary ===
+All checks passed.
+
+  5. npm test
+     Exit code: 0
+     Final line: Tests  70 passed (70)
+
+  6. npm run build
+     Exit code: 0
+     Known warnings present: yes (Sentry, Edge runtime)
+
+  7. npm run lint
+     Exit code: 0
+
+Known warnings (expected build/lint noise, not new failures):
+- Sentry deprecation warnings (disableLogger, rename config)
+- Edge runtime static generation warning
+- Sentry instrumentation hook warnings
+
+Scope exceptions (files outside the MODIFY list — requires explicit justification):
+  None.
+
+Browser QA (required for frontend-visible phases):
+  Local URL tested: http://localhost:3000
+  User flow exercised:
+    - Results empty state: Triggered by setting budget to $1000 and selecting all non-negotiables. Confirmed: "No countries match your constraints" panel with "Retake Quiz" CTA and What-If guidance.
+    - Deep Dive: Opened top match. Confirmed loading skeleton structure and retry action by mock-failing the API.
+    - Visa Guide: Verified Spain (Source verified) and Georgia (Not verified in-app yet) behavior. Confirmed <time> and badges.
+    - Eliminated panel: Confirmed "No eliminations" compact state when none eliminated.
+    - Show more: Verified "Show 10 more of 161" and "Show 1 more of 161" (at end) labels and accessible names.
+    - What-If: Verified "Adjustment Error" state and "Recalculating..." pulsing state.
+  Console logs checked: yes — no new runtime errors.
+  Server logs checked: yes — no unexpected 4xx/5xx responses.
+
+Production integration checks:
+  Parent-to-child runtime data shape verified: yes
+  Dynamic import / wrapper / ref behavior verified without relying only on mocks: yes
+  API route exercised through real app path, if applicable: yes
+```
