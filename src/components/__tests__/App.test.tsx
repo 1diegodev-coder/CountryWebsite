@@ -293,6 +293,200 @@ describe('ResultsView', () => {
     vi.unstubAllGlobals();
     cleanup();
   });
+
+  it('renders Source verified badge with safe external link when pathway has sourceUrl', async () => {
+    window.HTMLElement.prototype.scrollIntoView = vi.fn();
+    vi.stubGlobal(
+      'fetch',
+      vi.fn().mockResolvedValue({
+        ok: true,
+        json: async () => mockCountryPT,
+      }),
+    );
+
+    render(
+      <ResultsView
+        result={{
+          sessionToken: 'test-token',
+          shareReady: false,
+          candidateCount: 1,
+          eliminatedCount: 0,
+          matches: [{
+            countryCode: 'PT',
+            countryName: 'Portugal',
+            countryDescriptor: 'A sun-drenched Atlantic nation.',
+            dataConfidence: 'medium',
+            score: 88,
+            rank: 1,
+            whyFit: ['Strong visa access.'],
+            watchOut: ['Housing costs can be high.'],
+            costRealityText: 'Fits the stated budget.',
+            dimensionScores: {
+              cost: 5.7, safety: 8.6, healthcare: 7.2, visaEase: 8,
+              digitalInfra: 5.7, climate: 6.7, english: 4.8,
+              lgbtqSafety: 8.3, techEcosystem: 7.1, naturalEnvironment: 5.2,
+            },
+          }],
+          eliminated: [],
+          profileSummary: 'Test profile',
+          computedWeights: {
+            cost: 0.15, safety: 0.10, healthcare: 0.08, visaEase: 0.15,
+            digitalInfra: 0.18, climate: 0.08, english: 0.08,
+            lgbtqSafety: 0.08, techEcosystem: 0.08, naturalEnvironment: 0.02,
+          },
+          generatedAt: new Date().toISOString(),
+        }}
+        onRetake={vi.fn()}
+        tweaks={{}}
+        profile={profile as any}
+        onUpdateResult={vi.fn()}
+        isReadOnly
+      />,
+    );
+
+    fireEvent.click(screen.getByText('Visa Guide'));
+
+    const sourceLink = await screen.findByRole('link', {
+      name: /official source for D8 Digital Nomad Visa/i,
+    });
+    expect(sourceLink.getAttribute('href')).toBe('https://vistos.mne.gov.pt/');
+    expect(sourceLink.getAttribute('target')).toBe('_blank');
+    const rel = sourceLink.getAttribute('rel') || '';
+    expect(rel).toContain('noopener');
+    expect(rel).toContain('noreferrer');
+    expect(screen.getByText(/Source verified/i)).toBeDefined();
+
+    vi.unstubAllGlobals();
+    cleanup();
+  });
+
+  it('renders lastVerified as a <time> element with ISO dateTime', async () => {
+    window.HTMLElement.prototype.scrollIntoView = vi.fn();
+    vi.stubGlobal(
+      'fetch',
+      vi.fn().mockResolvedValue({
+        ok: true,
+        json: async () => mockCountryPT,
+      }),
+    );
+
+    const { container } = render(
+      <ResultsView
+        result={{
+          sessionToken: 'test-token',
+          shareReady: false,
+          candidateCount: 1,
+          eliminatedCount: 0,
+          matches: [{
+            countryCode: 'PT',
+            countryName: 'Portugal',
+            countryDescriptor: 'A sun-drenched Atlantic nation.',
+            dataConfidence: 'medium',
+            score: 88,
+            rank: 1,
+            whyFit: ['Strong visa access.'],
+            watchOut: ['Housing costs can be high.'],
+            costRealityText: 'Fits the stated budget.',
+            dimensionScores: {
+              cost: 5.7, safety: 8.6, healthcare: 7.2, visaEase: 8,
+              digitalInfra: 5.7, climate: 6.7, english: 4.8,
+              lgbtqSafety: 8.3, techEcosystem: 7.1, naturalEnvironment: 5.2,
+            },
+          }],
+          eliminated: [],
+          profileSummary: 'Test profile',
+          computedWeights: {
+            cost: 0.15, safety: 0.10, healthcare: 0.08, visaEase: 0.15,
+            digitalInfra: 0.18, climate: 0.08, english: 0.08,
+            lgbtqSafety: 0.08, techEcosystem: 0.08, naturalEnvironment: 0.02,
+          },
+          generatedAt: new Date().toISOString(),
+        }}
+        onRetake={vi.fn()}
+        tweaks={{}}
+        profile={profile as any}
+        onUpdateResult={vi.fn()}
+        isReadOnly
+      />,
+    );
+
+    fireEvent.click(screen.getByText('Visa Guide'));
+    await screen.findByText('D8 Digital Nomad Visa');
+
+    const timeEl = container.querySelector('time');
+    expect(timeEl).not.toBeNull();
+    expect(timeEl?.getAttribute('dateTime')).toBe('2026-04-27');
+    expect(timeEl?.textContent).toBe('2026-04-27');
+
+    vi.unstubAllGlobals();
+    cleanup();
+  });
+
+  it('shows trust-preserving empty visa state copy when visaPathways is empty', async () => {
+    window.HTMLElement.prototype.scrollIntoView = vi.fn();
+    const emptyVisaCountry = {
+      name: 'Test Country',
+      iso2: 'TC',
+      descriptor: 'A test country.',
+      capitalCity: 'Test City',
+      currency: { code: 'TST', name: 'Test' },
+      dataConfidence: 'high',
+      costBreakdown: { totalEstimateUsd: 2000 },
+      dimensions: {},
+      visaPathways: [],
+    };
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue({
+      ok: true,
+      json: async () => emptyVisaCountry,
+    }));
+
+    render(
+      <ResultsView
+        result={{
+          sessionToken: 'test-token',
+          shareReady: false,
+          candidateCount: 1,
+          eliminatedCount: 0,
+          matches: [{
+            countryCode: 'TC',
+            countryName: 'Test Country',
+            countryDescriptor: 'A test country.',
+            dataConfidence: 'high',
+            score: 80,
+            rank: 1,
+            whyFit: [],
+            watchOut: [],
+            costRealityText: 'Fits budget',
+            dimensionScores: {} as any,
+          }],
+          eliminated: [],
+          profileSummary: 'Test',
+          computedWeights: {} as any,
+          generatedAt: new Date().toISOString(),
+        }}
+        onRetake={vi.fn()}
+        tweaks={{}}
+        profile={profile as any}
+        onUpdateResult={vi.fn()}
+        isReadOnly
+      />,
+    );
+
+    fireEvent.click(screen.getByText('Deep Dive Details'));
+    await screen.findByText('Test Country');
+
+    expect(screen.getAllByText(/not verified in-app yet/i).length).toBeGreaterThanOrEqual(1);
+    expect(
+      screen.getByText(/sourced from primary government references/i),
+    ).toBeDefined();
+    expect(
+      screen.getByRole('status', { name: /visa pathway data not yet verified/i }),
+    ).toBeDefined();
+    expect(screen.queryByText(/coming soon/i)).toBeNull();
+
+    vi.unstubAllGlobals();
+    cleanup();
+  });
 });
 
 describe('Accessibility', () => {

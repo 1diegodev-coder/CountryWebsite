@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { RefreshCcw, Share2, MapPin, Check, AlertTriangle, TrendingUp, Globe, Info, Sliders, X, ChevronDown } from "lucide-react";
+import { RefreshCcw, Share2, MapPin, Check, AlertTriangle, TrendingUp, Globe, Info, Sliders, X, ChevronDown, ShieldCheck, ExternalLink } from "lucide-react";
 import GlobeViewer from "./GlobeViewer";
 import { MatchPayload, EliminatedCountry } from "../lib/schema/match";
 import { UserProfile } from "../lib/schema/profile";
@@ -842,14 +842,14 @@ function DeepDive({
           </div>
 
           {loading ? (
-            <div className="space-y-4 animate-pulse">
+            <div role="status" aria-label="Loading country details" className="space-y-4 animate-pulse">
               <div className="h-40 bg-bg-elevated rounded-xl" />
               <div className="h-8 w-1/2 bg-bg-elevated rounded" />
               <div className="h-32 bg-bg-elevated rounded-xl" />
             </div>
           ) : error ? (
-            <div className="flex flex-col items-center justify-center py-12 text-center space-y-4">
-              <AlertTriangle size={48} className="text-accent-warning opacity-50" />
+            <div role="alert" className="flex flex-col items-center justify-center py-12 text-center space-y-4">
+              <AlertTriangle size={48} className="text-accent-warning opacity-50" aria-hidden="true" />
               <p className="text-text-secondary max-w-xs">{error}</p>
               <button onClick={onClose} className="btn-ghost btn-sm border-bg-elevated">Close</button>
             </div>
@@ -889,11 +889,13 @@ function DeepDive({
                           <a
                             href={pathway.sourceUrl}
                             target="_blank"
-                            rel="noreferrer"
-                            className="text-[10px] font-mono text-accent-green uppercase hover:underline"
-                            aria-label={`Official source for ${pathway.name} visa`}
+                            rel="noopener noreferrer"
+                            aria-label={`Official source for ${pathway.name} — opens in a new tab`}
+                            className="inline-flex items-center gap-1 text-[10px] font-mono uppercase tracking-wider text-accent-green border border-accent-green/30 bg-accent-green/5 px-2 py-1 rounded hover:bg-accent-green/10 focus-visible:outline focus-visible:outline-1 focus-visible:outline-accent-green"
                           >
-                            Source
+                            <ShieldCheck size={10} aria-hidden="true" />
+                            Source verified
+                            <ExternalLink size={10} aria-hidden="true" className="opacity-60" />
                           </a>
                         </div>
                         <div className="grid grid-cols-2 gap-3 text-[11px]">
@@ -933,7 +935,8 @@ function DeepDive({
                           <p className="text-[11px] text-text-secondary leading-relaxed">{pathway.notes}</p>
                         )}
                         <div className="text-[9px] text-text-muted font-mono uppercase">
-                          Last verified {pathway.lastVerified}
+                          Last verified{' '}
+                          <time dateTime={pathway.lastVerified}>{pathway.lastVerified}</time>
                         </div>
                       </div>
                     ))}
@@ -945,13 +948,17 @@ function DeepDive({
                     </div>
                   </div>
                 ) : (
-                  <div className="p-5 bg-bg-elevated/20 rounded-xl border border-bg-elevated space-y-3">
-                    <div className="inline-flex items-center gap-2 text-[10px] font-mono text-accent-warning bg-accent-warning/10 border border-accent-warning/20 px-2 py-1 rounded uppercase">
-                      <AlertTriangle size={10} />
-                      Coming soon
+                  <div
+                    role="status"
+                    aria-label="Visa pathway data not yet verified"
+                    className="p-5 bg-bg-elevated/20 rounded-xl border border-bg-elevated space-y-3"
+                  >
+                    <div className="inline-flex items-center gap-2 text-[10px] font-mono text-text-muted bg-bg-elevated/60 border border-bg-elevated px-2 py-1 rounded uppercase">
+                      <Info size={10} aria-hidden="true" />
+                      Not verified in-app yet
                     </div>
                     <p className="text-[11px] text-text-muted leading-relaxed">
-                      Visa pathway data is still being verified for this country. Check official government sources before making relocation decisions.
+                      Visa pathway data for this country is not verified in-app yet. Many countries operate working visa programs we have not yet sourced from primary government references — check the country&apos;s official immigration site before making relocation decisions.
                     </p>
                   </div>
                 )}
