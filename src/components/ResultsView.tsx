@@ -384,6 +384,7 @@ export default function ResultsView({
               <button
                 onClick={showMore}
                 className="w-full py-4 mt-4 border border-dashed border-bg-elevated rounded-xl text-text-muted hover:text-text-primary hover:border-text-muted transition-all flex items-center justify-center gap-2 group"
+                aria-label="Show more matches"
               >
                 <span>Show more matches</span>
                 <ChevronDown size={16} className="group-hover:translate-y-0.5 transition-transform" />
@@ -435,7 +436,7 @@ export default function ResultsView({
                 <h4 className="text-[11px] font-mono text-text-muted uppercase tracking-widest mb-4">Weighting Modifiers</h4>
                 <div className="space-y-4">
                   {Object.entries(result.computedWeights).map(([dim, weight]) => (
-                    <div key={dim} className="space-y-1">
+                    <div key={dim} className="space-y-1" role="img" aria-label={`${dim.replace(/([A-Z])/g, ' $1')}: ${(weight * 100).toFixed(1)}%`}>
                       <div className="flex justify-between items-center text-[11px]">
                         <span className="text-text-secondary capitalize">{dim.replace(/([A-Z])/g, ' $1')}</span>
                         <span className="font-mono text-accent-green">{(weight * 100).toFixed(1)}%</span>
@@ -524,6 +525,7 @@ export default function ResultsView({
                             : "border-bg-elevated text-text-muted hover:border-text-muted"
                         }`}
                         aria-pressed={localProfile.nonNegotiables?.includes(nn)}
+                        aria-label={`Toggle ${nn} requirement`}
                       >
                         {nn}
                       </button>
@@ -532,7 +534,7 @@ export default function ResultsView({
                 </div>
 
                 {isWhatIfLoading && (
-                  <div className="flex items-center gap-2 text-accent-green text-[10px] font-mono animate-pulse">
+                  <div className="flex items-center gap-2 text-accent-green text-[10px] font-mono animate-pulse" aria-live="polite">
                     <RefreshCcw size={10} className="animate-spin" />
                     Recalculating...
                   </div>
