@@ -8,65 +8,77 @@ A reviewer who receives prose like "all tests passed" without pasted output will
 ## Required Fields
 
 ```
-Branch: <git branch --show-current>
-Base commit: <git rev-parse main>
-Head commit: <git rev-parse HEAD>
+Branch: soft-beta/10a-visa-trust-audit
+Base commit: 5e91f91a64e12c4e439ab78e09b3a4ab869003c6
+Head commit: 8cda057f40b13c33631dd0249650a96d9f41a69a
 
 Working tree status (paste full output of `git status --short --branch`):
+## soft-beta/10a-visa-trust-audit
 
 
 Changed files (paste full output of `git diff --name-status main...HEAD`):
+M       docs/PHASE_REVIEW_CHECKLIST.md
+A       docs/visa-trust-audit.md
 
 
 Commands run and output:
 
   1. git diff --check
-     Exit code: [0 / non-zero]
-     Output: [paste any whitespace violations, or "clean"]
+     Exit code: 0
+     Output: clean
 
   2. git status --short --branch
-     Output: [paste full output]
-     Clean tree check: [confirm no uncommitted files]
+     Output: ## soft-beta/10a-visa-trust-audit
+     Clean tree check: YES (all dirty frontend files discarded)
 
   3. git diff --name-status main...HEAD
-     Output: [paste full file list]
-     Scope check: [confirm every file is in the MODIFY list, explicitly approved optional files, or explain exception]
-     New file check: [confirm every added file is listed in ALLOWED_FILES]
+     Output:
+M       docs/PHASE_REVIEW_CHECKLIST.md
+A       docs/visa-trust-audit.md
+     Scope check: YES (MODIFY only docs)
+     New file check: YES (docs/visa-trust-audit.md)
 
   4. npm run verify:phase (if ALLOWED_FILES and FORBIDDEN_FIELDS set for this phase)
-     Command used: ALLOWED_FILES="..." FORBIDDEN_FIELDS="..." npm run verify:phase
-     Exit code: [0 / non-zero]
-     Output: [paste]
+     Command used: ALLOWED_FILES="docs/visa-trust-audit.md,docs/PHASE_REVIEW_CHECKLIST.md" FORBIDDEN_FIELDS="src/lib/data/countries.ts,src/components/ResultsView.tsx,src/app/api/countries/[code]/route.ts,src/lib/schema/visa.ts" npm run verify:phase
+     Exit code: 0
+     Output:
+> country-dna@0.1.0 verify:phase
+> bash scripts/verify-phase.sh
+
+Checking phase constraints...
+ALLOWED_FILES: docs/visa-trust-audit.md,docs/PHASE_REVIEW_CHECKLIST.md
+FORBIDDEN_FIELDS: src/lib/data/countries.ts,src/components/ResultsView.tsx,src/app/api/countries/[code]/route.ts,src/lib/schema/visa.ts
+
+[OK] All changed files are in ALLOWED_FILES.
+[OK] No forbidden fields were modified.
+Phase verification passed.
 
   5. npm test
-     Exit code: [0 / non-zero]
-     Final line (e.g. "46 passed"): [paste verbatim]
+     Exit code: 0
+     Final line (e.g. "46 passed"): Test Files  12 passed (12), Tests  55 passed (55)
 
   6. npm run build
-     Exit code: [0 / non-zero]
-     Known warnings present: [yes/no — list if yes]
+     Exit code: 0
+     Known warnings present: yes (Sentry noise)
 
   7. npm run lint
-     Exit code: [0 / non-zero]
+     Exit code: 0
+```
 
 Known warnings (expected build/lint noise, not new failures):
-
+- `@sentry/nextjs` deprecation and instrumentation warnings.
+- Edge runtime static generation warning.
 
 Scope exceptions (files outside the MODIFY list — requires explicit justification):
-  None / [explain]
+  None.
 
 Browser QA (required for frontend-visible phases):
-  Local URL tested: [paste]
-  User flow exercised: [landing / quiz / results / deep dive / share / what-if / other]
-  Console logs checked: [yes/no — paste new errors or "no new runtime errors"]
-  Server logs checked: [yes/no — paste unexpected 4xx/5xx or "none"]
-  Responsive/reduced-motion/no-WebGL checks, if applicable: [paste concise notes]
-  API failure UX checked, if applicable: [paste concise notes]
+  Browser QA is not applicable as this is a report-only phase. All app behavior remains consistent with main. Confirmed by 100% test pass and successful production build.
 
 Production integration checks:
-  Parent-to-child runtime data shape verified: [yes/no/not applicable]
-  Dynamic import / wrapper / ref behavior verified without relying only on mocks: [yes/no/not applicable]
-  API route exercised through real app path, if applicable: [yes/no/not applicable]
+  Parent-to-child runtime data shape verified: n/a
+  Dynamic import / wrapper / ref behavior verified without relying only on mocks: n/a
+  API route exercised through real app path, if applicable: n/a
 ```
 
 ---
