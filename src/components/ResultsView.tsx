@@ -36,6 +36,8 @@ export default function ResultsView({
     code: string;
     initialSection?: "overview" | "visa";
   } | null>(null);
+  const lastMatchFocusRef = useRef<HTMLButtonElement | null>(null);
+  const shareTriggerRef = useRef<HTMLButtonElement>(null);
 
   // Source of truth for rapid-fire multi-control edits
   const localProfileRef = useRef<UserProfile>(profile);
@@ -70,7 +72,6 @@ export default function ResultsView({
   [result.eliminated]);
 
   const [showShareModal, setShowShareModal] = useState(false);
-  const shareTriggerRef = useRef<HTMLButtonElement>(null);
 
   // What-If Request Pressure: Debounce & Cancellation
   const abortControllerRef = useRef<AbortController | null>(null);
@@ -156,12 +157,6 @@ export default function ResultsView({
     };
   }, []);
 
-  const handleShare = async () => {
-    const url = `${window.location.origin}/r/${result.sessionToken}`;
-    setShareUrl(url);
-    setShowShareModal(true);
-  };
-
   useEffect(() => {
     if (!showShareModal) return;
 
@@ -175,6 +170,12 @@ export default function ResultsView({
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [showShareModal]);
+
+  const handleShare = async () => {
+    const url = `${window.location.origin}/r/${result.sessionToken}`;
+    setShareUrl(url);
+    setShowShareModal(true);
+  };
 
   const copyToClipboard = async () => {
     if (shareUrl) {
@@ -352,14 +353,20 @@ export default function ResultsView({
                   <div className="card-actions mt-4 pt-4 border-t border-bg-elevated flex gap-3">
                     <button
                       className="btn-card-primary"
-                      onClick={() => setSelectedCountry({ code: match.countryCode, initialSection: "overview" })}
+                      onClick={(e) => {
+                        lastMatchFocusRef.current = e.currentTarget;
+                        setSelectedCountry({ code: match.countryCode, initialSection: "overview" });
+                      }}
                       aria-label={`View deep dive details for ${match.countryName}`}
                     >
                       Deep Dive Details
                     </button>
                     <button
                       className="btn-card-ghost"
-                      onClick={() => setSelectedCountry({ code: match.countryCode, initialSection: "visa" })}
+                      onClick={(e) => {
+                        lastMatchFocusRef.current = e.currentTarget;
+                        setSelectedCountry({ code: match.countryCode, initialSection: "visa" });
+                      }}
                       aria-label={`View visa guide for ${match.countryName}`}
                     >
                       Visa Guide
@@ -383,8 +390,12 @@ export default function ResultsView({
 
         {/* Right: Insights & Filters */}
         <div className="side-panel bg-bg-surface/30">
-          <div className="side-tabs">
+          <div className="side-tabs" role="tablist" aria-label="Results view options">
             <button
+              role="tab"
+              aria-selected={activeTab === "insights"}
+              aria-controls="insights-panel"
+              id="tab-insights"
               className={`side-tab ${activeTab === "insights" ? "active" : ""}`}
               onClick={() => setActiveTab("insights")}
             >
@@ -392,6 +403,10 @@ export default function ResultsView({
             </button>
             {!isReadOnly && (
               <button
+                role="tab"
+                aria-selected={activeTab === "whatif"}
+                aria-controls="whatif-panel"
+                id="tab-whatif"
                 className={`side-tab ${activeTab === "whatif" ? "active" : ""}`}
                 onClick={() => setActiveTab("whatif")}
               >
@@ -399,6 +414,10 @@ export default function ResultsView({
               </button>
             )}
             <button
+              role="tab"
+              aria-selected={activeTab === "eliminated"}
+              aria-controls="eliminated-panel"
+              id="tab-eliminated"
               className={`side-tab ${activeTab === "eliminated" ? "active" : ""}`}
               onClick={() => setActiveTab("eliminated")}
             >
@@ -408,7 +427,7 @@ export default function ResultsView({
 
           <div className="flex-1 overflow-y-auto">
             {activeTab === "insights" && (
-              <div className="p-6">
+              <div id="insights-panel" role="tabpanel" aria-labelledby="tab-insights" className="p-6">
                 <h4 className="text-[11px] font-mono text-text-muted uppercase tracking-widest mb-4">Weighting Modifiers</h4>
                 <div className="space-y-4">
                   {Object.entries(result.computedWeights).map(([dim, weight]) => (
@@ -427,9 +446,9 @@ export default function ResultsView({
             )}
 
             {activeTab === "whatif" && (
-              <div className="p-6 space-y-8">
+              <div id="whatif-panel" role="tabpanel" aria-labelledby="tab-whatif" className="p-6 space-y-8">
                 {whatIfError && (
-                  <div className="p-3 bg-accent-warning/10 border border-accent-warning/20 rounded-lg flex items-center gap-3 text-xs text-accent-warning animate-in fade-in slide-in-from-top-1">
+                  <div className="p-3 bg-accent-warning/10 border border-accent-warning/20 rounded-lg flex items-center gap-3 text-xs text-accent-warning animate-in fade-in slide-in-from-top-1" role="alert">
                     <AlertTriangle size={14} className="shrink-0" />
                     <p>{whatIfError}</p>
                   </div>
@@ -518,7 +537,7 @@ export default function ResultsView({
             )}
 
             {activeTab === "eliminated" && (
-              <div className="elim-log">
+              <div id="eliminated-panel" role="tabpanel" aria-labelledby="tab-eliminated" className="elim-log">
                 {Object.entries(groupedEliminated).map(([reason, items]) => (
                   <div key={reason} className="elim-group">
                     <div className="bg-bg-elevated/50 px-4 py-2 text-[10px] font-mono text-accent-warning uppercase tracking-widest border-b border-bg-elevated">
@@ -568,7 +587,10 @@ export default function ResultsView({
           <DeepDive
             code={selectedCountry.code}
             initialSection={selectedCountry.initialSection}
-            onClose={() => setSelectedCountry(null)}
+            onClose={() => {
+              setSelectedCountry(null);
+              lastMatchFocusRef.current?.focus();
+            }}
           />
         )}
       </AnimatePresence>

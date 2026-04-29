@@ -1,5 +1,5 @@
-import { describe, it, expect, vi } from 'vitest';
-import { render, screen, fireEvent, cleanup } from '@testing-library/react';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { render, screen, fireEvent, cleanup, waitFor } from '@testing-library/react';
 import React from 'react';
 import App from '../App';
 import ResultsView from '../ResultsView';
@@ -47,6 +47,11 @@ const localStorageMock = (function() {
 Object.defineProperty(window, 'localStorage', { value: localStorageMock });
 
 describe('App Client Logic', () => {
+  beforeEach(() => {
+    localStorage.clear();
+    vi.clearAllMocks();
+  });
+
   it('renders landing page initially', () => {
     render(<App />);
     expect(screen.getByText(/CountryDNA/i)).toBeDefined();
@@ -136,7 +141,7 @@ describe('ResultsView', () => {
       />,
     );
 
-    expect(screen.getByText(/Low confidence/i)).toBeDefined();
+    expect(screen.getByText(/low confidence/i)).toBeDefined();
   });
 
   it('opens Deep Dive directly to visa pathway content', async () => {
@@ -276,7 +281,7 @@ describe('ResultsView', () => {
 
     // Case 2: Low Confidence
     await setupDeepDive('low');
-    expect(screen.getAllByText(/Low confidence/i).length).toBeGreaterThanOrEqual(2);
+    expect(screen.getAllByText(/low confidence/i).length).toBeGreaterThanOrEqual(2);
     expect(screen.getByText(/This country has limited or unstable source data/i)).toBeDefined();
     vi.unstubAllGlobals();
     cleanup();
@@ -287,5 +292,126 @@ describe('ResultsView', () => {
     expect(screen.queryByText(/This country has limited or unstable source data/i)).toBeNull();
     vi.unstubAllGlobals();
     cleanup();
+  });
+});
+
+describe('Accessibility', () => {
+  beforeEach(() => {
+    localStorage.clear();
+    vi.clearAllMocks();
+  });
+
+  it('Tweaks panel handles escape key and focus return', async () => {
+    render(<App />);
+    const trigger = screen.getByLabelText(/Open UI Tweaks/i);
+
+    // Open
+    fireEvent.click(trigger);
+    expect(trigger.getAttribute('aria-expanded')).toBe('true');
+
+    // Focus should be in panel (first button is Close Tweaks)
+    const closeBtn = screen.getByLabelText(/Close Tweaks/i);
+    expect(document.activeElement).toBe(closeBtn);
+
+    // Escape to close
+    fireEvent.keyDown(window, { key: 'Escape' });
+    expect(trigger.getAttribute('aria-expanded')).toBe('false');
+    expect(document.activeElement).toBe(trigger);
+  });
+
+  it('Quiz options have correct roles and states', async () => {
+    render(<App />);
+    fireEvent.click(screen.getByText(/Begin your match/i));
+
+    const options = await screen.findAllByRole('radio');
+    expect(options.length).toBeGreaterThan(0);
+
+    fireEvent.click(options[0]);
+    expect(options[0].getAttribute('aria-checked')).toBe('true');
+  });
+});
+
+describe('ResultsView Accessibility', () => {
+  const mockResult = {
+    sessionToken: 'test-token',
+    shareReady: true,
+    candidateCount: 1,
+    eliminatedCount: 0,
+    matches: [{
+      countryCode: 'PT',
+      countryName: 'Portugal',
+      countryDescriptor: 'Descriptor',
+      dataConfidence: 'high',
+      score: 95,
+      rank: 1,
+      whyFit: [],
+      watchOut: [],
+      costRealityText: 'Fits',
+      dimensionScores: {} as any,
+    }],
+    eliminated: [],
+    profileSummary: 'Test profile',
+    computedWeights: {} as any,
+    generatedAt: new Date().toISOString(),
+  };
+
+  const profile = {
+    budgetUsdMonthly: 5000,
+    languageFlexibility: 'openToLearning',
+    healthcareNeed: 'none',
+    nonNegotiables: [],
+  };
+
+  it('Share modal handles escape and focus return', async () => {
+    render(
+      <ResultsView
+        result={mockResult as any}
+        onRetake={vi.fn()}
+        tweaks={{}}
+        profile={profile as any}
+        onUpdateResult={vi.fn()}
+      />
+    );
+
+    const shareBtn = screen.getByLabelText(/Share your results/i);
+    fireEvent.click(shareBtn);
+
+    expect(screen.getByRole('dialog')).toBeDefined();
+
+    fireEvent.keyDown(window, { key: 'Escape' });
+    await waitFor(() => expect(screen.queryByRole('dialog')).toBeNull());
+    expect(document.activeElement).toBe(shareBtn);
+  });
+
+  it('Deep Dive handles escape and focus return', async () => {
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue({
+      ok: true,
+      json: async () => ({ name: 'Portugal', capitalCity: 'Lisbon', currency: { code: 'EUR', name: 'Euro' }, visaPathways: [] }),
+    }));
+
+    render(
+      <ResultsView
+        result={mockResult as any}
+        onRetake={vi.fn()}
+        tweaks={{}}
+        profile={profile as any}
+        onUpdateResult={vi.fn()}
+      />
+    );
+
+    const deepDiveBtn = screen.getByLabelText(/View deep dive details for Portugal/i);
+    fireEvent.click(deepDiveBtn);
+
+    await screen.findByRole('dialog');
+
+    // Focus should be in deep dive (close button is first focusable element)
+    const closeBtn = screen.getByLabelText(/Close details/i);
+    await waitFor(() => expect(document.activeElement).toBe(closeBtn));
+
+    fireEvent.keyDown(window, { key: 'Escape' });
+    await waitFor(() => expect(screen.queryByRole('dialog')).toBeNull());
+    expect(document.activeElement).toBe(deepDiveBtn);
+
+    vi.unstubAllGlobals();
   });
 });
