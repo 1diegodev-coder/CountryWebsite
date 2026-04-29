@@ -292,10 +292,10 @@ describe('Integration: App -> ResultsView -> WhatIf', () => {
     vi.stubGlobal('fetch', fetchMock);
 
     render(<App />);
-    
+
     // Start Quiz
     fireEvent.click(screen.getByText(/Begin your match/i));
-    
+
     // Full Quiz Flow (resilient navigation)
     fireEvent.click(await screen.findByText(/Remote Worker/i, {}, { timeout: 3000 }));
     fireEvent.click(await screen.findByText(/Just me/i, {}, { timeout: 3000 }));
