@@ -290,6 +290,112 @@ Production integration checks:
   API route exercised through real app path, if applicable: n/a
 ```
 
+### soft-beta/10C — Visa Trust UI Polish
+
+```
+Branch: soft-beta/10c-visa-trust-ui
+Base commit: 9468f28
+Head commit at verification: cda271f
+
+Working tree status (paste full output of `git status --short --branch`):
+## soft-beta/10c-visa-trust-ui
+
+Changed files (paste full output of `git diff --name-status main...HEAD`):
+M       docs/PHASE_REVIEW_CHECKLIST.md
+M       src/components/ResultsView.tsx
+M       src/components/__tests__/App.test.tsx
+
+Commands run and output:
+
+  1. git diff --check
+     Exit code: 0
+     Output: clean
+
+  2. git status --short --branch
+     Output:
+## soft-beta/10c-visa-trust-ui
+     Clean tree check: confirm no uncommitted files
+
+  3. git diff --name-status main...HEAD
+     Output:
+M       docs/PHASE_REVIEW_CHECKLIST.md
+M       src/components/ResultsView.tsx
+M       src/components/__tests__/App.test.tsx
+     Scope check: every file is in the MODIFY list
+     New file check: no new files
+
+  4. npm run verify:phase
+     Command used: ALLOWED_FILES="src/components/ResultsView.tsx,src/components/__tests__/App.test.tsx,docs/PHASE_REVIEW_CHECKLIST.md" FORBIDDEN_FIELDS="src/lib/data/countries.ts,fixtures,visaPathways" npm run verify:phase
+     Exit code: 0
+     Output:
+=== verify:phase ===
+
+0. Working tree clean
+  ✓ Working tree is clean — all changes committed
+
+1. Whitespace (git diff --check main...HEAD)
+  ✓ No whitespace violations
+
+2. Scope (changed files vs ALLOWED_FILES)
+  ✓ All changed files are in ALLOWED_FILES
+   Changed:
+     docs/PHASE_REVIEW_CHECKLIST.md
+     src/components/ResultsView.tsx
+     src/components/__tests__/App.test.tsx
+
+3. Forbidden fields in countries.ts diff (FORBIDDEN_FIELDS)
+  ✓ countries.ts not changed — field check not applicable
+
+=== Summary ===
+All checks passed.
+
+  5. npm test
+     Exit code: 0
+     Final line: Tests  67 passed (67)
+
+  6. npm run build
+     Exit code: 0
+     Known warnings present: yes (Sentry logger deprecation, edge runtime static generation warning — pre-existing)
+
+  7. npm run lint
+     Exit code: 0
+
+Known warnings (expected build/lint noise, not new failures):
+- Sentry logger deprecation
+- Edge runtime static generation warning
+
+Scope exceptions (files outside the MODIFY list — requires explicit justification):
+  None
+
+Browser QA (required for frontend-visible phases):
+  Local URL tested: http://localhost:62019 (Next.js dev, autoPort)
+  User flow exercised:
+    - POST /api/match with a remoteEmployee/solo/US profile → 161 matches returned
+    - Loaded results view via localStorage hydration
+    - Opened "View visa guide for Spain" (rank 4, has 2 visa pathways)
+    - Confirmed: "Source verified" badge with ShieldCheck icon on both pathways; rel="noopener noreferrer"; target="_blank"; aria-label "Official source for X — opens in a new tab"; <time dateTime="2026-04-27"> on both entries
+    - Confirmed: "Coming soon" text NOT present anywhere
+    - Opened "View visa guide for Georgia" (rank 5, audit-confirmed empty)
+    - Confirmed: role="status" panel with aria-label "Visa pathway data not yet verified"; badge text "Not verified in-app yet"; body copy includes "not verified in-app yet … Many countries operate working visa programs we have not yet sourced from primary government references"
+    - Confirmed: "Coming soon" NOT present in Georgia view
+  Console logs checked: yes — no errors; only React DevTools info and Fast Refresh notices
+  Server logs checked: yes — no errors; only expected Sentry deprecation warnings (pre-existing)
+  Responsive/reduced-motion/no-WebGL checks, if applicable: n/a for this phase
+  API failure UX checked, if applicable: n/a (error state ARIA added but not triggered in smoke test)
+
+Production integration checks:
+  Parent-to-child runtime data shape verified: yes — /api/countries/ES and /api/countries/GE exercised via DeepDive fetch on real app path
+  Dynamic import / wrapper / ref behavior verified without relying only on mocks: yes — DeepDive rendered against live API data
+  API route exercised through real app path, if applicable: yes — /api/match + /api/countries/[code]
+
+UI behavior added:
+- Replaced bare "Source" link with "Source verified" badge (ShieldCheck + ExternalLink icons), inline-flex pill, focus-visible outline. rel changed from "noreferrer" to "noopener noreferrer".
+- Wrapped lastVerified date in <time dateTime="YYYY-MM-DD"> for semantic markup.
+- Replaced "Coming soon" empty visa state with role="status" panel labeled "Visa pathway data not yet verified", body copy "Visa pathway data for this country is not verified in-app yet…". Icon swapped from AlertTriangle (warning) to Info (informational).
+- Added role="status"/aria-label="Loading country details" to DeepDive loading skeleton.
+- Added role="alert" to DeepDive error block; AlertTriangle icon marked aria-hidden.
+```
+
 ---
 
 ## Rules
