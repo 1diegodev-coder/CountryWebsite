@@ -278,117 +278,143 @@ export default function ResultsView({
         {/* Center: Match Cards */}
         <div className="match-cards-panel">
           <div className="match-cards-grid">
-            {visibleMatches.map((match, i) => {
-              return (
-                <motion.div
-                  key={match.countryCode}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.05 }}
-                  className={`match-card ${match.rank === 1 ? "top-match" : ""}`}
-                >
-                  <div className="card-header">
-                    <div>
-                      <div className="flex items-center gap-2 mb-1">
-                        <span className="text-2xl" aria-hidden="true">🌍</span>
-                        <h3 className="text-lg font-bold">{match.countryName}</h3>
-                        <span className="text-[10px] font-mono text-text-muted bg-bg-elevated px-1.5 py-0.5 rounded uppercase">
-                          {match.countryCode}
-                        </span>
-                        {match.dataConfidence !== "high" && (
-                          <span
-                            className="inline-flex items-center gap-1 text-[10px] font-mono text-accent-warning bg-accent-warning/10 border border-accent-warning/20 px-1.5 py-0.5 rounded uppercase"
-                            title="This country uses lower-confidence source data and should be reviewed before making decisions."
-                          >
-                            <Info size={10} />
-                            {match.dataConfidence} confidence
-                          </span>
-                        )}
-                      </div>
-                      <p className="text-xs text-text-secondary leading-relaxed max-w-md">
-                        {match.countryDescriptor}
-                      </p>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-2xl font-mono font-bold text-accent-green">
-                        {match.score}%
-                      </div>
-                      <div className="text-[10px] text-text-muted uppercase tracking-widest">Best Fit</div>
-                    </div>
+            {result.matches.length === 0 ? (
+              <div className="flex flex-col items-center justify-center py-20 text-center space-y-6 px-6 bg-bg-surface/20 rounded-2xl border border-dashed border-bg-elevated">
+                <div className="w-16 h-16 bg-bg-elevated rounded-full flex items-center justify-center text-accent-warning">
+                  <AlertTriangle size={32} />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold mb-2">No countries match your constraints</h3>
+                  <p className="text-text-secondary max-w-sm mx-auto text-sm leading-relaxed">
+                    Your current non-negotiables or budget might be too restrictive for our dataset of 195 countries.
+                  </p>
+                </div>
+                {!isReadOnly && (
+                  <div className="space-y-4">
+                    <p className="text-xs text-text-muted italic">
+                      Try relaxing some filters in the <span className="text-accent-green font-mono">What-If</span> tab or retake the quiz to explore other possibilities.
+                    </p>
                   </div>
-
-                  <div className="match-bar-outer my-4">
+                )}
+                <button onClick={onRetake} className="btn-primary">
+                  Retake Quiz
+                </button>
+              </div>
+            ) : (
+              <>
+                {visibleMatches.map((match, i) => {
+                  return (
                     <motion.div
-                      className="match-bar-inner bg-accent-green"
-                      initial={{ width: 0 }}
-                      animate={{ width: `${match.score}%` }}
-                      transition={{ duration: 1, delay: 0.5 + i * 0.05 }}
-                    />
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
-                    <div className="card-section">
-                      <h4 className="card-section-title green">WHY IT FITS</h4>
-                      <ul className="space-y-2">
-                        {match.whyFit.map((bullet, idx) => (
-                          <li key={idx} className="bullet green">
-                            {bullet}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div className="card-section">
-                      <h4 className="card-section-title amber">WATCH OUT</h4>
-                      <ul className="space-y-2">
-                        {match.watchOut.map((bullet, idx) => (
-                          <li key={idx} className="bullet amber">
-                            {bullet}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div className="card-cost mt-4">
-                    <TrendingUp size={14} className="text-accent-green" />
-                    <span className="font-medium">{match.costRealityText}</span>
-                  </div>
-
-                  <div className="card-actions mt-4 pt-4 border-t border-bg-elevated flex gap-3">
-                    <button
-                      className="btn-card-primary"
-                      onClick={(e) => {
-                        lastMatchFocusRef.current = e.currentTarget;
-                        setSelectedCountry({ code: match.countryCode, initialSection: "overview" });
-                      }}
-                      aria-label={`View deep dive details for ${match.countryName}`}
+                      key={match.countryCode}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: i * 0.05 }}
+                      className={`match-card ${match.rank === 1 ? "top-match" : ""}`}
                     >
-                      Deep Dive Details
-                    </button>
-                    <button
-                      className="btn-card-ghost"
-                      onClick={(e) => {
-                        lastMatchFocusRef.current = e.currentTarget;
-                        setSelectedCountry({ code: match.countryCode, initialSection: "visa" });
-                      }}
-                      aria-label={`View visa guide for ${match.countryName}`}
-                    >
-                      Visa Guide
-                    </button>
-                  </div>
-                </motion.div>
-              );
-            })}
+                      <div className="card-header">
+                        <div>
+                          <div className="flex items-center gap-2 mb-1">
+                            <span className="text-2xl" aria-hidden="true">🌍</span>
+                            <h3 className="text-lg font-bold">{match.countryName}</h3>
+                            <span className="text-[10px] font-mono text-text-muted bg-bg-elevated px-1.5 py-0.5 rounded uppercase">
+                              {match.countryCode}
+                            </span>
+                            {match.dataConfidence !== "high" && (
+                              <span
+                                className="inline-flex items-center gap-1 text-[10px] font-mono text-accent-warning bg-accent-warning/10 border border-accent-warning/20 px-1.5 py-0.5 rounded uppercase"
+                                title="This country uses lower-confidence source data and should be reviewed before making decisions."
+                              >
+                                <Info size={10} />
+                                {match.dataConfidence} confidence
+                              </span>
+                            )}
+                          </div>
+                          <p className="text-xs text-text-secondary leading-relaxed max-w-md">
+                            {match.countryDescriptor}
+                          </p>
+                        </div>
+                        <div className="text-right">
+                          <div className="text-2xl font-mono font-bold text-accent-green">
+                            {match.score}%
+                          </div>
+                          <div className="text-[10px] text-text-muted uppercase tracking-widest">Best Fit</div>
+                        </div>
+                      </div>
 
-            {hasMoreMatches && (
-              <button
-                onClick={showMore}
-                className="w-full py-4 mt-4 border border-dashed border-bg-elevated rounded-xl text-text-muted hover:text-text-primary hover:border-text-muted transition-all flex items-center justify-center gap-2 group"
-                aria-label="Show more matches"
-              >
-                <span>Show more matches</span>
-                <ChevronDown size={16} className="group-hover:translate-y-0.5 transition-transform" />
-              </button>
+                      <div className="match-bar-outer my-4">
+                        <motion.div
+                          className="match-bar-inner bg-accent-green"
+                          initial={{ width: 0 }}
+                          animate={{ width: `${match.score}%` }}
+                          transition={{ duration: 1, delay: 0.5 + i * 0.05 }}
+                        />
+                      </div>
+
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+                        <div className="card-section">
+                          <h4 className="card-section-title green">WHY IT FITS</h4>
+                          <ul className="space-y-2">
+                            {match.whyFit.map((bullet, idx) => (
+                              <li key={idx} className="bullet green">
+                                {bullet}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                        <div className="card-section">
+                          <h4 className="card-section-title amber">WATCH OUT</h4>
+                          <ul className="space-y-2">
+                            {match.watchOut.map((bullet, idx) => (
+                              <li key={idx} className="bullet amber">
+                                {bullet}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div className="card-cost mt-4">
+                        <TrendingUp size={14} className="text-accent-green" />
+                        <span className="font-medium">{match.costRealityText}</span>
+                      </div>
+
+                      <div className="card-actions mt-4 pt-4 border-t border-bg-elevated flex gap-3">
+                        <button
+                          className="btn-card-primary"
+                          onClick={(e) => {
+                            lastMatchFocusRef.current = e.currentTarget;
+                            setSelectedCountry({ code: match.countryCode, initialSection: "overview" });
+                          }}
+                          aria-label={`View deep dive details for ${match.countryName}`}
+                        >
+                          Deep Dive Details
+                        </button>
+                        <button
+                          className="btn-card-ghost"
+                          onClick={(e) => {
+                            lastMatchFocusRef.current = e.currentTarget;
+                            setSelectedCountry({ code: match.countryCode, initialSection: "visa" });
+                          }}
+                          aria-label={`View visa guide for ${match.countryName}`}
+                        >
+                          Visa Guide
+                        </button>
+                      </div>
+                    </motion.div>
+                  );
+                })}
+
+                {hasMoreMatches && (
+                  <button
+                    onClick={showMore}
+                    className="w-full py-4 mt-4 border border-dashed border-bg-elevated rounded-xl text-text-muted hover:text-text-primary hover:border-text-muted transition-all flex items-center justify-center gap-2 group"
+                    aria-label={`Show ${Math.min(10, result.matches.length - visibleCount)} more of ${result.matches.length} matches`}
+                  >
+                    <span>Show {Math.min(10, result.matches.length - visibleCount)} more of {result.matches.length}</span>
+                    <ChevronDown size={16} className="group-hover:translate-y-0.5 transition-transform" />
+                  </button>
+                )}
+              </>
             )}
           </div>
         </div>
@@ -453,9 +479,12 @@ export default function ResultsView({
             {activeTab === "whatif" && (
               <div id="whatif-panel" role="tabpanel" aria-labelledby="tab-whatif" className="p-6 space-y-8">
                 {whatIfError && (
-                  <div className="p-3 bg-accent-warning/10 border border-accent-warning/20 rounded-lg flex items-center gap-3 text-xs text-accent-warning animate-in fade-in slide-in-from-top-1" role="alert">
-                    <AlertTriangle size={14} className="shrink-0" />
-                    <p>{whatIfError}</p>
+                  <div className="p-4 bg-accent-warning/10 border border-accent-warning/20 rounded-xl flex items-start gap-3 text-xs text-accent-warning animate-in fade-in slide-in-from-top-1" role="alert">
+                    <AlertTriangle size={16} className="shrink-0 mt-0.5" />
+                    <div className="space-y-1">
+                      <p className="font-bold uppercase tracking-tight text-[10px]">Adjustment Error</p>
+                      <p className="opacity-90">{whatIfError}</p>
+                    </div>
                   </div>
                 )}
                 <div className="space-y-4">
@@ -534,8 +563,8 @@ export default function ResultsView({
                 </div>
 
                 {isWhatIfLoading && (
-                  <div className="flex items-center gap-2 text-accent-green text-[10px] font-mono animate-pulse" aria-live="polite">
-                    <RefreshCcw size={10} className="animate-spin" />
+                  <div className="flex items-center justify-center gap-3 py-4 bg-bg-elevated/20 rounded-xl border border-bg-elevated text-accent-green text-[10px] font-mono tracking-widest uppercase animate-pulse" aria-live="polite">
+                    <RefreshCcw size={12} className="animate-spin" />
                     Recalculating...
                   </div>
                 )}
@@ -544,44 +573,58 @@ export default function ResultsView({
 
             {activeTab === "eliminated" && (
               <div id="eliminated-panel" role="tabpanel" aria-labelledby="tab-eliminated" className="elim-log">
-                {Object.entries(groupedEliminated).map(([reason, items]) => (
-                  <div key={reason} className="elim-group">
-                    <div className="bg-bg-elevated/50 px-4 py-2 text-[10px] font-mono text-accent-warning uppercase tracking-widest border-b border-bg-elevated">
-                      {reason} ({items.length})
+                {result.eliminated.length === 0 ? (
+                  <div className="flex flex-col items-center justify-center py-16 text-center space-y-4 px-6">
+                    <div className="w-12 h-12 bg-accent-green/10 rounded-full flex items-center justify-center text-accent-green">
+                      <Check size={24} />
                     </div>
-                    {items.map((elim, idx) => {
-                      const isOverridden = ((localProfileRef.current as any).overrides || []).includes(elim.countryCode);
-
-                      return (
-                        <div key={idx} className="elim-country border-b border-bg-elevated hover:bg-bg-elevated/30 p-4">
-                          <div className="flex items-start justify-between gap-3 w-full">
-                            <div className="flex items-start gap-3">
-                              <span className="text-lg opacity-50" aria-hidden="true">🌍</span>
-                              <div>
-                                <div className="text-[13px] font-semibold text-text-secondary">{elim.countryName}</div>
-                                <div className="text-[11px] text-text-muted leading-relaxed">{elim.detail}</div>
-                              </div>
-                            </div>
-                            {!isReadOnly && (
-                              <button
-                                onClick={() => handleOverride(elim.countryCode)}
-                                className={`text-[10px] font-mono uppercase px-2 py-1 rounded border transition-all ${
-                                  isOverridden
-                                    ? "bg-accent-green text-bg-primary border-accent-green"
-                                    : "text-text-muted border-bg-elevated hover:border-text-muted"
-                                }`}
-                                aria-pressed={isOverridden}
-                                aria-label={`Override elimination for ${elim.countryName}`}
-                              >
-                                {isOverridden ? "Active" : "Override"}
-                              </button>
-                            )}
-                          </div>
-                        </div>
-                      );
-                    })}
+                    <div>
+                      <h4 className="font-bold text-sm">No eliminations</h4>
+                      <p className="text-text-muted text-[10px] uppercase tracking-wider mt-1">
+                        Every country in our set passed your current constraints.
+                      </p>
+                    </div>
                   </div>
-                ))}
+                ) : (
+                  Object.entries(groupedEliminated).map(([reason, items]) => (
+                    <div key={reason} className="elim-group">
+                      <div className="bg-bg-elevated/50 px-4 py-2 text-[10px] font-mono text-accent-warning uppercase tracking-widest border-b border-bg-elevated">
+                        {reason} ({items.length})
+                      </div>
+                      {items.map((elim, idx) => {
+                        const isOverridden = ((localProfileRef.current as any).overrides || []).includes(elim.countryCode);
+
+                        return (
+                          <div key={idx} className="elim-country border-b border-bg-elevated hover:bg-bg-elevated/30 p-4">
+                            <div className="flex items-start justify-between gap-3 w-full">
+                              <div className="flex items-start gap-3">
+                                <span className="text-lg opacity-50" aria-hidden="true">🌍</span>
+                                <div>
+                                  <div className="text-[13px] font-semibold text-text-secondary">{elim.countryName}</div>
+                                  <div className="text-[11px] text-text-muted leading-relaxed">{elim.detail}</div>
+                                </div>
+                              </div>
+                              {!isReadOnly && (
+                                <button
+                                  onClick={() => handleOverride(elim.countryCode)}
+                                  className={`text-[10px] font-mono uppercase px-2 py-1 rounded border transition-all ${
+                                    isOverridden
+                                      ? "bg-accent-green text-bg-primary border-accent-green"
+                                      : "text-text-muted border-bg-elevated hover:border-text-muted"
+                                  }`}
+                                  aria-pressed={isOverridden}
+                                  aria-label={`Override elimination for ${elim.countryName}`}
+                                >
+                                  {isOverridden ? "Active" : "Override"}
+                                </button>
+                              )}
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  ))
+                )}
               </div>
             )}
           </div>
@@ -749,7 +792,7 @@ function DeepDive({
     }
   }, [loading]);
 
-  React.useEffect(() => {
+  const fetchData = useCallback(() => {
     setLoading(true);
     setError(null);
     fetch(`/api/countries/${code}`)
@@ -763,10 +806,14 @@ function DeepDive({
       })
       .catch(err => {
         console.error(err);
-        setError("We couldn't load the details for this country. Please try again later.");
+        setError("We couldn't load the details for this country. Please check your connection and try again.");
         setLoading(false);
       });
   }, [code]);
+
+  React.useEffect(() => {
+    fetchData();
+  }, [fetchData]);
 
   React.useEffect(() => {
     if (!loading && initialSection === "visa") {
@@ -842,16 +889,43 @@ function DeepDive({
           </div>
 
           {loading ? (
-            <div role="status" aria-label="Loading country details" className="space-y-4 animate-pulse">
-              <div className="h-40 bg-bg-elevated rounded-xl" />
-              <div className="h-8 w-1/2 bg-bg-elevated rounded" />
-              <div className="h-32 bg-bg-elevated rounded-xl" />
+            <div role="status" aria-label="Loading country details" className="space-y-12 animate-pulse">
+              <div className="space-y-4">
+                <div className="h-3 w-24 bg-bg-elevated rounded font-mono" />
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="h-20 bg-bg-elevated rounded-xl" />
+                  <div className="h-20 bg-bg-elevated rounded-xl" />
+                  <div className="h-24 col-span-2 bg-bg-elevated rounded-xl" />
+                </div>
+              </div>
+              <div className="space-y-4">
+                <div className="h-3 w-24 bg-bg-elevated rounded font-mono" />
+                <div className="h-48 bg-bg-elevated rounded-xl" />
+              </div>
+              <div className="space-y-4">
+                <div className="h-3 w-24 bg-bg-elevated rounded font-mono" />
+                <div className="space-y-3">
+                  <div className="h-2 bg-bg-elevated rounded w-full" />
+                  <div className="h-2 bg-bg-elevated rounded w-5/6" />
+                  <div className="h-2 bg-bg-elevated rounded w-4/6" />
+                </div>
+              </div>
             </div>
           ) : error ? (
-            <div role="alert" className="flex flex-col items-center justify-center py-12 text-center space-y-4">
-              <AlertTriangle size={48} className="text-accent-warning opacity-50" aria-hidden="true" />
-              <p className="text-text-secondary max-w-xs">{error}</p>
-              <button onClick={onClose} className="btn-ghost btn-sm border-bg-elevated">Close</button>
+            <div role="alert" className="flex flex-col items-center justify-center py-12 text-center space-y-6">
+              <div className="w-16 h-16 bg-accent-warning/10 rounded-full flex items-center justify-center text-accent-warning">
+                <AlertTriangle size={32} aria-hidden="true" />
+              </div>
+              <div className="space-y-2">
+                <h3 className="font-bold">Connection Error</h3>
+                <p className="text-text-secondary text-sm max-w-xs mx-auto">{error}</p>
+              </div>
+              <div className="flex gap-3">
+                <button onClick={fetchData} className="btn-primary btn-sm flex items-center gap-2">
+                  <RefreshCcw size={14} /> Retry
+                </button>
+                <button onClick={onClose} className="btn-ghost btn-sm border-bg-elevated">Close</button>
+              </div>
             </div>
           ) : (
             <div className="space-y-10">

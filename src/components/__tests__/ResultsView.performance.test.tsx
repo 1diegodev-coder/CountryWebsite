@@ -60,10 +60,12 @@ describe("ResultsView Performance and Debounce", () => {
     // Should find 10 matches initially
     const cards = screen.getAllByRole("heading", { level: 3 });
     expect(cards.length).toBe(10);
-    expect(screen.getByText(/Show more matches/i)).toBeDefined();
+    // Count-aware label: Show 10 more of 25
+    expect(screen.getByText(/Show 10 more of 25/i)).toBeDefined();
+    expect(screen.getByLabelText(/Show 10 more of 25 matches/i)).toBeDefined();
   });
 
-  it("Show more reveals the next batch without changing ordering", async () => {
+  it("Show more reveals the next batch and updates the count-aware label", async () => {
     render(
       <ResultsView
         result={mockResult}
@@ -75,13 +77,17 @@ describe("ResultsView Performance and Debounce", () => {
     );
 
     await act(async () => {
-      fireEvent.click(screen.getByText(/Show more matches/i));
+      fireEvent.click(screen.getByText(/Show 10 more of 25/i));
     });
 
     const cards = screen.getAllByRole("heading", { level: 3 });
     expect(cards.length).toBe(20);
     expect(cards[0].textContent).toBe("Country 0");
     expect(cards[19].textContent).toBe("Country 19");
+
+    // Next batch is partial: Show 5 more of 25
+    expect(screen.getByText(/Show 5 more of 25/i)).toBeDefined();
+    expect(screen.getByLabelText(/Show 5 more of 25 matches/i)).toBeDefined();
   });
 
   it("What-If slider changes are debounced", async () => {

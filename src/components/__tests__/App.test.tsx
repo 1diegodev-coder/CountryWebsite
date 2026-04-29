@@ -487,7 +487,121 @@ describe('ResultsView', () => {
     vi.unstubAllGlobals();
     cleanup();
   });
+
+  it('renders useful empty state when no countries match', () => {
+    render(
+      <ResultsView
+        result={{
+          sessionToken: 'test-token',
+          shareReady: false,
+          candidateCount: 0,
+          eliminatedCount: 195,
+          matches: [],
+          eliminated: [],
+          profileSummary: 'Test profile',
+          computedWeights: {} as any,
+          generatedAt: new Date().toISOString(),
+        }}
+        onRetake={vi.fn()}
+        tweaks={{}}
+        profile={profile as any}
+        onUpdateResult={vi.fn()}
+      />
+    );
+
+    expect(screen.getByText(/No countries match your constraints/i)).toBeDefined();
+    expect(screen.getByText(/Try relaxing some filters in the/i)).toBeDefined();
+    expect(screen.getAllByRole('button', { name: /Retake Quiz/i }).length).toBe(2);
+    // Should NOT show match actions
+    expect(screen.queryByText(/Deep Dive Details/i)).toBeNull();
+  });
+
+  it('renders compact empty state in eliminated panel when no countries are eliminated', () => {
+    render(
+      <ResultsView
+        result={{
+          sessionToken: 'test-token',
+          shareReady: false,
+          candidateCount: 195,
+          eliminatedCount: 0,
+          matches: [],
+          eliminated: [],
+          profileSummary: 'Test profile',
+          computedWeights: {} as any,
+          generatedAt: new Date().toISOString(),
+        }}
+        onRetake={vi.fn()}
+        tweaks={{}}
+        profile={profile as any}
+        onUpdateResult={vi.fn()}
+      />
+    );
+
+    fireEvent.click(screen.getByText(/ELIM \(0\)/i));
+    expect(screen.getByText(/No eliminations/i)).toBeDefined();
+    expect(screen.getByText(/Every country in our set passed your current constraints/i)).toBeDefined();
+  });
+
+  it('Deep Dive fetch failure renders role="alert" with retry/close behavior', async () => {
+    const fetchSpy = vi.stubGlobal('fetch', vi.fn()
+      .mockRejectedValueOnce(new Error('Network error')) // First fail
+      .mockResolvedValueOnce({ // Second succeed
+        ok: true,
+        json: async () => ({ name: 'Portugal', capitalCity: 'Lisbon', currency: { code: 'EUR', name: 'Euro' }, visaPathways: [] }),
+      })
+    );
+
+    render(
+      <ResultsView
+        result={mockResult as any}
+        onRetake={vi.fn()}
+        tweaks={{}}
+        profile={profile as any}
+        onUpdateResult={vi.fn()}
+      />
+    );
+
+    fireEvent.click(screen.getByLabelText(/View deep dive details for Portugal/i));
+
+    // Wait for error state
+    const alert = await screen.findByRole('alert');
+    expect(alert).toBeDefined();
+    expect(screen.getByText(/Connection Error/i)).toBeDefined();
+
+    // Retry
+    const retryBtn = screen.getByRole('button', { name: /Retry/i });
+    fireEvent.click(retryBtn);
+
+    // Wait for success
+    await screen.findByText('Portugal');
+    expect(screen.queryByRole('alert')).toBeNull();
+
+    vi.unstubAllGlobals();
+  });
 });
+
+const mockResult = {
+  sessionToken: 'test-token',
+  shareReady: true,
+  candidateCount: 1,
+  eliminatedCount: 0,
+  matches: [{
+    countryCode: 'PT',
+    countryName: 'Portugal',
+    countryDescriptor: 'Descriptor',
+    dataConfidence: 'high',
+    score: 95,
+    rank: 1,
+    whyFit: [],
+    watchOut: [],
+    costRealityText: 'Fits',
+    dimensionScores: {} as any,
+  }],
+  eliminated: [],
+  profileSummary: 'Test profile',
+  computedWeights: {} as any,
+  generatedAt: new Date().toISOString(),
+};
 
 describe('Accessibility', () => {
   beforeEach(() => {
