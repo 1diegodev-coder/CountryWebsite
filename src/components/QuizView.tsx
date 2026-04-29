@@ -22,7 +22,9 @@ export default function QuizView({ answers, onAnswer, onComplete, initialStep }:
   const [showInterim, setShowInterim] = useState(false);
   const [interimData, setInterimData] = useState<any>(null);
 
-  const handleNext = async () => {
+  const handleNext = async (currentAnswersOverride?: any) => {
+    const activeAnswers = currentAnswersOverride || answers;
+
     if (currentStep === 6) {
       // Fetch interim results
       try {
@@ -30,18 +32,18 @@ export default function QuizView({ answers, onAnswer, onComplete, initialStep }:
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            ...answers,
+            ...activeAnswers,
             // Fill missing required fields with defaults for interim check
-            healthcareNeed: answers.healthcareNeed || "none",
-            nonNegotiables: answers.nonNegotiables || [],
-            socialMode: answers.socialMode || "mixed",
-            environmentPreference: answers.environmentPreference || "midCity",
-            culturalAppetite: answers.culturalAppetite || "noPref",
-            topPriorities: answers.topPriorities || [],
-            dealbreakers: answers.dealbreakers || [],
-            languages: answers.languages || ["en"],
+            healthcareNeed: activeAnswers.healthcareNeed || "none",
+            nonNegotiables: activeAnswers.nonNegotiables || [],
+            socialMode: activeAnswers.socialMode || "mixed",
+            environmentPreference: activeAnswers.environmentPreference || "midCity",
+            culturalAppetite: activeAnswers.culturalAppetite || "noPref",
+            topPriorities: activeAnswers.topPriorities || [],
+            dealbreakers: activeAnswers.dealbreakers || [],
+            languages: activeAnswers.languages || ["en"],
             locale: "en-US",
-            passports: answers.passports || ["US"],
+            passports: activeAnswers.passports || ["US"],
           }),
         });
         if (response.ok) {
@@ -88,13 +90,12 @@ export default function QuizView({ answers, onAnswer, onComplete, initialStep }:
   const handleSelect = (value: any) => {
     if (question?.type === "single") {
       onAnswer(question.id, value);
-      // Wait for the state to update before calling handleNext
-      // In a real app, we'd use the value directly or a callback
+      
+      // Immediately call handleNext with the updated state to avoid stale closure/400
+      const updatedAnswers = { ...answers, [question.id]: value };
+      
       setTimeout(() => {
-        // We need to pass the updated answers if we want to call handleNext immediately
-        // but handleNext uses the `answers` state. 
-        // For simplicity in this mock, we'll just delay a bit more.
-        handleNext();
+        handleNext(updatedAnswers);
       }, 500);
     } else {
       const currentAnswers = answers[question!.id] || [];

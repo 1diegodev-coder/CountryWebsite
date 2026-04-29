@@ -264,17 +264,20 @@ describe('Integration: App -> ResultsView -> WhatIf', () => {
   }, 20000);
 
   it('displays error state when What-If API fails', async () => {
-    // Mock /api/match
-    vi.stubGlobal('fetch', vi.fn((url) => {
+    // 1. Mock /api/match response
+    const mockMatchResult = {
+      sessionToken: 'test-token',
+      matches: [{ countryCode: 'PT', countryName: 'Portugal', score: 95, whyFit: [], watchOut: [], dimensionScores: { cost: 8, safety: 8, healthcare: 8, visaEase: 8, digitalInfra: 8, climate: 8, techEcosystem: 8, lgbtqSafety: 8, naturalEnvironment: 8, english: 8 } }],
+      eliminated: [],
+      computedWeights: {},
+      generatedAt: new Date().toISOString(),
+    };
+
+    const fetchMock = vi.fn((url) => {
       if (url === '/api/match') {
         return Promise.resolve({
           ok: true,
-          json: async () => ({
-            sessionToken: 'test-token',
-            matches: [{ countryCode: 'PT', countryName: 'Portugal', score: 95, whyFit: [], watchOut: [], dimensionScores: {} }],
-            eliminated: [],
-            computedWeights: {},
-          }),
+          json: async () => mockMatchResult,
         });
       }
       if (url === '/api/whatif') {
@@ -285,10 +288,48 @@ describe('Integration: App -> ResultsView -> WhatIf', () => {
         });
       }
       return Promise.reject(new Error('Unknown URL'));
-    }));
+    });
+    vi.stubGlobal('fetch', fetchMock);
 
     render(<App />);
+    
+    // Start Quiz
     fireEvent.click(screen.getByText(/Begin your match/i));
-    // Fast forward through quiz would be too long, let's mock the state or just test ResultsView directly for error state
-  });
+    
+    // Full Quiz Flow (resilient navigation)
+    fireEvent.click(await screen.findByText(/Remote Worker/i, {}, { timeout: 3000 }));
+    fireEvent.click(await screen.findByText(/Just me/i, {}, { timeout: 3000 }));
+    fireEvent.click(await screen.findByText(/Lower cost of living/i, {}, { timeout: 3000 }));
+    fireEvent.click(await screen.findByText(/Continue|Next/i, {}, { timeout: 3000 }));
+    fireEvent.click(await screen.findByText(/United States/i, {}, { timeout: 3000 }));
+    fireEvent.click(await screen.findByText(/Continue|Next/i, {}, { timeout: 3000 }));
+    fireEvent.click(await screen.findByText(/\$2,500 – \$3,500 \/ month/i, {}, { timeout: 3000 }));
+    fireEvent.click(await screen.findByText(/English only/i, {}, { timeout: 3000 }));
+    fireEvent.click(await screen.findByText(/Answer 7 more to refine/i, {}, { timeout: 3000 }));
+    fireEvent.click(await screen.findByText(/Basic access is fine/i, {}, { timeout: 3000 }));
+    fireEvent.click(await screen.findByText(/LGBTQ\+ safety and rights/i, {}, { timeout: 3000 }));
+    fireEvent.click(await screen.findByText(/Continue|Next/i, {}, { timeout: 3000 }));
+    fireEvent.click(await screen.findByText(/Expat community/i, {}, { timeout: 3000 }));
+    fireEvent.click(await screen.findByText(/Big City/i, {}, { timeout: 3000 }));
+    fireEvent.click(await screen.findByText(/Broadly familiar/i, {}, { timeout: 3000 }));
+    fireEvent.click(await screen.findByText(/Safety first/i, {}, { timeout: 3000 }));
+    fireEvent.click(await screen.findByText(/Continue|Next/i, {}, { timeout: 3000 }));
+    fireEvent.click(await screen.findByText(/Extreme cold/i, {}, { timeout: 3000 }));
+    fireEvent.click(await screen.findByText(/See My Results/i, {}, { timeout: 3000 }));
+
+    // Wait for ResultsView
+    await waitFor(() => expect(screen.getByText('Portugal')).toBeDefined(), { timeout: 5000 });
+
+    // Switch to What-If tab
+    fireEvent.click(screen.getByText('WHAT-IF'));
+
+    // Trigger What-If change (Budget)
+    const whatIfBudgetInput = screen.getByDisplayValue('3500');
+    fireEvent.change(whatIfBudgetInput, { target: { value: '4500' } });
+
+    // Verify error message appearance
+    await waitFor(() => {
+      expect(screen.getByText(/Server error/i)).toBeDefined();
+    }, { timeout: 5000 });
+  }, 20000);
 });
