@@ -301,3 +301,90 @@ Production integration checks:
 5. **A non-zero exit on any command is a blocker.** Fix it before handing off.
 6. **Frontend phases require browser QA.** Component tests are not a substitute for exercising the real app path in a browser.
 7. **The reviewer will rerun verification independently.** Agent-reported output is informational only - the reviewer's local run is authoritative.
+
+### soft-beta/10B — Visa Pathway Restoration
+
+```
+Branch: soft-beta/10b-visa-pathway-restore
+Base commit: 9468f2888de1f4d09675f6df6baf9a3ff8b57302
+Head commit: c9e1192073073b33456908cb657aa936e057d611
+
+Working tree status (paste full output of `git status --short --branch`):
+## soft-beta/10b-visa-pathway-restore
+
+Changed files (paste full output of `git diff --name-status main...HEAD`):
+M       docs/PHASE_REVIEW_CHECKLIST.md
+M       docs/visa-trust-audit.md
+M       src/lib/__tests__/data.test.ts
+M       src/lib/data/countries.ts
+
+Commands run and output:
+
+  1. git diff --check
+     Exit code: 0
+     Output: clean
+
+  2. git status --short --branch
+     Output:
+## soft-beta/10b-visa-pathway-restore
+
+  3. git diff --name-status main...HEAD
+     Output:
+M       docs/PHASE_REVIEW_CHECKLIST.md
+M       docs/visa-trust-audit.md
+M       src/lib/__tests__/data.test.ts
+M       src/lib/data/countries.ts
+
+  4. npm run verify:phase (if ALLOWED_FILES and FORBIDDEN_FIELDS set for this phase)
+     Command used: ALLOWED_FILES="src/lib/data/countries.ts,src/lib/__tests__/data.test.ts,docs/PHASE_REVIEW_CHECKLIST.md,docs/visa-trust-audit.md" FORBIDDEN_FIELDS="costBreakdown,dimensions,descriptors,matchNarrative" npm run verify:phase
+     Exit code: 0
+     Output:
+=== verify:phase ===
+
+0. Working tree clean
+  ✓ Working tree is clean — all changes committed
+
+1. Whitespace (git diff --check main...HEAD)
+  ✓ No whitespace violations
+
+2. Scope (changed files vs ALLOWED_FILES)
+  ✓ All changed files are in ALLOWED_FILES
+   Changed:
+     docs/PHASE_REVIEW_CHECKLIST.md
+     docs/visa-trust-audit.md
+     src/lib/__tests__/data.test.ts
+     src/lib/data/countries.ts
+
+3. Forbidden fields in countries.ts diff (FORBIDDEN_FIELDS)
+  ✓ No forbidden fields added (checked: costBreakdown,dimensions,descriptors,matchNarrative)
+
+=== Summary ===
+All checks passed.
+
+  5. npm test
+     Exit code: 0
+     Final line: Test Files  13 passed (13), Tests  64 passed (64)
+
+  6. npm run build
+     Exit code: 0
+     Known warnings present: yes (Sentry, Edge runtime)
+
+  7. npm run lint
+     Exit code: 0
+
+Known warnings (expected build/lint noise, not new failures):
+- Sentry deprecation warnings (disableLogger, rename config)
+- Edge runtime static generation warning
+- Sentry instrumentation hook warnings
+
+Scope exceptions (files outside the MODIFY list — requires explicit justification):
+  None.
+
+Browser QA (required for frontend-visible phases):
+  N/A (Data-only phase). Verified via unit tests ensuring schema compliance and source URL validity.
+
+Production integration checks:
+  Parent-to-child runtime data shape verified: Yes (VisaSchema validation)
+  Dynamic import / wrapper / ref behavior verified without relying only on mocks: N/A
+  API route exercised through real app path, if applicable: Yes (via build and existing integration tests)
+```

@@ -205,6 +205,56 @@ export const COUNTRIES: Country[] = [
     descriptor: "A digitally advanced EU nation with marriage equality, deep e-government infrastructure, and strong founder appeal.",
     dimensions: { cost: 7.2, safety: 8.6, healthcare: 7.4, visaEase: 3.5, digitalInfra: 9.1, climate: 2.3, english: 5.4, lgbtqSafety: 8.8, techEcosystem: 9, naturalEnvironment: 2.1 },
     costBreakdown: { rentUsd: 800, groceriesUsd: 250, transportUsd: 30, utilitiesUsd: 150, diningOutUsd: 240, healthInsuranceUsd: 50, totalEstimateUsd: 1520 },
+    visaPathways: [
+      {
+        pathwayId: "EE-DIGITAL-NOMAD",
+        countryCode: "EE",
+        visaType: "digital-nomad",
+        name: "Digital Nomad Visa",
+        eligibleLifeStages: ["remoteEmployee", "freelancer"],
+        incomeRequirement: {
+          amount: 4500,
+          currencyCode: "EUR",
+          period: "monthly",
+          notes: "Gross income requirement in the 6 months preceding application."
+        },
+        durationMonths: 12,
+        renewable: false,
+        leadsToResidency: false,
+        residencyYearsRequired: null,
+        processingWeeks: [4, 8],
+        difficultyRating: 2,
+        requiresEmployer: false,
+        requiresMinIncome: true,
+        notes: "Allows working for a foreign employer or as a freelancer for foreign clients.",
+        sourceUrl: "https://www.politsei.ee/en/instructions/digital-nomad-visa",
+        lastVerified: "2026-04-29"
+      },
+      {
+        pathwayId: "EE-STARTUP-VISA",
+        countryCode: "EE",
+        visaType: "founder",
+        name: "Startup Visa",
+        eligibleLifeStages: ["founder"],
+        incomeRequirement: {
+          amount: 200,
+          currencyCode: "EUR",
+          period: "monthly",
+          notes: "Requires at least €200 per month for the duration of stay."
+        },
+        durationMonths: 18,
+        renewable: true,
+        leadsToResidency: true,
+        residencyYearsRequired: 5,
+        processingWeeks: [4, 12],
+        difficultyRating: 3,
+        requiresEmployer: false,
+        requiresMinIncome: true,
+        notes: "Company must be evaluated by the Startup Committee first.",
+        sourceUrl: "https://startupestonia.ee/visa/",
+        lastVerified: "2026-04-29"
+      }
+    ],
     cities: ["Tallinn", "Tartu"],
     rawIndicators: { summerHighC: 21, winterLowC: -8, humidityAvg: 80, airQualityIndex: 15, seismicZone: 0, internetReliability: 9.9, englishDailyLife: 8.5, stability: 9.1, authoritarianRisk: 1.2, corruptionRisk: 1.5 },
     dataConfidence: "high", lastUpdated: "2026-04-21", capitalCity: "Tallinn", currency: { code: "EUR", name: "Euro" }
@@ -414,6 +464,56 @@ export const COUNTRIES: Country[] = [
     descriptor: "Offering immense biodiversity and cultural vibrancy, Colombia has seen Medellín emerge as a top global hub for digital nomads. It provides a warm, welcoming environment with a significantly lower cost of living than North American or European counterparts.",
     dimensions: { cost: 8.2, safety: 4.2, healthcare: 7.4, visaEase: 8.5, digitalInfra: 5.1, climate: 7.5, english: 2.7, lgbtqSafety: 6.4, techEcosystem: 6.8, naturalEnvironment: 8.5 },
     costBreakdown: { rentUsd: 650, groceriesUsd: 200, transportUsd: 30, utilitiesUsd: 60, diningOutUsd: 150, healthInsuranceUsd: 60, totalEstimateUsd: 1150 },
+    visaPathways: [
+      {
+        pathwayId: "CO-DIGITAL-NOMAD",
+        countryCode: "CO",
+        visaType: "digital-nomad",
+        name: "Digital Nomad Visa (V)",
+        eligibleLifeStages: ["remoteEmployee", "freelancer"],
+        incomeRequirement: {
+          amount: 3900000,
+          currencyCode: "COP",
+          period: "monthly",
+          notes: "Requires at least 3x the current Colombian minimum wage."
+        },
+        durationMonths: 24,
+        renewable: true,
+        leadsToResidency: false,
+        residencyYearsRequired: null,
+        processingWeeks: [2, 4],
+        difficultyRating: 1,
+        requiresEmployer: false,
+        requiresMinIncome: true,
+        notes: "Very accessible pathway for remote workers and freelancers.",
+        sourceUrl: "https://www.cancilleria.gov.co/vistas-colombia-nomadas-digitales",
+        lastVerified: "2026-04-29"
+      },
+      {
+        pathwayId: "CO-PENSIONADO",
+        countryCode: "CO",
+        visaType: "retired",
+        name: "Pensionado / Rentista Visa (M)",
+        eligibleLifeStages: ["retired", "semiRetired"],
+        incomeRequirement: {
+          amount: 3900000,
+          currencyCode: "COP",
+          period: "monthly",
+          notes: "Requires at least 3x the current Colombian minimum wage in passive income."
+        },
+        durationMonths: 36,
+        renewable: true,
+        leadsToResidency: true,
+        residencyYearsRequired: 5,
+        processingWeeks: [4, 8],
+        difficultyRating: 2,
+        requiresEmployer: false,
+        requiresMinIncome: true,
+        notes: "Leads to permanent residency after 5 years of holding a Migrant (M) visa.",
+        sourceUrl: "https://www.cancilleria.gov.co/vistas-colombia-pensionado-rentista",
+        lastVerified: "2026-04-29"
+      }
+    ],
     cities: ["Medellin", "Bogota", "Cartagena"],
     rawIndicators: { summerHighC: 28, winterLowC: 7, humidityAvg: 70, airQualityIndex: 60, seismicZone: 4, internetReliability: 7.8, englishDailyLife: 4.1, stability: 6.2, authoritarianRisk: 3.8, corruptionRisk: 6.5 },
     dataConfidence: "high", lastUpdated: "2026-04-21", capitalCity: "Bogotá", currency: { code: "COP", name: "Colombian Peso" }
@@ -593,6 +693,50 @@ export const COUNTRIES: Country[] = [
     descriptor: "A mountain-ringed nation at the crossroads of Europe and Asia, famous for its hospitality and liberal business climate.",
     dimensions: { cost: 7.7, safety: 8.4, healthcare: 5.1, visaEase: 9.7, digitalInfra: 6.1, climate: 5.1, english: 4, lgbtqSafety: 3.8, techEcosystem: 6.4, naturalEnvironment: 7.7 },
     costBreakdown: { rentUsd: 750, groceriesUsd: 220, transportUsd: 20, utilitiesUsd: 70, diningOutUsd: 180, healthInsuranceUsd: 50, totalEstimateUsd: 1290 },
+    visaPathways: [
+      {
+        pathwayId: "GE-VISA-FREE-365",
+        countryCode: "GE",
+        visaType: "visa-free",
+        name: "365-Day Visa-Free Stay",
+        eligibleLifeStages: ["remoteEmployee", "freelancer", "retired", "semiRetired", "founder"],
+        durationMonths: 12,
+        renewable: true,
+        leadsToResidency: false,
+        residencyYearsRequired: null,
+        processingWeeks: [0, 0],
+        difficultyRating: 1,
+        requiresEmployer: false,
+        requiresMinIncome: false,
+        notes: "Most nationalities can stay for a full year without a visa. Can be 'reset' by a quick trip across the border.",
+        sourceUrl: "https://geoconsul.gov.ge/en/visa-free-stay",
+        lastVerified: "2026-04-29"
+      },
+      {
+        pathwayId: "GE-SMALL-BUSINESS",
+        countryCode: "GE",
+        visaType: "freelancer",
+        name: "Individual Entrepreneur (1% Tax)",
+        eligibleLifeStages: ["freelancer", "founder"],
+        incomeRequirement: {
+          amount: 0,
+          currencyCode: "GEL",
+          period: "monthly",
+          notes: "No minimum income, but applies to turnover up to 500,000 GEL per year."
+        },
+        durationMonths: 12,
+        renewable: true,
+        leadsToResidency: true,
+        residencyYearsRequired: 6,
+        processingWeeks: [1, 2],
+        difficultyRating: 1,
+        requiresEmployer: false,
+        requiresMinIncome: false,
+        notes: "Offers a 1% flat tax on turnover. Provides a basis for residency permits.",
+        sourceUrl: "https://www.rs.ge/SmallBusiness-en",
+        lastVerified: "2026-04-29"
+      }
+    ],
     cities: ["Tbilisi", "Batumi", "Kutaisi"],
     rawIndicators: { summerHighC: 31, winterLowC: 1, humidityAvg: 60, airQualityIndex: 70, seismicZone: 4, internetReliability: 8.2, englishDailyLife: 6.1, stability: 7.2, authoritarianRisk: 4.8, corruptionRisk: 4.2 },
     dataConfidence: "high", lastUpdated: "2026-04-21", capitalCity: "Tbilisi", currency: { code: "GEL", name: "Georgian Lari" }
@@ -741,6 +885,32 @@ export const COUNTRIES: Country[] = [
     descriptor: "An island fortress in the Mediterranean with a warm climate, English as an official language, and a booming iGaming and tech sector.",
     dimensions: { cost: 5.2, safety: 8.6, healthcare: 7.6, visaEase: 6.1, digitalInfra: 7.3, climate: 7.5, english: 8.7, lgbtqSafety: 9.8, techEcosystem: 7.1, naturalEnvironment: 2.7 },
     costBreakdown: { rentUsd: 1350, groceriesUsd: 350, transportUsd: 35, utilitiesUsd: 110, diningOutUsd: 350, healthInsuranceUsd: 90, totalEstimateUsd: 2285 },
+    visaPathways: [
+      {
+        pathwayId: "MT-NOMAD-RESIDENCE",
+        countryCode: "MT",
+        visaType: "digital-nomad",
+        name: "Nomad Residence Permit",
+        eligibleLifeStages: ["remoteEmployee", "freelancer"],
+        incomeRequirement: {
+          amount: 3500,
+          currencyCode: "EUR",
+          period: "monthly",
+          notes: "Applicant must prove a gross monthly income of at least €3,500."
+        },
+        durationMonths: 12,
+        renewable: true,
+        leadsToResidency: false,
+        residencyYearsRequired: null,
+        processingWeeks: [4, 8],
+        difficultyRating: 2,
+        requiresEmployer: false,
+        requiresMinIncome: true,
+        notes: "Ideal for non-EU nationals working for employers outside Malta.",
+        sourceUrl: "https://residencymalta.gov.mt/overview-nomad-residence-permit/",
+        lastVerified: "2026-04-29"
+      }
+    ],
     cities: ["Valletta", "Sliema", "St. Julian's"],
     rawIndicators: { summerHighC: 31, winterLowC: 9, humidityAvg: 70, airQualityIndex: 40, seismicZone: 2, internetReliability: 9.2, englishDailyLife: 9.5, stability: 9.1, authoritarianRisk: 1.5, corruptionRisk: 3.5 },
     dataConfidence: "high", lastUpdated: "2026-04-21", capitalCity: "Valletta", currency: { code: "EUR", name: "Euro" }
@@ -1013,6 +1183,50 @@ export const COUNTRIES: Country[] = [
     descriptor: "Boasting South America's most European culture, Argentina features world-class cities and extraordinary natural variety. It remains a top choice for those seeking cultural depth and a high standard of living at a competitive cost.",
     dimensions: { cost: 8.6, safety: 6.2, healthcare: 7.2, visaEase: 7.5, digitalInfra: 5.1, climate: 5.4, english: 4.6, lgbtqSafety: 7.4, techEcosystem: 5.8, naturalEnvironment: 5 },
     costBreakdown: { rentUsd: 600, groceriesUsd: 180, transportUsd: 20, utilitiesUsd: 90, diningOutUsd: 120, healthInsuranceUsd: 50, totalEstimateUsd: 1060 },
+    visaPathways: [
+      {
+        pathwayId: "AR-RENTISTA",
+        countryCode: "AR",
+        visaType: "passive-income",
+        name: "Rentista Visa",
+        eligibleLifeStages: ["remoteEmployee", "freelancer", "retired", "semiRetired"],
+        incomeRequirement: {
+          amount: 2000,
+          currencyCode: "USD",
+          period: "monthly",
+          notes: "Requires proof of recurring passive income. Threshold fluctuates with local economy."
+        },
+        durationMonths: 12,
+        renewable: true,
+        leadsToResidency: true,
+        residencyYearsRequired: 2,
+        processingWeeks: [4, 12],
+        difficultyRating: 3,
+        requiresEmployer: false,
+        requiresMinIncome: true,
+        notes: "One of the fastest global pathways to permanent residency (2 years).",
+        sourceUrl: "https://www.migraciones.gov.ar/residencia/",
+        lastVerified: "2026-04-29"
+      },
+      {
+        pathwayId: "AR-DIGITAL-NOMAD",
+        countryCode: "AR",
+        visaType: "digital-nomad",
+        name: "Digital Nomad Visa",
+        eligibleLifeStages: ["remoteEmployee", "freelancer"],
+        durationMonths: 6,
+        renewable: true,
+        leadsToResidency: false,
+        residencyYearsRequired: null,
+        processingWeeks: [1, 3],
+        difficultyRating: 1,
+        requiresEmployer: false,
+        requiresMinIncome: false,
+        notes: "Simple online application for remote workers. Provides local discounts.",
+        sourceUrl: "https://www.migraciones.gob.ar/nomadas-digitales/",
+        lastVerified: "2026-04-29"
+      }
+    ],
     cities: ["Buenos Aires", "Cordoba", "Mendoza", "Rosario"],
     rawIndicators: { summerHighC: 29, winterLowC: 8, humidityAvg: 65, airQualityIndex: 40, seismicZone: 3, internetReliability: 7.8, englishDailyLife: 6.8, stability: 6.1, authoritarianRisk: 3.2, corruptionRisk: 5.8 },
     dataConfidence: "high", lastUpdated: "2026-04-21", capitalCity: "Buenos Aires", currency: { code: "ARS", name: "Argentine Peso" }
@@ -1489,6 +1703,32 @@ export const COUNTRIES: Country[] = [
     descriptor: "A sophisticated Caribbean island with high living standards and a pioneer of the digital nomad visa.",
     dimensions: { cost: 3.3, safety: 8.4, healthcare: 7.8, visaEase: 5.5, digitalInfra: 7.7, climate: 7.5, english: 10, lgbtqSafety: 5.5, techEcosystem: 5.4, naturalEnvironment: 6.9 },
     costBreakdown: { rentUsd: 2000, groceriesUsd: 550, transportUsd: 80, utilitiesUsd: 250, diningOutUsd: 450, healthInsuranceUsd: 120, totalEstimateUsd: 3450 },
+    visaPathways: [
+      {
+        pathwayId: "BB-WELCOME-STAMP",
+        countryCode: "BB",
+        visaType: "digital-nomad",
+        name: "12-Month Welcome Stamp",
+        eligibleLifeStages: ["remoteEmployee", "freelancer"],
+        incomeRequirement: {
+          amount: 50000,
+          currencyCode: "USD",
+          period: "annual",
+          notes: "Applicant must expect to earn at least $50,000 USD in the next 12 months."
+        },
+        durationMonths: 12,
+        renewable: true,
+        leadsToResidency: false,
+        residencyYearsRequired: null,
+        processingWeeks: [1, 2],
+        difficultyRating: 1,
+        requiresEmployer: false,
+        requiresMinIncome: true,
+        notes: "A pioneer of the digital nomad visa, designed for high-income remote workers.",
+        sourceUrl: "https://www.visitbarbados.org/barbados-12-month-welcome-stamp",
+        lastVerified: "2026-04-29"
+      }
+    ],
     cities: ["Bridgetown", "Holetown", "Speightstown"],
     rawIndicators: { summerHighC: 31, winterLowC: 22, humidityAvg: 75, airQualityIndex: 25, seismicZone: 2, internetReliability: 9.1, englishDailyLife: 10.0, stability: 9.2, authoritarianRisk: 1.1, corruptionRisk: 1.8 },
     dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Bridgetown", currency: { code: "BBD", name: "Barbadian Dollar" }
@@ -1730,6 +1970,32 @@ export const COUNTRIES: Country[] = [
     descriptor: "A sun-soaked Mediterranean island, Cyprus offers a favourable tax regime and a high quality of life for international residents. It is a stable, European Union member state with a rich history and a welcoming local culture.",
     dimensions: { cost: 5.8, safety: 8.8, healthcare: 7.6, visaEase: 7.3, digitalInfra: 6.9, climate: 8.4, english: 7.7, lgbtqSafety: 6.8, techEcosystem: 7.1, naturalEnvironment: 5 },
     costBreakdown: { rentUsd: 1200, groceriesUsd: 350, transportUsd: 50, utilitiesUsd: 150, diningOutUsd: 300, healthInsuranceUsd: 100, totalEstimateUsd: 2150 },
+    visaPathways: [
+      {
+        pathwayId: "CY-DIGITAL-NOMAD",
+        countryCode: "CY",
+        visaType: "digital-nomad",
+        name: "Cyprus Digital Nomad Visa",
+        eligibleLifeStages: ["remoteEmployee", "freelancer"],
+        incomeRequirement: {
+          amount: 3500,
+          currencyCode: "EUR",
+          period: "monthly",
+          notes: "Applicant must prove a net monthly income of at least €3,500."
+        },
+        durationMonths: 12,
+        renewable: true,
+        leadsToResidency: true,
+        residencyYearsRequired: 7,
+        processingWeeks: [5, 12],
+        difficultyRating: 3,
+        requiresEmployer: false,
+        requiresMinIncome: true,
+        notes: "Allows non-EU nationals to reside and work remotely for employers registered abroad.",
+        sourceUrl: "https://www.moi.gov.cy/moi/crmd/crmd.nsf/All/6119894458C9660AC225875200388279?OpenDocument",
+        lastVerified: "2026-04-29"
+      }
+    ],
     cities: ["Nicosia", "Limassol", "Paphos", "Larnaca"],
     rawIndicators: { summerHighC: 33, winterLowC: 8, humidityAvg: 60, airQualityIndex: 45, seismicZone: 4, internetReliability: 8.8, englishDailyLife: 8.5, stability: 8.4, authoritarianRisk: 1.8, corruptionRisk: 3.2 },
     dataConfidence: "high", lastUpdated: "2026-04-24", capitalCity: "Nicosia", currency: { code: "EUR", name: "Euro" }
@@ -2557,6 +2823,26 @@ export const COUNTRIES: Country[] = [
     descriptor: "A tranquil South American heartland, Paraguay offers exceptional value and a growing digital footprint for international residents. It is known for its relaxed pace of life, friendly local culture, and a very accessible residency pathway.",
     dimensions: { cost: 7.9, safety: 6.4, healthcare: 5.2, visaEase: 8, digitalInfra: 4.4, climate: 5.4, english: 2.3, lgbtqSafety: 4.2, techEcosystem: 5.1, naturalEnvironment: 3.7 },
     costBreakdown: { rentUsd: 650, groceriesUsd: 220, transportUsd: 35, utilitiesUsd: 70, diningOutUsd: 180, healthInsuranceUsd: 80, totalEstimateUsd: 1235 },
+    visaPathways: [
+      {
+        pathwayId: "PY-SUACE-RESIDENCY",
+        countryCode: "PY",
+        visaType: "temporary-resident",
+        name: "Temporary Residence (SUACE)",
+        eligibleLifeStages: ["remoteEmployee", "freelancer", "founder", "retired", "semiRetired"],
+        durationMonths: 24,
+        renewable: true,
+        leadsToResidency: true,
+        residencyYearsRequired: 2,
+        processingWeeks: [12, 16],
+        difficultyRating: 2,
+        requiresEmployer: false,
+        requiresMinIncome: false,
+        notes: "Offers a straightforward path to permanent residency. Known for being one of the most accessible in South America.",
+        sourceUrl: "https://www.migraciones.gov.py/index.php/tramites/radicaciones/radicacion-temporaria-por-suace",
+        lastVerified: "2026-04-29"
+      }
+    ],
     cities: ["Asunción", "Ciudad del Este", "Encarnación"],
     rawIndicators: { summerHighC: 33, winterLowC: 13, humidityAvg: 65, airQualityIndex: 55, seismicZone: 1, internetReliability: 6.8, englishDailyLife: 3.2, stability: 7.2, authoritarianRisk: 3.5, corruptionRisk: 5.8 },
     dataConfidence: "medium", lastUpdated: "2026-04-24", capitalCity: "Asunción", currency: { code: "PYG", name: "Paraguayan Guaraní" }
