@@ -10,12 +10,13 @@ A reviewer who receives prose like "all tests passed" without pasted output will
 ```
 Branch: soft-beta/4-accessibility-interactions
 Base commit: 94bc702d6d72e0599324a90fd6c62664812d8ea3
-Head commit: a712fd148ac5919eb8f08bb47cb7daa900f558af
+Head commit at verification: 70c4f3603d714f96b389359f18f326c4f55af771
 
 Working tree status (paste full output of `git status --short --branch`):
 ## soft-beta/4-accessibility-interactions
 
 Changed files (paste full output of `git diff --name-status main...HEAD`):
+M       docs/PHASE_REVIEW_CHECKLIST.md
 M       src/components/App.tsx
 M       src/components/GlobeViewer.tsx
 M       src/components/QuizView.tsx
@@ -40,8 +41,9 @@ M       src/components/GlobeViewer.tsx
 M       src/components/QuizView.tsx
 M       src/components/ResultsView.tsx
 M       src/components/__tests__/App.test.tsx
-     Scope check: confirm every file is in the MODIFY list, explicitly approved optional files, or explain exception
-     New file check: confirm every added file is listed in ALLOWED_FILES
+M       docs/PHASE_REVIEW_CHECKLIST.md
+     Scope check: every file is in the MODIFY list
+     New file check: no new files
 
   4. npm run verify:phase (if ALLOWED_FILES and FORBIDDEN_FIELDS set for this phase)
      Command used: ALLOWED_FILES="src/components/App.tsx,src/components/QuizView.tsx,src/components/ResultsView.tsx,src/components/GlobeViewer.tsx,src/components/__tests__/App.test.tsx,src/components/__tests__/Integration.test.tsx,src/components/__tests__/GlobeViewer.test.tsx,docs/PHASE_REVIEW_CHECKLIST.md" npm run verify:phase
@@ -58,6 +60,7 @@ M       src/components/__tests__/App.test.tsx
 2. Scope (changed files vs ALLOWED_FILES)
   ✓ All changed files are in ALLOWED_FILES
    Changed:
+     docs/PHASE_REVIEW_CHECKLIST.md
      src/components/App.tsx
      src/components/GlobeViewer.tsx
      src/components/QuizView.tsx
@@ -94,10 +97,10 @@ Browser QA (required for frontend-visible phases):
   User flow exercised: landing -> quiz -> interim reveal -> results -> Deep Dive -> Escape close -> share modal -> What-If tab keyboard traversal -> retake.
   Console logs checked: yes — no new runtime errors
   Server logs checked: yes — none
-  Responsive/reduced-motion/no-WebGL checks, if applicable: 
+  Responsive/reduced-motion/no-WebGL checks, if applicable:
     - Verified reduced motion media query correctly disables globe rotation.
     - Verified globe fallback renders correctly when WebGL is unavailable or loading.
-  API failure UX checked, if applicable: 
+  API failure UX checked, if applicable:
     - Verified What-If error state displays correctly when API fails.
 
 Production integration checks:

@@ -38,6 +38,7 @@ export default function ResultsView({
   } | null>(null);
   const lastMatchFocusRef = useRef<HTMLButtonElement | null>(null);
   const shareTriggerRef = useRef<HTMLButtonElement>(null);
+  const shareCloseButtonRef = useRef<HTMLButtonElement>(null);
 
   // Source of truth for rapid-fire multi-control edits
   const localProfileRef = useRef<UserProfile>(profile);
@@ -159,6 +160,8 @@ export default function ResultsView({
 
   useEffect(() => {
     if (!showShareModal) return;
+
+    shareCloseButtonRef.current?.focus();
 
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -621,6 +624,7 @@ export default function ResultsView({
               <div className="flex justify-between items-center mb-6">
                 <h3 id="share-modal-title" className="text-xl font-bold">Share Your Results</h3>
                 <button
+                  ref={shareCloseButtonRef}
                   onClick={() => {
                     setShowShareModal(false);
                     shareTriggerRef.current?.focus();

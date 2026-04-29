@@ -377,6 +377,8 @@ describe('ResultsView Accessibility', () => {
     fireEvent.click(shareBtn);
 
     expect(screen.getByRole('dialog')).toBeDefined();
+    const closeBtn = screen.getByLabelText(/Close share modal/i);
+    expect(document.activeElement).toBe(closeBtn);
 
     fireEvent.keyDown(window, { key: 'Escape' });
     await waitFor(() => expect(screen.queryByRole('dialog')).toBeNull());
