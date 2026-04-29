@@ -10,7 +10,7 @@ A reviewer who receives prose like "all tests passed" without pasted output will
 ```
 Branch: soft-beta/10a-visa-trust-audit
 Base commit: 5e91f91a64e12c4e439ab78e09b3a4ab869003c6
-Head commit: 8cda057f40b13c33631dd0249650a96d9f41a69a
+Head commit: 5ebaaf4ea6a8a13298d27754bb655729ca8ebd07
 
 Working tree status (paste full output of `git status --short --branch`):
 ## soft-beta/10a-visa-trust-audit
