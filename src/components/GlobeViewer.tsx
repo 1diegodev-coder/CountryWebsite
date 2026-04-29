@@ -153,11 +153,14 @@ export default function GlobeViewer({ matchResults, eliminatedCodes, isResults }
       ref={containerRef}
       className="relative overflow-hidden w-full h-full"
       style={{ width: "100%", height: "100%" }}
+      role="img"
+      aria-label="Interactive 3D globe showing matching countries"
     >
       {/* Fallback Shell: lightweight and renders immediately */}
       <div
         data-testid="globe-fallback"
         className="absolute inset-0 flex flex-col items-center justify-center"
+        aria-label="Globe visualization loading"
         style={{
           zIndex: 10,
           opacity: showWebGl ? 0 : 1,

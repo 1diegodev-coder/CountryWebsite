@@ -155,10 +155,18 @@ export default function QuizView({ answers, onAnswer, onComplete, initialStep }:
               </div>
 
               <div className="space-y-3">
-                <button onClick={handleContinueFromInterim} className="btn-primary w-full">
-                  Answer 7 more to refine <ArrowRight size={18} className="ml-2" />
+                <button
+                  onClick={handleContinueFromInterim}
+                  className="btn-primary w-full"
+                  aria-label="Continue to finish the remaining 7 questions"
+                >
+                  Answer 7 more to refine <ArrowRight size={18} className="ml-2" aria-hidden="true" />
                 </button>
-                <button onClick={() => onComplete()} className="btn-ghost w-full">
+                <button
+                  onClick={() => onComplete()}
+                  className="btn-ghost w-full"
+                  aria-label="Skip remaining questions and see partial results"
+                >
                   See partial results now
                 </button>
               </div>
@@ -191,7 +199,7 @@ export default function QuizView({ answers, onAnswer, onComplete, initialStep }:
           {question.subtitle && <p className="question-sub">{question.subtitle}</p>}
         </div>
 
-        <div className="options-list">
+        <div className="options-list" role={isMulti ? "group" : "radiogroup"} aria-label="Question options">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentStep}
@@ -210,12 +218,15 @@ export default function QuizView({ answers, onAnswer, onComplete, initialStep }:
                     key={String(opt.value)}
                     onClick={() => handleSelect(opt.value)}
                     className={`option-card ${isSelected ? "selected" : ""}`}
+                    role={isMulti ? "checkbox" : "radio"}
+                    aria-checked={isSelected}
+                    aria-label={`${opt.label}${opt.sub ? `: ${opt.sub}` : ""}`}
                   >
                     <div className="option-card-inner">
-                      <div className={`${isMulti ? "checkbox" : "radio"} ${isSelected ? "checked" : ""}`}>
+                      <div className={`${isMulti ? "checkbox" : "radio"} ${isSelected ? "checked" : ""}`} aria-hidden="true">
                         {isSelected && isMulti && <Check size={12} strokeWidth={4} />}
                       </div>
-                      <div className="option-text">
+                      <div className="option-text text-left">
                         <div className="option-label">{opt.label}</div>
                         {opt.sub && <div className="option-sub">{opt.sub}</div>}
                       </div>
@@ -232,8 +243,9 @@ export default function QuizView({ answers, onAnswer, onComplete, initialStep }:
             onClick={handleBack}
             className="btn-ghost"
             disabled={currentStep === 1}
+            aria-label="Go back to previous question"
           >
-            <ArrowLeft size={16} className="mr-2" /> Back
+            <ArrowLeft size={16} className="mr-2" aria-hidden="true" /> Back
           </button>
 
           {isMulti && (
@@ -241,16 +253,17 @@ export default function QuizView({ answers, onAnswer, onComplete, initialStep }:
               onClick={handleNext}
               className={`btn-primary ${!canContinue ? "disabled" : ""}`}
               disabled={!canContinue}
+              aria-label={currentStep === totalSteps ? "See My Results" : "Continue to next question"}
             >
-              {currentStep === totalSteps ? "See My Results" : "Continue"} <ArrowRight size={16} className="ml-2" />
+              {currentStep === totalSteps ? "See My Results" : "Continue"} <ArrowRight size={16} className="ml-2" aria-hidden="true" />
             </button>
           )}
         </div>
       </div>
 
       <div className="quiz-right">
-        <div className="live-counter">
-          <Globe size={24} className="text-accent-green" />
+        <div className="live-counter" aria-live="polite">
+          <Globe size={24} className="text-accent-green" aria-hidden="true" />
           <div>
             <div className="counter-number">195</div>
             <div className="text-[11px] text-text-secondary uppercase tracking-wider">countries match</div>

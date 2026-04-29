@@ -180,15 +180,44 @@ export default function App() {
 
 function TweaksPanel({ tweaks, onChange }: { tweaks: any; onChange: any }) {
   const [isOpen, setIsOpen] = useState(false);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
 
   const set = (key: string, value: any) => {
     onChange({ ...tweaks, [key]: value });
   };
 
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setIsOpen(false);
+        triggerRef.current?.focus();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isOpen]);
+
+  // Simple focus trap: when open, focus the first element in tweaks panel
+  useEffect(() => {
+    if (isOpen) {
+      const focusable = panelRef.current?.querySelectorAll('button, input');
+      if (focusable && focusable.length > 0) {
+        (focusable[0] as HTMLElement).focus();
+      }
+    }
+  }, [isOpen]);
+
   return (
     <>
       <button
+        ref={triggerRef}
         onClick={() => setIsOpen(!isOpen)}
+        aria-label="Open UI Tweaks"
+        aria-expanded={isOpen}
         className="fixed bottom-6 right-6 z-[9999] w-10 h-10 rounded-full flex items-center justify-center transition-all bg-bg-surface border border-bg-elevated hover:border-accent-green"
         style={{ color: isOpen ? "var(--accent-green)" : "var(--text-secondary)" }}
       >
@@ -198,30 +227,47 @@ function TweaksPanel({ tweaks, onChange }: { tweaks: any; onChange: any }) {
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            ref={panelRef}
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             className="fixed bottom-20 right-6 z-[9999] w-64 bg-bg-surface border border-bg-elevated rounded-xl shadow-2xl overflow-hidden"
+            role="dialog"
+            aria-label="UI Tweaks Panel"
           >
             <div className="p-3 bg-bg-elevated flex items-center justify-between">
               <span className="text-[10px] font-bold tracking-widest text-accent-green uppercase">Tweaks</span>
-              <button onClick={() => setIsOpen(false)} className="text-text-muted hover:text-text-primary">
+              <button
+                onClick={() => {
+                  setIsOpen(false);
+                  triggerRef.current?.focus();
+                }}
+                className="text-text-muted hover:text-text-primary"
+                aria-label="Close Tweaks"
+              >
                 <X size={14} />
               </button>
             </div>
 
             <div className="p-4 space-y-6">
               <div>
-                <label className="text-[11px] font-semibold text-text-secondary uppercase mb-3 block">Accent Color</label>
-                <div className="flex gap-2">
-                  {["#4ADE80", "#60A5FA", "#FBBF24", "#F472B6"].map((c) => (
+                <label id="accent-color-label" className="text-[11px] font-semibold text-text-secondary uppercase mb-3 block">Accent Color</label>
+                <div className="flex gap-2" role="group" aria-labelledby="accent-color-label">
+                  {[
+                    { hex: "#4ADE80", name: "Green" },
+                    { hex: "#60A5FA", name: "Blue" },
+                    { hex: "#FBBF24", name: "Yellow" },
+                    { hex: "#F472B6", name: "Pink" }
+                  ].map((c) => (
                     <button
-                      key={c}
-                      onClick={() => set("accentColor", c)}
+                      key={c.hex}
+                      onClick={() => set("accentColor", c.hex)}
+                      aria-label={`Set accent color to ${c.name}`}
+                      aria-pressed={tweaks.accentColor === c.hex}
                       className={`w-7 h-7 rounded-full transition-all ${
-                        tweaks.accentColor === c ? "ring-2 ring-white ring-offset-2 ring-offset-bg-surface" : ""
+                        tweaks.accentColor === c.hex ? "ring-2 ring-white ring-offset-2 ring-offset-bg-surface" : ""
                       }`}
-                      style={{ backgroundColor: c }}
+                      style={{ backgroundColor: c.hex }}
                     />
                   ))}
                 </div>
@@ -229,10 +275,11 @@ function TweaksPanel({ tweaks, onChange }: { tweaks: any; onChange: any }) {
 
               <div>
                 <div className="flex justify-between mb-2">
-                  <label className="text-[11px] font-semibold text-text-secondary uppercase">Min Match %</label>
+                  <label htmlFor="min-match-range" className="text-[11px] font-semibold text-text-secondary uppercase">Min Match %</label>
                   <span className="text-[11px] font-mono text-accent-green">{tweaks.minMatchPct}%</span>
                 </div>
                 <input
+                  id="min-match-range"
                   type="range"
                   min="0"
                   max="90"

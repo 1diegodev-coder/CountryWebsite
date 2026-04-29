@@ -70,6 +70,7 @@ export default function ResultsView({
   [result.eliminated]);
 
   const [showShareModal, setShowShareModal] = useState(false);
+  const shareTriggerRef = useRef<HTMLButtonElement>(null);
 
   // What-If Request Pressure: Debounce & Cancellation
   const abortControllerRef = useRef<AbortController | null>(null);
@@ -161,6 +162,20 @@ export default function ResultsView({
     setShowShareModal(true);
   };
 
+  useEffect(() => {
+    if (!showShareModal) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setShowShareModal(false);
+        shareTriggerRef.current?.focus();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [showShareModal]);
+
   const copyToClipboard = async () => {
     if (shareUrl) {
       try {
@@ -202,10 +217,14 @@ export default function ResultsView({
           </button>
           {!isReadOnly && (
             <button
+              ref={shareTriggerRef}
               onClick={handleShare}
               disabled={isSharing || !result.shareReady}
               className={`btn-primary btn-sm ${isSharing || !result.shareReady ? "opacity-50 cursor-not-allowed" : ""}`}
               title={!result.shareReady ? "Sharing is temporarily unavailable" : ""}
+              aria-label="Share your results"
+              aria-haspopup="dialog"
+              aria-expanded={showShareModal}
             >
               <Share2 size={14} className="mr-2" />
               {isSharing ? "Copied!" : "Share Results"}
@@ -266,7 +285,7 @@ export default function ResultsView({
                   <div className="card-header">
                     <div>
                       <div className="flex items-center gap-2 mb-1">
-                        <span className="text-2xl">🌍</span>
+                        <span className="text-2xl" aria-hidden="true">🌍</span>
                         <h3 className="text-lg font-bold">{match.countryName}</h3>
                         <span className="text-[10px] font-mono text-text-muted bg-bg-elevated px-1.5 py-0.5 rounded uppercase">
                           {match.countryCode}
@@ -334,12 +353,14 @@ export default function ResultsView({
                     <button
                       className="btn-card-primary"
                       onClick={() => setSelectedCountry({ code: match.countryCode, initialSection: "overview" })}
+                      aria-label={`View deep dive details for ${match.countryName}`}
                     >
                       Deep Dive Details
                     </button>
                     <button
                       className="btn-card-ghost"
                       onClick={() => setSelectedCountry({ code: match.countryCode, initialSection: "visa" })}
+                      aria-label={`View visa guide for ${match.countryName}`}
                     >
                       Visa Guide
                     </button>
@@ -426,6 +447,7 @@ export default function ResultsView({
                     value={localProfile.budgetUsdMonthly}
                     onChange={(e) => handleWhatIf("budgetUsdMonthly", parseInt(e.target.value))}
                     className="w-full h-1 bg-bg-elevated rounded-lg appearance-none cursor-pointer accent-accent-green"
+                    aria-label="Adjust monthly budget"
                   />
                   <p className="text-[10px] text-text-muted leading-relaxed italic">
                     Increasing your budget may rescue countries previously eliminated for cost.
@@ -440,6 +462,9 @@ export default function ResultsView({
                       <button
                         onClick={() => handleWhatIf("languageFlexibility", localProfile.languageFlexibility === "englishOnly" ? "openToLearning" : "englishOnly")}
                         className={`w-8 h-4 rounded-full transition-colors relative ${localProfile.languageFlexibility === "englishOnly" ? "bg-accent-green" : "bg-bg-elevated"}`}
+                        role="switch"
+                        aria-checked={localProfile.languageFlexibility === "englishOnly"}
+                        aria-label="Toggle English only requirement"
                       >
                         <div className={`absolute top-0.5 w-3 h-3 bg-white rounded-full transition-all ${localProfile.languageFlexibility === "englishOnly" ? "left-[18px]" : "left-0.5"}`} />
                       </button>
@@ -449,6 +474,9 @@ export default function ResultsView({
                       <button
                         onClick={() => handleWhatIf("healthcareNeed", localProfile.healthcareNeed === "chronic" ? "general" : "chronic")}
                         className={`w-8 h-4 rounded-full transition-colors relative ${localProfile.healthcareNeed === "chronic" ? "bg-accent-green" : "bg-bg-elevated"}`}
+                        role="switch"
+                        aria-checked={localProfile.healthcareNeed === "chronic"}
+                        aria-label="Toggle chronic healthcare requirement"
                       >
                         <div className={`absolute top-0.5 w-3 h-3 bg-white rounded-full transition-all ${localProfile.healthcareNeed === "chronic" ? "left-[18px]" : "left-0.5"}`} />
                       </button>
@@ -472,6 +500,7 @@ export default function ResultsView({
                             ? "bg-accent-green/10 border-accent-green text-accent-green"
                             : "border-bg-elevated text-text-muted hover:border-text-muted"
                         }`}
+                        aria-pressed={localProfile.nonNegotiables?.includes(nn)}
                       >
                         {nn}
                       </button>
@@ -502,7 +531,7 @@ export default function ResultsView({
                         <div key={idx} className="elim-country border-b border-bg-elevated hover:bg-bg-elevated/30 p-4">
                           <div className="flex items-start justify-between gap-3 w-full">
                             <div className="flex items-start gap-3">
-                              <span className="text-lg opacity-50">🌍</span>
+                              <span className="text-lg opacity-50" aria-hidden="true">🌍</span>
                               <div>
                                 <div className="text-[13px] font-semibold text-text-secondary">{elim.countryName}</div>
                                 <div className="text-[11px] text-text-muted leading-relaxed">{elim.detail}</div>
@@ -516,6 +545,8 @@ export default function ResultsView({
                                     ? "bg-accent-green text-bg-primary border-accent-green"
                                     : "text-text-muted border-bg-elevated hover:border-text-muted"
                                 }`}
+                                aria-pressed={isOverridden}
+                                aria-label={`Override elimination for ${elim.countryName}`}
                               >
                                 {isOverridden ? "Active" : "Override"}
                               </button>
@@ -549,7 +580,11 @@ export default function ResultsView({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-[500] bg-black/60 backdrop-blur-md flex items-center justify-center p-6"
-            onClick={() => setShowShareModal(false)}
+            onClick={() => {
+              setShowShareModal(false);
+              shareTriggerRef.current?.focus();
+            }}
+            role="presentation"
           >
             <motion.div
               initial={{ scale: 0.9, y: 20 }}
@@ -557,10 +592,20 @@ export default function ResultsView({
               exit={{ scale: 0.9, y: 20 }}
               className="max-w-md w-full bg-bg-surface border border-bg-elevated rounded-2xl p-8 shadow-2xl"
               onClick={e => e.stopPropagation()}
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="share-modal-title"
             >
               <div className="flex justify-between items-center mb-6">
-                <h3 className="text-xl font-bold">Share Your Results</h3>
-                <button onClick={() => setShowShareModal(false)} className="text-text-muted hover:text-text-primary">
+                <h3 id="share-modal-title" className="text-xl font-bold">Share Your Results</h3>
+                <button
+                  onClick={() => {
+                    setShowShareModal(false);
+                    shareTriggerRef.current?.focus();
+                  }}
+                  className="text-text-muted hover:text-text-primary"
+                  aria-label="Close share modal"
+                >
                   <X size={20} />
                 </button>
               </div>
@@ -568,7 +613,7 @@ export default function ResultsView({
               <div className="space-y-6">
                 <div className="p-4 bg-bg-primary rounded-xl border border-bg-elevated space-y-4">
                   <div className="flex items-center gap-3">
-                    <span className="text-2xl">🌍</span>
+                    <span className="text-2xl" aria-hidden="true">🌍</span>
                     <div>
                       <div className="text-[10px] font-mono text-accent-green uppercase tracking-widest">Your Top Match</div>
                       <div className="text-lg font-bold">{result.matches[0].countryName}</div>
@@ -589,13 +634,15 @@ export default function ResultsView({
                   <div className="text-[10px] font-mono text-text-muted uppercase tracking-widest">Results Link</div>
                   <div className="flex gap-2">
                     <input
+                      id="share-link-input"
                       type="text"
                       readOnly
                       value={shareUrl || ""}
                       className="flex-1 bg-bg-primary border border-bg-elevated rounded-lg px-3 py-2 text-xs font-mono"
+                      aria-label="Shareable link"
                     />
                     <button onClick={copyToClipboard} className="btn-primary whitespace-nowrap px-4 text-xs">
-                      {isSharing ? "Copied" : "Copy"}
+                      {isSharing ? "Copied" : "Copy Link"}
                     </button>
                   </div>
                   <p className="text-[10px] text-text-muted italic">
@@ -653,6 +700,25 @@ function DeepDive({
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const visaSectionRef = React.useRef<HTMLElement | null>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [onClose]);
+
+  // Focus trap: when loaded, focus the first element
+  useEffect(() => {
+    if (!loading && panelRef.current) {
+      const focusable = panelRef.current.querySelectorAll('button, a, input, [tabindex]:not([tabindex="-1"])');
+      if (focusable.length > 0) {
+        (focusable[0] as HTMLElement).focus();
+      }
+    }
+  }, [loading]);
 
   React.useEffect(() => {
     setLoading(true);
@@ -688,21 +754,26 @@ function DeepDive({
       exit={{ opacity: 0 }}
       className="fixed inset-0 z-[100] flex items-center justify-end bg-black/40 backdrop-blur-sm"
       onClick={onClose}
+      role="presentation"
     >
       <motion.div
+        ref={panelRef}
         initial={{ x: "100%" }}
         animate={{ x: 0 }}
         exit={{ x: "100%" }}
         transition={{ type: "spring", damping: 25, stiffness: 200 }}
         className="w-full max-w-xl h-full bg-bg-surface border-l border-bg-elevated shadow-2xl overflow-y-auto"
         onClick={e => e.stopPropagation()}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="deep-dive-title"
       >
         <div className="p-8 pb-20">
           <div className="flex justify-between items-start mb-8">
             <div>
               <div className="flex items-center gap-3 mb-2">
-                <span className="text-4xl">🌍</span>
-                <h2 className="text-3xl font-bold font-display">{data?.name || code}</h2>
+                <span className="text-4xl" aria-hidden="true">🌍</span>
+                <h2 id="deep-dive-title" className="text-3xl font-bold font-display">{data?.name || code}</h2>
               </div>
               {data && (
                 <div className="flex flex-wrap gap-x-4 gap-y-1 mb-4 text-[10px] font-mono text-text-muted uppercase tracking-wider">
@@ -732,7 +803,11 @@ function DeepDive({
                 </div>
               )}
             </div>
-            <button onClick={onClose} className="p-2 hover:bg-bg-elevated rounded-full transition-colors">
+            <button
+              onClick={onClose}
+              className="p-2 hover:bg-bg-elevated rounded-full transition-colors"
+              aria-label="Close details"
+            >
               <X size={24} />
             </button>
           </div>
@@ -787,6 +862,7 @@ function DeepDive({
                             target="_blank"
                             rel="noreferrer"
                             className="text-[10px] font-mono text-accent-green uppercase hover:underline"
+                            aria-label={`Official source for ${pathway.name} visa`}
                           >
                             Source
                           </a>
@@ -874,7 +950,7 @@ function DeepDive({
               </section>
 
               <div className="p-6 bg-bg-elevated/20 rounded-xl border border-bg-elevated flex flex-col items-center text-center space-y-3">
-                <Info size={16} className="text-text-muted" />
+                <Info size={16} className="text-text-muted" aria-hidden="true" />
                 <p className="text-[9px] text-text-muted leading-relaxed">
                   Scoring is relative to your specific user profile. These indicators reflect general country-level trends and may not capture regional variations or recent socio-political shifts.
                 </p>
