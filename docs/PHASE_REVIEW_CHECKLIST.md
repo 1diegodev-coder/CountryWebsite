@@ -8,65 +8,107 @@ A reviewer who receives prose like "all tests passed" without pasted output will
 ## Required Fields
 
 ```
-Branch: <git branch --show-current>
-Base commit: <git rev-parse main>
-Head commit: <git rev-parse HEAD>
+Branch: soft-beta/5-globe-stability
+Base commit: 94bc702d6d72e0599324a90fd6c62664812d8ea3
+Head commit at verification: 04d2f0d3c78a017c40be39e894347d39ceb3a2c1 before final checklist amend; final commit necessarily changes this hash.
 
 Working tree status (paste full output of `git status --short --branch`):
-
+## soft-beta/5-globe-stability
 
 Changed files (paste full output of `git diff --name-status main...HEAD`):
-
+M       docs/PHASE_REVIEW_CHECKLIST.md
+M       src/app/globals.css
+M       src/components/GlobeViewer.tsx
+M       src/components/QuizView.tsx
+M       src/components/ResultsView.tsx
+M       src/components/__tests__/GlobeViewer.test.tsx
 
 Commands run and output:
 
   1. git diff --check
-     Exit code: [0 / non-zero]
-     Output: [paste any whitespace violations, or "clean"]
+     Exit code: 0
+     Output: clean
 
   2. git status --short --branch
-     Output: [paste full output]
-     Clean tree check: [confirm no uncommitted files]
+     Output:
+     ## soft-beta/5-globe-stability
+     Clean tree check: clean after commit.
 
   3. git diff --name-status main...HEAD
-     Output: [paste full file list]
-     Scope check: [confirm every file is in the MODIFY list, explicitly approved optional files, or explain exception]
-     New file check: [confirm every added file is listed in ALLOWED_FILES]
+     Output:
+     M       docs/PHASE_REVIEW_CHECKLIST.md
+     M       src/app/globals.css
+     M       src/components/GlobeViewer.tsx
+     M       src/components/QuizView.tsx
+     M       src/components/ResultsView.tsx
+     M       src/components/__tests__/GlobeViewer.test.tsx
+     Scope check: every file is in Phase 5 globe stability scope or the required checklist.
+     New file check: no added files.
 
   4. npm run verify:phase (if ALLOWED_FILES and FORBIDDEN_FIELDS set for this phase)
-     Command used: ALLOWED_FILES="..." FORBIDDEN_FIELDS="..." npm run verify:phase
-     Exit code: [0 / non-zero]
-     Output: [paste]
+     Command used: ALLOWED_FILES="docs/PHASE_REVIEW_CHECKLIST.md,src/app/globals.css,src/components/GlobeViewer.tsx,src/components/QuizView.tsx,src/components/ResultsView.tsx,src/components/__tests__/GlobeViewer.test.tsx" FORBIDDEN_FIELDS="costBreakdown,dimensions,visaPathways" npm run verify:phase
+     Exit code: 0
+     Output:
+     > country-dna@0.1.0 verify:phase
+     > bash scripts/verify-phase.sh
+
+     === verify:phase ===
+
+     0. Working tree clean
+       ✓ Working tree is clean — all changes committed
+
+     1. Whitespace (git diff --check main...HEAD)
+       ✓ No whitespace violations
+
+     2. Scope (changed files vs ALLOWED_FILES)
+       ✓ All changed files are in ALLOWED_FILES
+        Changed:
+          docs/PHASE_REVIEW_CHECKLIST.md
+          src/app/globals.css
+          src/components/GlobeViewer.tsx
+          src/components/QuizView.tsx
+          src/components/ResultsView.tsx
+          src/components/__tests__/GlobeViewer.test.tsx
+
+     3. Forbidden fields in countries.ts diff (FORBIDDEN_FIELDS)
+       ✓ countries.ts not changed — field check not applicable
+
+     === Summary ===
+     All checks passed.
 
   5. npm test
-     Exit code: [0 / non-zero]
-     Final line (e.g. "46 passed"): [paste verbatim]
+     Exit code: 0
+     Final line (e.g. "46 passed"): Tests  60 passed (60)
 
   6. npm run build
-     Exit code: [0 / non-zero]
-     Known warnings present: [yes/no — list if yes]
+     Exit code: 0
+     Known warnings present: yes - existing Sentry configuration warnings and edge runtime static generation warning. Initial sandboxed build failed on Google Fonts DNS; rerun with network access passed.
 
   7. npm run lint
-     Exit code: [0 / non-zero]
+     Exit code: 0
 
 Known warnings (expected build/lint noise, not new failures):
+[@sentry/nextjs] disableLogger deprecation warning.
+[@sentry/nextjs] missing onRequestError hook warning.
+[@sentry/nextjs] missing global error handler warning.
+[@sentry/nextjs] sentry.client.config.ts rename warning.
+Next.js edge runtime static generation warning.
 
-
-Scope exceptions (files outside the MODIFY list — requires explicit justification):
-  None / [explain]
+Scope exceptions (files outside the MODIFY list - requires explicit justification):
+docs/PHASE_REVIEW_CHECKLIST.md is updated as the required handoff artifact.
 
 Browser QA (required for frontend-visible phases):
-  Local URL tested: [paste]
-  User flow exercised: [landing / quiz / results / deep dive / share / what-if / other]
-  Console logs checked: [yes/no — paste new errors or "no new runtime errors"]
-  Server logs checked: [yes/no — paste unexpected 4xx/5xx or "none"]
-  Responsive/reduced-motion/no-WebGL checks, if applicable: [paste concise notes]
-  API failure UX checked, if applicable: [paste concise notes]
+  Local URL tested: http://localhost:3001
+  User flow exercised: results from persisted state, Retake Quiz to live quiz.
+  Console logs checked: no - in-app browser API did not expose console messages.
+  Server logs checked: yes - GET / 200; no unexpected 4xx/5xx observed.
+  Responsive/reduced-motion/no-WebGL checks, if applicable: unit coverage verifies immediate fallback, no-WebGL fallback, reduced-motion pause, visibility pause, context loss fallback, and context restore.
+  API failure UX checked, if applicable: not applicable to globe stability.
 
 Production integration checks:
-  Parent-to-child runtime data shape verified: [yes/no/not applicable]
-  Dynamic import / wrapper / ref behavior verified without relying only on mocks: [yes/no/not applicable]
-  API route exercised through real app path, if applicable: [yes/no/not applicable]
+  Parent-to-child runtime data shape verified: yes - QuizView passes forceFallback and ResultsView passes isPaused to GlobeViewer.
+  Dynamic import / wrapper / ref behavior verified without relying only on mocks: yes - real app path loaded through Next dev server; unit tests cover wrapper ref controls and renderer canvas context listeners.
+  API route exercised through real app path, if applicable: not applicable.
 ```
 
 ---
@@ -79,4 +121,4 @@ Production integration checks:
 4. **No hidden scope drift.** Whitespace-only edits, formatting churn, or unrelated docs changes outside scope are blockers unless explicitly approved.
 5. **A non-zero exit on any command is a blocker.** Fix it before handing off.
 6. **Frontend phases require browser QA.** Component tests are not a substitute for exercising the real app path in a browser.
-7. **The reviewer will rerun verification independently.** Agent-reported output is informational only — the reviewer's local run is authoritative.
+7. **The reviewer will rerun verification independently.** Agent-reported output is informational only - the reviewer's local run is authoritative.

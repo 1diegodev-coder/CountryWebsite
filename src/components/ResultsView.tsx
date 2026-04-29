@@ -237,6 +237,7 @@ export default function ResultsView({
               isResults={true}
               matchResults={result.matches}
               eliminatedCodes={eliminatedCodes}
+              isPaused={!!selectedCountry || showShareModal}
             />
           </div>
           <div className="globe-stats">

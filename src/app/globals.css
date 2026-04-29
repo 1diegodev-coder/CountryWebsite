@@ -520,6 +520,13 @@ input {
   position: relative;
 }
 
+.globe-container canvas,
+.globe-wrap canvas,
+.landing-globe canvas {
+  max-width: 100%;
+  display: block;
+}
+
 /* ── TOAST ──────────────────────────────────────────────────── */
 .toast-area {
   position: absolute;

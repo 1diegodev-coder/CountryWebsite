@@ -257,7 +257,11 @@ export default function QuizView({ answers, onAnswer, onComplete, initialStep }:
           </div>
         </div>
         <div className="globe-container">
-          <GlobeViewer isResults={false} activeStep={currentStep} />
+          <GlobeViewer
+            isResults={false}
+            activeStep={currentStep}
+            forceFallback={typeof window !== "undefined" && window.innerWidth < 768}
+          />
         </div>
       </div>
     </div>

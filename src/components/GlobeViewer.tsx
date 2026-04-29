@@ -7,6 +7,11 @@ import Globe from "./GlobeWrapper";
 let countriesGeoJsonCache: any | null = null;
 let countriesGeoJsonPromise: Promise<any> | null = null;
 
+export function __resetGlobeViewerCacheForTests() {
+  countriesGeoJsonCache = null;
+  countriesGeoJsonPromise = null;
+}
+
 function loadCountriesGeoJson() {
   if (countriesGeoJsonCache) return Promise.resolve(countriesGeoJsonCache);
   if (!countriesGeoJsonPromise) {
@@ -42,9 +47,17 @@ interface GlobeViewerProps {
   eliminatedCodes?: string[];
   activeStep?: number;
   isResults: boolean;
+  forceFallback?: boolean;
+  isPaused?: boolean;
 }
 
-export default function GlobeViewer({ matchResults, eliminatedCodes, isResults }: GlobeViewerProps) {
+export default function GlobeViewer({
+  matchResults,
+  eliminatedCodes,
+  isResults,
+  forceFallback = false,
+  isPaused = false
+}: GlobeViewerProps) {
   const globeRef = useRef<any>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [countries, setCountries] = useState<any>({ features: [] });
@@ -53,23 +66,38 @@ export default function GlobeViewer({ matchResults, eliminatedCodes, isResults }
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
   const [webGlActive, setWebGlActive] = useState(false);
   const [webGlError, setWebGlError] = useState(false);
+  const [isContextLost, setIsContextLost] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const isContextLostRef = useRef(false);
+
+  // Performance cap: Device Pixel Ratio
+  const [dpr, setDpr] = useState(1);
 
   useEffect(() => {
     setIsMounted(true);
+    setDpr(Math.min(Math.max(window.devicePixelRatio || 1, 1), 2)); // Cap at 2.0 for stability
 
     // Check for reduced motion
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
     setPrefersReducedMotion(mediaQuery.matches);
     const updateMotion = (e: MediaQueryListEvent) => setPrefersReducedMotion(e.matches);
     mediaQuery.addEventListener("change", updateMotion);
+    let cancelled = false;
 
     // Progressive Activation: Defer WebGL
-    if (hasWebGLSupport()) {
+    if (forceFallback) {
+      setWebGlActive(false);
+      setWebGlError(false);
+    } else if (hasWebGLSupport()) {
       const activate = () => {
+        if (cancelled) return;
         setWebGlActive(true);
         loadCountriesGeoJson()
-          .then(setCountries)
+          .then(data => {
+            if (!cancelled) setCountries(data);
+          })
           .catch(error => {
+            if (cancelled) return;
             console.error("Globe GeoJSON load error:", error);
             setWebGlError(true);
           });
@@ -84,8 +112,64 @@ export default function GlobeViewer({ matchResults, eliminatedCodes, isResults }
       setWebGlError(true);
     }
 
-    return () => mediaQuery.removeEventListener("change", updateMotion);
+    return () => {
+      cancelled = true;
+      mediaQuery.removeEventListener("change", updateMotion);
+    };
+  }, [forceFallback]);
+
+  // Handle Visibility for Pausing
+  useEffect(() => {
+    if (!containerRef.current) return;
+    if (typeof IntersectionObserver === "undefined") return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0 }
+    );
+
+    observer.observe(containerRef.current);
+    return () => observer.disconnect();
   }, []);
+
+  // WebGL Context Management
+  useEffect(() => {
+    const globe = globeRef.current;
+    if (!globe) return;
+
+    const canvas = globe.renderer?.()?.domElement;
+    if (!canvas) return;
+
+    const handleContextLost = (e: Event) => {
+      e.preventDefault();
+      if (!isContextLostRef.current) {
+        console.warn("Globe: WebGL context lost");
+      }
+      isContextLostRef.current = true;
+      setIsContextLost(true);
+    };
+
+    const handleContextRestored = () => {
+      isContextLostRef.current = false;
+      console.info("Globe: WebGL context restored");
+      setIsContextLost(false);
+      // Re-trigger resize to ensure renderer is healthy
+      if (containerRef.current) {
+        const { width, height } = containerRef.current.getBoundingClientRect();
+        setDimensions({ width: Math.floor(width), height: Math.floor(height) });
+      }
+    };
+
+    canvas.addEventListener("webglcontextlost", handleContextLost, false);
+    canvas.addEventListener("webglcontextrestored", handleContextRestored, false);
+
+    return () => {
+      canvas.removeEventListener("webglcontextlost", handleContextLost);
+      canvas.removeEventListener("webglcontextrestored", handleContextRestored);
+    };
+  }, [webGlActive, countries.features.length]);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -103,15 +187,16 @@ export default function GlobeViewer({ matchResults, eliminatedCodes, isResults }
     const resizeObserver = new ResizeObserver(updateDimensions);
     resizeObserver.observe(container);
     return () => resizeObserver.disconnect();
-  }, []); // Only run once on mount
+  }, []);
 
   useEffect(() => {
     const controls = globeRef.current?.controls?.();
     if (!controls) return;
 
-    controls.autoRotate = !prefersReducedMotion;
+    // Pause rotation if not visible, reduced motion, or manually paused
+    controls.autoRotate = !prefersReducedMotion && isVisible && !isContextLost && !isPaused;
     controls.autoRotateSpeed = 0.35;
-  }, [prefersReducedMotion, dimensions.width, dimensions.height, webGlActive, countries.features.length]);
+  }, [prefersReducedMotion, dimensions.width, dimensions.height, webGlActive, countries.features.length, isVisible, isContextLost, isPaused]);
 
   const getCountryColor = useCallback((d: any) => {
     const code = d.properties.ISO_A2;
@@ -146,7 +231,8 @@ export default function GlobeViewer({ matchResults, eliminatedCodes, isResults }
 
   // Fallback shell is rendered unconditionally for immediate first-paint.
   // We use inline styles for motion gating to ensure immediate reliability.
-  const showWebGl = isMounted && webGlActive && !webGlError && countries.features.length > 0 && dimensions.width > 0;
+  const shouldRenderWebGl = isMounted && webGlActive && !webGlError && countries.features.length > 0 && dimensions.width > 0;
+  const showWebGl = shouldRenderWebGl && !isContextLost;
 
   return (
     <div
@@ -193,26 +279,36 @@ export default function GlobeViewer({ matchResults, eliminatedCodes, isResults }
       </div>
 
       {/* WebGL Globe: dynamic client-only component */}
-      {showWebGl && (
-        <Globe
-          ref={globeRef}
-          width={dimensions.width}
-          height={dimensions.height}
-          backgroundColor="rgba(0,0,0,0)"
-          showAtmosphere={true}
-          atmosphereColor="#60A5FA"
-          atmosphereAltitude={0.15}
-          polygonsData={countries.features}
-          polygonCapColor={getCountryColor}
-          polygonSideColor={() => "rgba(0, 0, 0, 0.1)"}
-          polygonStrokeColor={() => "rgba(255, 255, 255, 0.1)"}
-          polygonAltitude={getCountryAltitude}
-          polygonLabel={({ properties: d }: any) => `
-            <div class="bg-bg-surface border border-bg-elevated p-2 rounded-lg text-xs shadow-2xl">
-              <b class="text-text-primary uppercase tracking-wider">${d.ADMIN}</b>
-            </div>
-          `}
-        />
+      {shouldRenderWebGl && (
+        <div
+          className="absolute inset-0"
+          style={{
+            zIndex: 5,
+            opacity: showWebGl ? 1 : 0,
+            pointerEvents: showWebGl ? "auto" : "none"
+          }}
+        >
+          <Globe
+            ref={globeRef}
+            width={dimensions.width}
+            height={dimensions.height}
+            devicePixelRatio={dpr}
+            backgroundColor="rgba(0,0,0,0)"
+            showAtmosphere={true}
+            atmosphereColor="#60A5FA"
+            atmosphereAltitude={0.15}
+            polygonsData={countries.features}
+            polygonCapColor={getCountryColor}
+            polygonSideColor={() => "rgba(0, 0, 0, 0.1)"}
+            polygonStrokeColor={() => "rgba(255, 255, 255, 0.1)"}
+            polygonAltitude={getCountryAltitude}
+            polygonLabel={({ properties: d }: any) => `
+              <div class="bg-bg-surface border border-bg-elevated p-2 rounded-lg text-xs shadow-2xl">
+                <b class="text-text-primary uppercase tracking-wider">${d.ADMIN}</b>
+              </div>
+            `}
+          />
+        </div>
       )}
     </div>
   );
