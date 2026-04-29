@@ -31,6 +31,7 @@ export default function ResultsView({
   const [shareUrl, setShareUrl] = useState<string | null>(null);
   const [pngExportNotice, setPngExportNotice] = useState(false);
   const [isWhatIfLoading, setIsWhatIfLoading] = useState(false);
+  const [whatIfError, setWhatIfError] = useState<string | null>(null);
   const [selectedCountry, setSelectedCountry] = useState<{
     code: string;
     initialSection?: "overview" | "visa";
@@ -80,6 +81,7 @@ export default function ResultsView({
     abortControllerRef.current = controller;
 
     setIsWhatIfLoading(true);
+    setWhatIfError(null);
     try {
       const response = await fetch("/api/whatif", {
         method: "POST",
@@ -96,12 +98,20 @@ export default function ResultsView({
           onUpdateResult({ ...newResult, sessionToken: result.sessionToken });
           onUpdateProfile?.(updatedProfile);
         }
+      } else {
+        const errorData = await response.json().catch(() => ({}));
+        if (requestId === latestRequestIdRef.current) {
+          setWhatIfError(errorData.error || "Failed to update results");
+        }
       }
     } catch (e: any) {
       if (e.name === 'AbortError' || e.message === 'AbortError') {
         // Ignored
       } else {
         console.error("What-if error", e);
+        if (requestId === latestRequestIdRef.current) {
+          setWhatIfError("A connection error occurred");
+        }
       }
     } finally {
       // Only set loading to false if this was the latest request
@@ -397,6 +407,12 @@ export default function ResultsView({
 
             {activeTab === "whatif" && (
               <div className="p-6 space-y-8">
+                {whatIfError && (
+                  <div className="p-3 bg-accent-warning/10 border border-accent-warning/20 rounded-lg flex items-center gap-3 text-xs text-accent-warning animate-in fade-in slide-in-from-top-1">
+                    <AlertTriangle size={14} className="shrink-0" />
+                    <p>{whatIfError}</p>
+                  </div>
+                )}
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
                     <h4 className="text-[11px] font-mono text-text-muted uppercase tracking-widest">Adjust Budget</h4>

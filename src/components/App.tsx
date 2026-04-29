@@ -78,19 +78,24 @@ export default function App() {
       const locale = navigator.language || "en-US";
       const browserLanguages = navigator.languages ? [...navigator.languages] : [locale.split("-")[0]];
       
+      const fullProfile = {
+        ...answers,
+        languages: browserLanguages,
+        locale: locale,
+      };
+
       const response = await fetch("/api/match", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          ...answers,
-          languages: browserLanguages,
-          locale: locale,
-        }),
+        body: JSON.stringify(fullProfile),
       });
 
       if (!response.ok) throw new Error("Match request failed");
 
       const result = await response.json();
+      
+      // Persist the full profile used for the match
+      setAnswers(fullProfile as UserProfile);
       setEngineResult(result);
       setScreen("results");
     } catch (e) {
