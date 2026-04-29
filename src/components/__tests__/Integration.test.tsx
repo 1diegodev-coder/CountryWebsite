@@ -39,7 +39,7 @@ describe('Integration: App -> ResultsView -> WhatIf', () => {
   beforeEach(() => {
     localStorage.clear();
     vi.clearAllMocks();
-    
+
     // Mock navigator
     Object.defineProperty(window, 'navigator', {
       value: {
@@ -116,13 +116,13 @@ describe('Integration: App -> ResultsView -> WhatIf', () => {
 
     // Start Quiz
     fireEvent.click(screen.getByText(/Begin your match/i));
-    
+
     // Wait for QuizView to render
     await waitFor(() => expect(screen.getByText(/What best describes where you are right now/i)).toBeDefined());
 
     // Question 1: Life Stage (Single)
     fireEvent.click(screen.getByText(/Remote Worker/i));
-    
+
     // Question 2: Household (Single)
     fireEvent.click(await screen.findByText(/Just me/i, {}, { timeout: 3000 }));
 
@@ -218,10 +218,10 @@ describe('Integration: App -> ResultsView -> WhatIf', () => {
     // Fast track to ResultsView by mocking engineResult
     // Since we can't easily set state from outside, we'll just go through the quiz one more time but faster if possible
     // Actually, I'll just use the first test's logic but focus on the What-If click
-    
+
     // Start Quiz
     fireEvent.click(screen.getByText(/Begin your match/i));
-    
+
     // We'll just reuse the same flow
     fireEvent.click(await screen.findByText(/Remote Worker/i, {}, { timeout: 3000 }));
     fireEvent.click(await screen.findByText(/Just me/i, {}, { timeout: 3000 }));
