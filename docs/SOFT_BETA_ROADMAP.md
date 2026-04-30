@@ -5,26 +5,27 @@ This is the handoff source for the soft-beta launch sequence. It is separate fro
 
 ## Current Checkout Status
 
-Current local `main` is ahead of `origin/main` and includes merged soft-beta work through:
+Current accepted soft-beta branch state includes completed work through:
 
 - Phase 3 — Integration Hotfixes
 - Phase 4 — Accessibility And Interaction Polish
 - Phase 5 — Globe Stability Hardening
+- Phase 6 — Results UX And Trust Polish
+- Phase 7 — Sharing And Deploy Readiness
 - Phase 10A — Visa Trust Audit Report
 - Phase 10B — Visa Pathway Restoration
 - Phase 10C — Visa Trust UI Polish
 
 The remaining planned tracks are:
 
-- Phase 6 — Results UX And Trust Polish
-- Phase 7 — Sharing And Deploy Readiness
 - Phase 8 — Observability, Privacy, And Compliance
 - Phase 9 — Performance Budget And Device Matrix
 - Phase 11 — Prototype Parity And Product Polish
 - Phase 12 — Soft Beta Launch Gate
 
-Before starting a new phase, sync/confirm the intended base branch. The root checkout is the canonical
-`main` worktree for this project.
+Before starting a new phase, sync/confirm the intended base branch. If Phase 6 or Phase 7 is not
+merged into the reader's local `main` yet, merge and verify those phases first. The root checkout is
+the canonical `main` worktree for this project.
 
 ## Operating Model
 
@@ -142,45 +143,49 @@ Delivered scope:
 - Added semantic `time` display for `lastVerified`.
 - Replaced "Coming soon" empty visa copy with clearer "not verified in-app yet" language.
 - Added loading/error accessibility improvements in Deep Dive.
-- Verified Spain with structured pathways and Georgia with an unverified/empty state via real app path.
+- Verified Spain with structured pathways and Uruguay with an unverified/empty state via real app path.
 
 Reference: `docs/PHASE_REVIEW_CHECKLIST.md`, section `soft-beta/10C`.
 
-## Remaining Phases
-
 ### Phase 6 — Results UX And Trust Polish
+
+Branch: `soft-beta/6-results-ux-trust`
+
+Status: accepted on branch; merge before starting Phase 8 if not already on `main`.
 
 Goal: make results feel complete, not beta-fragile.
 
-Scope:
-- Improve empty and error states for Results, Deep Dive, and What-If.
-- Keep Visa Guide labeling honest after the Phase 10B/10C data/UI changes.
-- Verify `hasVisaData` behavior against actual `/api/countries/[code]`.
-- Improve "Show more matches" state/count, for example "Show 10 more of 153".
-- Add tests for visa gating and Deep Dive placeholders.
+Delivered scope:
+- Added informative empty states for no matches and no eliminated countries.
+- Improved Deep Dive loading/error states with retry and close behavior.
+- Preserved Visa Guide trust language after the Phase 10B/10C changes.
+- Added count-aware Show More copy and clearer What-If feedback.
+- Added regression tests for the Phase 6 results/trust states.
+- Guarded empty results so sharing cannot open when `matches` is empty, even if persistence marks `shareReady`.
 
-Acceptance:
-- Browser: top match Deep Dive, Visa Guide, eliminated panel, show more, and error handling.
-- Check browser console and server logs.
-
-Dependency note:
-- Run from current `main`, because Phase 10B/10C changed visa data and Deep Dive behavior.
+Reference: `docs/PHASE_REVIEW_CHECKLIST.md`, section `soft-beta/6`.
 
 ### Phase 7 — Sharing And Deploy Readiness
 
+Branch: `soft-beta/7-sharing-deploy-readiness`
+
+Status: accepted on branch at `3a6dbd3`; merge before starting Phase 8 if not already on `main`.
+
 Goal: make share/read-only flows dependable.
 
-Scope:
-- Confirm Redis environment behavior in local and deployed mode.
-- Verify `/r/[token]` read-only results.
-- Improve disabled share copy when Redis is unavailable.
-- Decide PNG export: implement a real share card or remove/de-emphasize the CTA until V1.1.
-- Add tests for share-ready and read-only mode.
+Delivered scope:
+- Improved missing-Redis share-disabled copy while preserving local results.
+- Verified share-ready modal behavior and read-only `/r/[token]` route behavior.
+- Hid interactive controls in read-only mode while preserving "Take Your Own Quiz."
+- Labeled PNG export as unavailable for soft beta.
+- Restored strict 8-character share-token validation.
+- Invalidated share readiness after What-If updates to avoid stale share links.
+- Updated expiry copy to match Redis write-time TTL behavior.
+- Raised the heavy API route import test timeout to prevent full-suite flake.
 
-Acceptance:
-- Browser with envs missing: graceful disabled share.
-- Browser with envs present, if available: create share link, open `/r/[token]`, confirm read-only result.
-- Check browser console and server logs.
+Reference: `docs/PHASE_REVIEW_CHECKLIST.md`, section `soft-beta/7`.
+
+## Remaining Phases
 
 ### Phase 8 — Observability, Privacy, And Compliance
 
@@ -261,11 +266,11 @@ Dependency note:
 
 ## Suggested Remaining Sequence
 
-Parallelism is still possible, but avoid file collisions:
+Proceed serially unless there is a strong reason to parallelize:
 
-1. Run Phase 6 and Phase 7 in parallel only if their prompts define disjoint write scopes.
-2. Run Phase 8 in parallel with Phase 7 if analytics/Sentry files do not overlap sharing/read-only files.
-3. Run Phase 9 after Phases 6, 7, and 8 so performance measurements reflect the near-final surface.
+1. Merge and verify Phase 6 and Phase 7 from fresh `main`, if not already merged.
+2. Run Phase 8 next from fresh `main`.
+3. Run Phase 9 after Phase 8 so performance measurements reflect the instrumented near-final surface.
 4. Run Phase 11 after Phase 9.
 5. Run Phase 12 last.
 
