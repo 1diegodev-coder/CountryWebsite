@@ -12,7 +12,7 @@ A reviewer who receives prose like "all tests passed" without pasted output will
 ```
 Branch: soft-beta/4-accessibility-interactions
 Base commit: 94bc702d6d72e0599324a90fd6c62664812d8ea3
-Head commit at verification: 4bb384bfed002ee3b6fd7204121dcc0e2c809fff
+Head commit at verification: 70c4f3603d714f96b389359f18f326c4f55af771
 
 Working tree status (paste full output of `git status --short --branch`):
 ## soft-beta/4-accessibility-interactions
@@ -116,7 +116,7 @@ Production integration checks:
 ```
 Branch: soft-beta/5-globe-stability
 Base commit: 94bc702d6d72e0599324a90fd6c62664812d8ea3
-Head commit at verification: 4bb384bfed002ee3b6fd7204121dcc0e2c809fff
+Head commit at verification: 04d2f0d3c78a017c40be39e894347d39ceb3a2c1 before final checklist amend; final commit necessarily changes this hash.
 
 Working tree status (paste full output of `git status --short --branch`):
 ## soft-beta/5-globe-stability
@@ -295,7 +295,7 @@ Production integration checks:
 ```
 Branch: soft-beta/10c-visa-trust-ui
 Base commit: 9468f28
-Head commit at verification: 4bb384bfed002ee3b6fd7204121dcc0e2c809fff
+Head commit at verification: cda271f
 
 Working tree status (paste full output of `git status --short --branch`):
 ## soft-beta/10c-visa-trust-ui
@@ -500,7 +500,7 @@ Production integration checks:
 ```
 Branch: soft-beta/6-results-ux-trust
 Base commit: c9e1192073073b33456908cb657aa936e057d611
-Head commit at verification: 4bb384bfed002ee3b6fd7204121dcc0e2c809fff
+Head commit at verification: cb1a409
 
 Working tree status (paste full output of `git status --short --branch`):
 ## soft-beta/6-results-ux-trust
@@ -600,7 +600,7 @@ Production integration checks:
 ```
 Branch: soft-beta/7-sharing-deploy-readiness
 Base commit: 14857e1df2fe315777f1910f94ab41396635e98d
-Head commit at verification: 4bb384bfed002ee3b6fd7204121dcc0e2c809fff
+Head commit at verification: 8a0c8b17b5ece1c19fe18a6d48202b1560fb45a4
 
 Working tree status (paste full output of `git status --short --branch`):
 ## soft-beta/7-sharing-deploy-readiness
