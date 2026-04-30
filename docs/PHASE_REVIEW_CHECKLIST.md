@@ -833,12 +833,13 @@ Production integration checks:
 ```
 Branch: soft-beta/11-prototype-parity-polish
 Base commit: 7b2dbb44f058b6338322e170bbd2da7ba237b1a2
-Head commit at verification: 1de5ede4a6e7978de30d8efa25c08fa853cef892
+Head commit at verification: 895b3ad before final checklist metadata correction; final commit necessarily changes this hash.
 
 Working tree status (paste full output of `git status --short --branch`):
 ## soft-beta/11-prototype-parity-polish
 
 Changed files (paste full output of `git diff --name-status main...HEAD`):
+M	docs/PHASE_REVIEW_CHECKLIST.md
 A	docs/soft-beta-phase11-gap-report.md
 
 Commands run and output:
@@ -854,6 +855,7 @@ Commands run and output:
 
   3. git diff --name-status main...HEAD
      Output:
+M	docs/PHASE_REVIEW_CHECKLIST.md
 A	docs/soft-beta-phase11-gap-report.md
      Scope check: YES (MODIFY checklist, CREATE gap report)
      New file check: YES (docs/soft-beta-phase11-gap-report.md)
