@@ -11,8 +11,8 @@ For the Soft Beta phase, we have deferred the integration of third-party analyti
 ## Privacy Strategy
 We employ a "Sanitize-at-Source" strategy for all telemetry and error reporting:
 
-1.  **Telemetry Sanitization:** The `trackEvent` wrapper in `src/lib/telemetry.ts` explicitly deletes sensitive keys (passport, budget, profile, etc.) before any potential transmission.
-2.  **Sentry Sanitization:** `beforeSend` hooks in all Sentry configurations (`client`, `server`, `edge`) redact request bodies and sensitive extra context (profile, answers, tokens).
+1.  **Telemetry Sanitization:** The `trackEvent` wrapper in `src/lib/telemetry.ts` only emits event-specific allowlisted metadata and strips sensitive keys before any potential transmission.
+2.  **Sentry Sanitization:** `beforeSend` hooks in all Sentry configurations (`client`, `server`, `edge`) recursively redact sensitive request, context, and extra fields, including share tokens in known URLs.
 3.  **Coarse Metadata:** Only non-sensitive, coarse metadata is allowed in telemetry (e.g., bucketed match counts instead of exact numbers).
 
 ## Tracked Funnel Events
@@ -20,8 +20,8 @@ The following events are tracked without sensitive data:
 - `quiz_started`
 - `quiz_completed` (includes `matchCountBucket`)
 - `results_viewed` (includes `matchCountBucket`, `isReadOnly`)
-- `deep_dive_opened` (includes `countryCode`, `section`)
-- `what_if_used` (includes `field`)
+- `deep_dive_opened` (includes `section`)
+- `what_if_used` (no metadata)
 - `share_attempted` (includes `shareAvailable`)
 
 ## Compliance

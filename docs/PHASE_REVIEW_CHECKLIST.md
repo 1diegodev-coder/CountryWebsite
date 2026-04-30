@@ -599,14 +599,15 @@ Production integration checks:
 
 ```
 Branch: soft-beta/8-observability-privacy
-Base commit: 3ed39a3
-Head commit at verification: 0841225
+Base commit: a227d62
+Head commit at verification: c305414 before Codex privacy metadata hardening; final cleanup commit necessarily changes this hash.
 
 Working tree status (paste full output of `git status --short --branch`):
 ## soft-beta/8-observability-privacy
 
 Changed files (paste full output of `git diff --name-status main...HEAD`):
 M       .env.example
+M       docs/PHASE_REVIEW_CHECKLIST.md
 A       docs/soft-beta-observability-privacy.md
 A       instrumentation-client.ts
 M       instrumentation.ts
@@ -633,6 +634,7 @@ Commands run and output:
   3. git diff --name-status main...HEAD
      Output:
 M       .env.example
+M       docs/PHASE_REVIEW_CHECKLIST.md
 A       docs/soft-beta-observability-privacy.md
 A       instrumentation-client.ts
 M       instrumentation.ts
@@ -664,6 +666,7 @@ A       src/lib/telemetry.ts
   ✓ All changed files are in ALLOWED_FILES
    Changed:
      .env.example
+     docs/PHASE_REVIEW_CHECKLIST.md
      docs/soft-beta-observability-privacy.md
      instrumentation-client.ts
      instrumentation.ts
@@ -685,7 +688,7 @@ All checks passed.
 
   5. npm test
      Exit code: 0
-     Final line: Tests  78 passed (78)
+     Final line: Tests  80 passed (80)
 
   6. npm run build
      Exit code: 0
@@ -709,8 +712,9 @@ Browser QA (required for frontend-visible phases):
     - Open Deep Dive (track deep_dive_opened)
     - Adjust What-If (track what_if_used)
     - Share button (track share_attempted)
-    - Verified all telemetry logs in non-production environments with sanitized metadata.
-    - Confirmed Sentry initialized on all runtimes with beforeSend scrubbing.
+    - Verified all telemetry logs in non-production environments with event-specific allowlisted metadata.
+    - Confirmed Deep Dive telemetry omits exact country code and What-If telemetry omits raw field names.
+    - Confirmed Sentry initialized on all runtimes with recursive beforeSend scrubbing.
     - Verified global-error boundary exists.
   Console logs checked: yes — confirmed [Telemetry] logs with expected (sanitized) metadata.
   Server logs checked: yes — no unexpected 4xx/5xx.

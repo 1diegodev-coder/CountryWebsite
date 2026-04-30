@@ -171,9 +171,7 @@ export default function ResultsView({
       performWhatIf(updatedProfile, requestId);
     }, 350);
 
-    trackEvent("what_if_used", {
-      field: key
-    });
+    trackEvent("what_if_used");
   };
 
   useEffect(() => {
@@ -415,7 +413,7 @@ export default function ResultsView({
                           onClick={(e) => {
                             lastMatchFocusRef.current = e.currentTarget;
                             setSelectedCountry({ code: match.countryCode, initialSection: "overview" });
-                            trackEvent("deep_dive_opened", { countryCode: match.countryCode, section: "overview" });
+                            trackEvent("deep_dive_opened", { section: "overview" });
                           }}
                           aria-label={`View deep dive details for ${match.countryName}`}
                         >
@@ -426,7 +424,7 @@ export default function ResultsView({
                           onClick={(e) => {
                             lastMatchFocusRef.current = e.currentTarget;
                             setSelectedCountry({ code: match.countryCode, initialSection: "visa" });
-                            trackEvent("deep_dive_opened", { countryCode: match.countryCode, section: "visa" });
+                            trackEvent("deep_dive_opened", { section: "visa" });
                           }}
                           aria-label={`View visa guide for ${match.countryName}`}
                         >

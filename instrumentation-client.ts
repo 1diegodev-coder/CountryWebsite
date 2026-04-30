@@ -1,4 +1,5 @@
 import * as Sentry from "@sentry/nextjs";
+import { sanitizeSentryEvent } from "./src/lib/telemetry";
 
 Sentry.init({
   dsn: process.env.NEXT_PUBLIC_SENTRY_DSN,
@@ -7,19 +8,7 @@ Sentry.init({
   debug: false,
   replaysOnErrorSampleRate: 0,
   replaysSessionSampleRate: 0,
-  beforeSend(event) {
-    // Sanitization: remove sensitive data from error reports
-    if (event.request && event.request.data) {
-      delete event.request.data;
-    }
-    if (event.extra) {
-      delete event.extra.profile;
-      delete event.extra.answers;
-      delete event.extra.token;
-      delete event.extra.sessionToken;
-    }
-    return event;
-  },
+  beforeSend: sanitizeSentryEvent,
 });
 
 export const onRouterTransitionStart = Sentry.captureRouterTransitionStart;
