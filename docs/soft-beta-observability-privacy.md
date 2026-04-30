@@ -1,7 +1,7 @@
 # Soft Beta Observability, Privacy, and Compliance
 
 ## Analytics Decision
-For the Soft Beta phase, we have deferred the integration of third-party analytics vendors (e.g., PostHog). 
+For the Soft Beta phase, we have deferred the integration of third-party analytics vendors (e.g., PostHog).
 
 **Reasoning:**
 - Minimize third-party dependencies during initial rollout.

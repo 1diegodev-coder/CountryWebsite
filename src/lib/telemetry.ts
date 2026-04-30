@@ -1,12 +1,12 @@
 /**
  * Telemetry and Analytics wrapper for CountryDNA.
- * 
+ *
  * Provides privacy-safe funnel event tracking.
- * sensitive relocation-profile data (passport, budget, answers) 
+ * sensitive relocation-profile data (passport, budget, answers)
  * is NEVER sent to telemetry.
  */
 
-type FunnelEvent = 
+type FunnelEvent =
   | 'quiz_started'
   | 'quiz_completed'
   | 'results_viewed'
@@ -29,10 +29,10 @@ interface TelemetryMetadata {
 export function trackEvent(name: FunnelEvent, metadata?: TelemetryMetadata) {
   // Privacy safety: Ensure no sensitive keys leaked via metadata spread
   const sanitizedMetadata = metadata ? { ...metadata } : {};
-  
+
   const forbiddenKeys = [
-    'passport', 'citizenship', 'budget', 'income', 'savings', 
-    'healthcare', 'household', 'answers', 'profile', 
+    'passport', 'citizenship', 'budget', 'income', 'savings',
+    'healthcare', 'household', 'answers', 'profile',
     'token', 'sessionToken', 'localStorage'
   ];
 

@@ -4,7 +4,7 @@ import { trackEvent, bucketMatchCount } from "../telemetry";
 describe("Telemetry", () => {
   it("sanitizes forbidden keys from metadata", () => {
     const consoleSpy = vi.spyOn(console, "log").mockImplementation(() => {});
-    
+
     trackEvent("quiz_completed" as any, {
       matchCountBucket: "1-5",
       passport: "US", // Forbidden
