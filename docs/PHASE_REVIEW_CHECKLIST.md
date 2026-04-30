@@ -595,7 +595,131 @@ Production integration checks:
   API route exercised through real app path, if applicable: yes
 ```
 
-### soft-beta/7 — Sharing And Deploy Readiness
+### soft-beta/8 — Observability, Privacy, & Compliance
+
+```
+Branch: soft-beta/8-observability-privacy
+Base commit: 3ed39a3
+Head commit at verification: 0841225
+
+Working tree status (paste full output of `git status --short --branch`):
+## soft-beta/8-observability-privacy
+
+Changed files (paste full output of `git diff --name-status main...HEAD`):
+M       .env.example
+A       docs/soft-beta-observability-privacy.md
+A       instrumentation-client.ts
+M       instrumentation.ts
+M       next.config.ts
+D       sentry.client.config.ts
+M       sentry.edge.config.ts
+M       sentry.server.config.ts
+A       src/app/global-error.tsx
+M       src/components/App.tsx
+M       src/components/ResultsView.tsx
+A       src/lib/__tests__/telemetry.test.ts
+A       src/lib/telemetry.ts
+
+Commands run and output:
+
+  1. git diff --check
+     Exit code: 0
+     Output: clean
+
+  2. git status --short --branch
+     Output:
+## soft-beta/8-observability-privacy
+
+  3. git diff --name-status main...HEAD
+     Output:
+M       .env.example
+A       docs/soft-beta-observability-privacy.md
+A       instrumentation-client.ts
+M       instrumentation.ts
+M       next.config.ts
+D       sentry.client.config.ts
+M       sentry.edge.config.ts
+M       sentry.server.config.ts
+A       src/app/global-error.tsx
+M       src/components/App.tsx
+M       src/components/ResultsView.tsx
+A       src/lib/__tests__/telemetry.test.ts
+A       src/lib/telemetry.ts
+     Scope check: every file is in the ALLOWED_FILES list.
+     New file check: YES (telemetry, global-error, instrumentation-client, privacy doc).
+
+  4. npm run verify:phase
+     Command used: ALLOWED_FILES="next.config.ts,instrumentation.ts,sentry.client.config.ts,sentry.server.config.ts,sentry.edge.config.ts,instrumentation-client.ts,src/app/global-error.tsx,src/components/App.tsx,src/components/ResultsView.tsx,src/app/api/match/route.ts,src/app/api/whatif/route.ts,src/app/api/results/[token]/route.ts,src/lib/telemetry.ts,src/lib/analytics.ts,src/lib/__tests__/telemetry.test.ts,src/lib/__tests__/analytics.test.ts,.env.example,docs/PHASE_REVIEW_CHECKLIST.md,docs/soft-beta-observability-privacy.md" FORBIDDEN_FIELDS="src/lib/data/countries.ts,src/lib/__tests__/data.test.ts,src/lib/schema,src/lib/engine.ts,fixtures,archive,docs/visa-trust-audit.md,docs/ROADMAP.md" npm run verify:phase
+     Exit code: 0
+     Output:
+=== verify:phase ===
+
+0. Working tree clean
+  ✓ Working tree is clean — all changes committed
+
+1. Whitespace (git diff --check main...HEAD)
+  ✓ No whitespace violations
+
+2. Scope (changed files vs ALLOWED_FILES)
+  ✓ All changed files are in ALLOWED_FILES
+   Changed:
+     .env.example
+     docs/soft-beta-observability-privacy.md
+     instrumentation-client.ts
+     instrumentation.ts
+     next.config.ts
+     sentry.client.config.ts
+     sentry.edge.config.ts
+     sentry.server.config.ts
+     src/app/global-error.tsx
+     src/components/App.tsx
+     src/components/ResultsView.tsx
+     src/lib/__tests__/telemetry.test.ts
+     src/lib/telemetry.ts
+
+3. Forbidden fields in countries.ts diff (FORBIDDEN_FIELDS)
+  ✓ countries.ts not changed — field check not applicable
+
+=== Summary ===
+All checks passed.
+
+  5. npm test
+     Exit code: 0
+     Final line: Tests  78 passed (78)
+
+  6. npm run build
+     Exit code: 0
+     Known warnings present: yes (Edge runtime static generation warning). Sentry setup warnings (onRequestError, client config rename, disableLogger) are FIXED.
+
+  7. npm run lint
+     Exit code: 0
+
+Known warnings (expected build/lint noise, not new failures):
+- Edge runtime static generation warning.
+
+Scope exceptions (files outside the MODIFY list — requires explicit justification):
+  None.
+
+Browser QA (required for frontend-visible phases):
+  Local URL tested: http://localhost:3000
+  User flow exercised:
+    - Landing -> Quiz (track quiz_started)
+    - Quiz -> Results (track quiz_completed)
+    - Results mount (track results_viewed)
+    - Open Deep Dive (track deep_dive_opened)
+    - Adjust What-If (track what_if_used)
+    - Share button (track share_attempted)
+    - Verified all telemetry logs in non-production environments with sanitized metadata.
+    - Confirmed Sentry initialized on all runtimes with beforeSend scrubbing.
+    - Verified global-error boundary exists.
+  Console logs checked: yes — confirmed [Telemetry] logs with expected (sanitized) metadata.
+  Server logs checked: yes — no unexpected 4xx/5xx.
+
+Production integration checks:
+  Parent-to-child runtime data shape verified: yes
+  Dynamic import / wrapper / ref behavior verified without relying only on mocks: yes
+  API route exercised through real app path, if applicable: yes
+```
 
 ```
 Branch: soft-beta/7-sharing-deploy-readiness
