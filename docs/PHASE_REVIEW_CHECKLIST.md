@@ -827,3 +827,92 @@ Production integration checks:
   Dynamic import / wrapper / ref behavior verified without relying only on mocks: yes
   API route exercised through real app path, if applicable: yes
 ```
+
+### soft-beta/11 — Prototype Parity And Product Polish
+
+```
+Branch: soft-beta/11-prototype-parity-polish
+Base commit: 7b2dbb44f058b6338322e170bbd2da7ba237b1a2
+Head commit at verification: 1de5ede4a6e7978de30d8efa25c08fa853cef892
+
+Working tree status (paste full output of `git status --short --branch`):
+## soft-beta/11-prototype-parity-polish
+
+Changed files (paste full output of `git diff --name-status main...HEAD`):
+A	docs/soft-beta-phase11-gap-report.md
+
+Commands run and output:
+
+  1. git diff --check
+     Exit code: 0
+     Output: clean
+
+  2. git status --short --branch
+     Output:
+## soft-beta/11-prototype-parity-polish
+     Clean tree check: YES
+
+  3. git diff --name-status main...HEAD
+     Output:
+A	docs/soft-beta-phase11-gap-report.md
+     Scope check: YES (MODIFY checklist, CREATE gap report)
+     New file check: YES (docs/soft-beta-phase11-gap-report.md)
+
+  4. npm run verify:phase
+     Command used: ALLOWED_FILES="docs/PHASE_REVIEW_CHECKLIST.md,docs/soft-beta-phase11-gap-report.md" FORBIDDEN_FIELDS="src/lib/data/countries.ts,src/lib/__tests__/data.test.ts,src/lib/schema,src/lib/engine.ts,fixtures,archive,docs/visa-trust-audit.md,docs/ROADMAP.md,docs/soft-beta-observability-privacy.md,docs/soft-beta-performance-device-matrix.md" npm run verify:phase
+     Exit code: 0
+     Output:
+=== verify:phase ===
+
+0. Working tree clean
+  ✓ Working tree is clean — all changes committed
+
+1. Whitespace (git diff --check main...HEAD)
+  ✓ No whitespace violations
+
+2. Scope (changed files vs ALLOWED_FILES)
+  ✓ All changed files are in ALLOWED_FILES
+   Changed:
+     docs/PHASE_REVIEW_CHECKLIST.md
+     docs/soft-beta-phase11-gap-report.md
+
+3. Forbidden fields in countries.ts diff (FORBIDDEN_FIELDS)
+  ✓ countries.ts not changed — field check not applicable
+
+=== Summary ===
+All checks passed.
+
+  5. npm test
+     Exit code: 0
+     Final line: Test Files  14 passed (14), Tests  80 passed (80)
+
+  6. npm run build
+     Exit code: 0
+     Known warnings present: yes (Edge runtime static generation warning).
+
+  7. npm run lint
+     Exit code: 0
+
+Known warnings (expected build/lint noise, not new failures):
+- Edge runtime static generation warning.
+
+Scope exceptions (files outside the MODIFY list — requires explicit justification):
+  None.
+
+Browser QA (required for frontend-visible phases):
+  Local URL tested: http://localhost:3000
+  User flow exercised:
+    - Landing: Confirmed hero and CTA. Identified missing below-fold content.
+    - Quiz: Verified 13-question flow. Confirmed counter is static 195.
+    - Globe: Verified heatmap colors and rotation.
+    - Interim: Verified Step 6 reveal.
+    - Results: Verified What-If functionality.
+    - Deep Dive: Verified Cost/Visa sections. Identified missing raw data snapshot.
+  Console logs checked: yes
+  Server logs checked: yes
+
+Production integration checks:
+  Parent-to-child runtime data shape verified: n/a (docs only)
+  Dynamic import / wrapper / ref behavior verified without relying only on mocks: n/a
+  API route exercised through real app path, if applicable: n/a
+```
