@@ -12,20 +12,19 @@ Current accepted soft-beta branch state includes completed work through:
 - Phase 5 — Globe Stability Hardening
 - Phase 6 — Results UX And Trust Polish
 - Phase 7 — Sharing And Deploy Readiness
+- Phase 8 — Observability, Privacy, And Compliance
 - Phase 10A — Visa Trust Audit Report
 - Phase 10B — Visa Pathway Restoration
 - Phase 10C — Visa Trust UI Polish
 
 The remaining planned tracks are:
 
-- Phase 8 — Observability, Privacy, And Compliance
 - Phase 9 — Performance Budget And Device Matrix
 - Phase 11 — Prototype Parity And Product Polish
 - Phase 12 — Soft Beta Launch Gate
 
-Before starting a new phase, sync/confirm the intended base branch. If Phase 6 or Phase 7 is not
-merged into the reader's local `main` yet, merge and verify those phases first. The root checkout is
-the canonical `main` worktree for this project.
+Before starting a new phase, sync/confirm the intended base branch. The root checkout is the canonical
+`main` worktree for this project.
 
 ## Operating Model
 
@@ -151,7 +150,7 @@ Reference: `docs/PHASE_REVIEW_CHECKLIST.md`, section `soft-beta/10C`.
 
 Branch: `soft-beta/6-results-ux-trust`
 
-Status: accepted on branch; merge before starting Phase 8 if not already on `main`.
+Status: merged into local `main`.
 
 Goal: make results feel complete, not beta-fragile.
 
@@ -169,7 +168,7 @@ Reference: `docs/PHASE_REVIEW_CHECKLIST.md`, section `soft-beta/6`.
 
 Branch: `soft-beta/7-sharing-deploy-readiness`
 
-Status: accepted on branch at `3a6dbd3`; merge before starting Phase 8 if not already on `main`.
+Status: merged into local `main`.
 
 Goal: make share/read-only flows dependable.
 
@@ -185,23 +184,25 @@ Delivered scope:
 
 Reference: `docs/PHASE_REVIEW_CHECKLIST.md`, section `soft-beta/7`.
 
-## Remaining Phases
-
 ### Phase 8 — Observability, Privacy, And Compliance
+
+Branch: `soft-beta/8-observability-privacy`
+
+Status: merged into local `main`.
 
 Goal: give soft beta safe visibility without leaking sensitive profile data.
 
-Scope:
-- Fix Sentry Next.js warnings if in scope: `onRequestError`, `global-error`, updated client instrumentation naming.
-- Add safe client/server error capture without logging raw profiles.
-- Add PostHog/cookie consent only if ready; otherwise explicitly defer.
-- Add analytics events for core funnel only: quiz started, completed, results viewed, Deep Dive opened, What-If used, share attempted.
-- Add privacy checks so passport, budget, and raw profile data are not sent to analytics.
+Delivered scope:
+- Fixed avoidable Sentry setup warnings with `onRequestError`, `instrumentation-client.ts`, `global-error`, and current logger treeshaking config.
+- Added recursive Sentry event scrubbing across client, server, and edge configs.
+- Added event-specific allowlisted funnel telemetry for quiz/results/Deep Dive/What-If/share actions.
+- Omitted exact country codes and raw What-If field names from telemetry metadata.
+- Deferred third-party analytics pending consent/privacy policy readiness.
+- Added `docs/soft-beta-observability-privacy.md`.
 
-Acceptance:
-- Review analytics/error payloads.
-- Browser: consent behavior if analytics is enabled.
-- Build should no longer show avoidable Sentry setup warnings if Phase 8 includes Sentry setup.
+Reference: `docs/PHASE_REVIEW_CHECKLIST.md`, section `soft-beta/8`.
+
+## Remaining Phases
 
 ### Phase 9 — Performance Budget And Device Matrix
 
@@ -268,10 +269,8 @@ Dependency note:
 
 Proceed serially unless there is a strong reason to parallelize:
 
-1. Merge and verify Phase 6 and Phase 7 from fresh `main`, if not already merged.
-2. Run Phase 8 next from fresh `main`.
-3. Run Phase 9 after Phase 8 so performance measurements reflect the instrumented near-final surface.
-4. Run Phase 11 after Phase 9.
-5. Run Phase 12 last.
+1. Run Phase 9 next from fresh `main` so performance measurements reflect the instrumented near-final surface.
+2. Run Phase 11 after Phase 9.
+3. Run Phase 12 last.
 
 If in doubt, prefer clean serial merges over parallel branches that both rewrite `ResultsView`, `App`, or shared CSS.
