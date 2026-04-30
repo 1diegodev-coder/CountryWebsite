@@ -6,6 +6,7 @@ import { RefreshCcw, Share2, MapPin, Check, AlertTriangle, TrendingUp, Globe, In
 import GlobeViewer from "./GlobeViewer";
 import { MatchPayload, EliminatedCountry } from "../lib/schema/match";
 import { UserProfile } from "../lib/schema/profile";
+import { trackEvent, bucketMatchCount } from "../lib/telemetry";
 
 interface ResultsViewProps {
   result: MatchPayload;
@@ -44,6 +45,14 @@ export default function ResultsView({
   const localProfileRef = useRef<UserProfile>(profile);
   // Mirror to state for rendering
   const [localProfile, setLocalProfile] = useState<UserProfile>(profile);
+
+  // Telemetry: track results viewed on mount
+  useEffect(() => {
+    trackEvent("results_viewed", {
+      matchCountBucket: bucketMatchCount(result.matches.length),
+      isReadOnly
+    });
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Sync local profile when parent profile changes (e.g. from quiz or reset)
   useEffect(() => {
@@ -161,6 +170,10 @@ export default function ResultsView({
     debounceTimerRef.current = setTimeout(() => {
       performWhatIf(updatedProfile, requestId);
     }, 350);
+
+    trackEvent("what_if_used", {
+      field: key
+    });
   };
 
   useEffect(() => {
@@ -192,6 +205,10 @@ export default function ResultsView({
     const url = `${window.location.origin}/r/${result.sessionToken}`;
     setShareUrl(url);
     setShowShareModal(true);
+
+    trackEvent("share_attempted", {
+      shareAvailable: result.shareReady
+    });
   };
 
   const copyToClipboard = async () => {
@@ -398,6 +415,7 @@ export default function ResultsView({
                           onClick={(e) => {
                             lastMatchFocusRef.current = e.currentTarget;
                             setSelectedCountry({ code: match.countryCode, initialSection: "overview" });
+                            trackEvent("deep_dive_opened", { countryCode: match.countryCode, section: "overview" });
                           }}
                           aria-label={`View deep dive details for ${match.countryName}`}
                         >
@@ -408,6 +426,7 @@ export default function ResultsView({
                           onClick={(e) => {
                             lastMatchFocusRef.current = e.currentTarget;
                             setSelectedCountry({ code: match.countryCode, initialSection: "visa" });
+                            trackEvent("deep_dive_opened", { countryCode: match.countryCode, section: "visa" });
                           }}
                           aria-label={`View visa guide for ${match.countryName}`}
                         >

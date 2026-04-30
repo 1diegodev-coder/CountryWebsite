@@ -8,6 +8,7 @@ import QuizView from "./QuizView";
 import ResultsView from "./ResultsView";
 import { UserProfile } from "../lib/schema/profile";
 import { MatchPayload } from "../lib/schema/match";
+import { trackEvent, bucketMatchCount } from "../lib/telemetry";
 
 const STORAGE_KEYS = {
   SCREEN: "cdna_screen",
@@ -66,7 +67,10 @@ export default function App() {
     document.documentElement.style.setProperty("--accent-green", tweaks.accentColor);
   }, [tweaks.accentColor]);
 
-  const handleStart = () => setScreen("quiz");
+  const handleStart = () => {
+    setScreen("quiz");
+    trackEvent("quiz_started");
+  };
 
   const handleAnswer = (questionId: string, value: any) => {
     setAnswers((prev) => ({ ...prev, [questionId]: value }));
@@ -98,6 +102,10 @@ export default function App() {
       setAnswers(fullProfile as UserProfile);
       setEngineResult(result);
       setScreen("results");
+
+      trackEvent("quiz_completed", {
+        matchCountBucket: bucketMatchCount(result.matches.length)
+      });
     } catch (e) {
       console.error("Match error:", e);
     }

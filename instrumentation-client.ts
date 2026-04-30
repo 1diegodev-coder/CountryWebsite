@@ -5,6 +5,8 @@ Sentry.init({
   environment: process.env.NODE_ENV,
   tracesSampleRate: process.env.NODE_ENV === 'production' ? 0.1 : 1.0,
   debug: false,
+  replaysOnErrorSampleRate: 0,
+  replaysSessionSampleRate: 0,
   beforeSend(event) {
     // Sanitization: remove sensitive data from error reports
     if (event.request && event.request.data) {
@@ -19,3 +21,5 @@ Sentry.init({
     return event;
   },
 });
+
+export const onRouterTransitionStart = Sentry.captureRouterTransitionStart;
