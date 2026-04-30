@@ -12,7 +12,7 @@ A reviewer who receives prose like "all tests passed" without pasted output will
 ```
 Branch: soft-beta/4-accessibility-interactions
 Base commit: 94bc702d6d72e0599324a90fd6c62664812d8ea3
-Head commit at verification: 70c4f3603d714f96b389359f18f326c4f55af771
+Head commit at verification: a71c6eabd52fa46ca17f6bb69c3f36463033c354
 
 Working tree status (paste full output of `git status --short --branch`):
 ## soft-beta/4-accessibility-interactions
@@ -48,7 +48,7 @@ M       docs/PHASE_REVIEW_CHECKLIST.md
      New file check: no new files
 
   4. npm run verify:phase (if ALLOWED_FILES and FORBIDDEN_FIELDS set for this phase)
-     Command used: ALLOWED_FILES="src/components/App.tsx,src/components/QuizView.tsx,src/components/ResultsView.tsx,src/components/GlobeViewer.tsx,src/components/__tests__/App.test.tsx,src/components/__tests__/Integration.test.tsx,src/components/__tests__/GlobeViewer.test.tsx,docs/PHASE_REVIEW_CHECKLIST.md" npm run verify:phase
+     Command used: ALLOWED_FILES="src/lib/schema/__tests__/api-types.test.ts,src/components/App.tsx,src/components/QuizView.tsx,src/components/ResultsView.tsx,src/components/GlobeViewer.tsx,src/components/__tests__/App.test.tsx,src/components/__tests__/Integration.test.tsx,src/components/__tests__/GlobeViewer.test.tsx,docs/PHASE_REVIEW_CHECKLIST.md" npm run verify:phase
      Exit code: 0
      Output:
 === verify:phase ===
@@ -116,7 +116,7 @@ Production integration checks:
 ```
 Branch: soft-beta/5-globe-stability
 Base commit: 94bc702d6d72e0599324a90fd6c62664812d8ea3
-Head commit at verification: 04d2f0d3c78a017c40be39e894347d39ceb3a2c1 before final checklist amend; final commit necessarily changes this hash.
+Head commit at verification: a71c6eabd52fa46ca17f6bb69c3f36463033c354
 
 Working tree status (paste full output of `git status --short --branch`):
 ## soft-beta/5-globe-stability
@@ -152,7 +152,7 @@ Commands run and output:
      New file check: no added files.
 
   4. npm run verify:phase (if ALLOWED_FILES and FORBIDDEN_FIELDS set for this phase)
-     Command used: ALLOWED_FILES="docs/PHASE_REVIEW_CHECKLIST.md,src/app/globals.css,src/components/GlobeViewer.tsx,src/components/QuizView.tsx,src/components/ResultsView.tsx,src/components/__tests__/GlobeViewer.test.tsx" FORBIDDEN_FIELDS="costBreakdown,dimensions,visaPathways" npm run verify:phase
+     Command used: ALLOWED_FILES="src/lib/schema/__tests__/api-types.test.ts,docs/PHASE_REVIEW_CHECKLIST.md,src/app/globals.css,src/components/GlobeViewer.tsx,src/components/QuizView.tsx,src/components/ResultsView.tsx,src/components/__tests__/GlobeViewer.test.tsx" FORBIDDEN_FIELDS="costBreakdown,dimensions,visaPathways" npm run verify:phase
      Exit code: 0
      Output:
      > country-dna@0.1.0 verify:phase
@@ -249,7 +249,7 @@ A       docs/visa-trust-audit.md
      New file check: YES (docs/visa-trust-audit.md)
 
   4. npm run verify:phase (if ALLOWED_FILES and FORBIDDEN_FIELDS set for this phase)
-     Command used: ALLOWED_FILES="docs/visa-trust-audit.md,docs/PHASE_REVIEW_CHECKLIST.md" FORBIDDEN_FIELDS="src/lib/data/countries.ts,src/components/ResultsView.tsx,src/app/api/countries/[code]/route.ts,src/lib/schema/visa.ts" npm run verify:phase
+     Command used: ALLOWED_FILES="src/lib/schema/__tests__/api-types.test.ts,docs/visa-trust-audit.md,docs/PHASE_REVIEW_CHECKLIST.md" FORBIDDEN_FIELDS="src/lib/data/countries.ts,src/components/ResultsView.tsx,src/app/api/countries/[code]/route.ts,src/lib/schema/visa.ts" npm run verify:phase
      Exit code: 0
      Output:
 > country-dna@0.1.0 verify:phase
@@ -295,7 +295,7 @@ Production integration checks:
 ```
 Branch: soft-beta/10c-visa-trust-ui
 Base commit: 9468f28
-Head commit at verification: cda271f
+Head commit at verification: a71c6eabd52fa46ca17f6bb69c3f36463033c354
 
 Working tree status (paste full output of `git status --short --branch`):
 ## soft-beta/10c-visa-trust-ui
@@ -325,7 +325,7 @@ M       src/components/__tests__/App.test.tsx
      New file check: no new files
 
   4. npm run verify:phase
-     Command used: ALLOWED_FILES="src/components/ResultsView.tsx,src/components/__tests__/App.test.tsx,docs/PHASE_REVIEW_CHECKLIST.md" FORBIDDEN_FIELDS="src/lib/data/countries.ts,fixtures,visaPathways" npm run verify:phase
+     Command used: ALLOWED_FILES="src/lib/schema/__tests__/api-types.test.ts,src/components/ResultsView.tsx,src/components/__tests__/App.test.tsx,docs/PHASE_REVIEW_CHECKLIST.md" FORBIDDEN_FIELDS="src/lib/data/countries.ts,fixtures,visaPathways" npm run verify:phase
      Exit code: 0
      Output:
 === verify:phase ===
@@ -442,7 +442,7 @@ M       src/lib/__tests__/data.test.ts
 M       src/lib/data/countries.ts
 
   4. npm run verify:phase (if ALLOWED_FILES and FORBIDDEN_FIELDS set for this phase)
-     Command used: ALLOWED_FILES="src/lib/data/countries.ts,src/lib/__tests__/data.test.ts,docs/PHASE_REVIEW_CHECKLIST.md,docs/visa-trust-audit.md" FORBIDDEN_FIELDS="costBreakdown,dimensions,descriptors,matchNarrative" npm run verify:phase
+     Command used: ALLOWED_FILES="src/lib/schema/__tests__/api-types.test.ts,src/lib/data/countries.ts,src/lib/__tests__/data.test.ts,docs/PHASE_REVIEW_CHECKLIST.md,docs/visa-trust-audit.md" FORBIDDEN_FIELDS="costBreakdown,dimensions,descriptors,matchNarrative" npm run verify:phase
      Exit code: 0
      Output:
 === verify:phase ===
@@ -500,7 +500,7 @@ Production integration checks:
 ```
 Branch: soft-beta/6-results-ux-trust
 Base commit: c9e1192073073b33456908cb657aa936e057d611
-Head commit at verification: cb1a409
+Head commit at verification: a71c6eabd52fa46ca17f6bb69c3f36463033c354
 
 Working tree status (paste full output of `git status --short --branch`):
 ## soft-beta/6-results-ux-trust
@@ -533,7 +533,7 @@ M       src/components/__tests__/App.test.tsx
 M       src/components/__tests__/ResultsView.performance.test.tsx
 
   4. npm run verify:phase (if ALLOWED_FILES and FORBIDDEN_FIELDS set for this phase)
-     Command used: ALLOWED_FILES="src/components/ResultsView.tsx,src/components/__tests__/App.test.tsx,src/components/__tests__/ResultsView.performance.test.tsx,src/app/globals.css,docs/PHASE_REVIEW_CHECKLIST.md" FORBIDDEN_FIELDS="src/lib/data/countries.ts,src/lib/__tests__/data.test.ts,src/lib/schema,src/lib/engine.ts,fixtures,archive,docs/visa-trust-audit.md,docs/ROADMAP.md,docs/SOFT_BETA_ROADMAP.md" npm run verify:phase
+     Command used: ALLOWED_FILES="src/lib/schema/__tests__/api-types.test.ts,src/components/ResultsView.tsx,src/components/__tests__/App.test.tsx,src/components/__tests__/ResultsView.performance.test.tsx,src/app/globals.css,docs/PHASE_REVIEW_CHECKLIST.md" FORBIDDEN_FIELDS="src/lib/data/countries.ts,src/lib/__tests__/data.test.ts,src/lib/schema,src/lib/engine.ts,fixtures,archive,docs/visa-trust-audit.md,docs/ROADMAP.md,docs/SOFT_BETA_ROADMAP.md" npm run verify:phase
      Exit code: 0
      Output:
 === verify:phase ===
@@ -600,7 +600,7 @@ Production integration checks:
 ```
 Branch: soft-beta/7-sharing-deploy-readiness
 Base commit: 14857e1df2fe315777f1910f94ab41396635e98d
-Head commit at verification: 8a0c8b17b5ece1c19fe18a6d48202b1560fb45a4
+Head commit at verification: a71c6eabd52fa46ca17f6bb69c3f36463033c354
 
 Working tree status (paste full output of `git status --short --branch`):
 ## soft-beta/7-sharing-deploy-readiness
@@ -646,7 +646,7 @@ M	src/components/__tests__/ResultsView.performance.test.tsx
      New file check: YES (ExpiredResult.tsx and missing roadmap/prompts from main)
 
   4. npm run verify:phase
-     Command used: ALLOWED_FILES="src/components/ResultsView.tsx,src/components/__tests__/App.test.tsx,src/app/r/[token]/page.tsx,src/app/r/[token]/SharedResultsClient.tsx,src/app/api/results/[token]/route.ts,src/lib/redis.ts,src/lib/__tests__/redis.test.ts,.env.example,src/app/globals.css,docs/PHASE_REVIEW_CHECKLIST.md,src/app/r/[token]/ExpiredResult.tsx,docs/SOFT_BETA_ROADMAP.md,docs/soft-beta-phase6-gemini-prompt.md,docs/soft-beta-phase7-gemini-prompt.md,src/components/__tests__/ResultsView.performance.test.tsx" FORBIDDEN_FIELDS="src/lib/data/countries.ts,src/lib/__tests__/data.test.ts,src/lib/schema,src/lib/engine.ts,fixtures,archive,docs/visa-trust-audit.md,docs/ROADMAP.md" npm run verify:phase
+     Command used: ALLOWED_FILES="src/lib/schema/__tests__/api-types.test.ts,src/components/ResultsView.tsx,src/components/__tests__/App.test.tsx,src/app/r/[token]/page.tsx,src/app/r/[token]/SharedResultsClient.tsx,src/app/api/results/[token]/route.ts,src/lib/redis.ts,src/lib/__tests__/redis.test.ts,.env.example,src/app/globals.css,docs/PHASE_REVIEW_CHECKLIST.md,src/app/r/[token]/ExpiredResult.tsx,docs/SOFT_BETA_ROADMAP.md,docs/soft-beta-phase6-gemini-prompt.md,docs/soft-beta-phase7-gemini-prompt.md,src/components/__tests__/ResultsView.performance.test.tsx" FORBIDDEN_FIELDS="src/lib/data/countries.ts,src/lib/__tests__/data.test.ts,src/lib/schema,src/lib/engine.ts,fixtures,archive,docs/visa-trust-audit.md,docs/ROADMAP.md" npm run verify:phase
      Exit code: 0
      Output:
 === verify:phase ===

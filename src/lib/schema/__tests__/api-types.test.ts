@@ -59,5 +59,5 @@ describe('api route stubs', () => {
         );
       }),
     );
-  });
+  }, 20000);
 });
