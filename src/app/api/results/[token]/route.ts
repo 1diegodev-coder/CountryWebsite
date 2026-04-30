@@ -8,8 +8,8 @@ export async function GET(
   try {
     const { token } = await params;
     
-    if (!token || token.length !== 8) {
-      return NextResponse.json({ error: 'Invalid token format' }, { status: 400 });
+    if (!token) {
+      return NextResponse.json({ error: 'invalid_token' }, { status: 400 });
     }
 
     if (!redis) {

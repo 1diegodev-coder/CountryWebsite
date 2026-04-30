@@ -748,3 +748,108 @@ describe('ResultsView Accessibility', () => {
     vi.unstubAllGlobals();
   });
 });
+
+describe('ResultsView Sharing and Read-Only', () => {
+  const mockResult = {
+    sessionToken: 'test-token',
+    shareReady: true,
+    candidateCount: 1,
+    eliminatedCount: 0,
+    matches: [{
+      countryCode: 'PT',
+      countryName: 'Portugal',
+      countryDescriptor: 'Descriptor',
+      dataConfidence: 'high',
+      score: 95,
+      rank: 1,
+      whyFit: [],
+      watchOut: [],
+      costRealityText: 'Fits',
+      dimensionScores: {} as any,
+    }],
+    eliminated: [],
+    profileSummary: 'Test profile',
+    computedWeights: {} as any,
+    generatedAt: new Date().toISOString(),
+  };
+
+  const profile = {
+    budgetUsdMonthly: 5000,
+    languageFlexibility: 'openToLearning',
+    healthcareNeed: 'none',
+    nonNegotiables: [],
+  };
+
+  it('disables share button and shows offline copy when shareReady is false', () => {
+    render(
+      <ResultsView
+        result={{ ...mockResult, shareReady: false } as any}
+        onRetake={vi.fn()}
+        tweaks={{}}
+        profile={profile as any}
+        onUpdateResult={vi.fn()}
+      />
+    );
+
+    const shareBtn = screen.getByLabelText(/Share your results/i);
+    expect((shareBtn as HTMLButtonElement).disabled).toBe(true);
+    expect(screen.getByText(/cloud sync is offline/i)).toBeDefined();
+  });
+
+  it('shows link expiry and access info in share modal', () => {
+    render(
+      <ResultsView
+        result={mockResult as any}
+        onRetake={vi.fn()}
+        tweaks={{}}
+        profile={profile as any}
+        onUpdateResult={vi.fn()}
+      />
+    );
+
+    fireEvent.click(screen.getByLabelText(/Share your results/i));
+
+    expect(screen.getByText(/Anyone with this link can view your results/i)).toBeDefined();
+    expect(screen.getByText(/expire automatically after 90 days/i)).toBeDefined();
+  });
+
+  it('hides interactive controls in read-only mode but shows retake CTA', () => {
+    render(
+      <ResultsView
+        result={mockResult as any}
+        onRetake={vi.fn()}
+        tweaks={{}}
+        profile={profile as any}
+        onUpdateResult={vi.fn()}
+        isReadOnly={true}
+      />
+    );
+
+    // No share button
+    expect(screen.queryByLabelText(/Share your results/i)).toBeNull();
+
+    // No What-If tab
+    expect(screen.queryByRole('tab', { name: /WHAT-IF/i })).toBeNull();
+
+    // Still has "Take Your Own Quiz" (retake)
+    expect(screen.getByText(/Take Your Own Quiz/i)).toBeDefined();
+  });
+
+  it('labels PNG export as unavailable and disabled', () => {
+    render(
+      <ResultsView
+        result={mockResult as any}
+        onRetake={vi.fn()}
+        tweaks={{}}
+        profile={profile as any}
+        onUpdateResult={vi.fn()}
+      />
+    );
+
+    fireEvent.click(screen.getByLabelText(/Share your results/i));
+
+    const pngBtn = screen.getByRole('button', { name: /Download Shareable Card \(PNG\)/i });
+    expect((pngBtn as HTMLButtonElement).disabled).toBe(true);
+    expect(screen.getByText(/Export unavailable in Soft Beta/i)).toBeDefined();
+  });
+});

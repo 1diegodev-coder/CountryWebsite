@@ -1,8 +1,8 @@
-import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { redis } from "@/lib/redis";
 import { MatchPayload } from "@/lib/schema/match";
 import SharedResultsClient from "./SharedResultsClient";
+import ExpiredResult from "./ExpiredResult";
 
 type Props = { params: Promise<{ token: string }> };
 
@@ -44,14 +44,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function SharedResultsPage({ params }: Props) {
   const { token } = await params;
 
-  if (!token || token.length !== 8) {
-    notFound();
+  if (!token) {
+    return <ExpiredResult />;
   }
 
   const result = await fetchResult(token);
 
   if (!result) {
-    notFound();
+    return <ExpiredResult />;
   }
 
   return <SharedResultsClient result={result} />;

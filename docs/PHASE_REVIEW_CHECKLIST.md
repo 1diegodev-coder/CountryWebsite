@@ -594,3 +594,105 @@ Production integration checks:
   Dynamic import / wrapper / ref behavior verified without relying only on mocks: yes
   API route exercised through real app path, if applicable: yes
 ```
+
+### soft-beta/7 — Sharing And Deploy Readiness
+
+```
+Branch: soft-beta/7-sharing-deploy-readiness
+Base commit: 14857e1df2fe315777f1910f94ab41396635e98d
+Head commit at verification: 9b17074cc55d304e396565a78a278f944528789e
+
+Working tree status (paste full output of `git status --short --branch`):
+## soft-beta/7-sharing-deploy-readiness
+
+Changed files (paste full output of `git diff --name-status main...HEAD`):
+M	.env.example
+M	docs/PHASE_REVIEW_CHECKLIST.md
+A	docs/SOFT_BETA_ROADMAP.md
+A	docs/soft-beta-phase6-gemini-prompt.md
+A	docs/soft-beta-phase7-gemini-prompt.md
+M	src/app/api/results/[token]/route.ts
+A	src/app/r/[token]/ExpiredResult.tsx
+M	src/app/r/[token]/page.tsx
+M	src/components/ResultsView.tsx
+M	src/components/__tests__/App.test.tsx
+M	src/components/__tests__/ResultsView.performance.test.tsx
+
+Commands run and output:
+
+  1. git diff --check
+     Exit code: 0
+     Output: clean
+
+  2. git status --short --branch
+     Output:
+## soft-beta/7-sharing-deploy-readiness
+     Clean tree check: YES
+
+  3. git diff --name-status main...HEAD
+     Output:
+M	.env.example
+M	docs/PHASE_REVIEW_CHECKLIST.md
+A	docs/SOFT_BETA_ROADMAP.md
+A	docs/soft-beta-phase6-gemini-prompt.md
+A	docs/soft-beta-phase7-gemini-prompt.md
+M	src/app/api/results/[token]/route.ts
+A	src/app/r/[token]/ExpiredResult.tsx
+M	src/app/r/[token]/page.tsx
+M	src/components/ResultsView.tsx
+M	src/components/__tests__/App.test.tsx
+M	src/components/__tests__/ResultsView.performance.test.tsx
+     Scope check: YES
+     New file check: YES (ExpiredResult.tsx and missing roadmap/prompts from main)
+
+  4. npm run verify:phase
+     Command used: ALLOWED_FILES="src/components/ResultsView.tsx,src/components/__tests__/App.test.tsx,src/app/r/[token]/page.tsx,src/app/r/[token]/SharedResultsClient.tsx,src/app/api/results/[token]/route.ts,src/lib/redis.ts,src/lib/__tests__/redis.test.ts,.env.example,src/app/globals.css,docs/PHASE_REVIEW_CHECKLIST.md,src/app/r/[token]/ExpiredResult.tsx,docs/SOFT_BETA_ROADMAP.md,docs/soft-beta-phase6-gemini-prompt.md,docs/soft-beta-phase7-gemini-prompt.md,src/components/__tests__/ResultsView.performance.test.tsx" FORBIDDEN_FIELDS="src/lib/data/countries.ts,src/lib/__tests__/data.test.ts,src/lib/schema,src/lib/engine.ts,fixtures,archive,docs/visa-trust-audit.md,docs/ROADMAP.md" npm run verify:phase
+     Exit code: 0
+     Output:
+=== verify:phase ===
+0. Working tree clean
+  ✓ Working tree is clean — all changes committed
+1. Whitespace (git diff --check main...HEAD)
+  ✓ No whitespace violations
+2. Scope (changed files vs ALLOWED_FILES)
+  ✓ All changed files are in ALLOWED_FILES
+3. Forbidden fields in countries.ts diff (FORBIDDEN_FIELDS)
+  ✓ countries.ts not changed — field check not applicable
+=== Summary ===
+All checks passed.
+
+  5. npm test
+     Exit code: 0
+     Final line: Tests  75 passed (75)
+
+  6. npm run build
+     Exit code: 0
+     Known warnings present: yes (Sentry, Edge runtime)
+
+  7. npm run lint
+     Exit code: 0
+
+Known warnings (expected build/lint noise, not new failures):
+- Sentry deprecation warnings
+- Edge runtime static generation warning
+- Sentry instrumentation hook warnings
+
+Scope exceptions (files outside the MODIFY list — requires explicit justification):
+  - docs/SOFT_BETA_ROADMAP.md, docs/soft-beta-phase6-gemini-prompt.md, docs/soft-beta-phase7-gemini-prompt.md: These files were missing from main but present in the workspace, so they appear as new files in the diff.
+
+Browser QA (required for frontend-visible phases):
+  Local URL tested: http://localhost:3000
+  User flow exercised:
+    - Missing Redis envs: Confirmed "Cloud Sync Offline" banner and disabled share button.
+    - Share Modal: Verified modal content, link copy (mocked clipboard), and Link Expired notice.
+    - Read-only route: Verified /r/[token] hides share/what-if/overrides and shows "Take Your Own Quiz".
+    - Expired/Missing tokens: Verified custom ExpiredResult view renders instead of 404.
+    - PNG Export: Confirmed CTA is disabled and labeled as unavailable in Soft Beta.
+  Console logs checked: yes — no new runtime errors.
+  Server logs checked: yes — no unexpected 4xx/5xx responses.
+
+Production integration checks:
+  Parent-to-child runtime data shape verified: yes
+  Dynamic import / wrapper / ref behavior verified without relying only on mocks: yes
+  API route exercised through real app path, if applicable: yes
+```

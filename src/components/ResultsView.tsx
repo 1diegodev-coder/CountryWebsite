@@ -58,15 +58,14 @@ export default function ResultsView({
   const hasShareableMatches = result.matches.length > 0;
   const isShareDisabled = isSharing || !result.shareReady || !hasShareableMatches;
   const shareDisabledTitle = !result.shareReady
-    ? "Sharing is temporarily unavailable"
-    : !hasShareableMatches
-      ? "Sharing requires at least one matched country"
-      : undefined;
+  ? "Sharing is temporarily unavailable because cloud sync is offline."
+  : !hasShareableMatches
+    ? "Sharing requires at least one matched country."
+    : undefined;
 
   const showMore = () => {
-    setVisibleCount(prev => Math.min(prev + 10, result.matches.length));
+  setVisibleCount(prev => Math.min(prev + 10, result.matches.length));
   };
-
   const groupedEliminated = React.useMemo(() => {
     return result.eliminated.reduce((acc, curr) => {
       if (!acc[curr.reason]) acc[curr.reason] = [];
@@ -105,7 +104,11 @@ export default function ResultsView({
 
         // Strict stale check: Only update if this is still the latest ID AND not aborted
         if (requestId === latestRequestIdRef.current && !controller.signal.aborted) {
-          onUpdateResult({ ...newResult, sessionToken: result.sessionToken });
+          onUpdateResult({
+            ...newResult,
+            sessionToken: result.sessionToken,
+            shareReady: result.shareReady // Preserve sharing capability across tweaks
+          });
           onUpdateProfile?.(updatedProfile);
         }
       } else {
@@ -129,7 +132,7 @@ export default function ResultsView({
         setIsWhatIfLoading(false);
       }
     }
-  }, [onUpdateResult, onUpdateProfile, result.sessionToken]);
+  }, [onUpdateResult, onUpdateProfile, result.sessionToken, result.shareReady]);
 
   const handleWhatIf = (key: string, value: any) => {
     // 1. Invalidate stale work immediately on intent
@@ -250,7 +253,7 @@ export default function ResultsView({
         <div className="bg-accent-warning/10 border-b border-accent-warning/20 px-6 py-2 flex items-center gap-2">
           <AlertTriangle size={14} className="text-accent-warning" />
           <span className="text-[10px] text-accent-warning uppercase tracking-wider font-semibold">
-            Cloud Sync Offline: Share flow is disabled, but your results are saved locally.
+            Cloud Sync Offline: sharing is unavailable because cloud sync is offline; local results still work.
           </span>
         </div>
       )}
@@ -712,7 +715,9 @@ export default function ResultsView({
                 </div>
 
                 <div className="space-y-3">
-                  <div className="text-[10px] font-mono text-text-muted uppercase tracking-widest">Results Link</div>
+                  <div className="text-[10px] font-mono text-text-muted uppercase tracking-widest">
+                    <label htmlFor="share-link-input">Results Link</label>
+                  </div>
                   <div className="flex gap-2">
                     <input
                       id="share-link-input"
@@ -726,17 +731,24 @@ export default function ResultsView({
                       {isSharing ? "Copied" : "Copy Link"}
                     </button>
                   </div>
-                  <p className="text-[10px] text-text-muted italic">
-                    Anyone with this link can view your results. Results expire in 90 days.
+                  <p className="text-[10px] text-text-muted italic leading-relaxed">
+                    Anyone with this link can view your results. Shared results expire automatically after 90 days of inactivity.
                   </p>
                 </div>
 
-                <button
-                  className="w-full btn-ghost border-bg-elevated"
-                  onClick={handlePngExport}
-                >
-                  Download Shareable Card (PNG)
-                </button>
+                <div className="space-y-2">
+                  <button
+                    className="w-full btn-ghost border-bg-elevated opacity-50 cursor-not-allowed text-text-muted"
+                    onClick={handlePngExport}
+                    disabled={true}
+                    aria-describedby="png-unavailable-note"
+                  >
+                    Download Shareable Card (PNG)
+                  </button>
+                  <p id="png-unavailable-note" className="text-[9px] text-center text-text-muted uppercase tracking-tighter">
+                    Export unavailable in Soft Beta
+                  </p>
+                </div>
                 {pngExportNotice && (
                   <div className="bg-accent-warning/10 border border-accent-warning/20 rounded-lg px-4 py-3 flex items-start gap-2">
                     <AlertTriangle size={14} className="text-accent-warning mt-0.5" />
