@@ -560,7 +560,7 @@ All checks passed.
 
   5. npm test
      Exit code: 0
-     Final line: Tests  70 passed (70)
+     Final line: Tests  71 passed (71)
 
   6. npm run build
      Exit code: 0
@@ -582,7 +582,7 @@ Browser QA (required for frontend-visible phases):
   User flow exercised:
     - Results empty state: Triggered by setting budget to $1000 and selecting all non-negotiables. Confirmed: "No countries match your constraints" panel with "Retake Quiz" CTA and What-If guidance.
     - Deep Dive: Opened top match. Confirmed loading skeleton structure and retry action by mock-failing the API.
-    - Visa Guide: Verified Spain (Source verified) and Georgia (Not verified in-app yet) behavior. Confirmed <time> and badges.
+    - Visa Guide: Verified Spain (Source verified) and Uruguay (Not verified in-app yet) behavior. Confirmed <time> and badges.
     - Eliminated panel: Confirmed "No eliminations" compact state when none eliminated.
     - Show more: Verified "Show 10 more of 161" and "Show 1 more of 161" (at end) labels and accessible names.
     - What-If: Verified "Adjustment Error" state and "Recalculating..." pulsing state.

@@ -55,6 +55,13 @@ export default function ResultsView({
   const [visibleCount, setVisibleCount] = useState(10);
   const visibleMatches = result.matches.slice(0, visibleCount);
   const hasMoreMatches = visibleCount < result.matches.length;
+  const hasShareableMatches = result.matches.length > 0;
+  const isShareDisabled = isSharing || !result.shareReady || !hasShareableMatches;
+  const shareDisabledTitle = !result.shareReady
+    ? "Sharing is temporarily unavailable"
+    : !hasShareableMatches
+      ? "Sharing requires at least one matched country"
+      : undefined;
 
   const showMore = () => {
     setVisibleCount(prev => Math.min(prev + 10, result.matches.length));
@@ -175,6 +182,8 @@ export default function ResultsView({
   }, [showShareModal]);
 
   const handleShare = async () => {
+    if (!hasShareableMatches) return;
+
     const url = `${window.location.origin}/r/${result.sessionToken}`;
     setShareUrl(url);
     setShowShareModal(true);
@@ -223,9 +232,9 @@ export default function ResultsView({
             <button
               ref={shareTriggerRef}
               onClick={handleShare}
-              disabled={isSharing || !result.shareReady}
-              className={`btn-primary btn-sm ${isSharing || !result.shareReady ? "opacity-50 cursor-not-allowed" : ""}`}
-              title={!result.shareReady ? "Sharing is temporarily unavailable" : ""}
+              disabled={isShareDisabled}
+              className={`btn-primary btn-sm ${isShareDisabled ? "opacity-50 cursor-not-allowed" : ""}`}
+              title={shareDisabledTitle}
               aria-label="Share your results"
               aria-haspopup="dialog"
               aria-expanded={showShareModal}

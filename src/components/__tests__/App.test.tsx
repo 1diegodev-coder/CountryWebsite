@@ -693,6 +693,29 @@ describe('ResultsView Accessibility', () => {
     expect(document.activeElement).toBe(shareBtn);
   });
 
+  it('does not open share modal for empty results even when shareReady is true', () => {
+    render(
+      <ResultsView
+        result={{
+          ...mockResult,
+          candidateCount: 0,
+          matches: [],
+        } as any}
+        onRetake={vi.fn()}
+        tweaks={{}}
+        profile={profile as any}
+        onUpdateResult={vi.fn()}
+      />
+    );
+
+    const shareBtn = screen.getByLabelText(/Share your results/i);
+    expect((shareBtn as HTMLButtonElement).disabled).toBe(true);
+
+    fireEvent.click(shareBtn);
+    expect(screen.queryByRole('dialog')).toBeNull();
+    expect(screen.getByText(/No countries match your constraints/i)).toBeDefined();
+  });
+
   it('Deep Dive handles escape and focus return', async () => {
     vi.stubGlobal('fetch', vi.fn().mockResolvedValue({
       ok: true,
