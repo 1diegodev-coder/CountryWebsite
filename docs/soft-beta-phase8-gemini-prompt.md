@@ -37,6 +37,7 @@ Authoritative references:
 Current relevant state:
 - The project already depends on `@sentry/nextjs`.
 - `next build` currently emits avoidable Sentry setup warnings about `onRequestError`, missing global error handling, deprecated `disableLogger`, and client instrumentation naming.
+- The installed Sentry SDK exports `captureRequestError`, `captureRouterTransitionStart`, and the replacement `webpack.treeshake.removeDebugLogging` option.
 - There is no PostHog or consent dependency in `package.json`.
 - Quiz answers and match results include sensitive relocation preferences such as passport, budget, household, healthcare, and non-negotiables. These must not be sent raw to analytics or error telemetry.
 
@@ -83,10 +84,12 @@ Keep edits surgical. Do not redesign UI surfaces.
 
 1. **Sentry setup warnings**
    - Fix avoidable Next.js/Sentry setup warnings that are in scope for the current SDK version.
-   - Prefer the current Next.js/Sentry file conventions for client instrumentation.
-   - Add `onRequestError` in `instrumentation.ts` if appropriate for the SDK version.
-   - Add a minimal `global-error` boundary if needed for app-router render error capture.
-   - Replace deprecated Sentry config options where the replacement is clear and supported.
+   - Move the client `Sentry.init()` from `sentry.client.config.ts` into root `instrumentation-client.ts`, or otherwise follow the SDK's current file convention without double-initializing Sentry.
+   - Export `onRouterTransitionStart = Sentry.captureRouterTransitionStart` from `instrumentation-client.ts` if client instrumentation is moved there.
+   - Add `export const onRequestError = Sentry.captureRequestError` in `instrumentation.ts` using the installed SDK export.
+   - Add a minimal app-router `src/app/global-error.tsx` boundary that captures render errors with Sentry and preserves a usable fallback UI.
+   - Replace deprecated `disableLogger: true` in `next.config.ts` with `webpack: { treeshake: { removeDebugLogging: true } }`.
+   - Do not suppress warnings with environment variables unless a warning is intentionally deferred and documented.
 
 2. **Privacy-safe error capture**
    - Add Sentry `beforeSend`/event filtering where appropriate so raw profile data, passports, budget values, healthcare answers, household details, tokens, and localStorage snapshots are not transmitted.
@@ -107,7 +110,8 @@ Keep edits surgical. Do not redesign UI surfaces.
 5. **Environment documentation**
    - Update `.env.example` with observability variables that the app actually reads.
    - Do not include secrets.
-   - Make clear that Sentry is optional for local development.
+   - Make clear that `NEXT_PUBLIC_SENTRY_DSN` is optional for local development.
+   - Do not document Sentry upload/source-map secrets unless the implementation actually reads them.
 
 ## Required Tests
 
