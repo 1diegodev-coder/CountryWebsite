@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function SharedResultsPage({ params }: Props) {
   const { token } = await params;
 
-  if (!token) {
+  if (!token || token.length !== 8) {
     return <ExpiredResult />;
   }
 

@@ -17,7 +17,7 @@ export default function ExpiredResult() {
         <div className="space-y-3">
           <h1 className="text-2xl font-bold font-display">Link Expired or Missing</h1>
           <p className="text-text-secondary text-sm leading-relaxed">
-            We couldn&apos;t find these results. Shared links automatically expire after 90 days of inactivity to protect privacy.
+            We couldn&apos;t find these results. Shared results expire after 90 days.
           </p>
         </div>
 

@@ -12,7 +12,7 @@ A reviewer who receives prose like "all tests passed" without pasted output will
 ```
 Branch: soft-beta/4-accessibility-interactions
 Base commit: 94bc702d6d72e0599324a90fd6c62664812d8ea3
-Head commit at verification: 70c4f3603d714f96b389359f18f326c4f55af771
+Head commit at verification: 4bb384bfed002ee3b6fd7204121dcc0e2c809fff
 
 Working tree status (paste full output of `git status --short --branch`):
 ## soft-beta/4-accessibility-interactions
@@ -116,7 +116,7 @@ Production integration checks:
 ```
 Branch: soft-beta/5-globe-stability
 Base commit: 94bc702d6d72e0599324a90fd6c62664812d8ea3
-Head commit at verification: 04d2f0d3c78a017c40be39e894347d39ceb3a2c1 before final checklist amend; final commit necessarily changes this hash.
+Head commit at verification: 4bb384bfed002ee3b6fd7204121dcc0e2c809fff
 
 Working tree status (paste full output of `git status --short --branch`):
 ## soft-beta/5-globe-stability
@@ -295,7 +295,7 @@ Production integration checks:
 ```
 Branch: soft-beta/10c-visa-trust-ui
 Base commit: 9468f28
-Head commit at verification: cda271f
+Head commit at verification: 4bb384bfed002ee3b6fd7204121dcc0e2c809fff
 
 Working tree status (paste full output of `git status --short --branch`):
 ## soft-beta/10c-visa-trust-ui
@@ -375,9 +375,9 @@ Browser QA (required for frontend-visible phases):
     - Opened "View visa guide for Spain" (rank 4, has 2 visa pathways)
     - Confirmed: "Source verified" badge with ShieldCheck icon on both pathways; rel="noopener noreferrer"; target="_blank"; aria-label "Official source for X — opens in a new tab"; <time dateTime="2026-04-27"> on both entries
     - Confirmed: "Coming soon" text NOT present anywhere
-    - Opened "View visa guide for Georgia" (rank 5, audit-confirmed empty)
+    - Opened "View visa guide for Uruguay" (audit-confirmed empty)
     - Confirmed: role="status" panel with aria-label "Visa pathway data not yet verified"; badge text "Not verified in-app yet"; body copy includes "not verified in-app yet … Many countries operate working visa programs we have not yet sourced from primary government references"
-    - Confirmed: "Coming soon" NOT present in Georgia view
+    - Confirmed: "Coming soon" NOT present in Uruguay view
   Console logs checked: yes — no errors; only React DevTools info and Fast Refresh notices
   Server logs checked: yes — no errors; only expected Sentry deprecation warnings (pre-existing)
   Responsive/reduced-motion/no-WebGL checks, if applicable: n/a for this phase
@@ -500,7 +500,7 @@ Production integration checks:
 ```
 Branch: soft-beta/6-results-ux-trust
 Base commit: c9e1192073073b33456908cb657aa936e057d611
-Head commit at verification: 671e6303e8822bd104df9f1f202101e143fa574c
+Head commit at verification: 4bb384bfed002ee3b6fd7204121dcc0e2c809fff
 
 Working tree status (paste full output of `git status --short --branch`):
 ## soft-beta/6-results-ux-trust
@@ -600,7 +600,7 @@ Production integration checks:
 ```
 Branch: soft-beta/7-sharing-deploy-readiness
 Base commit: 14857e1df2fe315777f1910f94ab41396635e98d
-Head commit at verification: 9b17074cc55d304e396565a78a278f944528789e
+Head commit at verification: 4bb384bfed002ee3b6fd7204121dcc0e2c809fff
 
 Working tree status (paste full output of `git status --short --branch`):
 ## soft-beta/7-sharing-deploy-readiness
@@ -663,7 +663,7 @@ All checks passed.
 
   5. npm test
      Exit code: 0
-     Final line: Tests  75 passed (75)
+     Final line: Tests  76 passed (76)
 
   6. npm run build
      Exit code: 0
@@ -684,10 +684,11 @@ Browser QA (required for frontend-visible phases):
   Local URL tested: http://localhost:3000
   User flow exercised:
     - Missing Redis envs: Confirmed "Cloud Sync Offline" banner and disabled share button.
-    - Share Modal: Verified modal content, link copy (mocked clipboard), and Link Expired notice.
+    - Share Modal: Verified modal content, link copy (mocked clipboard), and Link Expired notice with updated 90-day copy.
     - Read-only route: Verified /r/[token] hides share/what-if/overrides and shows "Take Your Own Quiz".
     - Expired/Missing tokens: Verified custom ExpiredResult view renders instead of 404.
     - PNG Export: Confirmed CTA is disabled and labeled as unavailable in Soft Beta.
+    - Verified Uruguay (empty visa) shows "Not verified in-app yet" panel correctly.
   Console logs checked: yes — no new runtime errors.
   Server logs checked: yes — no unexpected 4xx/5xx responses.
 

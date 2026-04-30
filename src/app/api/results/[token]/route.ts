@@ -8,7 +8,7 @@ export async function GET(
   try {
     const { token } = await params;
     
-    if (!token) {
+    if (!token || token.length !== 8) {
       return NextResponse.json({ error: 'invalid_token' }, { status: 400 });
     }
 

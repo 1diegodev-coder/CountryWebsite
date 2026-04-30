@@ -810,9 +810,8 @@ describe('ResultsView Sharing and Read-Only', () => {
     fireEvent.click(screen.getByLabelText(/Share your results/i));
 
     expect(screen.getByText(/Anyone with this link can view your results/i)).toBeDefined();
-    expect(screen.getByText(/expire automatically after 90 days/i)).toBeDefined();
-  });
-
+    expect(screen.getByText(/Shared results expire after 90 days/i)).toBeDefined();
+    });
   it('hides interactive controls in read-only mode but shows retake CTA', () => {
     render(
       <ResultsView
@@ -851,5 +850,49 @@ describe('ResultsView Sharing and Read-Only', () => {
     const pngBtn = screen.getByRole('button', { name: /Download Shareable Card \(PNG\)/i });
     expect((pngBtn as HTMLButtonElement).disabled).toBe(true);
     expect(screen.getByText(/Export unavailable in Soft Beta/i)).toBeDefined();
+  });
+
+  it('resets shareReady to false after a successful What-If update', async () => {
+    const onUpdateResult = vi.fn();
+
+    // Mock successful What-If response
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue({
+      ok: true,
+      json: async () => ({
+        ...mockResult,
+        matches: [
+          { ...mockResult.matches[0], score: 98 }
+        ]
+      }),
+    }));
+
+    render(
+      <ResultsView
+        result={mockResult as any}
+        onRetake={vi.fn()}
+        tweaks={{}}
+        profile={profile as any}
+        onUpdateResult={onUpdateResult}
+      />
+    );
+
+    // Initial state: share is enabled
+    const shareBtn = screen.getByLabelText(/Share your results/i);
+    expect((shareBtn as HTMLButtonElement).disabled).toBe(false);
+
+    // Switch to What-If tab to make slider visible
+    fireEvent.click(screen.getByRole('tab', { name: /WHAT-IF/i }));
+
+    // Trigger What-If
+    const budgetSlider = screen.getByLabelText(/Adjust monthly budget/i);
+    fireEvent.change(budgetSlider, { target: { value: '6000' } });
+
+    await waitFor(() => {
+      expect(onUpdateResult).toHaveBeenCalledWith(expect.objectContaining({
+        shareReady: false
+      }));
+    }, { timeout: 2000 });
+
+    vi.unstubAllGlobals();
   });
 });

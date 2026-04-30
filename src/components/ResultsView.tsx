@@ -107,10 +107,12 @@ export default function ResultsView({
           onUpdateResult({
             ...newResult,
             sessionToken: result.sessionToken,
-            shareReady: result.shareReady // Preserve sharing capability across tweaks
+            shareReady: false // Reset share state because What-If results are not persisted to Redis
           });
+
           onUpdateProfile?.(updatedProfile);
         }
+
       } else {
         const errorData = await response.json().catch(() => ({}));
         if (requestId === latestRequestIdRef.current) {
@@ -132,7 +134,7 @@ export default function ResultsView({
         setIsWhatIfLoading(false);
       }
     }
-  }, [onUpdateResult, onUpdateProfile, result.sessionToken, result.shareReady]);
+  }, [onUpdateResult, onUpdateProfile, result.sessionToken]);
 
   const handleWhatIf = (key: string, value: any) => {
     // 1. Invalidate stale work immediately on intent
@@ -732,7 +734,7 @@ export default function ResultsView({
                     </button>
                   </div>
                   <p className="text-[10px] text-text-muted italic leading-relaxed">
-                    Anyone with this link can view your results. Shared results expire automatically after 90 days of inactivity.
+                    Anyone with this link can view your results. Shared results expire after 90 days.
                   </p>
                 </div>
 
