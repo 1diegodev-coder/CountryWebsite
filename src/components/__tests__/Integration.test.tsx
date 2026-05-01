@@ -35,6 +35,25 @@ const localStorageMock = (() => {
 })();
 Object.defineProperty(window, 'localStorage', { value: localStorageMock });
 
+function withQuizCountMock(
+  handler: (url: string, options?: RequestInit) => Promise<{
+    ok: boolean;
+    status?: number;
+    json: () => Promise<unknown>;
+  }>
+) {
+  return vi.fn((url: string, options?: RequestInit) => {
+    if (url === '/api/match/count') {
+      return Promise.resolve({
+        ok: true,
+        json: async () => ({ count: 164 }),
+      });
+    }
+
+    return handler(url, options);
+  });
+}
+
 describe('Integration: App -> ResultsView -> WhatIf', () => {
   beforeEach(() => {
     localStorage.clear();
@@ -85,7 +104,7 @@ describe('Integration: App -> ResultsView -> WhatIf', () => {
       matches: [{ ...mockMatchResult.matches[0], score: 96 }]
     };
 
-    const fetchMock = vi.fn((url, options) => {
+    const fetchMock = withQuizCountMock((url, options) => {
       if (url === '/api/match') {
         return Promise.resolve({
           ok: true,
@@ -203,7 +222,7 @@ describe('Integration: App -> ResultsView -> WhatIf', () => {
       generatedAt: new Date().toISOString(),
     };
 
-    const fetchMock = vi.fn((url, options) => {
+    const fetchMock = withQuizCountMock((url, options) => {
       if (url === '/api/match') return Promise.resolve({ ok: true, json: async () => mockMatchResult });
       if (url === '/api/whatif') {
         const body = JSON.parse(options.body);
@@ -273,7 +292,7 @@ describe('Integration: App -> ResultsView -> WhatIf', () => {
       generatedAt: new Date().toISOString(),
     };
 
-    const fetchMock = vi.fn((url) => {
+    const fetchMock = withQuizCountMock((url) => {
       if (url === '/api/match') {
         return Promise.resolve({
           ok: true,

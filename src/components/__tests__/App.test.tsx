@@ -46,10 +46,27 @@ const localStorageMock = (function() {
 })();
 Object.defineProperty(window, 'localStorage', { value: localStorageMock });
 
+function stubQuizCountFetch(count = 164) {
+  return vi.stubGlobal(
+    'fetch',
+    vi.fn(async (url: string) => {
+      if (url === '/api/match/count') {
+        return {
+          ok: true,
+          json: async () => ({ count }),
+        };
+      }
+
+      throw new Error(`Unexpected fetch in test: ${url}`);
+    }),
+  );
+}
+
 describe('App Client Logic', () => {
   beforeEach(() => {
     localStorage.clear();
     vi.clearAllMocks();
+    stubQuizCountFetch();
   });
 
   it('renders landing page initially', () => {
@@ -613,6 +630,7 @@ describe('Accessibility', () => {
   beforeEach(() => {
     localStorage.clear();
     vi.clearAllMocks();
+    stubQuizCountFetch();
   });
 
   it('Tweaks panel handles escape key and focus return', async () => {
