@@ -13,14 +13,14 @@ Current accepted soft-beta branch state includes completed work through:
 - Phase 6 — Results UX And Trust Polish
 - Phase 7 — Sharing And Deploy Readiness
 - Phase 8 — Observability, Privacy, And Compliance
+- Phase 9 — Performance Budget And Device Matrix
+- Phase 11 — Prototype Parity And Product Polish
 - Phase 10A — Visa Trust Audit Report
 - Phase 10B — Visa Pathway Restoration
 - Phase 10C — Visa Trust UI Polish
 
 The remaining planned tracks are:
 
-- Phase 9 — Performance Budget And Device Matrix
-- Phase 11 — Prototype Parity And Product Polish
 - Phase 12 — Soft Beta Launch Gate
 
 Before starting a new phase, sync/confirm the intended base branch. The root checkout is the canonical
@@ -202,45 +202,40 @@ Delivered scope:
 
 Reference: `docs/PHASE_REVIEW_CHECKLIST.md`, section `soft-beta/8`.
 
-## Remaining Phases
-
 ### Phase 9 — Performance Budget And Device Matrix
+
+Branch: `soft-beta/9-performance-device-matrix`
+
+Status: accepted.
 
 Goal: prove the app is smooth enough for soft beta.
 
-Scope:
-- Add basic performance instrumentation or a manual QA script.
-- Define budgets: landing interactive, quiz step latency, results render, What-If response.
-- Run desktop, tablet, and mobile viewport checks.
-- Confirm no external globe texture/network dependency.
-- Add lightweight Playwright/browser smoke only if the project wants e2e tests.
+Delivered scope:
+- Defined soft-beta performance budgets and a device/viewport matrix.
+- Verified real app behavior across desktop, tablet, mobile, reduced-motion, and globe fallback conditions.
+- Recorded remaining performance and WebGL risks for launch judgment.
+- Kept the phase measurement-first, with only lightweight support work where needed.
 
-Acceptance:
-- Browser/device matrix recorded.
-- Server logs and console logs checked.
-- Remaining WebGL concerns recorded explicitly.
-
-Dependency note:
-- Run after Phases 6, 7, and 8 if those phases touch main user flows or instrumentation.
+Reference: `docs/PHASE_REVIEW_CHECKLIST.md`, section `soft-beta/9`.
 
 ### Phase 11 — Prototype Parity And Product Polish
 
-Goal: compare against the intended prototype/PRD and close the highest-impact experience gaps.
+Branch: `soft-beta/11-implementation-polish`
 
-Scope:
-- Compare current app against prototype/PRD for landing, quiz, globe, interim reveal, results, Deep Dive, and share.
-- Produce a gap report first.
-- Implement only approved P0/P1 polish after the gap report is accepted.
-- Improve misleading copy where needed, such as live country counter, What-If feedback, or share/PNG language.
-- Add final `docs/soft-beta-known-limitations.md`.
+Status: accepted on branch.
 
-Acceptance:
-- Browser walkthrough across core flows.
-- Confirm no unapproved product expansion.
-- Check browser console and server logs.
+Goal: close the highest-impact prototype/PRD parity gaps without expanding scope beyond soft-beta readiness.
 
-Dependency note:
-- Do not run early. Phase 11 depends on the product surface settling after Phases 6, 7, 8, and 9.
+Delivered scope:
+- Added below-the-fold landing trust/product context while preserving the existing hero-first first viewport.
+- Replaced the static quiz country counter with a live narrowing count aligned to actual engine elimination semantics.
+- Added a curated Deep Dive data snapshot grounded in public raw indicators.
+- Improved elimination transparency while preserving override behavior and read-only restrictions.
+- Added `docs/soft-beta-known-limitations.md`.
+
+Reference: `docs/PHASE_REVIEW_CHECKLIST.md`, section `soft-beta/11`, `docs/soft-beta-phase11-gap-report.md`, and `docs/soft-beta-known-limitations.md`.
+
+## Remaining Phases
 
 ### Phase 12 — Soft Beta Launch Gate
 
@@ -269,8 +264,7 @@ Dependency note:
 
 Proceed serially unless there is a strong reason to parallelize:
 
-1. Run Phase 9 next from fresh `main` so performance measurements reflect the instrumented near-final surface.
-2. Run Phase 11 after Phase 9.
-3. Run Phase 12 last.
+1. Merge the accepted Phase 11 branch into fresh `main`.
+2. Run Phase 12 last from that merged `main`.
 
 If in doubt, prefer clean serial merges over parallel branches that both rewrite `ResultsView`, `App`, or shared CSS.
