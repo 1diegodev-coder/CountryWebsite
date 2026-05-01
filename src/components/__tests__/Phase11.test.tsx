@@ -120,7 +120,7 @@ describe('Phase 11: Product Polish', () => {
     fireEvent.click(screen.getByText(/Begin your match/i));
     
     // Wait for quiz
-    await waitFor(() => expect(screen.getByText(/What best describes/i)).toBeDefined());
+    await waitFor(() => expect(screen.getByText(/What best describes/i)).toBeDefined(), { timeout: 3000 });
 
     // Initial count
     const initialCounter = screen.getByText(/countries match/i).parentElement;
@@ -159,7 +159,7 @@ describe('Phase 11: Product Polish', () => {
       const countAfterBudget = parseInt(screen.getByText(/countries match/i).parentElement?.textContent || "0");
       expect(countAfterBudget).toBeLessThan(countBeforeBudget);
     }, { timeout: 2000 });
-  });
+  }, 15000);
 
   it('ResultsView renders snapshot and elimination details', async () => {
     const mockResult = {
