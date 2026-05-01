@@ -924,24 +924,24 @@ Production integration checks:
 ```
 Branch: soft-beta/11-implementation-polish
 Base commit: d019ab8
-Head commit at verification: d019ab8c587b54bc58242440eecd32d7df789a61
+Head commit at verification: 476d78919cd39cd3a2e39395d0cc2cdaf1dd021e
 
 Working tree status (paste full output of `git status --short --branch`):
 ## soft-beta/11-implementation-polish
- M src/app/api/countries/[code]/route.ts
- M src/components/LandingView.tsx
- M src/components/QuizView.tsx
- M src/components/ResultsView.tsx
- M src/components/__tests__/App.test.tsx
- M src/lib/schema/country.ts
-?? docs/soft-beta-known-limitations.md
-?? src/app/api/match/count/
-?? src/components/__tests__/Phase11.test.tsx
-?? src/lib/__tests__/quizCounter.test.ts
-?? src/lib/quizCounter.ts
 
 Changed files (paste full output of `git diff --name-status main...HEAD`):
-
+M       docs/PHASE_REVIEW_CHECKLIST.md
+A       docs/soft-beta-known-limitations.md
+M       src/app/api/countries/[code]/route.ts
+A       src/app/api/match/count/route.ts
+M       src/components/LandingView.tsx
+M       src/components/QuizView.tsx
+M       src/components/ResultsView.tsx
+M       src/components/__tests__/App.test.tsx
+A       src/components/__tests__/Phase11.test.tsx
+A       src/lib/__tests__/quizCounter.test.ts
+A       src/lib/quizCounter.ts
+M       src/lib/schema/country.ts
 
 Commands run and output:
 
@@ -977,8 +977,8 @@ Browser QA (required for frontend-visible phases):
   Local URL tested: http://localhost:3002
   User flow exercised:
     - Landing: Hero centered, below-fold content visible, footer legal bar present.
-    - Quiz: Counter starts at 164 and narrows correctly after budget/dealbreaker selection.
-    - Results: Deep Dive shows new "Data Snapshot" section with raw values.
+    - Quiz: Counter starts at 164 and narrows correctly. Dealbreakers do NOT narrow count (parity with engine).
+    - Results: Deep Dive shows new "Data Snapshot" section.
     - Eliminated Tab: Shows specific reason badges and styled detail boxes.
   Console logs checked: yes
   Server logs checked: yes
