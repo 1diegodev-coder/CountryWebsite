@@ -25,7 +25,7 @@ export function getMatchingCount(answers: Partial<UserProfile>): number {
  * Logic must stay in sync with src/lib/engine.ts getEliminationReasons.
  */
 function isStillMatch(country: Country, answers: Partial<UserProfile>): boolean {
-  const { budgetUsdMonthly, languageFlexibility, nonNegotiables, healthcareNeed, dealbreakers } = answers;
+  const { budgetUsdMonthly, languageFlexibility, nonNegotiables, healthcareNeed } = answers;
 
   // 1. Budget Filter (if answered)
   if (budgetUsdMonthly !== undefined) {
@@ -34,6 +34,7 @@ function isStillMatch(country: Country, answers: Partial<UserProfile>): boolean 
   }
 
   // 2. Baseline Viability (always apply as it's static data)
+  // Logic from src/lib/engine.ts:isRelocationViable
   if (country.dimensions.safety < 3 || 
       country.rawIndicators.stability < 3 || 
       country.dimensions.visaEase < 2 || 
@@ -49,10 +50,6 @@ function isStillMatch(country: Country, answers: Partial<UserProfile>): boolean 
   // 4. Non-Negotiables (if answered)
   if (nonNegotiables && nonNegotiables.length > 0) {
     if (nonNegotiables.includes('lgbtq') && country.dimensions.lgbtqSafety < 5) return false;
-    // Note: Other non-negotiables like pressFreedom, genderEquality, secular are currently 
-    // weights in the PRD/engine draft or handled by score mapping, but if they were hard filters 
-    // in getEliminationReasons, they'd go here. 
-    // Currently, engine.ts only hard-filters lgbtq from nonNegotiables.
   }
 
   // 5. Healthcare Filter (if answered)
@@ -60,14 +57,9 @@ function isStillMatch(country: Country, answers: Partial<UserProfile>): boolean 
     return false;
   }
 
-  // 6. Dealbreakers (if answered)
-  if (dealbreakers && dealbreakers.length > 0) {
-    if (dealbreakers.includes('extremeHeat') && country.rawIndicators.summerHighC >= 35) return false;
-    if (dealbreakers.includes('extremeCold') && country.rawIndicators.winterLowC <= -5) return false;
-    if (dealbreakers.includes('authoritarian') && country.rawIndicators.authoritarianRisk >= 7) return false;
-    // airPollution/humidity are currently handled as weights/scores in some engine drafts 
-    // but if we want to add them as hard filters here we should verify engine.ts parity.
-  }
+  // Note: Selected 'dealbreakers' (extremeHeat, extremeCold, authoritarian < 7) 
+  // are score penalties in src/lib/engine.ts:rankCandidates, NOT hard filters.
+  // We do not eliminate on them here to maintain parity with the engine.
 
   return true;
 }

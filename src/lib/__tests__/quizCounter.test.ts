@@ -22,9 +22,10 @@ describe('quizCounter', () => {
     expect(narrowed).toBeLessThan(initial);
   });
 
-  it('narrows count for dealbreakers like extreme heat', () => {
+  it('does NOT narrow count for score-only dealbreakers like extreme heat', () => {
     const initial = getMatchingCount({});
-    const narrowed = getMatchingCount({ dealbreakers: ['extremeHeat'] });
-    expect(narrowed).toBeLessThan(initial);
+    // dealbreakers are weights in the engine, not hard filters, so they shouldn't change the count
+    const afterDealbreaker = getMatchingCount({ dealbreakers: ['extremeHeat'] });
+    expect(afterDealbreaker).toBe(initial);
   });
 });
