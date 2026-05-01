@@ -51,6 +51,7 @@ All data types are Zod schemas. When adding or changing quiz questions, update `
 | Route | Purpose |
 |---|---|
 | `POST /api/match` | Run engine, persist to Redis, return `MatchPayload` |
+| `POST /api/match/count` | Return real-time match count for partial profile |
 | `POST /api/whatif` | Re-run engine with `overrides[]` (no Redis write) |
 | `GET /api/countries/[code]` | Single country detail |
 | `GET /api/results/[token]` | Retrieve shared result from Redis |

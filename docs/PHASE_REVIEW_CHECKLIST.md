@@ -7,6 +7,15 @@ A reviewer who receives prose like "all tests passed" without pasted output will
 
 ## Required Fields
 
+### soft-beta/3 — Core Engine Hardening (Retroactive)
+
+```
+Branch: soft-beta/3-engine-hardening
+Status: Completed Retroactively
+Description: Integrated Zod-based UserProfileSchema and formalized runMatchingEngine logic with hard filters (budget, safety, language, lgbtq, healthcare).
+Verification: Verified via engine.test.ts and data.test.ts.
+```
+
 ### soft-beta/4 — Accessibility & Interactions
 
 ```

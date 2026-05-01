@@ -17,3 +17,11 @@ export const whatifRatelimit: Ratelimit | null = redis
       prefix: 'rl:whatif',
     })
   : null;
+
+export const matchCountRatelimit: Ratelimit | null = redis
+  ? new Ratelimit({
+      redis,
+      limiter: Ratelimit.slidingWindow(120, '60 s'),
+      prefix: 'rl:matchCount',
+    })
+  : null;

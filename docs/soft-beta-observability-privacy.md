@@ -27,3 +27,8 @@ The following events are tracked without sensitive data:
 ## Compliance
 - **GDPR/CCPA:** No Personally Identifiable Information (PII) or sensitive relocation preferences are transmitted to external observability platforms.
 - **Sentry:** Configured to respect `NODE_ENV` and use safe sampling rates.
+
+## Phase 11 Review
+- **Status:** Reviewed for pre-Phase 12 hardening.
+- **Decision:** Phase 11 surfaces (e.g., real-time quiz counter, eliminated reason badges) are intentionally covered by existing `quiz_started`, `quiz_completed`, and `results_viewed` events.
+- **Granularity:** Eliminated-card override clicks lead to `what_if_used`. No new granular events added to keep telemetry lean and non-sensitive.
