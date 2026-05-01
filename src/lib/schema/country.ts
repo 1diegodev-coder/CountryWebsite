@@ -106,7 +106,19 @@ export const CountrySchema = z.object({
 export type Country = z.infer<typeof CountrySchema>;
 
 /** Country shape returned by the public API (internal fields stripped). */
-export const PublicCountrySchema = CountrySchema.omit({
+export const PublicCountrySchema = CountrySchema.extend({
+  snapshot: z.object({
+    internetSpeed: z.number().optional(), // Derived or direct
+    internetReliability: z.number(),
+    englishDailyLife: z.number(),
+    stability: z.number(),
+    airQualityIndex: z.number(),
+    climate: z.object({
+      summerHigh: z.number(),
+      winterLow: z.number(),
+    }),
+  }).optional(),
+}).omit({
   lastUpdated: true,
   rawIndicators: true,
 });

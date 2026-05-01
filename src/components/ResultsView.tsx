@@ -626,22 +626,29 @@ export default function ResultsView({
                         const isOverridden = ((localProfileRef.current as any).overrides || []).includes(elim.countryCode);
 
                         return (
-                          <div key={idx} className="elim-country border-b border-bg-elevated hover:bg-bg-elevated/30 p-4">
+                          <div key={idx} className="elim-country border-b border-bg-elevated hover:bg-bg-elevated/20 p-4 transition-colors">
                             <div className="flex items-start justify-between gap-3 w-full">
                               <div className="flex items-start gap-3">
-                                <span className="text-lg opacity-50" aria-hidden="true">🌍</span>
-                                <div>
-                                  <div className="text-[13px] font-semibold text-text-secondary">{elim.countryName}</div>
-                                  <div className="text-[11px] text-text-muted leading-relaxed">{elim.detail}</div>
+                                <span className="text-xl opacity-40 shrink-0" aria-hidden="true">🌍</span>
+                                <div className="space-y-1">
+                                  <div className="flex items-center gap-2">
+                                    <div className="text-[13px] font-bold text-text-primary">{elim.countryName}</div>
+                                    <span className="text-[9px] font-mono uppercase bg-accent-elim/50 text-text-muted px-1.5 py-0.5 rounded border border-bg-elevated">
+                                      {elim.reason}
+                                    </span>
+                                  </div>
+                                  <div className="text-[11px] text-text-secondary leading-relaxed bg-bg-elevated/30 p-2 rounded-md border border-bg-elevated/50">
+                                    {elim.detail}
+                                  </div>
                                 </div>
                               </div>
                               {!isReadOnly && (
                                 <button
                                   onClick={() => handleOverride(elim.countryCode)}
-                                  className={`text-[10px] font-mono uppercase px-2 py-1 rounded border transition-all ${
+                                  className={`text-[10px] font-mono uppercase px-2.5 py-1.5 rounded border transition-all shrink-0 ${
                                     isOverridden
-                                      ? "bg-accent-green text-bg-primary border-accent-green"
-                                      : "text-text-muted border-bg-elevated hover:border-text-muted"
+                                      ? "bg-accent-green text-bg-primary border-accent-green font-bold shadow-[0_0_10px_rgba(74,222,128,0.2)]"
+                                      : "text-text-muted border-bg-elevated hover:border-text-muted hover:text-text-secondary"
                                   }`}
                                   aria-pressed={isOverridden}
                                   aria-label={`Override elimination for ${elim.countryName}`}
@@ -1076,6 +1083,56 @@ function DeepDive({
                     </p>
                   </div>
                 )}
+              </section>
+
+              <section>
+                <h3 className="text-[11px] font-mono text-text-muted uppercase tracking-widest mb-4">Data Snapshot</h3>
+                <div className="grid grid-cols-2 gap-3">
+                  {data?.snapshot && (
+                    <>
+                      <div className="flex items-center gap-3 p-3 border border-bg-elevated rounded-lg">
+                        <TrendingUp size={16} className="text-accent-blue" />
+                        <div>
+                          <div className="text-[10px] text-text-muted uppercase">Stability</div>
+                          <div className="text-xs font-semibold">{data.snapshot.stability}/10</div>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-3 p-3 border border-bg-elevated rounded-lg">
+                        <Globe size={16} className="text-accent-blue" />
+                        <div>
+                          <div className="text-[10px] text-text-muted uppercase">Daily English</div>
+                          <div className="text-xs font-semibold">{data.snapshot.englishDailyLife}/10</div>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-3 p-3 border border-bg-elevated rounded-lg">
+                        <RefreshCcw size={16} className="text-accent-blue" />
+                        <div>
+                          <div className="text-[10px] text-text-muted uppercase">Internet Reliability</div>
+                          <div className="text-xs font-semibold">{data.snapshot.internetReliability}/10</div>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-3 p-3 border border-bg-elevated rounded-lg">
+                        <AlertTriangle size={16} className="text-accent-blue" />
+                        <div>
+                          <div className="text-[10px] text-text-muted uppercase">Air Quality (AQI)</div>
+                          <div className="text-xs font-semibold">{data.snapshot.airQualityIndex}</div>
+                        </div>
+                      </div>
+                      <div className="col-span-2 flex items-center gap-3 p-3 border border-bg-elevated rounded-lg bg-bg-elevated/20">
+                        <TrendingUp size={16} className="text-accent-blue shrink-0" />
+                        <div className="flex-1 flex justify-between items-center">
+                          <div>
+                            <div className="text-[10px] text-text-muted uppercase">Climate Range</div>
+                            <div className="text-xs font-semibold">
+                              {data.snapshot.climate.winterLow}°C to {data.snapshot.climate.summerHigh}°C
+                            </div>
+                          </div>
+                          <div className="text-[10px] text-text-muted italic">Typical yearly highs/lows</div>
+                        </div>
+                      </div>
+                    </>
+                  )}
+                </div>
               </section>
 
               <section>

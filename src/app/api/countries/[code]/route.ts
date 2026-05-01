@@ -18,8 +18,20 @@ export async function GET(
       return NextResponse.json({ error: 'not_found' }, { status: 404 });
     }
 
-    // Strip internal fields
-    const publicData = PublicCountrySchema.parse(country);
+    // Strip internal fields and add curated snapshot
+    const publicData = PublicCountrySchema.parse({
+      ...country,
+      snapshot: {
+        internetReliability: country.rawIndicators.internetReliability,
+        englishDailyLife: country.rawIndicators.englishDailyLife,
+        stability: country.rawIndicators.stability,
+        airQualityIndex: country.rawIndicators.airQualityIndex,
+        climate: {
+          summerHigh: country.rawIndicators.summerHighC,
+          winterLow: country.rawIndicators.winterLowC,
+        }
+      }
+    });
     return NextResponse.json(publicData);
   } catch (error) {
     console.error('Country API error:', error);

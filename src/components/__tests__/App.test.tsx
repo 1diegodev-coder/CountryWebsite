@@ -54,8 +54,14 @@ describe('App Client Logic', () => {
 
   it('renders landing page initially', () => {
     render(<App />);
-    expect(screen.getByText(/CountryDNA/i)).toBeDefined();
+    // Multiple occurrences now due to footer/preview
+    expect(screen.getAllByText(/CountryDNA/i).length).toBeGreaterThanOrEqual(1);
     expect(screen.getByText(/Find the country/i)).toBeDefined();
+    
+    // Below-the-fold content
+    expect(screen.getByText(/Three steps to your perfect match/i)).toBeDefined();
+    expect(screen.getByText(/Product Preview/i)).toBeDefined();
+    expect(screen.getByText(/legal, tax, or immigration advisory/i)).toBeDefined();
   });
 
   it('navigates to quiz on start', async () => {

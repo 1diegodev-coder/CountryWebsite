@@ -22,6 +22,30 @@ export default function QuizView({ answers, onAnswer, onComplete, initialStep }:
   const [showInterim, setShowInterim] = useState(false);
   const [interimData, setInterimData] = useState<any>(null);
 
+  const [matchingCount, setMatchingCount] = useState(164);
+
+  React.useEffect(() => {
+    let active = true;
+    const fetchCount = async () => {
+      try {
+        const response = await fetch("/api/match/count", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(answers),
+        });
+        if (response.ok && active) {
+          const data = await response.json();
+          setMatchingCount(data.count);
+        }
+      } catch (e) {
+        console.error("Failed to fetch match count", e);
+      }
+    };
+
+    fetchCount();
+    return () => { active = false; };
+  }, [answers]);
+
   const handleNext = async (currentAnswersOverride?: any) => {
     const activeAnswers = currentAnswersOverride || answers;
 
@@ -265,7 +289,18 @@ export default function QuizView({ answers, onAnswer, onComplete, initialStep }:
         <div className="live-counter" aria-live="polite">
           <Globe size={24} className="text-accent-green" aria-hidden="true" />
           <div>
-            <div className="counter-number">195</div>
+            <AnimatePresence mode="popLayout">
+              <motion.div 
+                key={matchingCount}
+                initial={{ opacity: 0, y: -8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 8 }}
+                transition={{ duration: 0.2 }}
+                className="counter-number"
+              >
+                {matchingCount}
+              </motion.div>
+            </AnimatePresence>
             <div className="text-[11px] text-text-secondary uppercase tracking-wider">countries match</div>
           </div>
         </div>
