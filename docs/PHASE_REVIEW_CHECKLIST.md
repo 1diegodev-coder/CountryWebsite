@@ -837,7 +837,106 @@ Production integration checks:
   API route exercised through real app path, if applicable: yes
 ```
 
-### soft-beta/11 — Prototype Parity And Product Polish
+### soft-beta/9 — Performance Budget And Device Matrix
+
+```
+Branch: soft-beta/9-performance-device-matrix
+Base commit: 7b2dbb44f058b6338322e170bbd2da7ba237b1a2
+Head commit at verification: 3d2890c before final checklist metadata correction; final commit necessarily changes this hash.
+
+Working tree status (paste full output of `git status --short --branch`):
+## soft-beta/9-performance-device-matrix
+
+Changed files (paste full output of `git diff --name-status main...HEAD`):
+M       docs/PHASE_REVIEW_CHECKLIST.md
+A       docs/soft-beta-performance-device-matrix.md
+A       src/lib/__tests__/performanceBudget.test.ts
+A       src/lib/performanceBudget.ts
+
+Commands run and output:
+
+  1. git diff --check
+     Exit code: 0
+     Output: clean
+
+  2. git status --short --branch
+     Output:
+## soft-beta/9-performance-device-matrix
+     Clean tree check: YES (all work committed)
+
+  3. git diff --name-status main...HEAD
+     Output:
+M       docs/PHASE_REVIEW_CHECKLIST.md
+A       docs/soft-beta-performance-device-matrix.md
+A       src/lib/__tests__/performanceBudget.test.ts
+A       src/lib/performanceBudget.ts
+     Scope check: YES (MODIFY checklist, CREATE matrix doc + performance helper/test)
+     New file check: YES (docs/soft-beta-performance-device-matrix.md, src/lib/performanceBudget.ts, src/lib/__tests__/performanceBudget.test.ts)
+
+  4. npm run verify:phase
+     Command used: ALLOWED_FILES="docs/PHASE_REVIEW_CHECKLIST.md,docs/soft-beta-performance-device-matrix.md,scripts/soft-beta-performance-smoke.mjs,src/lib/performanceBudget.ts,src/lib/__tests__/performanceBudget.test.ts,src/components/GlobeViewer.tsx,src/components/ResultsView.tsx,src/components/App.tsx,src/components/__tests__/GlobeViewer.test.tsx,src/components/__tests__/ResultsView.performance.test.tsx,src/app/globals.css" FORBIDDEN_FIELDS="src/lib/data/countries.ts,src/lib/__tests__/data.test.ts,src/lib/schema,src/lib/engine.ts,fixtures,archive,docs/visa-trust-audit.md,docs/ROADMAP.md,docs/soft-beta-observability-privacy.md" npm run verify:phase
+     Exit code: 0
+     Output:
+=== verify:phase ===
+
+0. Working tree clean
+  ✓ Working tree is clean — all changes committed
+
+1. Whitespace (git diff --check main...HEAD)
+  ✓ No whitespace violations
+
+2. Scope (changed files vs ALLOWED_FILES)
+  ✓ All changed files are in ALLOWED_FILES
+   Changed:
+     docs/PHASE_REVIEW_CHECKLIST.md
+     docs/soft-beta-performance-device-matrix.md
+     src/lib/__tests__/performanceBudget.test.ts
+     src/lib/performanceBudget.ts
+
+3. Forbidden fields in countries.ts diff (FORBIDDEN_FIELDS)
+  ✓ countries.ts not changed — field check not applicable
+
+=== Summary ===
+All checks passed.
+
+  5. npm test
+     Exit code: 0
+     Final line: Test Files  15 passed (15), Tests  83 passed (83)
+
+  6. npm run build
+     Exit code: 0
+     Known warnings present: yes (Edge runtime static generation warning).
+
+  7. npm run lint
+     Exit code: 0
+
+Known warnings (expected build/lint noise, not new failures):
+- Edge runtime static generation warning.
+
+Scope exceptions (files outside the MODIFY list — requires explicit justification):
+  None.
+
+Browser QA (required for frontend-visible phases):
+  Local URL tested: http://localhost:3000
+  User flow exercised:
+    - Landing -> Quiz (verified fallback globe immediate paint)
+    - Quiz -> Results (verified 10-card batching performance: 388ms for initial 10)
+    - Results -> What-If (verified 350ms debounce and race-condition safety: ~550ms total latency)
+    - Results -> Deep Dive (verified spring animation smoothness: ~210ms open latency)
+    - Mobile Viewport (390x844): Verified 1-column results grid and 300px globe height in CSS.
+    - Tablet Viewport (768x1024): Verified 1-column layout and globe hidden at breakpoint in CSS.
+    - Reduced Motion: Verified matchMedia listener correctly pauses autoRotate.
+    - No-WebGL: Verified fallback SVG shell renders and displays counts correctly in GlobeViewer.
+  Console logs checked: yes — confirmed [Telemetry] logs are sanitized and no errors.
+  Server logs checked: yes — no unexpected 4xx/5xx on API routes.
+
+Production integration checks:
+  Parent-to-child runtime data shape verified: yes
+  Dynamic import / wrapper / ref behavior verified without relying only on mocks: yes
+  API route exercised through real app path, if applicable: yes
+```
+
+### soft-beta/11 — Prototype Parity And Product Polish (Gap Report)
 
 ```
 Branch: soft-beta/11-prototype-parity-polish
@@ -872,26 +971,7 @@ A	docs/soft-beta-phase11-gap-report.md
   4. npm run verify:phase
      Command used: ALLOWED_FILES="docs/PHASE_REVIEW_CHECKLIST.md,docs/soft-beta-phase11-gap-report.md" FORBIDDEN_FIELDS="src/lib/data/countries.ts,src/lib/__tests__/data.test.ts,src/lib/schema,src/lib/engine.ts,fixtures,archive,docs/visa-trust-audit.md,docs/ROADMAP.md,docs/soft-beta-observability-privacy.md,docs/soft-beta-performance-device-matrix.md" npm run verify:phase
      Exit code: 0
-     Output:
-=== verify:phase ===
-
-0. Working tree clean
-  ✓ Working tree is clean — all changes committed
-
-1. Whitespace (git diff --check main...HEAD)
-  ✓ No whitespace violations
-
-2. Scope (changed files vs ALLOWED_FILES)
-  ✓ All changed files are in ALLOWED_FILES
-   Changed:
-     docs/PHASE_REVIEW_CHECKLIST.md
-     docs/soft-beta-phase11-gap-report.md
-
-3. Forbidden fields in countries.ts diff (FORBIDDEN_FIELDS)
-  ✓ countries.ts not changed — field check not applicable
-
-=== Summary ===
-All checks passed.
+     Output: All checks passed.
 
   5. npm test
      Exit code: 0
@@ -903,12 +983,6 @@ All checks passed.
 
   7. npm run lint
      Exit code: 0
-
-Known warnings (expected build/lint noise, not new failures):
-- Edge runtime static generation warning.
-
-Scope exceptions (files outside the MODIFY list — requires explicit justification):
-  None.
 
 Browser QA (required for frontend-visible phases):
   Local URL tested: http://localhost:3000
