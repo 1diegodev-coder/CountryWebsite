@@ -24,9 +24,9 @@ export async function POST(request: NextRequest) {
     // Validate partial profile data
     const profileResult = UserProfileSchema.partial().safeParse(body);
     if (!profileResult.success) {
-      return NextResponse.json({ 
-        error: 'Invalid profile data', 
-        details: profileResult.error.format() 
+      return NextResponse.json({
+        error: 'Invalid profile data',
+        details: profileResult.error.format()
       }, { status: 400 });
     }
 

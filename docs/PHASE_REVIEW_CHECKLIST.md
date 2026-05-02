@@ -7,13 +7,13 @@ A reviewer who receives prose like "all tests passed" without pasted output will
 
 ## Required Fields
 
-### soft-beta/3 — Core Engine Hardening (Retroactive)
+### soft-beta/3 — Integration Hotfixes (Retroactive)
 
 ```
-Branch: soft-beta/3-engine-hardening
-Status: Completed Retroactively
-Description: Integrated Zod-based UserProfileSchema and formalized runMatchingEngine logic with hard filters (budget, safety, language, lgbtq, healthcare).
-Verification: Verified via engine.test.ts and data.test.ts.
+Branch: soft-beta/3-integration-hotfixes
+Base commit: 94bc702
+Description: Fixed /api/whatif 400s, persisted languages/locale in profile, added What-If UI error state, and added integration tests (App -> ResultsView -> WhatIf).
+Verification: Verified via browser smoke tests (full quiz flow) and integration tests.
 ```
 
 ### soft-beta/4 — Accessibility & Interactions
