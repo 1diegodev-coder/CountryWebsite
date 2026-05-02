@@ -305,3 +305,19 @@ Telemetry events observed live:
   deep_dive_opened {section:'overview'}  ← no country code leaked
   what_if_used {}
 ```
+
+---
+
+## 12. Resolution Log
+
+The following findings from Section 9 have been resolved on this branch (`soft-beta/12-precheck-hardening`).
+
+| Finding | Status | Resolved by | Resolution Detail |
+|---|---|---|---|
+| F-12 | FIXED | eb3eb53 | Added `matchCountRatelimit` (120/60s) and applied to route handler. |
+| F-13 | FIXED | eb3eb53 | Implemented JSON parse try/catch and `UserProfileSchema.partial()` validation. |
+| F-14 | FIXED | eb3eb53 | Integrated `Sentry.captureException(error)` in route catch block. |
+| F-15 | FIXED | eb3eb53 | Added `Parity Regression Guard` test suite in `quizCounter.test.ts`. |
+| F-11 | FIXED | eb3eb53 | Added `POST /api/match/count` to `CLAUDE.md` API table. |
+| F-19 | FIXED | eb3eb53 | Reviewed Phase 11 surfaces and updated `docs/soft-beta-observability-privacy.md`. |
+| F-01 | FIXED | 9d980cd | Added accurate retroactive Phase 3 entry to `docs/PHASE_REVIEW_CHECKLIST.md`. |
